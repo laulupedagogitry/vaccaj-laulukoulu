@@ -17,7 +17,7 @@
       line-height: 1.6;
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       color: #285b99;
     }
 
@@ -25,7 +25,7 @@
       margin-top: 35px;
     }
 
-    /* Sivuston päävalikko */
+    /* Sivuston ylävalikko */
 
     nav.paavalikko {
       display: flex;
@@ -54,15 +54,15 @@
       color: white;
     }
 
-    /* Metodo pratico -sivun välilehdet */
+    /* Metodo pratico -välilehdet */
 
     .valilehdet {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 30px;
-      border-bottom: 2px solid #d2e2f3;
       padding-bottom: 10px;
+      border-bottom: 2px solid #d2e2f3;
     }
 
     .valilehdet button {
@@ -100,6 +100,38 @@
 
     .valilehtisisalto[hidden] {
       display: none;
+    }
+
+    .allekirjoitus {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    .aaniala-kuva {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 25px 0;
+    }
+
+    .lainaus {
+      border-left: 4px solid #285b99;
+      padding: 12px 20px;
+      margin: 25px 0;
+      background: #f1f6fb;
+    }
+
+    .lainaus p {
+      margin: 0;
+    }
+
+    .lahde {
+      margin-top: 35px;
+      padding-top: 15px;
+      border-top: 1px solid #d2e2f3;
+      font-size: 15px;
+      color: #555;
     }
 
     @media (max-width: 600px) {
@@ -146,7 +178,7 @@
 
     <h1>Metodo pratico</h1>
 
-    <!-- NELJÄ VÄLILEHTEÄ -->
+    <!-- VÄLILEHDET -->
 
     <div class="valilehdet"
          role="tablist"
@@ -247,8 +279,98 @@
       <h2>Säveltäjän esipuhe</h2>
 
       <p>
-        Säveltäjän esipuheen teksti lisätään tähän.
+        "Ei ole epäilystäkään siitä, etteikö italia
+        ole soinnikkuudessaan kieli joka soveltuu
+        parhaiten laulamiseen ja josta laulutaidetta
+        opiskelevan tulisi aloittaa.
+        Perehdyttyään ensin italiaan, opiskelija
+        tulee huomaamaan että laulaminen on helppoa
+        muillakin kielillä. Toisella kielellä
+        aloitettaessa ei näin tapahdu.
       </p>
+
+      <p>
+        Pitkä kokemus on opettanut minulle että
+        Saksassa, Ranskassa, Englannissa ja jopa
+        Italiassakin monet, joskaan eivät kaikki,
+        harrastajat laiminlyövät helposti pitkällisen
+        harjoittelun ja säveltapailun opiskelun
+        vedotessaan siihen, että he haluavat oppia
+        vain sen verran kuin on tarpeellista
+        kamarilaulajalle.
+        Tästä seuraa se etteivät he opi
+        minkäänlaista metodia.
+      </p>
+
+      <p>
+        Nämä syyt synnyttivät ajatuksen tehdä
+        tämä pieni tutkielma, joka lyhykäisyydestään
+        huolimatta tulee osoittautumaan uudeksi,
+        innostavaksi ja käytännönläheiseksi teokseksi,
+        joka auttaa opiskelijaa saavuttamaan
+        tavoitteensa helposti ja nopeasti.
+      </p>
+
+      <p>
+        Vaikka laulaminen muulla kuin omalla
+        äidinkielellä on pääasiallinen vaikeus
+        jo jonkin aikaa jatkuneen säveltapailun
+        ja ääniharjoitusten jälkeenkin, ajattelin
+        että on viisaampaa tutustuttaa opiskelija
+        italiankieleen asteikkkojen harjoittelussa
+        kuin antaa hänen laulaa merkityksettömiä
+        tavuja.
+        Päätin korvata ne Metastasion kauniilla
+        runoilla, joista valitsin tarkoitusperääni
+        parhaiten sopivat.
+      </p>
+
+      <p>
+        Tämä edellä esitetyille ideoille perustuva
+        teos tulee vähentämään perussääntöjen
+        opiskelun ikävystyttävyyttä ja se saa
+        opiskelijan harjoittelemaan järjestelmällisesti.
+        Olen vakuuttunut siitä että tämä teos
+        käytännön harjoituksineen ja tehtävineen
+        osoittautuu hyödylliseksi ja tarpeelliseksi,
+        ei pelkästään harrastajille, vaan myös
+        laulajan ammattiin tähtääville opiskelijoille.
+        Se täydentää ja selittää mitä tahansa
+        metodia."
+      </p>
+
+      <p class="allekirjoitus">
+        Nicolo Vaccaj
+      </p>
+
+      <h2>Ääniala</h2>
+
+      <img
+        class="aaniala-kuva"
+        src="img/aaniala.gif"
+        alt="Vaccajin laulukoulun ääniala">
+
+      <div class="lainaus">
+        <p>
+          "Olen käyttänyt metodissani rajoitettua
+          äänialaa, joka sopii useimmille äänille.
+          On parempi aloittaa äänen harjoittaminen
+          keskialueelta.
+          Kaikki säännöt voidaan todellakin oppia
+          tällä äänialueella ja, jos niin halutaan,
+          voidaan jokainen tehtävä transponoida
+          yhtä sävelaskelta ylemmäksi tai alemmaksi."
+        </p>
+      </div>
+
+      <div class="lahde">
+        <strong>Lähde</strong>
+        <p>
+          Vaccaj, N. 1833.
+          <em>Metodo pratico.</em>
+          Edition Peters.
+        </p>
+      </div>
 
     </section>
 
@@ -304,21 +426,17 @@
       const painikkeet =
         document.querySelectorAll(".valilehdet button");
 
-      // Piilotetaan kaikki sisältöalueet.
       sisallot.forEach(function(sisalto) {
         sisalto.hidden = true;
       });
 
-      // Poistetaan aiempi valinta.
       painikkeet.forEach(function(painike) {
         painike.classList.remove("aktiivinen");
         painike.setAttribute("aria-selected", "false");
       });
 
-      // Näytetään valittu sisältö.
       document.getElementById(tunnus).hidden = false;
 
-      // Korostetaan valittu välilehti.
       const valittuPainike =
         document.getElementById("painike-" + tunnus);
 
