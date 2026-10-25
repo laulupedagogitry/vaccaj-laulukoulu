@@ -11,25 +11,85 @@
     body {
       font-family: Arial, sans-serif;
       max-width: 1300px;
-      margin: 30px auto;
+      margin: 0 auto;
       padding: 20px;
       line-height: 1.6;
       color: #333;
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       color: #285b99;
     }
+
+    a {
+      color: #285b99;
+    }
+
+    /* SAMA PÄÄVALIKKO KUIN ETUSIVULLA */
+
+    nav.paavalikko {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0 35px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #d2e2f3;
+    }
+
+    .paavalikko a {
+      padding: 10px 16px;
+      background: #f1f6fb;
+      border-radius: 6px;
+      color: #285b99;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .paavalikko a:hover {
+      background: #dceaf8;
+    }
+
+    .paavalikko a.aktiivinen {
+      background: #285b99;
+      color: white;
+    }
+
+    /* HARJOITUKSEN JA ÄÄNIALAN VALINTA */
 
     label {
       display: block;
       margin: 20px 0 8px;
+      font-weight: bold;
     }
 
     select {
       font-size: 18px;
       padding: 10px;
+      max-width: 100%;
+      border: 1px solid #b7cce2;
+      border-radius: 6px;
+      background: white;
     }
+
+    .valinnat {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 25px 0;
+      padding: 20px;
+      background: #f1f6fb;
+      border-radius: 10px;
+    }
+
+    .valintaryhma {
+      min-width: 200px;
+    }
+
+    .valintaryhma label {
+      margin-top: 0;
+    }
+
+    /* ÄÄNITE */
 
     audio {
       display: block;
@@ -37,9 +97,12 @@
       margin: 15px 0 25px;
     }
 
+    /* NUOTIT JA LAULUTEKSTI */
+
     .sisalto {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      grid-template-columns:
+        minmax(0, 1.4fr) minmax(280px, 1fr);
       gap: 35px;
       align-items: start;
     }
@@ -76,7 +139,7 @@
       font-weight: bold;
     }
 
-    .englanti {
+    .suomi {
       font-size: 16px;
       color: #555;
     }
@@ -87,9 +150,30 @@
       border-top: 1px solid #ccc;
     }
 
+    /* MOBIILINÄKYMÄ */
+
     @media (max-width: 800px) {
       .sisalto {
         grid-template-columns: 1fr;
+      }
+
+      .valinnat {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav.paavalikko {
+        flex-direction: column;
+      }
+
+      .paavalikko a {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 28px;
       }
     }
   </style>
@@ -97,115 +181,245 @@
 
 <body>
 
-  <p>
-    <a href="index.html">← Takaisin etusivulle</a>
-  </p>
+  <!-- SIVUSTON YLÄVALIKKO -->
 
-  <h1>Vaccaj – Harjoitus 1a</h1>
+  <nav class="paavalikko" aria-label="Päävalikko">
 
-  <label for="aaniala">Valitse ääniala:</label>
+    <a href="index.html"
+       class="aktiivinen"
+       aria-current="page">
+      Harjoitukset
+    </a>
 
-  <select id="aaniala" onchange="vaihdaAaniala()">
-    <option value="sopraano">Sopraano</option>
-    <option value="mezzo">Mezzosopraano</option>
-    <option value="altto">Altto</option>
-    <option value="baritoni1">Baritoni 1</option>
-    <option value="baritoni2">Baritoni 2</option>
-  </select>
+    <a href="metodo-pratico.html">
+      Metodo pratico
+    </a>
 
-  <h2>Kuuntele äänite</h2>
+    <a href="vaccaj-metastasio.html">
+      Vaccaj ja Metastasio
+    </a>
 
-  <audio
-    id="soitin"
-    controls
-    preload="none"
-    src="aanet/1a_sopraano.mp3">
-    Selaimesi ei tue äänisoitinta.
-  </audio>
+    <a href="tekijat.html">
+      Tekijät
+    </a>
 
-  <div class="sisalto">
+  </nav>
 
-    <section class="nuottialue">
+  <main>
 
-      <h2>Nuotit</h2>
+    <h1>Vaccaj – Harjoitus 1a</h1>
 
-      <img
-        id="nuotti"
-        src="img/nuottikuvat/1a_sopraano.jpg"
-        alt="Vaccaj 1a – sopraanon nuotit">
+    <!-- HARJOITUKSEN JA ÄÄNIALAN VALINTA -->
 
-    </section>
+    <div class="valinnat">
 
-    <section class="tekstialue">
+      <div class="valintaryhma">
 
-      <h2>Exercise 1a</h2>
+        <label for="harjoitus">
+          Valitse harjoitus:
+        </label>
 
-      <h3>La scala</h3>
-      <p>The scale</p>
+        <select
+          id="harjoitus"
+          onchange="vaihdaHarjoitus()">
 
-      <hr>
+          <option value="1a" selected>Harjoitus 1a</option>
+          <option value="1b">Harjoitus 1b</option>
+          <option value="2a">Harjoitus 2a</option>
+          <option value="2b">Harjoitus 2b</option>
+          <option value="3">Harjoitus 3</option>
+          <option value="4a">Harjoitus 4a</option>
+          <option value="4b">Harjoitus 4b</option>
+          <option value="5">Harjoitus 5</option>
+          <option value="6">Harjoitus 6</option>
+          <option value="7">Harjoitus 7</option>
+          <option value="8a">Harjoitus 8a</option>
+          <option value="8b">Harjoitus 8b</option>
+          <option value="9a">Harjoitus 9a</option>
+          <option value="9b">Harjoitus 9b</option>
+          <option value="10a">Harjoitus 10a</option>
+          <option value="10b">Harjoitus 10b</option>
+          <option value="11">Harjoitus 11</option>
+          <option value="12">Harjoitus 12</option>
+          <option value="13a">Harjoitus 13a</option>
+          <option value="13b">Harjoitus 13b</option>
+          <option value="14">Harjoitus 14</option>
+          <option value="15">Harjoitus 15</option>
 
-      <div class="sae">
-        <div class="aanne">['manka sol'letʃita]</div>
-        <div class="italia">Manca sollecita</div>
-        <div class="englanti">Dies quickly</div>
+        </select>
+
       </div>
 
-      <div class="sae">
-        <div class="aanne">[pju del u'zato]</div>
-        <div class="italia">più dell'usato,</div>
-        <div class="englanti">
-          more quickly than usual
+      <div class="valintaryhma">
+
+        <label for="aaniala">
+          Valitse ääniala:
+        </label>
+
+        <select
+          id="aaniala"
+          onchange="vaihdaAaniala()">
+
+          <option value="sopraano">Sopraano</option>
+          <option value="mezzo">Mezzosopraano</option>
+          <option value="altto">Altto</option>
+          <option value="baritoni1">Baritoni 1</option>
+          <option value="baritoni2">Baritoni 2</option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+    <!-- ÄÄNITE -->
+
+    <h2>Kuuntele äänite</h2>
+
+    <audio
+      id="soitin"
+      controls
+      preload="none"
+      src="aanet/1a_sopraano.mp3">
+      Selaimesi ei tue äänisoitinta.
+    </audio>
+
+    <div class="sisalto">
+
+      <!-- NUOTIT -->
+
+      <section class="nuottialue">
+
+        <h2>Nuotit</h2>
+
+        <img
+          id="nuotti"
+          src="img/nuottikuvat/1a_sopraano.jpg"
+          alt="Vaccaj 1a – sopraanon nuotit">
+
+      </section>
+
+      <!-- LAULUTEKSTI -->
+
+      <section class="tekstialue">
+
+        <h2>Tehtävä 1a</h2>
+
+        <div class="aanne">[la 'skala]</div>
+        <h3>La scala</h3>
+        <p>Asteikko</p>
+
+        <hr>
+
+        <div class="sae">
+          <div class="aanne">
+            ['manka sol'letʃita]
+          </div>
+          <div class="italia">
+            Manca sollecita
+          </div>
+          <div class="suomi">
+            Sammuu nopeasti
+          </div>
         </div>
-      </div>
 
-      <div class="sae">
-        <div class="aanne">[an'korke s'adʒiti]</div>
-        <div class="italia">ancor che s'agiti</div>
-        <div class="englanti">
-          even if it is moved
+        <div class="sae">
+          <div class="aanne">
+            [pju del u'zato]
+          </div>
+          <div class="italia">
+            più dell´usato,
+          </div>
+          <div class="suomi">
+            tavallista nopeammin,
+          </div>
         </div>
-      </div>
 
-      <div class="sae">
-        <div class="aanne">[kon 'ljeve 'fjato]</div>
-        <div class="italia">con lieve fiato,</div>
-        <div class="englanti">
-          by a light wind
+        <div class="sae">
+          <div class="aanne">
+            [an'korke s'adʒiti]
+          </div>
+          <div class="italia">
+            ancor che s'agiti
+          </div>
+          <div class="suomi">
+            vaikka sitä liikuttaa
+          </div>
         </div>
-      </div>
 
-      <div class="sae">
-        <div class="aanne">['fatʃe ke 'palpita]</div>
-        <div class="italia">face che palpita</div>
-        <div class="englanti">
-          makes it flicker
+        <div class="sae">
+          <div class="aanne">
+            [kon 'ljeve 'fjato]
+          </div>
+          <div class="italia">
+            con lieve fiato,
+          </div>
+          <div class="suomi">
+            keveä tuuli,
+          </div>
         </div>
-      </div>
 
-      <div class="sae">
-        <div class="aanne">['prɛsso al mo'rir]</div>
-        <div class="italia">presso al morir.</div>
-        <div class="englanti">
-          close to death.
+        <div class="sae">
+          <div class="aanne">
+            ['fatʃe ke 'palpita]
+          </div>
+          <div class="italia">
+            face che palpita
+          </div>
+          <div class="suomi">
+            liekki, joka värisee
+          </div>
         </div>
-      </div>
 
-      <div class="yhteenveto">
-        <strong>
-          The flame flickers close to death<br>
-          and dies unexpectedly<br>
-          even though<br>
-          the wind is light
-        </strong>
-      </div>
+        <div class="sae">
+          <div class="aanne">
+            ['prɛsso al mo'rir]
+          </div>
+          <div class="italia">
+            presso al morir.
+          </div>
+          <div class="suomi">
+            lähellä kuolemaa.
+          </div>
+        </div>
 
-    </section>
+        <!-- YHTEENVETO -->
 
-  </div>
+        <div class="yhteenveto">
+
+          <strong>
+            Liekki värisee<br>
+            lähellä kuolemaa,<br>
+            ja sammuu odottamatta<br>
+            keveästä tuulesta<br>
+            huolimatta
+          </strong>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
 
   <script>
+
+    // SIIRTYMINEN TOISEEN HARJOITUKSEEN
+
+    function vaihdaHarjoitus() {
+
+      const harjoitus =
+        document.getElementById("harjoitus").value;
+
+      window.location.href =
+        "harjoitus-" + harjoitus + ".html";
+    }
+
+    // ÄÄNIALAN, NUOTIN JA ÄÄNITTEEN VAIHTAMINEN
+
     function vaihdaAaniala() {
+
       const aaniala =
         document.getElementById("aaniala").value;
 
@@ -219,7 +433,7 @@
         "img/nuottikuvat/1a_" + aaniala + ".jpg";
 
       nuotti.alt =
-        "Vaccaj 1a – " + aaniala;
+        "Vaccaj 1a – " + aaniala + " – nuotit";
 
       soitin.pause();
 
@@ -228,6 +442,7 @@
 
       soitin.load();
     }
+
   </script>
 
 </body>
