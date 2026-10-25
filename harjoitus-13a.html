@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Harjoitus 13a</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+      font-weight: bold;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .suomi {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
+
+  <h1>Vaccaj – Harjoitus 13a</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="mezzo">Mezzosopraano</option>
+    <option value="altto">Altto</option>
+    <option value="baritoni">Baritoni</option>
+  </select>
+
+  <h2>Kuuntele äänite</h2>
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/13a_mezzo.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <div class="sisalto">
+
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/13a_mezzo.jpg"
+        alt="Vaccaj 13a – mezzosopraanon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Tehtävä 13a</h2>
+
+      <div class="aanne">
+        [porta'mento]
+      </div>
+
+      <h3>Portamento I</h3>
+      <p>Portamento / Kannatellen</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">
+          [vor'rɛi spie'gar laf'fanno]
+        </div>
+        <div class="italia">
+          Vorrei spiegar l´affanno,
+        </div>
+        <div class="suomi">
+          Tahtoisin ilmaista murheen,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [nas'konderlo vor'rɛi]
+        </div>
+        <div class="italia">
+          nasconderlo vorrei;
+        </div>
+        <div class="suomi">
+          salata sen tahtoisin,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [e 'mentre i 'dubbi 'mjɛi]
+        </div>
+        <div class="italia">
+          e mentre i dubbi miei
+        </div>
+        <div class="suomi">
+          ja samalla kun epäilykseni
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [ko'si kreʃ'ʃɛndo 'vanno]
+        </div>
+        <div class="italia">
+          così crescendo vanno,
+        </div>
+        <div class="suomi">
+          näin suuremmiksi tulevat,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['tutto spje'gar non 'ozo]
+        </div>
+        <div class="italia">
+          tutto spiegar non oso,
+        </div>
+        <div class="suomi">
+          kaikkea ilmaista en uskalla,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['tutto non so ta'tʃer]
+        </div>
+        <div class="italia">
+          tutto non so tacer.
+        </div>
+        <div class="suomi">
+          kaikesta en voi vaieta.
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [sol'letʃito dub'bjoso]
+        </div>
+        <div class="italia">
+          Sollecito, dubbioso,
+        </div>
+        <div class="suomi">
+          Kiireisenä, epävarmana
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['penso ram'mento e 'vedo]
+        </div>
+        <div class="italia">
+          penso, rammento e vedo;
+        </div>
+        <div class="suomi">
+          ajattelen, muistelen ja näen,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [e 'aʎʎi 'okki 'mjɛi non 'kredo]
+        </div>
+        <div class="italia">
+          e agli occhi miei non credo,
+        </div>
+        <div class="suomi">
+          ja silmiäni en usko,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [non 'kredo al 'mio pen'sjɛr]
+        </div>
+        <div class="italia">
+          non credo al mio pensier.
+        </div>
+        <div class="suomi">
+          en usko ajatuksiani.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          Haluaisin paljastaa tuskan,<br>
+          tahtoisin salata sen<br>
+          ja samalla kun<br>
+          epävarmuuteni tälla tavalla kasvaa,<br>
+          kaikkea en voi kertoa<br>
+          enkä kaikesta voi vaieta.<br>
+          Kiireisenä ja epävarmana ajattelen,<br>
+          muistelen ja näen,<br>
+          enkä usko silmiäni,<br>
+          enkä usko ajatuksiani.
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    function vaihdaAaniala() {
+
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/13a_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 13a – " + aaniala + " – nuotit";
+
+      soitin.pause();
+
+      soitin.src =
+        "aanet/13a_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+  </script>
+
+</body>
+</html>
