@@ -21,12 +21,6 @@
       color: #285b99;
     }
 
-    h1 {
-      margin-top: 35px;
-    }
-
-    /* Sivuston ylävalikko */
-
     nav.paavalikko {
       display: flex;
       flex-wrap: wrap;
@@ -54,7 +48,7 @@
       color: white;
     }
 
-    /* Metodo pratico -välilehdet */
+    /* Metodo pratico -sivun välilehdet */
 
     .valilehdet {
       display: flex;
@@ -71,9 +65,7 @@
       border: 1px solid #d2e2f3;
       border-radius: 6px;
       padding: 12px 16px;
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-      font-weight: bold;
+      font: bold 16px Arial, sans-serif;
       cursor: pointer;
     }
 
@@ -87,11 +79,9 @@
       border-color: #285b99;
     }
 
-    /* Välilehtien sisältö */
-
     .sisalto {
-      max-width: 850px;
       padding-top: 25px;
+      max-width: 850px;
     }
 
     .sisalto p {
@@ -103,9 +93,8 @@
     }
 
     .allekirjoitus {
-      margin-top: 20px;
-      font-weight: bold;
       text-align: right;
+      font-weight: bold;
     }
 
     .aaniala-kuva {
@@ -118,8 +107,8 @@
     .lainaus {
       border-left: 4px solid #285b99;
       padding: 12px 20px;
-      margin: 25px 0;
       background: #f1f6fb;
+      margin: 25px 0;
     }
 
     .lainaus p {
@@ -130,8 +119,71 @@
       margin-top: 35px;
       padding-top: 15px;
       border-top: 1px solid #d2e2f3;
-      font-size: 15px;
       color: #555;
+    }
+
+    /* Harjoitusten rakenne -taulukko */
+
+    .taulukko-kehys {
+      width: 100%;
+      overflow-x: auto;
+      margin: 25px 0;
+    }
+
+    .rakenne-taulukko {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .rakenne-taulukko th {
+      text-align: left;
+      padding: 12px 9px;
+      color: #285b99;
+      background: #e7f0fa;
+      border-bottom: 2px solid #b7cce2;
+      vertical-align: bottom;
+    }
+
+    .rakenne-taulukko td {
+      padding: 11px 9px;
+      border-bottom: 1px solid #e0e8f1;
+      vertical-align: top;
+    }
+
+    .rakenne-taulukko tbody tr:hover {
+      background: #f7faff;
+    }
+
+    .rakenne-taulukko .ryhmaraja td {
+      border-top: 2px solid #9eafc2;
+    }
+
+    .rakenne-taulukko .numero {
+      font-weight: bold;
+      color: #285b99;
+      white-space: nowrap;
+    }
+
+    .rakenne-taulukko .laulu {
+      font-style: italic;
+    }
+
+    .rakenne-taulukko a {
+      color: #285b99;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .rakenne-taulukko a:hover {
+      color: #173b67;
+    }
+
+    .huomautukset {
+      font-size: 14px;
+      color: #555;
+      margin-top: 25px;
     }
 
     @media (max-width: 600px) {
@@ -148,6 +200,10 @@
       h1 {
         font-size: 28px;
       }
+
+      .rakenne-taulukko {
+        min-width: 720px;
+      }
     }
   </style>
 </head>
@@ -157,21 +213,17 @@
   <!-- SIVUSTON YLÄVALIKKO -->
 
   <nav class="paavalikko" aria-label="Päävalikko">
-
     <a href="index.html">Harjoitukset</a>
 
     <a href="metodo-pratico.html"
        class="aktiivinen"
-       aria-current="page">
-      Metodo pratico
-    </a>
+       aria-current="page">Metodo pratico</a>
 
     <a href="vaccaj-metastasio.html">
       Vaccaj ja Metastasio
     </a>
 
     <a href="tekijat.html">Tekijät</a>
-
   </nav>
 
   <main>
@@ -227,7 +279,6 @@
 
     </div>
 
-
     <!-- 1. METODO PRATICO -->
 
     <section
@@ -239,33 +290,30 @@
       <h2>Metodo pratico</h2>
 
       <p>
-        Vuonna 1834 Lontoossa ensimmäisen kerran
-        julkaistu Nicolo Vaccajn
-        <em>Metodo pratico di canto italiano per
-        camera diviso in 15 lezioni</em>
+        Vuonna 1834 Lontoossa ensimmäisen kerran julkaistu
+        Nicolo Vaccajn
+        <em>Metodo pratico di canto italiano per camera
+        diviso in 15 lezioni</em>
         ("Käytännöllinen menetelmä italialaiseen
         kamarilauluun, jaettuna 15 oppituntiin")
         on laajimmalle levinnyt laulukoulu.
-        Siitä on tähän mennessä julkaistu
-        yli 40 painosta.
+        Siitä on tähän mennessä julkaistu yli 40 painosta.
       </p>
 
       <p>
-        Italian kielessä <em>metodo</em>
-        tarkoittaa tietä.
-        Vaccaj arvattavasti halusi kirjoittaa
-        laulukoulunsa tietyssä etenemisjärjestyksessä
-        ja tiettyä tarkoitusta silmällä pitäen.
+        Italian kielessä <em>metodo</em> tarkoittaa tietä.
+        Vaccaj arvattavasti halusi kirjoittaa laulukoulunsa
+        tietyssä etenemisjärjestyksessä ja tiettyä
+        tarkoitusta silmällä pitäen.
       </p>
 
       <p>
         Vaccaj jaotteli laulukoulunsa 15 oppituntiin
-        eli 15 tehtävään, jotka sisältävät
-        yhteensä 22 laulua.
+        eli 15 tehtävään, jotka sisältävät yhteensä
+        22 laulua.
       </p>
 
     </section>
-
 
     <!-- 2. SÄVELTÄJÄN ESIPUHE -->
 
@@ -279,69 +327,58 @@
       <h2>Säveltäjän esipuhe</h2>
 
       <p>
-        "Ei ole epäilystäkään siitä, etteikö italia
-        ole soinnikkuudessaan kieli joka soveltuu
-        parhaiten laulamiseen ja josta laulutaidetta
-        opiskelevan tulisi aloittaa.
-        Perehdyttyään ensin italiaan, opiskelija
-        tulee huomaamaan että laulaminen on helppoa
-        muillakin kielillä. Toisella kielellä
+        "Ei ole epäilystäkään siitä, etteikö italia ole
+        soinnikkuudessaan kieli joka soveltuu parhaiten
+        laulamiseen ja josta laulutaidetta opiskelevan
+        tulisi aloittaa. Perehdyttyään ensin italiaan,
+        opiskelija tulee huomaamaan että laulaminen on
+        helppoa muillakin kielillä. Toisella kielellä
         aloitettaessa ei näin tapahdu.
       </p>
 
       <p>
-        Pitkä kokemus on opettanut minulle että
-        Saksassa, Ranskassa, Englannissa ja jopa
-        Italiassakin monet, joskaan eivät kaikki,
-        harrastajat laiminlyövät helposti pitkällisen
-        harjoittelun ja säveltapailun opiskelun
-        vedotessaan siihen, että he haluavat oppia
-        vain sen verran kuin on tarpeellista
-        kamarilaulajalle.
-        Tästä seuraa se etteivät he opi
-        minkäänlaista metodia.
+        Pitkä kokemus on opettanut minulle että Saksassa,
+        Ranskassa, Englannissa ja jopa Italiassakin monet,
+        joskaan eivät kaikki, harrastajat laiminlyövät
+        helposti pitkällisen harjoittelun ja säveltapailun
+        opiskelun vedotessaan siihen, että he haluavat oppia
+        vain sen verran kuin on tarpeellista kamarilaulajalle.
+        Tästä seuraa se etteivät he opi minkäänlaista metodia.
       </p>
 
       <p>
-        Nämä syyt synnyttivät ajatuksen tehdä
-        tämä pieni tutkielma, joka lyhykäisyydestään
-        huolimatta tulee osoittautumaan uudeksi,
-        innostavaksi ja käytännönläheiseksi teokseksi,
-        joka auttaa opiskelijaa saavuttamaan
-        tavoitteensa helposti ja nopeasti.
+        Nämä syyt synnyttivät ajatuksen tehdä tämä pieni
+        tutkielma, joka lyhykäisyydestään huolimatta tulee
+        osoittautumaan uudeksi, innostavaksi ja
+        käytännönläheiseksi teokseksi, joka auttaa opiskelijaa
+        saavuttamaan tavoitteensa helposti ja nopeasti.
       </p>
 
       <p>
-        Vaikka laulaminen muulla kuin omalla
-        äidinkielellä on pääasiallinen vaikeus
-        jo jonkin aikaa jatkuneen säveltapailun
-        ja ääniharjoitusten jälkeenkin, ajattelin
-        että on viisaampaa tutustuttaa opiskelija
-        italiankieleen asteikkkojen harjoittelussa
-        kuin antaa hänen laulaa merkityksettömiä
-        tavuja.
-        Päätin korvata ne Metastasion kauniilla
-        runoilla, joista valitsin tarkoitusperääni
-        parhaiten sopivat.
+        Vaikka laulaminen muulla kuin omalla äidinkielellä
+        on pääasiallinen vaikeus jo jonkin aikaa jatkuneen
+        säveltapailun ja ääniharjoitusten jälkeenkin,
+        ajattelin että on viisaampaa tutustuttaa opiskelija
+        italiankieleen asteikkkojen harjoittelussa kuin
+        antaa hänen laulaa merkityksettömiä tavuja.
+        Päätin korvata ne Metastasion kauniilla runoilla,
+        joista valitsin tarkoitusperääni parhaiten sopivat.
       </p>
 
       <p>
-        Tämä edellä esitetyille ideoille perustuva
-        teos tulee vähentämään perussääntöjen
-        opiskelun ikävystyttävyyttä ja se saa
-        opiskelijan harjoittelemaan järjestelmällisesti.
-        Olen vakuuttunut siitä että tämä teos
-        käytännön harjoituksineen ja tehtävineen
-        osoittautuu hyödylliseksi ja tarpeelliseksi,
-        ei pelkästään harrastajille, vaan myös
-        laulajan ammattiin tähtääville opiskelijoille.
-        Se täydentää ja selittää mitä tahansa
-        metodia."
+        Tämä edellä esitetyille ideoille perustuva teos
+        tulee vähentämään perussääntöjen opiskelun
+        ikävystyttävyyttä ja se saa opiskelijan
+        harjoittelemaan järjestelmällisesti.
+        Olen vakuuttunut siitä että tämä teos käytännön
+        harjoituksineen ja tehtävineen osoittautuu
+        hyödylliseksi ja tarpeelliseksi, ei pelkästään
+        harrastajille, vaan myös laulajan ammattiin
+        tähtääville opiskelijoille.
+        Se täydentää ja selittää mitä tahansa metodia."
       </p>
 
-      <p class="allekirjoitus">
-        Nicolo Vaccaj
-      </p>
+      <p class="allekirjoitus">Nicolo Vaccaj</p>
 
       <h2>Ääniala</h2>
 
@@ -352,14 +389,13 @@
 
       <div class="lainaus">
         <p>
-          "Olen käyttänyt metodissani rajoitettua
-          äänialaa, joka sopii useimmille äänille.
-          On parempi aloittaa äänen harjoittaminen
-          keskialueelta.
-          Kaikki säännöt voidaan todellakin oppia
-          tällä äänialueella ja, jos niin halutaan,
-          voidaan jokainen tehtävä transponoida
-          yhtä sävelaskelta ylemmäksi tai alemmaksi."
+          "Olen käyttänyt metodissani rajoitettua äänialaa,
+          joka sopii useimmille äänille. On parempi aloittaa
+          äänen harjoittaminen keskialueelta. Kaikki säännöt
+          voidaan todellakin oppia tällä äänialueella ja,
+          jos niin halutaan, voidaan jokainen tehtävä
+          transponoida yhtä sävelaskelta ylemmäksi tai
+          alemmaksi."
         </p>
       </div>
 
@@ -374,7 +410,6 @@
 
     </section>
 
-
     <!-- 3. HARJOITUSTEN RAKENNE -->
 
     <section
@@ -387,12 +422,244 @@
       <h2>Harjoitusten rakenne</h2>
 
       <p>
-        Harjoitusten rakennetta käsittelevä
-        teksti lisätään tähän.
+        Nicolo Vaccajn laulukoulu koostuu 22 laulusta,
+        jotka jakautuvat kolmeen ryhmään:
+        intervalleihin, koristeisiin ja erillisiin
+        resitatiivi- ja aariaharjoituksiin
       </p>
 
-    </section>
+      <div class="taulukko-kehys">
 
+        <table class="rakenne-taulukko">
+
+          <thead>
+            <tr>
+              <th scope="col">Vaccajn oma<br>numerointi</th>
+              <th scope="col">S–A</th>
+              <th scope="col">Aloitus</th>
+              <th scope="col">Otsikot</th>
+              <th scope="col">Harjoitus</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <!-- INTERVALLIT -->
+
+            <tr>
+              <td class="numero" rowspan="2">I</td>
+              <td><a href="harjoitus-1a.html">1a</a></td>
+              <td class="laulu">Manca sollecita...</td>
+              <td>La scala</td>
+              <td>asteikko</td>
+            </tr>
+
+            <tr>
+              <td><a href="harjoitus-1b.html">1b</a></td>
+              <td class="laulu">Semplicetta tortorella...</td>
+              <td>Intervalli di terza</td>
+              <td>terssi</td>
+            </tr>
+
+            <tr>
+              <td class="numero" rowspan="2">II</td>
+              <td><a href="harjoitus-2a.html">2a</a></td>
+              <td class="laulu">Lascia il lido, e il mare infido...</td>
+              <td>Intervalli di quarta</td>
+              <td>kvartti</td>
+            </tr>
+
+            <tr>
+              <td><a href="harjoitus-2b.html">2b</a></td>
+              <td class="laulu">Avvezzo a vivere...</td>
+              <td>Intervalli di quinta</td>
+              <td>kvintti</td>
+            </tr>
+
+            <tr>
+              <td class="numero">III</td>
+              <td><a href="harjoitus-3.html">3</a></td>
+              <td class="laulu">Bella prova é d'alma forte...</td>
+              <td>Intervalli di sesta</td>
+              <td>seksti</td>
+            </tr>
+
+            <tr>
+              <td class="numero" rowspan="2">IV</td>
+              <td><a href="harjoitus-4a.html">4a</a></td>
+              <td class="laulu">Fra l'ombre un lampo solo...</td>
+              <td>Intervalli di settima</td>
+              <td>septimi</td>
+            </tr>
+
+            <tr>
+              <td><a href="harjoitus-4b.html">4b</a></td>
+              <td class="laulu">Quell' onda che ruina...</td>
+              <td>Intervalli di ottava</td>
+              <td>oktaavi</td>
+            </tr>
+
+            <!-- KORISTEET -->
+
+            <tr class="ryhmaraja">
+              <td class="numero">V</td>
+              <td><a href="harjoitus-5.html">5</a></td>
+              <td class="laulu">Delira dubbiosa...</td>
+              <td>I semitoni</td>
+              <td>puolisävelaskel</td>
+            </tr>
+
+            <tr>
+              <td class="numero">VI</td>
+              <td><a href="harjoitus-6.html">6</a></td>
+              <td class="laulu">Nel contrasto amor accende...</td>
+              <td>Modo sincopato</td>
+              <td>synkooppi</td>
+            </tr>
+
+            <tr>
+              <td class="numero">VII</td>
+              <td><a href="harjoitus-7.html">7</a></td>
+              <td class="laulu">Come il candore...</td>
+              <td>Introduzione alle volate</td>
+              <td>johdatus juoksutukseen</td>
+            </tr>
+
+            <tr>
+              <td class="numero" rowspan="2">VIII</td>
+              <td><a href="harjoitus-8a.html">8a</a></td>
+              <td class="laulu">Senza l'amabile...</td>
+              <td>Le appoggiatura sopra e sotto</td>
+              <td>pitkä etuhele (*</td>
+            </tr>
+
+            <tr>
+              <td><a href="harjoitus-8b.html">8b</a></td>
+              <td class="laulu">Benchè di senso privo...</td>
+              <td>L'acciaccatura</td>
+              <td>lyhyt etuhele</td>
+            </tr>
+
+            <tr>
+              <td class="numero" rowspan="2">IX</td>
+              <td><a href="harjoitus-9a.html">9a</a></td>
+              <td class="laulu">La gioia verace...</td>
+              <td>Introduzione al Mordente</td>
+              <td>johdatus jälkiheleeseen</td>
+            </tr>
+
+            <tr>
+              <td><a href="harjoitus-9b.html">9b</a></td>
+              <td class="laulu">L'augelletto in lacci stretto...</td>
+              <td>Mordente in diversi modi</td>
+              <td>jälkihele, kaksoishele</td>
+            </tr>
+
+            <tr>
+              <td class="numero" rowspan="2">X</td>
+              <td><a href="harjoitus-10a.html">10a</a></td>
+              <td class="laulu">Quando accende un nobil petto...</td>
+              <td>Introduzione al grupetto</td>
+              <td>johdatus kaksoisheleeseen</td>
+            </tr>
+
+            <tr>
+              <td><a href="harjoitus-10b.html">10b</a></td>
+              <td class="laulu">Più non si trovano...</td>
+              <td>Il gruppetto</td>
+              <td>kaksoishele</td>
+            </tr>
+
+            <tr>
+              <td class="numero">XI</td>
+              <td><a href="harjoitus-11.html">11</a></td>
+              <td class="laulu">Se povero il ruscello...</td>
+              <td>Introduzione al trillo</td>
+              <td>johdatus trilliin</td>
+            </tr>
+
+            <tr>
+              <td class="numero">XII</td>
+              <td><a href="harjoitus-12.html">12</a></td>
+              <td class="laulu">Siam navi all' onde algenti...</td>
+              <td>Le volate</td>
+              <td>pitkä 16-osajuoksutus</td>
+            </tr>
+
+            <tr>
+              <td class="numero" rowspan="2">XIII</td>
+              <td><a href="harjoitus-13a.html">13a</a></td>
+              <td class="laulu">Vorrei spiegar l'affanno...</td>
+              <td>
+                Portamento I - Modo per portare la voce
+              </td>
+              <td>
+                kannattelu I - päänuotista ylös- tai
+                alaspäin legatona sitoen pikkunuotti
+                seuraavaan päänuottiin
+              </td>
+            </tr>
+
+            <tr>
+              <td><a href="harjoitus-13b.html">13b</a></td>
+              <td class="laulu">O placido il mare...</td>
+              <td>Portamento II - Altro modo</td>
+              <td>
+                kannattelu II - liukuen alhaalta ylös
+                (kuin aalto)
+              </td>
+            </tr>
+
+            <!-- RESITATIIVI JA AARIA -->
+
+            <tr class="ryhmaraja">
+              <td class="numero">XIV</td>
+              <td><a href="harjoitus-14.html">14</a></td>
+              <td class="laulu">La patria è un tutto...</td>
+              <td>Il recitativo</td>
+              <td>resitatiivi</td>
+            </tr>
+
+            <tr>
+              <td class="numero">XV</td>
+              <td><a href="harjoitus-15.html">15</a></td>
+              <td class="laulu">Alla stagion de' fiori...</td>
+              <td>Riepilogo</td>
+              <td>kertaus</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+
+      <!-- TAULUKON HUOMAUTUKSET -->
+
+      <div class="huomautukset">
+
+        <p>
+          (* Käytetään myös termiä lyönti:
+          etulyönti, jälkilyönti, kaksoislyönti.
+        </p>
+
+        <p>
+          Vaccaj numeroi laulut roomalaisittain I-XV,
+          joista seitsemällä luvulla
+          (I, II, IV, VIII, IX, X ja XIII)
+          on kaksi laulua kullakin.
+        </p>
+
+        <p>
+          Sibelius-Akatemiassa (S-A) noudatetaan
+          Vaccajn jaottelua 1-15 (I-XV),
+          mutta lisätään a ja b -kirjaimet
+          erottamaan laulut ja osoittamaan
+          niiden järjestys.
+        </p>
+
+      </div>
+
+    </section>
 
     <!-- 4. KAMARILAULAJAT -->
 
@@ -406,14 +673,13 @@
       <h2>Kamarilaulajat</h2>
 
       <p>
-        Kamarilaulajia käsittelevä
-        teksti lisätään tähän.
+        Kamarilaulajia käsittelevä teksti
+        lisätään tähän.
       </p>
 
     </section>
 
   </main>
-
 
   <!-- VÄLILEHTIEN TOIMINTA -->
 
