@@ -222,12 +222,17 @@
       const soitin =
         document.getElementById("soitin");
 
+      // Tenori käyttää samaa nuottikuvaa kuin sopraano.
+      const nuottiAaniala =
+        aaniala === "tenori" ? "sopraano" : aaniala;
+
       nuotti.src =
-        "img/nuottikuvat/11_" + aaniala + ".jpg";
+        "img/nuottikuvat/11_" + nuottiAaniala + ".jpg";
 
       nuotti.alt =
-        "Vaccaj 11 – " + aaniala;
+        "Vaccaj 11 – " + aaniala + " – nuotit";
 
+      // Jokaisella äänialalla on oma MP3-äänitteensä.
       soitin.pause();
 
       soitin.src =
