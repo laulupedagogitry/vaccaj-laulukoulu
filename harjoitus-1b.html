@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vaccaj – Harjoitus 1b</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 950px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 { color: #285b99; }
+    label { display: block; margin: 20px 0 8px; }
+    select { font-size: 18px; padding: 10px; }
+    img { width: 100%; height: auto; margin-top: 20px; }
+    audio { width: 100%; margin-top: 15px; }
+  </style>
+</head>
+<body>
+  <p><a href="index.html">← Takaisin etusivulle</a></p>
+
+  <h1>Vaccaj – Harjoitus 1b</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="sopraano">Sopraano</option>
+    <option value="mezzo">Mezzosopraano</option>
+    <option value="altto">Altto</option>
+    <option value="baritoni1">Baritoni 1</option>
+    <option value="baritoni2">Baritoni 2</option>
+  </select>
+
+  <h2>Nuotit</h2>
+  <img id="nuotti"
+       src="img/nuottikuvat/1b_sopraano.jpg"
+       alt="Vaccaj 1b – nuotit">
+
+  <h2>Kuuntele äänite</h2>
+  <audio id="soitin" controls preload="none"
+         src="aanet/1b_sopraano.mp3">
+  </audio>
+
+  <script>
+    function vaihdaAaniala() {
+      const aaniala = document.getElementById("aaniala").value;
+      const nuotti = document.getElementById("nuotti");
+      const soitin = document.getElementById("soitin");
+
+      nuotti.src = "img/nuottikuvat/1b_" + aaniala + ".jpg";
+      nuotti.alt = "Vaccaj 1b – " + aaniala;
+
+      soitin.pause();
+      soitin.src = "aanet/1b_" + aaniala + ".mp3";
+      soitin.load();
+    }
+  </script>
+</body>
+</html>
