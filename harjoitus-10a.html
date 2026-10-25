@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Harjoitus 10a</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+      font-weight: bold;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .suomi {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
+
+  <h1>Vaccaj – Harjoitus 10a</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="mezzo">Mezzosopraano</option>
+    <option value="tenori">Tenori</option>
+  </select>
+
+  <h2>Kuuntele äänite</h2>
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/10a_mezzo.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <div class="sisalto">
+
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/10a_mezzo.jpg"
+        alt="Vaccaj 10a – mezzosopraanon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Tehtävä 10a</h2>
+
+      <div class="aanne">
+        [introdu'tsjone al grup'petto]
+      </div>
+
+      <h3>Introduzione al gruppetto</h3>
+      <p>Johdatus kaksoisheleeseen</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">
+          ['kwando at'tʃɛnde un 'nɔbil 'pɛtto]
+        </div>
+        <div class="italia">
+          Quando accende un nobil petto
+        </div>
+        <div class="suomi">
+          Kun syttyy jalo rinta
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [ɛ innot'tʃɛnte ɛ 'puro af'fɛtto]
+        </div>
+        <div class="italia">
+          è innocente, è puro affetto,
+        </div>
+        <div class="suomi">
+          on se viatonta, on puhdasta kiintymystä,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [debo'lettsa a'mor non ɛ]
+        </div>
+        <div class="italia">
+          debolezza amor non è.
+        </div>
+        <div class="suomi">
+          heikkoutta rakkaus ei ole.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          Kun jalo ihminen rakastuu,<br>
+          hänen rakkautensa on viatonta,<br>
+          on puhdasta, ei heikkoutta.
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    function vaihdaAaniala() {
+
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/10a_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 10a – " + aaniala;
+
+      soitin.pause();
+
+      soitin.src =
+        "aanet/10a_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+  </script>
+
+</body>
+</html>
