@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Harjoitus 5</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .englanti {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
+
+  <h1>Vaccaj – Harjoitus 5</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="sopraano">Soprano</option>
+    <option value="mezzo">Mezzo</option>
+    <option value="altto">Alto</option>
+    <option value="baritoni1">Baritone 1</option>
+    <option value="baritoni2">Baritone 2</option>
+  </select>
+
+  <h2>Kuuntele äänite</h2>
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/5_sopraano.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <div class="sisalto">
+
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/5_sopraano.jpg"
+        alt="Vaccaj 5 – sopraanon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Exercise 5</h2>
+
+      <div class="aanne">
+        [i semi'tɔni]
+      </div>
+
+      <h3>I semitoni</h3>
+      <p>Semitones</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">
+          [de'lira dub'bjosa]
+        </div>
+        <div class="italia">
+          Delira dubbiosa,
+        </div>
+        <div class="englanti">
+          Wavering and delirious,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [in'tʃɛrta va'neddʒa]
+        </div>
+        <div class="italia">
+          incerta, vaneggia
+        </div>
+        <div class="englanti">
+          insecurely dreaming
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['oŋŋi 'almake on'deddʒa]
+        </div>
+        <div class="italia">
+          ogni almache ondeggia.
+        </div>
+        <div class="englanti">
+          every soul that hesitates
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [fra i 'mɔti del 'cor]
+        </div>
+        <div class="italia">
+          fra i moti del cor.
+        </div>
+        <div class="englanti">
+          in between the movements of the heart.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          Every soul dreams and hesitates<br>
+          wavering in the agonies<br>
+          of the heart.
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    function vaihdaAaniala() {
+
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/5_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 5 – " + aaniala;
+
+      soitin.pause();
+
+      soitin.src =
+        "aanet/5_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+  </script>
+
+</body>
+</html>
