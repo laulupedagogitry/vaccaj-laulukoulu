@@ -25,7 +25,7 @@
       color: #285b99;
     }
 
-    /* SIVUSTON YLÄVALIKKO */
+    /* SIVUSTON YLÄVÄLILEHDET */
 
     nav.paavalikko {
       display: flex;
@@ -199,7 +199,7 @@
 
 <body>
 
-  <!-- SIVUSTON YLÄVALIKKO -->
+  <!-- SIVUSTON YLÄVÄLILEHDET -->
 
   <nav class="paavalikko" aria-label="Päävalikko">
 
@@ -260,7 +260,7 @@
             </option>
 
             <option value="3">
-              III / 3 – Bella prova é d'alma forte... – Intervalli di sesta – seksti
+              III / 3 – Bella prova è d'alma forte... – Intervalli di sesta – seksti
             </option>
 
             <option value="4a" selected>
@@ -345,6 +345,8 @@
 
       </div>
 
+      <!-- ÄÄNIALAVALIKKO: VAIN KAKSI ÄÄNIALAA -->
+
       <div class="valintaryhma aanialaryhma">
 
         <label for="aaniala">
@@ -355,11 +357,13 @@
           id="aaniala"
           onchange="vaihdaAaniala()">
 
-          <option value="sopraano">Sopraano</option>
-          <option value="mezzo">Mezzosopraano</option>
-          <option value="altto">Altto</option>
-          <option value="baritoni1">Baritoni 1</option>
-          <option value="baritoni2">Baritoni 2</option>
+          <option value="mezzo" selected>
+            Mezzosopraano
+          </option>
+
+          <option value="baritoni">
+            Baritoni
+          </option>
 
         </select>
 
@@ -375,7 +379,7 @@
       id="soitin"
       controls
       preload="none"
-      src="aanet/4a_sopraano.mp3">
+      src="aanet/4a_mezzo.mp3">
       Selaimesi ei tue äänisoitinta.
     </audio>
 
@@ -389,12 +393,12 @@
 
         <img
           id="nuotti"
-          src="img/nuottikuvat/4a_sopraano.jpg"
-          alt="Vaccaj 4a – sopraanon nuotit">
+          src="img/nuottikuvat/4a_mezzo.jpg"
+          alt="Vaccaj 4a – mezzosopraanon nuotit">
 
       </section>
 
-      <!-- LAULUTEKSTI -->
+      <!-- LAULUTEKSTI JA SUOMENNOS -->
 
       <section class="tekstialue">
 
@@ -458,7 +462,7 @@
           </div>
         </div>
 
-        <!-- YHTEENVETO -->
+        <!-- SUOMENNETTU YHTEENVETO -->
 
         <div class="yhteenveto">
 
