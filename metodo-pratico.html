@@ -25,7 +25,9 @@
       margin-top: 35px;
     }
 
-    nav {
+    /* Sivuston päävalikko */
+
+    nav.paavalikko {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
@@ -34,7 +36,7 @@
       border-bottom: 2px solid #d2e2f3;
     }
 
-    nav a {
+    .paavalikko a {
       padding: 10px 16px;
       background: #f1f6fb;
       border-radius: 6px;
@@ -43,29 +45,71 @@
       font-weight: bold;
     }
 
-    nav a:hover {
+    .paavalikko a:hover {
       background: #dceaf8;
     }
 
-    nav a.aktiivinen {
+    .paavalikko a.aktiivinen {
       background: #285b99;
       color: white;
     }
 
-    main {
-      max-width: 850px;
+    /* Metodo pratico -sivun välilehdet */
+
+    .valilehdet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 30px;
+      border-bottom: 2px solid #d2e2f3;
+      padding-bottom: 10px;
     }
 
-    main p {
+    .valilehdet button {
+      background: #f1f6fb;
+      color: #285b99;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .valilehdet button:hover {
+      background: #dceaf8;
+    }
+
+    .valilehdet button.aktiivinen {
+      background: #285b99;
+      color: white;
+      border-color: #285b99;
+    }
+
+    /* Välilehtien sisältö */
+
+    .sisalto {
+      max-width: 850px;
+      padding-top: 25px;
+    }
+
+    .sisalto p {
       margin-bottom: 22px;
     }
 
+    .valilehtisisalto[hidden] {
+      display: none;
+    }
+
     @media (max-width: 600px) {
-      nav {
+      nav.paavalikko,
+      .valilehdet {
         flex-direction: column;
       }
 
-      nav a {
+      .paavalikko a,
+      .valilehdet button {
         text-align: center;
       }
 
@@ -78,13 +122,11 @@
 
 <body>
 
-  <!-- YLÄVALIKKO -->
+  <!-- SIVUSTON YLÄVALIKKO -->
 
-  <nav aria-label="Päävalikko">
+  <nav class="paavalikko" aria-label="Päävalikko">
 
-    <a href="index.html">
-      Harjoitukset
-    </a>
+    <a href="index.html">Harjoitukset</a>
 
     <a href="metodo-pratico.html"
        class="aktiivinen"
@@ -96,44 +138,194 @@
       Vaccaj ja Metastasio
     </a>
 
-    <a href="tekijat.html">
-      Tekijät
-    </a>
+    <a href="tekijat.html">Tekijät</a>
 
   </nav>
-
-
-  <!-- SIVUN SISÄLTÖ -->
 
   <main>
 
     <h1>Metodo pratico</h1>
 
-    <p>
-      Vuonna 1834 Lontoossa ensimmäisen kerran julkaistu
-      Nicolo Vaccajn
-      <em>Metodo pratico di canto italiano per camera
-      diviso in 15 lezioni</em>
-      ("Käytännöllinen menetelmä italialaiseen
-      kamarilauluun, jaettuna 15 oppituntiin")
-      on laajimmalle levinnyt laulukoulu.
-      Siitä on tähän mennessä julkaistu yli 40 painosta.
-    </p>
+    <!-- NELJÄ VÄLILEHTEÄ -->
 
-    <p>
-      Italian kielessä <em>metodo</em> tarkoittaa tietä.
-      Vaccaj arvattavasti halusi kirjoittaa laulukoulunsa
-      tietyssä etenemisjärjestyksessä ja tiettyä
-      tarkoitusta silmällä pitäen.
-    </p>
+    <div class="valilehdet"
+         role="tablist"
+         aria-label="Metodo pratico -aiheet">
 
-    <p>
-      Vaccaj jaotteli laulukoulunsa 15 oppituntiin
-      eli 15 tehtävään, jotka sisältävät yhteensä
-      22 laulua.
-    </p>
+      <button
+        type="button"
+        id="painike-metodo"
+        class="aktiivinen"
+        role="tab"
+        aria-selected="true"
+        aria-controls="metodo"
+        onclick="avaaValilehti('metodo')">
+        Metodo pratico
+      </button>
+
+      <button
+        type="button"
+        id="painike-esipuhe"
+        role="tab"
+        aria-selected="false"
+        aria-controls="esipuhe"
+        onclick="avaaValilehti('esipuhe')">
+        Säveltäjän esipuhe
+      </button>
+
+      <button
+        type="button"
+        id="painike-rakenne"
+        role="tab"
+        aria-selected="false"
+        aria-controls="rakenne"
+        onclick="avaaValilehti('rakenne')">
+        Harjoitusten rakenne
+      </button>
+
+      <button
+        type="button"
+        id="painike-kamarilaulajat"
+        role="tab"
+        aria-selected="false"
+        aria-controls="kamarilaulajat"
+        onclick="avaaValilehti('kamarilaulajat')">
+        Kamarilaulajat
+      </button>
+
+    </div>
+
+
+    <!-- 1. METODO PRATICO -->
+
+    <section
+      id="metodo"
+      class="sisalto valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-metodo">
+
+      <h2>Metodo pratico</h2>
+
+      <p>
+        Vuonna 1834 Lontoossa ensimmäisen kerran
+        julkaistu Nicolo Vaccajn
+        <em>Metodo pratico di canto italiano per
+        camera diviso in 15 lezioni</em>
+        ("Käytännöllinen menetelmä italialaiseen
+        kamarilauluun, jaettuna 15 oppituntiin")
+        on laajimmalle levinnyt laulukoulu.
+        Siitä on tähän mennessä julkaistu
+        yli 40 painosta.
+      </p>
+
+      <p>
+        Italian kielessä <em>metodo</em>
+        tarkoittaa tietä.
+        Vaccaj arvattavasti halusi kirjoittaa
+        laulukoulunsa tietyssä etenemisjärjestyksessä
+        ja tiettyä tarkoitusta silmällä pitäen.
+      </p>
+
+      <p>
+        Vaccaj jaotteli laulukoulunsa 15 oppituntiin
+        eli 15 tehtävään, jotka sisältävät
+        yhteensä 22 laulua.
+      </p>
+
+    </section>
+
+
+    <!-- 2. SÄVELTÄJÄN ESIPUHE -->
+
+    <section
+      id="esipuhe"
+      class="sisalto valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-esipuhe"
+      hidden>
+
+      <h2>Säveltäjän esipuhe</h2>
+
+      <p>
+        Säveltäjän esipuheen teksti lisätään tähän.
+      </p>
+
+    </section>
+
+
+    <!-- 3. HARJOITUSTEN RAKENNE -->
+
+    <section
+      id="rakenne"
+      class="sisalto valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-rakenne"
+      hidden>
+
+      <h2>Harjoitusten rakenne</h2>
+
+      <p>
+        Harjoitusten rakennetta käsittelevä
+        teksti lisätään tähän.
+      </p>
+
+    </section>
+
+
+    <!-- 4. KAMARILAULAJAT -->
+
+    <section
+      id="kamarilaulajat"
+      class="sisalto valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-kamarilaulajat"
+      hidden>
+
+      <h2>Kamarilaulajat</h2>
+
+      <p>
+        Kamarilaulajia käsittelevä
+        teksti lisätään tähän.
+      </p>
+
+    </section>
 
   </main>
+
+
+  <!-- VÄLILEHTIEN TOIMINTA -->
+
+  <script>
+    function avaaValilehti(tunnus) {
+
+      const sisallot =
+        document.querySelectorAll(".valilehtisisalto");
+
+      const painikkeet =
+        document.querySelectorAll(".valilehdet button");
+
+      // Piilotetaan kaikki sisältöalueet.
+      sisallot.forEach(function(sisalto) {
+        sisalto.hidden = true;
+      });
+
+      // Poistetaan aiempi valinta.
+      painikkeet.forEach(function(painike) {
+        painike.classList.remove("aktiivinen");
+        painike.setAttribute("aria-selected", "false");
+      });
+
+      // Näytetään valittu sisältö.
+      document.getElementById(tunnus).hidden = false;
+
+      // Korostetaan valittu välilehti.
+      const valittuPainike =
+        document.getElementById("painike-" + tunnus);
+
+      valittuPainike.classList.add("aktiivinen");
+      valittuPainike.setAttribute("aria-selected", "true");
+    }
+  </script>
 
 </body>
 </html>
