@@ -192,7 +192,7 @@
           i nostri affetti sono:
         </div>
         <div class="suomi">
-          meidan tunteemme ovat,
+          meidän tunteemme ovat,
         </div>
       </div>
 
@@ -246,12 +246,17 @@
       const soitin =
         document.getElementById("soitin");
 
+      // Tenori käyttää sopraanon nuottikuvaa.
+      const nuottiAaniala =
+        aaniala === "tenori" ? "sopraano" : aaniala;
+
       nuotti.src =
-        "img/nuottikuvat/12_" + aaniala + ".jpg";
+        "img/nuottikuvat/12_" + nuottiAaniala + ".jpg";
 
       nuotti.alt =
         "Vaccaj 12 – " + aaniala + " – nuotit";
 
+      // Jokaisella äänialalla on oma MP3-äänite.
       soitin.pause();
 
       soitin.src =
