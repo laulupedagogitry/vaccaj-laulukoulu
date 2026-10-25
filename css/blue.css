@@ -1,0 +1,456 @@
+/*  COMMON styles / browser default overrides */
+
+
+html {
+	width: 100%;
+	height: 100%;
+	}
+
+body {
+	background: #abaeb4;
+	margin: 0px;
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+
+#popup {
+	background: #ffffff;
+}
+
+a {
+	text-decoration: none;	/* We !<3 link underlines */
+	}
+
+/* MAIN layout blocks */
+
+#outer {
+	position: relative;
+	margin: 0px auto;
+	padding-top: 50px;
+	background: #abaeb4 url(../img/template/framebkgr.gif) no-repeat top right;
+	width: 860px;
+	}
+
+#frame {
+	display: relative;
+	width: 786px;
+	background-color: #ffffff;
+	text-align: left;
+	margin: 0px 0px;
+	border: 3px solid #97979b;
+	}
+
+/* Mega ugly hacqk to expand white frame bkgr to expand to minimum of 420px (800x600px
+   screen rez browser window). All thanks to f00ked-0p IE "minimum.height" property implementation.
+   NOTE: requires extra div's in HTML template (which kinda sucks). */
+img#pageexpander {
+	float: right;
+	width: 1px;
+	height: 360px;
+	}
+#bottomclear {
+	clear: both;
+	height: 1px;
+	font-size: 1px;
+	}
+
+#top {
+	width: 786px;
+	height: 101px;
+	background: #ffffff url(../img/template/topbkgr_fi.jpg) no-repeat top left;
+	}
+
+#menu {
+	position: relative;
+	margin: 6px 0px 6px 0px;
+	padding: 0px;
+	height: 28px;
+	background-color: #2f5ea7;
+	width: 786px;
+	}
+
+
+/* TOP styles */
+
+img#logo {
+	position: relative;
+	top: 35px;
+	left: 27px;
+	}
+
+/* MENU styles */
+
+#menu {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 28px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#menu ul {
+	display: inline;
+	position: relative;
+	left: -12px;
+	list-style: none;
+	width: 786px;
+	}
+#menu ul li {
+	vertical-align: middle;
+	display: inline;
+	list-style: none;
+	}
+/* menu item */
+#menu ul li a {
+	margin: 0px 35px 0px 0px;
+	color: #ffffff;
+	}
+#menu ul li a:hover, #menu ul li a:active, #menu ul li.selected a {
+	color: #7e8dd0;
+	}
+
+/* LEFTMENU styles */
+/* from separate list */
+
+#leftmenu {
+	display: inline;	/* Not really, corrects IE6 double-margin-on-float bug */
+	float: left;
+	width: 190px;
+	margin: 0px 0px 10px 8px;
+	line-height: 17px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	text-transform: none;
+	}
+
+/* leftmenu title */
+#leftmenu p.leftmenuheader {
+	padding: 20px 0px 0px 20px;
+	margin-bottom: 11px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 10px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #2f5ea7;
+	}
+
+/* leftmenu menu */
+#leftmenu ul {
+	display: block;
+	list-style: none;
+	width: 190px;
+	top: 30px;
+	left: 8px;
+	margin: 0px;
+	padding: 0px 0px 10px 0px;
+	background: #abaeb4 url(img/template/leftmenubk.html) no-repeat bottom right;
+	}
+#leftmenu ul li {
+	list-style: none;
+	}
+#leftmenu ul li.menuselected {
+	color: #015eab;
+	}
+
+/* leftmenu menu item */
+#leftmenu ul li a {
+	display: block;
+	margin: 0px 0px 0px 20px;
+	padding: 0px;
+	width: 140px;
+	color: #4a4c4f;
+	border-bottom: dashed 1px #757577;
+	}
+#leftmenu ul li.menuselected a {
+	color: #015eab;
+	}
+#leftmenu ul li a:hover {
+	color: #7e8dd0;
+	}
+#leftmenu ul li a:active {
+	color: #015eab;
+	}
+
+/* leftmenu second level menu */
+#leftmenu ul li.submenu {
+	display: block;
+	position: relative;
+	list-style: none;
+	top: 0px;
+	left: 14px;
+	margin: 0px;
+	width: 120px;
+	background: none;
+	}
+#leftmenu ul li.submenuselected {
+	display: block;
+	position: relative;
+	list-style: none;
+	top: 0px;
+	left: 14px;
+	margin: 0px;
+	width: 120px;
+	color: #015eab;
+	}
+
+/* leftmenu second level menu item */
+#leftmenu ul li.submenu a {
+	display: block;
+	color: #757577;
+	border-bottom: 1px dashed #757577;
+	}
+#leftmenu ul li.submenuselected a {
+	display: block;
+	color: #015eab;
+	border-bottom: 1px dashed #757577;
+	}
+#leftmenu ul li.submenu a:hover, #leftmenu ul li.submenuselected a:hover {
+	color: #7e8dd0;
+	}
+#leftmenu ul li.submenu a:active, #leftmenu ul li.submenuselected a:active {
+	color: #015eab;
+	}
+
+
+/* LANGSELECT layout block */
+
+ul#langselect {
+	position: absolute;
+	width: 240px;
+	top: 26px;
+	left: 495px !important;
+	left: 535px;
+	margin: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-transform: none;
+	letter-spacing: 1px;
+	font-size: 9px;
+	}
+ul#langselect li a {
+	margin: 0px 3px;
+	padding: 0px;
+	color: #babcbd;
+	}
+ul#langselect li a.currentlink {
+	color: #7e8dd0;
+	}
+
+
+/* CONTENT layout block */
+
+#content {
+	margin: 52px 0px 0px 225px;
+	_margin: 50px 0px 0px 225px;
+	width: 520px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 0.75em;
+	line-height: normal;
+	}
+
+#contentwide {
+	margin: 52px 0px 0px 10px;
+	_margin: 50px 0px 0px 10px;
+	width: 735px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 0.75em;
+	line-height: normal;
+	}
+
+#contentvariable {
+	width: 100%;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 0.75em;
+	line-height: normal;
+}
+
+#content h1, #contentwide h1, #contentvariable h1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 1.1em;
+	color: #2f5ea7;
+	margin: 19px 0px 19px 0px;
+	}
+
+#content h2, #contentwide h2, #contentvariable h2 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: bold;
+	letter-spacing: 2px;
+	font-size: 1.1em;
+	color: #2f5ea7;
+	margin: 19px 0px 19px 0px;
+	}
+
+#content h3, #contentwide h3, #contentvariable h3, #content h4, #contentwide h4, #contentvariable h4, #content h5, #contentwide h5, #contentvariable h5, #content h6, #contentwide h6, #contentvariable h6 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+	letter-spacing: 2px;
+	font-size: 1.1em;
+	color: #2f5ea7;
+	margin: 19px 0px 19px 0px;
+	}
+/*
+#content p, #contentwide p, #contentvariable p,
+#content ul, #contentwide ul, #contentvariable ul,
+#content ol, #contentwide ol, #contentvariable ol,
+#content li, #contentwide li, #contentvariable li,
+#content blockquote, #contentwide blockquote, #contentvariable blockquote,
+#content td, #contentwide td, #contentvariable td {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 0.80em;
+	line-height: normal;
+	}*/
+#content input, #contentwide input, #contentvariable input,
+#content select, #contentwide select, #contentvariable select {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: normal;
+	}
+
+#content th, #contentwide th, #contentvariable th {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	line-height: normal;
+	}
+
+#content caption, #contentwide caption, #contentvariable caption {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #ffffff;
+	background-color: #2f5ea7;
+	}
+
+
+#content a, #contentwide a, #contentvariable a {
+	color: #567DB8;
+	text-decoration: underline;
+	}
+#content a:hover, #contentwide a:hover, #contentvariable a:hover {
+	color: #97979b;
+	}
+
+#content a.biglink, #contentwide a.biglink, #contentvariable a.biglink {
+	display: block;
+	padding-left: 25px;
+	background: url(img/template/biglinkarrow_whitebk.html) no-repeat 0px 5px;
+	}
+
+
+/* FOOTER styles */
+
+#footer {
+	vertical-align: baseline;
+	width: 780px;
+	_width: 777px;
+	height: 24px;
+	padding: 4px 9px 0px 0px;
+	background-color: #97979b;
+	clear: both;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-size: 9px;
+	color: #ffffff;
+	}
+#footer a {
+	vertical-align: middle;
+	color: #ffffff;
+}
+
+#footer a:hover {
+	color: #7e8dd0;
+}
+
+#footer form {
+	margin: 0px;
+	padding: 0px;
+	}
+
+#footer #search {
+	vertical-align: middle;
+	float: right;
+	text-align: right;
+	/*width: 160px;*/
+	}
+
+#footer input#textbox {
+	vertical-align: middle;
+	font-size: 9px;
+	height: 11px;
+	margin-left: 30px;
+	/*_margin-bottom: 1px;
+	_margin-bottom: 4px;*/
+	}
+#footer input#searchsubmit {
+	vertical-align: middle;
+	height: 17px;
+	}
+
+
+/* SIBA ADDITIONS */
+
+#content #signature, #contentwide #signature, #contentvariable #signature {
+	text-align: right;
+	border-top: dashed 1px #a0a0a0;
+	padding-top: 2px;
+	padding-bottom: 11px;
+	color: #a0a0a0;
+	/*font-size: 9px;*/
+}
+
+#content td.tableRowOdd{
+	background-color: #ffffff;
+}
+
+#content td.tableRowEven{
+	background-color: #f0f0f0;
+}
+
+#content #sitelogo, #contentwide #sitelogo, #contentvariable #sitelogo {
+	float: right;
+}
+
+.foneettiset {
+	font-family: "Arial Unicode MS", "Lucinda Sans";
+	font-size: 100%;
+	line-height: 15px;
+}
+
+.vihrea {
+	color: #33601a;
+	font-family: "Arial Unicode MS", "Lucinda Sans";
+	font-size: 100%;
+	line-height: 15px;
+}
+
+.punainen {
+	color: #ff1a00;
+}
+
+.sininen {
+	color: #00559c;
+}
+
+.taulukko td{
+
+	border: solid 1px #d4d4d4;
+}
+
+.rakennetaulukko td{
+
+	padding-right: 10px;
+	padding-bottom: 10px
+}
+
+#content_2 {
+	background-color: #ffffff;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 620px;
+	padding: 20px;
+}
