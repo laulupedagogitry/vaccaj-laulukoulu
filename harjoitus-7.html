@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Harjoitus 7</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .englanti {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
+
+  <h1>Vaccaj – Harjoitus 7</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="sopraano">Soprano</option>
+    <option value="mezzo">Mezzo</option>
+    <option value="altto">Alto</option>
+    <option value="baritoni1">Baritoni 1</option>
+    <option value="baritoni2">Baritoni 2</option>
+  </select>
+
+  <h2>Kuuntele äänite</h2>
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/7_sopraano.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <div class="sisalto">
+
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/7_sopraano.jpg"
+        alt="Vaccaj 7 – sopraanon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Exercise 7</h2>
+
+      <div class="aanne">
+        [introdu'tsjone 'alle vo'late]
+      </div>
+
+      <h3>Introduzione alle volate</h3>
+      <p>Introduction to roulades</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">
+          ['kome il kan'dore]
+        </div>
+        <div class="italia">
+          Come il candore
+        </div>
+        <div class="englanti">
+          Like the whiteness
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [d in'tatta 'neve]
+        </div>
+        <div class="italia">
+          d'intatta neve
+        </div>
+        <div class="englanti">
+          of virgin snow
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [ɛ dun bɛl 'kore]
+        </div>
+        <div class="italia">
+          è d'un bel core
+        </div>
+        <div class="englanti">
+          is a noble heart's
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [la fedel'ta]
+        </div>
+        <div class="italia">
+          la fedeltà.
+        </div>
+        <div class="englanti">
+          fidelity.
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [un 'orma 'sola]
+        </div>
+        <div class="italia">
+          Un' orma sola
+        </div>
+        <div class="englanti">
+          A single mark
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [ke in se ri'tʃeve]
+        </div>
+        <div class="italia">
+          che in sé riceve,
+        </div>
+        <div class="englanti">
+          that it gets
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['tutta ne in'vola]
+        </div>
+        <div class="italia">
+          tutta ne invola
+        </div>
+        <div class="englanti">
+          will deprive it
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [la 'sua bel'ta]
+        </div>
+        <div class="italia">
+          la sua beltà.
+        </div>
+        <div class="englanti">
+          of its beauty.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          The fidelity of a noble heart is<br>
+          like the whiteness of virgin snow.<br>
+          A single mark on it will break its beauty.
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    function vaihdaAaniala() {
+
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/7_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 7 – " + aaniala;
+
+      soitin.pause();
+
+      soitin.src =
+        "aanet/7_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+  </script>
+
+</body>
+</html>
