@@ -2,40 +2,241 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vaccaj ja Metastasio – Vaccajin laulukoulu</title>
-<style>
-body { font-family: Arial, sans-serif; max-width: 1000px;
-       margin: 0 auto; padding: 20px; line-height: 1.6; color: #222; }
-h1, h2 { color: #285b99; }
-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0 35px;
-      padding-bottom: 15px; border-bottom: 2px solid #d2e2f3; }
-nav a { padding: 10px 16px; background: #f1f6fb;
-        border-radius: 6px; color: #285b99;
-        text-decoration: none; font-weight: bold; }
-nav a:hover { background: #dceaf8; }
-nav a.aktiivinen { background: #285b99; color: white; }
-@media (max-width: 600px) {
-  nav { flex-direction: column; }
-  nav a { text-align: center; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj ja Metastasio – Vaccaj-laulukoulu</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    /* Sivuston ylävalikko */
+
+    nav.paavalikko {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0 35px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #d2e2f3;
+    }
+
+    .paavalikko a {
+      padding: 10px 16px;
+      background: #f1f6fb;
+      border-radius: 6px;
+      color: #285b99;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .paavalikko a:hover {
+      background: #dceaf8;
+    }
+
+    .paavalikko a.aktiivinen {
+      background: #285b99;
+      color: white;
+    }
+
+    /* Sivun omat välilehdet */
+
+    .valilehdet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 30px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #d2e2f3;
+    }
+
+    .valilehdet button {
+      background: #f1f6fb;
+      color: #285b99;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font: bold 16px Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    .valilehdet button:hover {
+      background: #dceaf8;
+    }
+
+    .valilehdet button.aktiivinen {
+      background: #285b99;
+      color: white;
+      border-color: #285b99;
+    }
+
+    /* Välilehtien sisällöt */
+
+    .sisalto {
+      max-width: 850px;
+      padding-top: 25px;
+    }
+
+    .sisalto p {
+      margin-bottom: 22px;
+    }
+
+    .valilehtisisalto[hidden] {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      nav.paavalikko,
+      .valilehdet {
+        flex-direction: column;
+      }
+
+      .paavalikko a,
+      .valilehdet button {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav aria-label="Päävalikko">
-  <a href="index.html">Harjoitukset</a>
-  <a href="metodo-pratico.html">Metodo pratico</a>
-  <a href="vaccaj-metastasio.html" class="aktiivinen"
-     aria-current="page">Vaccaj ja Metastasio</a>
-  <a href="tekijat.html">Tekijät</a>
-</nav>
+  <!-- SIVUSTON YLÄVALIKKO -->
 
-<h1>Vaccaj ja Metastasio</h1>
+  <nav class="paavalikko" aria-label="Päävalikko">
 
-<p>Tälle sivulle lisätään tietoa Nicola Vaccajista
-ja Pietro Metastasiosta.</p>
+    <a href="index.html">
+      Harjoitukset
+    </a>
+
+    <a href="metodo-pratico.html">
+      Metodo pratico
+    </a>
+
+    <a href="vaccaj-metastasio.html"
+       class="aktiivinen"
+       aria-current="page">
+      Vaccaj ja Metastasio
+    </a>
+
+    <a href="tekijat.html">
+      Tekijät
+    </a>
+
+  </nav>
+
+  <main>
+
+    <h1>Vaccaj ja Metastasio</h1>
+
+    <!-- KAKSI VÄLILEHTEÄ -->
+
+    <div class="valilehdet"
+         role="tablist"
+         aria-label="Elämäkerrat">
+
+      <button
+        type="button"
+        id="painike-vaccaj"
+        class="aktiivinen"
+        role="tab"
+        aria-selected="true"
+        aria-controls="vaccaj"
+        onclick="avaaValilehti('vaccaj')">
+        Vaccajn elämästä
+      </button>
+
+      <button
+        type="button"
+        id="painike-metastasio"
+        role="tab"
+        aria-selected="false"
+        aria-controls="metastasio"
+        onclick="avaaValilehti('metastasio')">
+        Metastasion elämästä
+      </button>
+
+    </div>
+
+    <!-- 1. VACCAJN ELÄMÄSTÄ -->
+
+    <section
+      id="vaccaj"
+      class="sisalto valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-vaccaj">
+
+      <h2>Vaccajn elämästä</h2>
+
+      <p>
+        Nicolo Vaccajn elämäkerta lisätään tähän.
+      </p>
+
+    </section>
+
+    <!-- 2. METASTASION ELÄMÄSTÄ -->
+
+    <section
+      id="metastasio"
+      class="sisalto valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-metastasio"
+      hidden>
+
+      <h2>Metastasion elämästä</h2>
+
+      <p>
+        Metastasion elämäkerta lisätään tähän.
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- VÄLILEHTIEN TOIMINTA -->
+
+  <script>
+    function avaaValilehti(tunnus) {
+
+      const sisallot =
+        document.querySelectorAll(".valilehtisisalto");
+
+      const painikkeet =
+        document.querySelectorAll(".valilehdet button");
+
+      sisallot.forEach(function(sisalto) {
+        sisalto.hidden = true;
+      });
+
+      painikkeet.forEach(function(painike) {
+        painike.classList.remove("aktiivinen");
+        painike.setAttribute("aria-selected", "false");
+      });
+
+      document.getElementById(tunnus).hidden = false;
+
+      const valittuPainike =
+        document.getElementById("painike-" + tunnus);
+
+      valittuPainike.classList.add("aktiivinen");
+      valittuPainike.setAttribute("aria-selected", "true");
+    }
+  </script>
 
 </body>
 </html>
