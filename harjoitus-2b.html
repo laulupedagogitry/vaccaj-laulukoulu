@@ -129,7 +129,7 @@
 
       <img
         id="nuotti"
-        src="img/nuottikuvat/2b_soprano.jpg"
+        src="img/nuottikuvat/2b_sopraano.jpg"
         alt="Vaccaj 2b – sopraanon nuotit">
 
     </section>
@@ -219,17 +219,11 @@
       const soitin =
         document.getElementById("soitin");
 
-      // Sopraanon nuottikuvassa käytetään
-      // tiedostonimeä "soprano".
-      // MP3-tiedostossa käytetään "sopraano".
-
-      const nuottiAaniala =
-        aaniala === "sopraano"
-          ? "soprano"
-          : aaniala;
+      // Kaikilla kolmella äänialalla
+      // on sama tiedostonimien rakenne.
 
       nuotti.src =
-        "img/nuottikuvat/2b_" + nuottiAaniala + ".jpg";
+        "img/nuottikuvat/2b_" + aaniala + ".jpg";
 
       nuotti.alt =
         "Vaccaj 2b – " + aaniala;
