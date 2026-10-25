@@ -12,16 +12,61 @@
       margin: 40px auto;
       padding: 20px;
       line-height: 1.6;
+      color: #333;
     }
-    h1 { color: #285b99; }
-    a { color: #285b99; }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    a {
+      color: #285b99;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .harjoitus {
+      display: block;
+      padding: 16px 20px;
+      margin: 12px 0;
+      background: #f1f6fb;
+      border: 1px solid #d6e4f0;
+      border-radius: 8px;
+      font-size: 18px;
+    }
+
+    .harjoitus:hover {
+      background: #e2effa;
+    }
   </style>
 </head>
+
 <body>
+
   <h1>Vaccajin laulukoulu</h1>
+
   <p>Nicola Vaccaj – Metodo pratico di canto</p>
+
+  <h2>Tervetuloa Vaccajin laulukouluun!</h2>
+
+  <p>
+    Valitse lauluharjoitus alla olevasta luettelosta.
+    Jokaisessa harjoituksessa voit valita äänialan,
+    katsella nuotteja ja kuunnella äänitteen.
+  </p>
+
   <h2>Lauluharjoitukset</h2>
-  <p>Tervetuloa Vaccajin laulukouluun!</p>
-  <p>Harjoitukset, nuotit ja äänitteet lisätään tänne.</p>
+
+  <a class="harjoitus" href="harjoitus-1a.html">
+    Harjoitus 1a
+  </a>
+
+  <a class="harjoitus" href="harjoitus-1b.html">
+    Harjoitus 1b
+  </a>
+
 </body>
 </html>
