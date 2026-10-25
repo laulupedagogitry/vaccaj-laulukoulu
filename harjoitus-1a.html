@@ -4,17 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Vaccaj – Harjoitus 1a</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 950px;
+      max-width: 1300px;
       margin: 30px auto;
       padding: 20px;
       line-height: 1.6;
+      color: #333;
     }
 
-    h1 {
+    h1, h2 {
       color: #285b99;
     }
 
@@ -34,14 +37,64 @@
       margin: 15px 0 25px;
     }
 
-    img {
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
       display: block;
       width: 100%;
       height: auto;
       margin-top: 20px;
     }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .englanti {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <p>
@@ -70,24 +123,109 @@
     Selaimesi ei tue äänisoitinta.
   </audio>
 
-  <h2>Nuotit</h2>
+  <div class="sisalto">
 
-  <img
-    id="nuotti"
-    src="img/nuottikuvat/1a_sopraano.jpg"
-    alt="Vaccaj 1a – sopraanon nuotit">
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/1a_sopraano.jpg"
+        alt="Vaccaj 1a – sopraanon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Exercise 1a</h2>
+
+      <h3>La scala</h3>
+      <p>The scale</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">['manka sol'letʃita]</div>
+        <div class="italia">Manca sollecita</div>
+        <div class="englanti">Dies quickly</div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[pju del u'zato]</div>
+        <div class="italia">più dell'usato,</div>
+        <div class="englanti">
+          more quickly than usual
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[an'korke s'adʒiti]</div>
+        <div class="italia">ancor che s'agiti</div>
+        <div class="englanti">
+          even if it is moved
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[kon 'ljeve 'fjato]</div>
+        <div class="italia">con lieve fiato,</div>
+        <div class="englanti">
+          by a light wind
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">['fatʃe ke 'palpita]</div>
+        <div class="italia">face che palpita</div>
+        <div class="englanti">
+          makes it flicker
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">['prɛsso al mo'rir]</div>
+        <div class="italia">presso al morir.</div>
+        <div class="englanti">
+          close to death.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          The flame flickers close to death<br>
+          and dies unexpectedly<br>
+          even though<br>
+          the wind is light
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
 
   <script>
     function vaihdaAaniala() {
-      const aaniala = document.getElementById("aaniala").value;
-      const nuotti = document.getElementById("nuotti");
-      const soitin = document.getElementById("soitin");
+      const aaniala =
+        document.getElementById("aaniala").value;
 
-      nuotti.src = "img/nuottikuvat/1a_" + aaniala + ".jpg";
-      nuotti.alt = "Vaccaj 1a – " + aaniala;
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/1a_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 1a – " + aaniala;
 
       soitin.pause();
-      soitin.src = "aanet/1a_" + aaniala + ".mp3";
+
+      soitin.src =
+        "aanet/1a_" + aaniala + ".mp3";
+
       soitin.load();
     }
   </script>
