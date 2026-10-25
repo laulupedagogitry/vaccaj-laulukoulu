@@ -2,184 +2,344 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vaccajin laulukoulu – Harjoitukset</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    color: #222;
-    line-height: 1.6;
-  }
+  <title>Vaccaj-laulukoulu – Metodo pratico</title>
 
-  h1, h2 {
-    color: #285b99;
-  }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #222;
+      line-height: 1.6;
+    }
 
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 15px 0 35px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #d2e2f3;
-  }
+    h1, h2 {
+      color: #285b99;
+    }
 
-  nav a {
-    padding: 10px 16px;
-    background: #f1f6fb;
-    border-radius: 6px;
-    color: #285b99;
-    text-decoration: none;
-    font-weight: bold;
-  }
+    h1 {
+      margin-top: 35px;
+    }
 
-  nav a:hover {
-    background: #dceaf8;
-  }
-
-  nav a.aktiivinen {
-    background: #285b99;
-    color: white;
-  }
-
-  .valikko {
-    background: #f1f6fb;
-    border: 1px solid #d2e2f3;
-    border-radius: 8px;
-    padding: 24px;
-    margin-top: 20px;
-  }
-
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #285b99;
-  }
-
-  select {
-    width: 100%;
-    padding: 13px;
-    font-size: 17px;
-    border: 1px solid #b7cce2;
-    border-radius: 6px;
-    background: white;
-    box-sizing: border-box;
-  }
-
-  button {
-    margin-top: 18px;
-    padding: 13px 25px;
-    background: #285b99;
-    color: white;
-    font-size: 17px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-
-  button:disabled {
-    background: #9aafc6;
-    cursor: not-allowed;
-  }
-
-  @media (max-width: 600px) {
     nav {
-      flex-direction: column;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0 35px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #d2e2f3;
     }
 
     nav a {
-      text-align: center;
+      padding: 10px 16px;
+      background: #f1f6fb;
+      border-radius: 6px;
+      color: #285b99;
+      text-decoration: none;
+      font-weight: bold;
     }
-  }
-</style>
+
+    nav a:hover {
+      background: #dceaf8;
+    }
+
+    nav a.aktiivinen {
+      background: #285b99;
+      color: white;
+    }
+
+    .esittely {
+      margin-bottom: 30px;
+    }
+
+    .valikko {
+      background: #f1f6fb;
+      border: 1px solid #d2e2f3;
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #285b99;
+    }
+
+    select {
+      display: block;
+      width: 100%;
+      padding: 13px;
+      font-size: 17px;
+      border: 1px solid #b7cce2;
+      border-radius: 6px;
+      background: white;
+      color: #222;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 18px;
+      padding: 13px 25px;
+      background: #285b99;
+      color: white;
+      font-size: 17px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover:not(:disabled) {
+      background: #1c4678;
+    }
+
+    button:disabled {
+      background: #9aafc6;
+      cursor: not-allowed;
+    }
+
+    .historia {
+      margin-top: 35px;
+      padding-top: 15px;
+      border-top: 1px solid #d2e2f3;
+    }
+
+    .kayttooikeudet {
+      background: #f1f6fb;
+      padding: 24px;
+      border-radius: 8px;
+      margin-top: 35px;
+      margin-bottom: 40px;
+    }
+
+    .kayttooikeudet h2 {
+      margin-top: 0;
+    }
+
+    a {
+      color: #285b99;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<nav aria-label="Päävalikko">
-  <a href="index.html" class="aktiivinen"
-     aria-current="page">Harjoitukset</a>
-  <a href="metodo-pratico.html">Metodo pratico</a>
-  <a href="vaccaj-metastasio.html">Vaccaj ja Metastasio</a>
-  <a href="tekijat.html">Tekijät</a>
-</nav>
+  <!-- YLÄVALIKKO -->
 
-<h1>Vaccajin laulukoulu</h1>
+  <nav aria-label="Päävalikko">
+    <a href="index.html"
+       class="aktiivinen"
+       aria-current="page">Harjoitukset</a>
 
-<p>Nicola Vaccaj – Metodo pratico di canto</p>
+    <a href="metodo-pratico.html">
+      Metodo pratico
+    </a>
 
-<h2>Tervetuloa Vaccajin laulukouluun!</h2>
+    <a href="vaccaj-metastasio.html">
+      Vaccaj ja Metastasio
+    </a>
 
-<p>
-  Valitse lauluharjoitus alla olevasta valikosta.
-  Jokaisessa harjoituksessa voit valita äänialan,
-  katsella nuotteja ja kuunnella äänitteen.
-</p>
+    <a href="tekijat.html">
+      Tekijät
+    </a>
+  </nav>
 
-<h2>Lauluharjoitukset</h2>
 
-<div class="valikko">
+  <!-- ETUSIVUN ESITTELY -->
 
-  <label for="harjoitus">Valitse harjoitus:</label>
+  <main>
 
-  <select id="harjoitus" onchange="tarkistaValinta()">
-    <option value="">-- Valitse harjoitus --</option>
+    <h1>
+      Tervetuloa Vaccaj-laulukouluun – Metodo pratico
+    </h1>
 
-    <option value="1a">Harjoitus 1a</option>
-    <option value="1b">Harjoitus 1b</option>
-    <option value="2a">Harjoitus 2a</option>
-    <option value="2b">Harjoitus 2b</option>
-    <option value="3">Harjoitus 3</option>
-    <option value="4a">Harjoitus 4a</option>
-    <option value="4b">Harjoitus 4b</option>
-    <option value="5">Harjoitus 5</option>
-    <option value="6">Harjoitus 6</option>
-    <option value="7">Harjoitus 7</option>
-    <option value="8a">Harjoitus 8a</option>
-    <option value="8b">Harjoitus 8b</option>
-    <option value="9a">Harjoitus 9a</option>
-    <option value="9b">Harjoitus 9b</option>
-    <option value="10a">Harjoitus 10a</option>
-    <option value="10b">Harjoitus 10b</option>
-    <option value="11">Harjoitus 11</option>
-    <option value="12">Harjoitus 12</option>
-    <option value="13a">Harjoitus 13a</option>
-    <option value="13b">Harjoitus 13b</option>
-    <option value="14">Harjoitus 14</option>
-    <option value="15">Harjoitus 15</option>
-  </select>
+    <div class="esittely">
 
-  <button id="avaa" onclick="avaaHarjoitus()" disabled>
-    Avaa harjoitus
-  </button>
+      <p>
+        Sivusto sisältää Nicolo Vaccajn
+        Metodo pratico -kokoelman laulujen nuotit,
+        sanat ääntämisohjeineen ja suomennoksineen,
+        lauluesimerkit sekä taustatiedot.
+        Materiaali on tarkoitettu kaikille klassisen
+        laulun opiskelijoille ja opettajille,
+        laulajien kanssa työskenteleville pianisteille
+        ja muille alasta kiinnostuneille.
+      </p>
 
-</div>
+      <p>
+        Valitse lauluharjoitus alla olevasta valikosta.
+        Jokaisessa harjoituksessa voit valita äänialan,
+        katsella nuotteja ja kuunnella äänitteen.
+      </p>
 
-<script>
-function tarkistaValinta() {
-  const harjoitus =
-    document.getElementById("harjoitus").value;
+    </div>
 
-  document.getElementById("avaa").disabled =
-    harjoitus === "";
-}
 
-function avaaHarjoitus() {
-  const harjoitus =
-    document.getElementById("harjoitus").value;
+    <!-- LAULUHARJOITUKSET -->
 
-  if (harjoitus !== "") {
-    window.location.href =
-      "harjoitus-" + harjoitus + ".html";
-  }
-}
-</script>
+    <h2>Lauluharjoitukset</h2>
+
+    <div class="valikko">
+
+      <label for="harjoitus">
+        Valitse harjoitus:
+      </label>
+
+      <select id="harjoitus"
+              onchange="tarkistaValinta()">
+
+        <option value="">
+          -- Valitse harjoitus --
+        </option>
+
+        <option value="1a">Harjoitus 1a</option>
+        <option value="1b">Harjoitus 1b</option>
+
+        <option value="2a">Harjoitus 2a</option>
+        <option value="2b">Harjoitus 2b</option>
+
+        <option value="3">Harjoitus 3</option>
+
+        <option value="4a">Harjoitus 4a</option>
+        <option value="4b">Harjoitus 4b</option>
+
+        <option value="5">Harjoitus 5</option>
+        <option value="6">Harjoitus 6</option>
+        <option value="7">Harjoitus 7</option>
+
+        <option value="8a">Harjoitus 8a</option>
+        <option value="8b">Harjoitus 8b</option>
+
+        <option value="9a">Harjoitus 9a</option>
+        <option value="9b">Harjoitus 9b</option>
+
+        <option value="10a">Harjoitus 10a</option>
+        <option value="10b">Harjoitus 10b</option>
+
+        <option value="11">Harjoitus 11</option>
+        <option value="12">Harjoitus 12</option>
+
+        <option value="13a">Harjoitus 13a</option>
+        <option value="13b">Harjoitus 13b</option>
+
+        <option value="14">Harjoitus 14</option>
+        <option value="15">Harjoitus 15</option>
+
+      </select>
+
+      <button
+        id="avaa"
+        type="button"
+        onclick="avaaHarjoitus()"
+        disabled>
+        Avaa harjoitus
+      </button>
+
+    </div>
+
+
+    <!-- SIVUSTON HISTORIA -->
+
+    <section class="historia">
+
+      <p>
+        Tämä verkkojulkaisu syntyi
+        Sibelius-Akatemian laulumusiikin osaston
+        ja innovaatiokeskuksen yhteistyönä.
+      </p>
+
+      <p>
+        Sivuston päivittäminen päättyi vuonna 2012,
+        ja Flash-tuen päättyminen vuonna 2020
+        uhkasi jättää arvokkaan oppimateriaalin
+        historiaan.
+      </p>
+
+      <p>
+        Laulupedagogit ry teki aloitteen sivuston
+        herättämisestä uudelleen henkiin ja otti
+        yhteyttä Outi Parkkilaan.
+        Sibelius-Akatemia luovutti Vaccaj-oppimateriaalin
+        yhdistyksen käyttöön.
+      </p>
+
+      <p>
+        Vuonna 2026 Petteri Mansikka uudisti sivuston
+        teknisen toteutuksen ja palautti materiaalin
+        jälleen kaikkien saataville.
+      </p>
+
+    </section>
+
+
+    <!-- KÄYTTÖOIKEUDET -->
+
+    <section class="kayttooikeudet">
+
+      <h2>Käyttöoikeudet</h2>
+
+      <p>
+        Tämän teoksen käyttöoikeutta koskee
+        <a
+          href="http://creativecommons.org/licenses/by-nd-nc/1.0/fi/"
+          target="_blank"
+          rel="noopener noreferrer">
+          Creative Commons
+          Nimeä–Epäkaupallinen–Ei muutettuja teoksia
+          1.0 Suomi -lisenssi
+        </a>.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- HARJOITUSVALIKON TOIMINTA -->
+
+  <script>
+    function tarkistaValinta() {
+
+      const harjoitus =
+        document.getElementById("harjoitus").value;
+
+      document.getElementById("avaa").disabled =
+        harjoitus === "";
+    }
+
+    function avaaHarjoitus() {
+
+      const harjoitus =
+        document.getElementById("harjoitus").value;
+
+      if (harjoitus !== "") {
+
+        window.location.href =
+          "harjoitus-" + harjoitus + ".html";
+
+      }
+    }
+  </script>
 
 </body>
 </html>
