@@ -14,8 +14,10 @@
       line-height: 1.6;
     }
     h1 { color: #285b99; }
-    img { width: 100%; height: auto; }
-    audio { width: 100%; max-width: 500px; }
+    label { display: block; margin: 20px 0 8px; }
+    select { font-size: 18px; padding: 10px; }
+    img { width: 100%; height: auto; margin-top: 20px; }
+    audio { width: 100%; margin-top: 15px; }
   </style>
 </head>
 <body>
@@ -23,14 +25,38 @@
 
   <h1>Vaccaj – Harjoitus 1a</h1>
 
-  <h2>Nuotit – Sopraano</h2>
-  <img src="img/nuottikuvat/1a_sopraano.jpg"
-       alt="Vaccaj 1a – sopraanon nuotit">
+  <label for="aaniala">Valitse ääniala:</label>
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="sopraano">Sopraano</option>
+    <option value="mezzo">Mezzosopraano</option>
+    <option value="altto">Altto</option>
+    <option value="baritoni1">Baritoni 1</option>
+    <option value="baritoni2">Baritoni 2</option>
+  </select>
 
-  <h2>Kuuntele – Sopraano</h2>
-  <audio controls preload="none">
-    <source src="aanet/1a_sopraano.mp3" type="audio/mpeg">
-    Selaimesi ei tue äänisoitinta.
+  <h2>Nuotit</h2>
+  <img id="nuotti"
+       src="img/nuottikuvat/1a_sopraano.jpg"
+       alt="Vaccaj 1a – nuotit">
+
+  <h2>Kuuntele äänite</h2>
+  <audio id="soitin" controls preload="none"
+         src="aanet/1a_sopraano.mp3">
   </audio>
+
+  <script>
+    function vaihdaAaniala() {
+      const aaniala = document.getElementById("aaniala").value;
+      const nuotti = document.getElementById("nuotti");
+      const soitin = document.getElementById("soitin");
+
+      nuotti.src = "img/nuottikuvat/1a_" + aaniala + ".jpg";
+      nuotti.alt = "Vaccaj 1a – " + aaniala;
+
+      soitin.pause();
+      soitin.src = "aanet/1a_" + aaniala + ".mp3";
+      soitin.load();
+    }
+  </script>
 </body>
 </html>
