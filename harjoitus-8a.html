@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Harjoitus 8a</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+      font-weight: bold;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .englanti {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
+
+  <h1>Vaccaj – Harjoitus 8a</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="sopraano">Soprano</option>
+    <option value="mezzo">Mezzo-soprano</option>
+    <option value="altto">Alto</option>
+    <option value="tenori">Tenor</option>
+    <option value="baritoni">Baritone</option>
+  </select>
+
+  <h2>Kuuntele äänite</h2>
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/8a_sopraano.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <div class="sisalto">
+
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/8a_sopraano.jpg"
+        alt="Vaccaj 8a – sopraanon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Exercise 8a</h2>
+
+      <div class="aanne">
+        [le appoddʒa'ture ('sopra e 'sotto)]
+      </div>
+
+      <h3>Le appoggiature (sopra e sotto)</h3>
+      <p>Appoggiaturas (high and low)</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">
+          ['sɛntsa l a'mabile]
+        </div>
+        <div class="italia">
+          Senza l'amabile
+        </div>
+        <div class="englanti">
+          Without the amiable
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['dio di tʃi'tera]
+        </div>
+        <div class="italia">
+          Dio di Citera
+        </div>
+        <div class="englanti">
+          god of Cythera
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [i di non 'tornano]
+        </div>
+        <div class="italia">
+          i dì non tornano
+        </div>
+        <div class="englanti">
+          the days will not return
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [di prima'vera]
+        </div>
+        <div class="italia">
+          di primavera,
+        </div>
+        <div class="englanti">
+          of spring,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [non 'spira un 'dzɛffiro]
+        </div>
+        <div class="italia">
+          non spira un zeffiro,
+        </div>
+        <div class="englanti">
+          the west wind will not blow,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [non 'spunta un fjor]
+        </div>
+        <div class="italia">
+          non spunta un fior.
+        </div>
+        <div class="englanti">
+          the flower will not sprout.
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [l 'ɛrbe sul 'mardʒine]
+        </div>
+        <div class="italia">
+          L´erbe sul margine
+        </div>
+        <div class="englanti">
+          The grass by
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [del fonte a'miko]
+        </div>
+        <div class="italia">
+          del fonte amico,
+        </div>
+        <div class="englanti">
+          the friendly well,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [le 'pjante 'vedove]
+        </div>
+        <div class="italia">
+          le piante vedove
+        </div>
+        <div class="englanti">
+          the bare trees
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [sul 'kɔlle a'priko]
+        </div>
+        <div class="italia">
+          sul colle aprico
+        </div>
+        <div class="englanti">
+          on the sunny hill
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [per 'lui ri'vestono]
+        </div>
+        <div class="italia">
+          per lui rivestono
+        </div>
+        <div class="englanti">
+          get dressed for him again
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [l an'tiko o'nor]
+        </div>
+        <div class="italia">
+          l´antico onor.
+        </div>
+        <div class="englanti">
+          in the old splendour.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          Without the amiable<br>
+          god of Cythera (Aphrodite), the days of spring<br>
+          will not return, the west wind will not blow,<br>
+          and flowers will not blossom.<br>
+          The herbs by the well<br>
+          and the bare trees on the sunny hill<br>
+          will gratefully dress up for him<br>
+          in their new garments of the old splendour.
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    function vaihdaAaniala() {
+
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/8a_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 8a – " + aaniala;
+
+      soitin.pause();
+
+      soitin.src =
+        "aanet/8a_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+  </script>
+
+</body>
+</html>
