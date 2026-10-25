@@ -2,40 +2,138 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Metodo pratico – Vaccajin laulukoulu</title>
-<style>
-body { font-family: Arial, sans-serif; max-width: 1000px;
-       margin: 0 auto; padding: 20px; line-height: 1.6; color: #222; }
-h1, h2 { color: #285b99; }
-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0 35px;
-      padding-bottom: 15px; border-bottom: 2px solid #d2e2f3; }
-nav a { padding: 10px 16px; background: #f1f6fb;
-        border-radius: 6px; color: #285b99;
-        text-decoration: none; font-weight: bold; }
-nav a:hover { background: #dceaf8; }
-nav a.aktiivinen { background: #285b99; color: white; }
-@media (max-width: 600px) {
-  nav { flex-direction: column; }
-  nav a { text-align: center; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Metodo pratico – Vaccaj-laulukoulu</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    h1 {
+      margin-top: 35px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0 35px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #d2e2f3;
+    }
+
+    nav a {
+      padding: 10px 16px;
+      background: #f1f6fb;
+      border-radius: 6px;
+      color: #285b99;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background: #dceaf8;
+    }
+
+    nav a.aktiivinen {
+      background: #285b99;
+      color: white;
+    }
+
+    main {
+      max-width: 850px;
+    }
+
+    main p {
+      margin-bottom: 22px;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav aria-label="Päävalikko">
-  <a href="index.html">Harjoitukset</a>
-  <a href="metodo-pratico.html" class="aktiivinen"
-     aria-current="page">Metodo pratico</a>
-  <a href="vaccaj-metastasio.html">Vaccaj ja Metastasio</a>
-  <a href="tekijat.html">Tekijät</a>
-</nav>
+  <!-- YLÄVALIKKO -->
 
-<h1>Metodo pratico di canto</h1>
+  <nav aria-label="Päävalikko">
 
-<p>Tälle sivulle lisätään tietoa Vaccajin laulukoulusta
-ja sen harjoitusmenetelmästä.</p>
+    <a href="index.html">
+      Harjoitukset
+    </a>
+
+    <a href="metodo-pratico.html"
+       class="aktiivinen"
+       aria-current="page">
+      Metodo pratico
+    </a>
+
+    <a href="vaccaj-metastasio.html">
+      Vaccaj ja Metastasio
+    </a>
+
+    <a href="tekijat.html">
+      Tekijät
+    </a>
+
+  </nav>
+
+
+  <!-- SIVUN SISÄLTÖ -->
+
+  <main>
+
+    <h1>Metodo pratico</h1>
+
+    <p>
+      Vuonna 1834 Lontoossa ensimmäisen kerran julkaistu
+      Nicolo Vaccajn
+      <em>Metodo pratico di canto italiano per camera
+      diviso in 15 lezioni</em>
+      ("Käytännöllinen menetelmä italialaiseen
+      kamarilauluun, jaettuna 15 oppituntiin")
+      on laajimmalle levinnyt laulukoulu.
+      Siitä on tähän mennessä julkaistu yli 40 painosta.
+    </p>
+
+    <p>
+      Italian kielessä <em>metodo</em> tarkoittaa tietä.
+      Vaccaj arvattavasti halusi kirjoittaa laulukoulunsa
+      tietyssä etenemisjärjestyksessä ja tiettyä
+      tarkoitusta silmällä pitäen.
+    </p>
+
+    <p>
+      Vaccaj jaotteli laulukoulunsa 15 oppituntiin
+      eli 15 tehtävään, jotka sisältävät yhteensä
+      22 laulua.
+    </p>
+
+  </main>
 
 </body>
 </html>
