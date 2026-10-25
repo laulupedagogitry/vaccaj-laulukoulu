@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Harjoitus 12</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+      font-weight: bold;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .suomi {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
+
+  <h1>Vaccaj – Harjoitus 12</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="sopraano">Sopraano</option>
+    <option value="mezzo">Mezzosopraano</option>
+    <option value="tenori">Tenori</option>
+  </select>
+
+  <h2>Kuuntele äänite</h2>
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/12_sopraano.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <div class="sisalto">
+
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/12_sopraano.jpg"
+        alt="Vaccaj 12 – sopraanon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Tehtävä 12</h2>
+
+      <div class="aanne">
+        [le vo'late]
+      </div>
+
+      <h3>Le volate</h3>
+      <p>Juoksutuksia</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">
+          ['sjam 'navi all 'onde al'dʒɛnti]
+        </div>
+        <div class="italia">
+          Siam navi all' onde algenti
+        </div>
+        <div class="suomi">
+          Olemme laivoja aalloilla jäätävillä
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [laʃ'ʃate in abban'dono]
+        </div>
+        <div class="italia">
+          lasciate in abbandono:
+        </div>
+        <div class="suomi">
+          jätettyinä hyljätyiksi.
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [impetu'ozi 'vɛnti]
+        </div>
+        <div class="italia">
+          impetuosi venti
+        </div>
+        <div class="suomi">
+          Rajuja tuulia
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [i 'nɔstri af'fɛtti 'sono]
+        </div>
+        <div class="italia">
+          i nostri affetti sono:
+        </div>
+        <div class="suomi">
+          meidan tunteemme ovat,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['oŋŋi di'lɛtto ɛ 'skɔʎʎo]
+        </div>
+        <div class="italia">
+          ogni diletto è scoglio:
+        </div>
+        <div class="suomi">
+          jokainen ilo on karikko,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['tutta la 'vita ɛ un 'mar]
+        </div>
+        <div class="italia">
+          tutta la vita è un mar.
+        </div>
+        <div class="suomi">
+          koko elämä on meri.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          Olemme unohdukseen hyljättyjä<br>
+          laivoja jäätävillä aalloilla.<br>
+          Tunteemme ovat rajuja tuulia.<br>
+          Jokainen ilo on karikko.<br>
+          Koko elämä on meri.
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    function vaihdaAaniala() {
+
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/12_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 12 – " + aaniala + " – nuotit";
+
+      soitin.pause();
+
+      soitin.src =
+        "aanet/12_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+  </script>
+
+</body>
+</html>
