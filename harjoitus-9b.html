@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Harjoitus 9b</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+      font-weight: bold;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .suomi {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
+
+  <h1>Vaccaj – Harjoitus 9b</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="sopraano">Sopraano</option>
+    <option value="mezzo">Mezzosopraano</option>
+    <option value="altto">Altto</option>
+    <option value="baritoni">Baritoni</option>
+  </select>
+
+  <h2>Kuuntele äänite</h2>
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/9b_sopraano.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <div class="sisalto">
+
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/9b_sopraano.jpg"
+        alt="Vaccaj 9b – sopraanon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Tehtävä 9b</h2>
+
+      <div class="aanne">
+        [mor'dɛnte in di'versi 'modi]
+      </div>
+
+      <h3>Mordente in diversi modi</h3>
+      <p>Mordentti eri muodoissa</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">
+          [laudʒɛl'letto in 'lattʃi 'stretto]
+        </div>
+        <div class="italia">
+          L´augelletto in lacci stretto
+        </div>
+        <div class="suomi">
+          Lintusen ansassa tiukassa
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [per'ke 'mai kan'tar s'as'kolta]
+        </div>
+        <div class="italia">
+          perchè mai cantar s´ascolta?
+        </div>
+        <div class="suomi">
+          miksei koskaan laulavan (sen) kuulla?
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [per'ke 'spera un 'altra 'vɔlta]
+        </div>
+        <div class="italia">
+          Perchè spera un´ altra volta
+        </div>
+        <div class="suomi">
+          Koska toivoo vielä kerran
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [di tor'nare in liber'ta]
+        </div>
+        <div class="italia">
+          di tornare in libertà.
+        </div>
+        <div class="suomi">
+          palaavansa vapauteen.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          Miksi emme kuule lintusen laulavan<br>
+          tiukkaan ansaan juuttuneena?<br>
+          Siksi, että se toivoo vielä joskus<br>
+          palaavansa vapauteen.
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    function vaihdaAaniala() {
+
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/9b_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 9b – " + aaniala;
+
+      soitin.pause();
+
+      soitin.src =
+        "aanet/9b_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+  </script>
+
+</body>
+</html>
