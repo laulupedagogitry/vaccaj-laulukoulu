@@ -24,17 +24,26 @@
     label {
       display: block;
       margin: 20px 0 8px;
+      font-weight: bold;
     }
 
     select {
       font-size: 18px;
       padding: 10px;
+      min-width: 180px;
     }
 
     audio {
       display: block;
       width: 100%;
       margin: 15px 0 25px;
+    }
+
+    .valinnat {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px 35px;
+      margin-bottom: 25px;
     }
 
     .sisalto {
@@ -91,6 +100,11 @@
       .sisalto {
         grid-template-columns: 1fr;
       }
+
+      .valinnat {
+        flex-direction: column;
+        gap: 0;
+      }
     }
   </style>
 </head>
@@ -103,15 +117,30 @@
 
   <h1>Vaccaj – Harjoitus 7</h1>
 
-  <label for="aaniala">Valitse ääniala:</label>
+  <div class="valinnat">
 
-  <select id="aaniala" onchange="vaihdaAaniala()">
-    <option value="sopraano">Soprano</option>
-    <option value="mezzo">Mezzo</option>
-    <option value="altto">Alto</option>
-    <option value="baritoni1">Baritoni 1</option>
-    <option value="baritoni2">Baritoni 2</option>
-  </select>
+    <div>
+      <label for="aaniala">Valitse ääniala:</label>
+
+      <select id="aaniala" onchange="vaihdaAaniala()">
+        <option value="sopraano">Soprano</option>
+        <option value="mezzo">Mezzo</option>
+        <option value="altto">Alto</option>
+        <option value="baritoni1">Baritoni 1</option>
+        <option value="baritoni2">Baritoni 2</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="tempo">Valitse tempo:</label>
+
+      <select id="tempo" onchange="vaihdaAanite()">
+        <option value="hidas">Hidas versio</option>
+        <option value="nopea">Nopea versio</option>
+      </select>
+    </div>
+
+  </div>
 
   <h2>Kuuntele äänite</h2>
 
@@ -119,7 +148,7 @@
     id="soitin"
     controls
     preload="none"
-    src="aanet/7_sopraano.mp3">
+    src="aanet/7_hidas_sopraano.mp3">
     Selaimesi ei tue äänisoitinta.
   </audio>
 
@@ -258,6 +287,7 @@
   </div>
 
   <script>
+
     function vaihdaAaniala() {
 
       const aaniala =
@@ -266,22 +296,34 @@
       const nuotti =
         document.getElementById("nuotti");
 
-      const soitin =
-        document.getElementById("soitin");
-
       nuotti.src =
         "img/nuottikuvat/7_" + aaniala + ".jpg";
 
       nuotti.alt =
         "Vaccaj 7 – " + aaniala;
 
+      vaihdaAanite();
+    }
+
+    function vaihdaAanite() {
+
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const tempo =
+        document.getElementById("tempo").value;
+
+      const soitin =
+        document.getElementById("soitin");
+
       soitin.pause();
 
       soitin.src =
-        "aanet/7_" + aaniala + ".mp3";
+        "aanet/7_" + tempo + "_" + aaniala + ".mp3";
 
       soitin.load();
     }
+
   </script>
 
 </body>
