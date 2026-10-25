@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Harjoitus 15</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+      font-weight: bold;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .suomi {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
+
+  <h1>Vaccaj – Harjoitus 15</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="sopraano">Sopraano</option>
+    <option value="mezzo">Mezzosopraano</option>
+    <option value="altto">Altto</option>
+    <option value="baritoni">Baritoni</option>
+  </select>
+
+  <h2>Kuuntele äänite</h2>
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/15_sopraano.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <div class="sisalto">
+
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/15_sopraano.jpg"
+        alt="Vaccaj 15 – sopraanon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Tehtävä 15</h2>
+
+      <div class="aanne">
+        [rie'pilogo]
+      </div>
+
+      <h3>Riepilogo</h3>
+      <p>Yhteenveto</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">
+          ['alla sta'dʒon de 'fjori]
+        </div>
+        <div class="italia">
+          Alla stagion de' fiori
+        </div>
+        <div class="suomi">
+          Vuodenajoille kukkien
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [e de no'vɛlli a'mori]
+        </div>
+        <div class="italia">
+          e de' novelli amori
+        </div>
+        <div class="suomi">
+          ja uusien rakkauksien
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [ɛ 'grato il 'mɔlle 'fjato]
+        </div>
+        <div class="italia">
+          è grato il molle fiato
+        </div>
+        <div class="suomi">
+          on mieluisa pehmeä henkäys
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [dun 'dzɛffiro leg'gɛr]
+        </div>
+        <div class="italia">
+          d'un zeffiro legger.
+        </div>
+        <div class="suomi">
+          länsituulen keveän.
+        </div>
+        <small>(vanh. leggier)</small>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [o 'dʒɛma fra le 'fronde]
+        </div>
+        <div class="italia">
+          O gema fra le fronde
+        </div>
+        <div class="suomi">
+          Joko se huokaa lomassa lehvin
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [o 'lɛnto in'krespi l'onde]
+        </div>
+        <div class="italia">
+          o lento increspi l'onde:
+        </div>
+        <div class="suomi">
+          tai hitaasti taivuttaa aaltoja:
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['dzɛffiro in 'oɲɲi 'lato]
+        </div>
+        <div class="italia">
+          zeffiro in ogni lato
+        </div>
+        <div class="suomi">
+          länsituuli joka puolella
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [kom'paɲɲo ɛ del pja'tʃer]
+        </div>
+        <div class="italia">
+          compagno è del piacer.
+        </div>
+        <div class="suomi">
+          seuralainen on mielihyvän.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          Keveästi henkäilevä länsituuli<br>
+          on mieluisa kukkien ja uusien<br>
+          rakkauksien vuodenajalle.<br>
+          Puhaltaapa se lehvien lomassa<br>
+          taikka hitaasti taivuttaa aaltoja,<br>
+          länsituuli joka taholla on<br>
+          mielihyvän seuralainen.
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    function vaihdaAaniala() {
+
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      // Jokaisella äänialalla on oma nuottikuva.
+      nuotti.src =
+        "img/nuottikuvat/15_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 15 – " + aaniala + " – nuotit";
+
+      // Jokaisella äänialalla on oma MP3-äänite.
+      soitin.pause();
+
+      soitin.src =
+        "aanet/15_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+  </script>
+
+</body>
+</html>
