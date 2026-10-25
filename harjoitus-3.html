@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Harjoitus 3</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .englanti {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
+
+  <h1>Vaccaj – Harjoitus 3</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="mezzo">Mezzo</option>
+    <option value="baritoni">Baritone</option>
+  </select>
+
+  <h2>Kuuntele äänite</h2>
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/3_mezzo.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <div class="sisalto">
+
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/3_mezzo.jpg"
+        alt="Vaccaj 3 – mezzon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Exercise 3</h2>
+
+      <div class="aanne">
+        [inter'valli di 'sɛsta]
+      </div>
+
+      <h3>Intervalli di sesta</h3>
+      <p>Sixth intervals</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">
+          ['bɛlla 'prɔva ɛ d'alma 'fɔrte]
+        </div>
+        <div class="italia">
+          Bella prova è d'alma forte
+        </div>
+        <div class="englanti">
+          A solid proof of a powerful soul
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [l'ɛsser 'platʃida e se'rena]
+        </div>
+        <div class="italia">
+          l'esser placida e serena
+        </div>
+        <div class="englanti">
+          is to be calm and peaceful
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [nel sof'frir l in'dʒusta 'pena]
+        </div>
+        <div class="italia">
+          nel soffrir l'ingiusta pena
+        </div>
+        <div class="englanti">
+          when suffering from unjust pain
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [d'una 'kolpa ke non a]
+        </div>
+        <div class="italia">
+          d'una colpa, che non ha.
+        </div>
+        <div class="englanti">
+          not guilty of anything.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          It is a solid proof of a powerful soul<br>
+          to be calm and peaceful<br>
+          when suffering an unjust pain<br>
+          guiltless.
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    function vaihdaAaniala() {
+
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/3_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 3 – " + aaniala;
+
+      soitin.pause();
+
+      soitin.src =
+        "aanet/3_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+  </script>
+
+</body>
+</html>
