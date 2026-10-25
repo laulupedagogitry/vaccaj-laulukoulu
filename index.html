@@ -21,6 +21,8 @@
       color: #285b99;
     }
 
+    /* YLÄVÄLILEHDET */
+
     nav.paavalikko {
       display: flex;
       flex-wrap: wrap;
@@ -48,6 +50,8 @@
       color: white;
     }
 
+    /* HARJOITUSVALIKKO */
+
     .harjoitusvalinta {
       margin: 25px 0 40px;
       padding: 22px;
@@ -70,23 +74,10 @@
       border: 1px solid #b7cce2;
       border-radius: 6px;
       background: white;
-    }
-
-    .harjoitusvalinta button {
-      margin-top: 15px;
-      padding: 11px 20px;
-      background: #285b99;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
       cursor: pointer;
     }
 
-    .harjoitusvalinta button:disabled {
-      background: #aab8c8;
-      cursor: not-allowed;
-    }
+    /* YHTEISTYÖTAHOT */
 
     .yhteistyotahot {
       margin-top: 45px;
@@ -140,6 +131,8 @@
       overflow-wrap: anywhere;
     }
 
+    /* MOBIILINÄKYMÄ */
+
     @media (max-width: 600px) {
       nav.paavalikko {
         flex-direction: column;
@@ -158,11 +151,14 @@
 
 <body>
 
+  <!-- SIVUSTON YLÄVÄLILEHDET -->
+
   <nav class="paavalikko" aria-label="Päävalikko">
 
-    <a href="index.html"
-       class="aktiivinen"
-       aria-current="page">
+    <a
+      href="index.html"
+      class="aktiivinen"
+      aria-current="page">
       Harjoitukset
     </a>
 
@@ -182,7 +178,9 @@
 
   <main>
 
-    <h1>Tervetuloa Vaccaj-laulukouluun – Metodo pratico</h1>
+    <h1>
+      Tervetuloa Vaccaj-laulukouluun – Metodo pratico
+    </h1>
 
     <p>
       Sivusto sisältää Nicolo Vaccajn Metodo pratico
@@ -196,19 +194,28 @@
 
     <p>
       Valitse lauluharjoitus alla olevasta valikosta.
+      Harjoitus avautuu automaattisesti valinnan jälkeen.
       Jokaisessa harjoituksessa voit valita äänialan,
       katsella nuotteja ja kuunnella äänitteen.
     </p>
 
     <h2>Lauluharjoitukset</h2>
 
+    <!-- HARJOITUKSEN VALINTA -->
+
     <div class="harjoitusvalinta">
 
-      <label for="harjoitus">Valitse harjoitus:</label>
+      <label for="harjoitus">
+        Valitse harjoitus:
+      </label>
 
-      <select id="harjoitus" onchange="tarkistaValinta()">
+      <select
+        id="harjoitus"
+        onchange="vaihdaHarjoitus()">
 
-        <option value="">Valitse harjoitus</option>
+        <option value="" selected>
+          Valitse harjoitus
+        </option>
 
         <optgroup label="I–IV – Intervallit">
 
@@ -229,7 +236,7 @@
           </option>
 
           <option value="3">
-            III / 3 – Bella prova é d'alma forte... – Intervalli di sesta – seksti
+            III / 3 – Bella prova è d'alma forte... – Intervalli di sesta – seksti
           </option>
 
           <option value="4a">
@@ -312,15 +319,9 @@
 
       </select>
 
-      <button
-        id="avaa"
-        type="button"
-        onclick="avaaHarjoitus()"
-        disabled>
-        Avaa harjoitus
-      </button>
-
     </div>
+
+    <!-- SIVUSTON HISTORIA -->
 
     <h2>Sivuston historia</h2>
 
@@ -345,10 +346,12 @@
     </p>
 
     <p>
-      Vuonna 2026 Petteri Mansikka uudisti sivuston
+      Vuonna 2026 Laulupedagogit ryn tuottaja Petteri Mansikka uudisti sivuston
       teknisen toteutuksen ja palautti materiaalin
-      jälleen kaikkien saataville.
+      jälleen käyttökuntoon kaikkien saataville.
     </p>
+
+    <!-- KÄYTTÖOIKEUDET -->
 
     <h2>Käyttöoikeudet</h2>
 
@@ -360,8 +363,11 @@
       </a>.
     </p>
 
-    <section class="yhteistyotahot"
-             aria-labelledby="yhteistyotahot-otsikko">
+    <!-- YHTEISTYÖTAHOT -->
+
+    <section
+      class="yhteistyotahot"
+      aria-labelledby="yhteistyotahot-otsikko">
 
       <h2 id="yhteistyotahot-otsikko">
         Laulupedagogit ry ja Sibelius-Akatemia
@@ -369,15 +375,18 @@
 
       <div class="logokortit">
 
+        <!-- LAULUPEDAGOGIT RY -->
+
         <div class="logokortti">
 
           <h3>Laulupedagogit ry</h3>
 
-          <a class="logolinkki"
-             href="https://laulupedagogit.fi/"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="Laulupedagogit ry:n verkkosivut">
+          <a
+            class="logolinkki"
+            href="https://laulupedagogit.fi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Laulupedagogit ry:n verkkosivut">
 
             <img
               src="img/LP_logo_pyorea.png"
@@ -390,24 +399,28 @@
           </p>
 
           <p>
-            <a href="https://laulupedagogit.fi/"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a
+              href="https://laulupedagogit.fi/"
+              target="_blank"
+              rel="noopener noreferrer">
               laulupedagogit.fi
             </a>
           </p>
 
         </div>
 
+        <!-- SIBELIUS-AKATEMIA -->
+
         <div class="logokortti">
 
           <h3>Sibelius-Akatemia</h3>
 
-          <a class="logolinkki"
-             href="https://web.uniarts.fi/vaccaj/index-2.html"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="Alkuperäinen Vaccaj-laulukoulu">
+          <a
+            class="logolinkki"
+            href="https://web.uniarts.fi/vaccaj/index-2.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Alkuperäinen Vaccaj-laulukoulu">
 
             <img
               src="img/Sibelius-Akatemian_logo.png"
@@ -422,9 +435,10 @@
           </p>
 
           <p>
-            <a href="https://web.uniarts.fi/vaccaj/index-2.html"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a
+              href="https://web.uniarts.fi/vaccaj/index-2.html"
+              target="_blank"
+              rel="noopener noreferrer">
               Alkuperäinen Vaccaj-laulukoulu
             </a>
           </p>
@@ -438,23 +452,22 @@
   </main>
 
   <script>
-    function tarkistaValinta() {
-      const harjoitus =
-        document.getElementById("harjoitus").value;
 
-      document.getElementById("avaa").disabled =
-        harjoitus === "";
-    }
+    // AVAA HARJOITUKSEN HETI VALINNAN JÄLKEEN
 
-    function avaaHarjoitus() {
+    function vaihdaHarjoitus() {
+
       const harjoitus =
         document.getElementById("harjoitus").value;
 
       if (harjoitus !== "") {
+
         window.location.href =
           "harjoitus-" + harjoitus + ".html";
+
       }
     }
+
   </script>
 
 </body>
