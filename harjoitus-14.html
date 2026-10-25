@@ -404,12 +404,17 @@
       const soitin =
         document.getElementById("soitin");
 
+      // Baritoni käyttää mezzosopraanon nuottikuvaa.
+      const nuottiAaniala =
+        aaniala === "baritoni" ? "mezzo" : aaniala;
+
       nuotti.src =
-        "img/nuottikuvat/14_" + aaniala + ".jpg";
+        "img/nuottikuvat/14_" + nuottiAaniala + ".jpg";
 
       nuotti.alt =
         "Vaccaj 14 – " + aaniala + " – nuotit";
 
+      // Jokaisella äänialalla on oma MP3-äänitteensä.
       soitin.pause();
 
       soitin.src =
