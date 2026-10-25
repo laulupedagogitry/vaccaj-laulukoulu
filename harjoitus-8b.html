@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Harjoitus 8b</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+      font-weight: bold;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .englanti {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
+
+  <h1>Vaccaj – Harjoitus 8b</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="sopraano">Soprano</option>
+    <option value="mezzo">Mezzo-soprano</option>
+    <option value="altto">Alto</option>
+    <option value="tenori">Tenor</option>
+    <option value="baritoni">Baritone</option>
+  </select>
+
+  <h2>Kuuntele äänite</h2>
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/8b_sopraano.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <div class="sisalto">
+
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/8b_sopraano.jpg"
+        alt="Vaccaj 8b – sopraanon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Exercise 8b</h2>
+
+      <div class="aanne">
+        [l atʃakka'tura]
+      </div>
+
+      <h3>L'acciaccatura</h3>
+      <p>Accacciaturas</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">
+          [ben'ke di 'sɛnso 'privo]
+        </div>
+        <div class="italia">
+          Benchè di senso privo,
+        </div>
+        <div class="englanti">
+          Even if without brains,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [fin l arboʃ'ʃɛllo ɛ 'grato]
+        </div>
+        <div class="italia">
+          fin l'arboscello è grato
+        </div>
+        <div class="englanti">
+          the little tree is grateful
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [a 'kwell a'miko 'rivo]
+        </div>
+        <div class="italia">
+          a quell'amico rivo,
+        </div>
+        <div class="englanti">
+          to the friendly brook,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [da 'kui ri'tʃeve u'mor]
+        </div>
+        <div class="italia">
+          da cui riceve umor.
+        </div>
+        <div class="englanti">
+          from which it receives moisture.
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [per 'lui di 'fronde or'nato]
+        </div>
+        <div class="italia">
+          per lui di fronde ornato
+        </div>
+        <div class="englanti">
+          With its beautiful sprigs
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['bɛlla mer'tʃe ʎi 'rɛnde]
+        </div>
+        <div class="italia">
+          bella mercè gli rende,
+        </div>
+        <div class="englanti">
+          the tree returns a favour,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [dal sol 'kwando di'fɛnde]
+        </div>
+        <div class="italia">
+          dal sol quando difende
+        </div>
+        <div class="englanti">
+          when shadowing from the sun
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [il 'suo benefat'tor]
+        </div>
+        <div class="italia">
+          il suo benefattor.
+        </div>
+        <div class="englanti">
+          the benefactor.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          A mindless little tree knows how<br>
+          to be grateful to the friendly brook,<br>
+          which brings water to the tree.<br>
+          With its beautiful sprigs it shelters the brook<br>
+          from the sun.
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    function vaihdaAaniala() {
+
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/8b_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 8b – " + aaniala;
+
+      soitin.pause();
+
+      soitin.src =
+        "aanet/8b_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+  </script>
+
+</body>
+</html>
