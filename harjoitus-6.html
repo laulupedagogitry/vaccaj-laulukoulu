@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Harjoitus 6</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .englanti {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
+
+  <h1>Vaccaj – Harjoitus 6</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="mezzo">Mezzo</option>
+    <option value="baritoni">Baritone</option>
+  </select>
+
+  <h2>Kuuntele äänite</h2>
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/6_mezzo.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <div class="sisalto">
+
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/6_mezzo.jpg"
+        alt="Vaccaj 6 – mezzon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Exercise 6</h2>
+
+      <div class="aanne">
+        ['mɔdo sinco'pato]
+      </div>
+
+      <h3>Modo sincopato</h3>
+      <p>Syncopation</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">
+          [nel kon'trasto a'mor s at'tʃende]
+        </div>
+        <div class="italia">
+          Nel contrasto amor s'accende:
+        </div>
+        <div class="englanti">
+          Resistance makes love flare up:
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [kon ki 'tʃede o ki s ar'rende]
+        </div>
+        <div class="italia">
+          con chi cede, o chi s'arrende
+        </div>
+        <div class="englanti">
+          to him that succumbs or surrenders,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['mai si 'barbaro non ɛ]
+        </div>
+        <div class="italia">
+          mai sì barbaro non è.
+        </div>
+        <div class="englanti">
+          it is never cruel.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          When he encounters resistance, Cupid *<br>
+          flares up, but he is never cruel<br>
+          to those that surrender.
+        </strong>
+
+        <p>
+          <small>
+            * (Cupid imprisoned / By Metastasio)
+          </small>
+        </p>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    function vaihdaAaniala() {
+
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/6_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 6 – " + aaniala;
+
+      soitin.pause();
+
+      soitin.src =
+        "aanet/6_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+  </script>
+
+</body>
+</html>
