@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Harjoitus 2a</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .englanti {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
+
+  <h1>Vaccaj – Harjoitus 2a</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="sopraano">Sopraano</option>
+    <option value="mezzo">Mezzosopraano</option>
+    <option value="baritoni">Baritoni</option>
+  </select>
+
+  <h2>Kuuntele äänite</h2>
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/2a_sopraano.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <div class="sisalto">
+
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/2a_sopraano.jpg"
+        alt="Vaccaj 2a – sopraanon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Exercise 2a</h2>
+
+      <h3>Intervalli di quarta</h3>
+      <p>Fourth intervals</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">
+          ['laʃa il 'lido e il 'mare in'fido]
+        </div>
+        <div class="italia">
+          Lascia il lido, e il mare infido
+        </div>
+        <div class="englanti">
+          Leaves the shore, and the treacherous sea
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [a sol'kar 'torna il nok'kjɛro]
+        </div>
+        <div class="italia">
+          a solcar torna il nocchiero,
+        </div>
+        <div class="englanti">
+          to plough returns the coxswain
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [e pur sa ke mentsoŋ'ŋɛro]
+        </div>
+        <div class="italia">
+          e pur sa che menzognero
+        </div>
+        <div class="englanti">
+          and still he knows that the traitor
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['altre 'volte lingan'no]
+        </div>
+        <div class="italia">
+          altre volte l'ingannò.
+        </div>
+        <div class="englanti">
+          has betrayed him before.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          The coxswain leaves the shore to<br>
+          ploughs the treacherous<br>
+          waves again knowing that the sea has<br>
+          betrayed him before.
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    function vaihdaAaniala() {
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/2a_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 2a – " + aaniala;
+
+      soitin.pause();
+
+      soitin.src =
+        "aanet/2a_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+  </script>
+
+</body>
+</html>
