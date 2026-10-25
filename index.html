@@ -50,19 +50,31 @@
 
     .harjoitusvalinta {
       margin: 25px 0 40px;
+      padding: 22px;
+      background: #f1f6fb;
+      border-radius: 10px;
+    }
+
+    .harjoitusvalinta label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
     }
 
     .harjoitusvalinta select {
+      display: block;
+      width: 100%;
       max-width: 100%;
-      padding: 10px;
-      font-size: 16px;
+      padding: 12px;
+      font-size: 15px;
       border: 1px solid #b7cce2;
       border-radius: 6px;
+      background: white;
     }
 
     .harjoitusvalinta button {
-      padding: 11px 18px;
-      margin-left: 8px;
+      margin-top: 15px;
+      padding: 11px 20px;
       background: #285b99;
       color: white;
       border: none;
@@ -137,11 +149,6 @@
         text-align: center;
       }
 
-      .harjoitusvalinta button {
-        display: block;
-        margin: 12px 0 0;
-      }
-
       .logokortit {
         grid-template-columns: 1fr;
       }
@@ -150,8 +157,6 @@
 </head>
 
 <body>
-
-  <!-- SIVUSTON YLÄVALIKKO -->
 
   <nav class="paavalikko" aria-label="Päävalikko">
 
@@ -202,29 +207,109 @@
       <label for="harjoitus">Valitse harjoitus:</label>
 
       <select id="harjoitus" onchange="tarkistaValinta()">
+
         <option value="">Valitse harjoitus</option>
-        <option value="1a">1a</option>
-        <option value="1b">1b</option>
-        <option value="2a">2a</option>
-        <option value="2b">2b</option>
-        <option value="3">3</option>
-        <option value="4a">4a</option>
-        <option value="4b">4b</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8a">8a</option>
-        <option value="8b">8b</option>
-        <option value="9a">9a</option>
-        <option value="9b">9b</option>
-        <option value="10a">10a</option>
-        <option value="10b">10b</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13a">13a</option>
-        <option value="13b">13b</option>
-        <option value="14">14</option>
-        <option value="15">15</option>
+
+        <optgroup label="I–IV – Intervallit">
+
+          <option value="1a">
+            I / 1a – Manca sollecita... – La scala – asteikko
+          </option>
+
+          <option value="1b">
+            I / 1b – Semplicetta tortorella... – Intervalli di terza – terssi
+          </option>
+
+          <option value="2a">
+            II / 2a – Lascia il lido, e il mare infido... – Intervalli di quarta – kvartti
+          </option>
+
+          <option value="2b">
+            II / 2b – Avvezzo a vivere... – Intervalli di quinta – kvintti
+          </option>
+
+          <option value="3">
+            III / 3 – Bella prova é d'alma forte... – Intervalli di sesta – seksti
+          </option>
+
+          <option value="4a">
+            IV / 4a – Fra l'ombre un lampo solo... – Intervalli di settima – septimi
+          </option>
+
+          <option value="4b">
+            IV / 4b – Quell' onda che ruina... – Intervalli di ottava – oktaavi
+          </option>
+
+        </optgroup>
+
+        <optgroup label="V–XIII – Koristeet ja laulutekniikka">
+
+          <option value="5">
+            V / 5 – Delira dubbiosa... – I semitoni – puolisävelaskel
+          </option>
+
+          <option value="6">
+            VI / 6 – Nel contrasto amor accende... – Modo sincopato – synkooppi
+          </option>
+
+          <option value="7">
+            VII / 7 – Come il candore... – Introduzione alle volate – johdatus juoksutukseen
+          </option>
+
+          <option value="8a">
+            VIII / 8a – Senza l'amabile... – Le appoggiatura sopra e sotto – pitkä etuhele
+          </option>
+
+          <option value="8b">
+            VIII / 8b – Benchè di senso privo... – L'acciaccatura – lyhyt etuhele
+          </option>
+
+          <option value="9a">
+            IX / 9a – La gioia verace... – Introduzione al Mordente – johdatus jälkiheleeseen
+          </option>
+
+          <option value="9b">
+            IX / 9b – L'augelletto in lacci stretto... – Mordente in diversi modi – jälkihele, kaksoishele
+          </option>
+
+          <option value="10a">
+            X / 10a – Quando accende un nobil petto... – Introduzione al grupetto – johdatus kaksoisheleeseen
+          </option>
+
+          <option value="10b">
+            X / 10b – Più non si trovano... – Il gruppetto – kaksoishele
+          </option>
+
+          <option value="11">
+            XI / 11 – Se povero il ruscello... – Introduzione al trillo – johdatus trilliin
+          </option>
+
+          <option value="12">
+            XII / 12 – Siam navi all' onde algenti... – Le volate – pitkä 16-osajuoksutus
+          </option>
+
+          <option value="13a">
+            XIII / 13a – Vorrei spiegar l'affanno... – Portamento I - Modo per portare la voce – kannattelu I
+          </option>
+
+          <option value="13b">
+            XIII / 13b – O placido il mare... – Portamento II - Altro modo – kannattelu II
+          </option>
+
+        </optgroup>
+
+        <optgroup label="XIV–XV – Resitatiivi ja kertaus">
+
+          <option value="14">
+            XIV / 14 – La patria è un tutto... – Il recitativo – resitatiivi
+          </option>
+
+          <option value="15">
+            XV / 15 – Alla stagion de' fiori... – Riepilogo – kertaus
+          </option>
+
+        </optgroup>
+
       </select>
 
       <button
@@ -275,8 +360,6 @@
       </a>.
     </p>
 
-    <!-- LOGOT JA LINKIT -->
-
     <section class="yhteistyotahot"
              aria-labelledby="yhteistyotahot-otsikko">
 
@@ -285,8 +368,6 @@
       </h2>
 
       <div class="logokortit">
-
-        <!-- LAULUPEDAGOGIT RY -->
 
         <div class="logokortti">
 
@@ -317,8 +398,6 @@
           </p>
 
         </div>
-
-        <!-- SIBELIUS-AKATEMIA -->
 
         <div class="logokortti">
 
