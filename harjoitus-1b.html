@@ -4,17 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Vaccaj – Harjoitus 1b</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 950px;
+      max-width: 1300px;
       margin: 30px auto;
       padding: 20px;
       line-height: 1.6;
+      color: #333;
     }
 
-    h1 {
+    h1, h2 {
       color: #285b99;
     }
 
@@ -34,14 +37,64 @@
       margin: 15px 0 25px;
     }
 
-    img {
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
       display: block;
       width: 100%;
       height: auto;
       margin-top: 20px;
     }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .englanti {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <p>
@@ -70,24 +123,111 @@
     Selaimesi ei tue äänisoitinta.
   </audio>
 
-  <h2>Nuotit</h2>
+  <div class="sisalto">
 
-  <img
-    id="nuotti"
-    src="img/nuottikuvat/1b_sopraano.jpg"
-    alt="Vaccaj 1b – sopraanon nuotit">
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/1b_sopraano.jpg"
+        alt="Vaccaj 1b – sopraanon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Exercise 1b</h2>
+
+      <h3>Intervalli di terza</h3>
+      <p>Third intervals</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">
+          [sempli'tʃetta torto'rɛlla]
+        </div>
+        <div class="italia">
+          Semplicetta tortorella,
+        </div>
+        <div class="englanti">
+          A simple turtledove,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [ke non 'vede il 'suo pe'riljo]
+        </div>
+        <div class="italia">
+          che non vede il suo periglio,
+        </div>
+        <div class="englanti">
+          which does not see the peril,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [per fud'dʒir dal 'krudo ar'tiljo]
+        </div>
+        <div class="italia">
+          per fuggir dal crudo artiglio
+        </div>
+        <div class="englanti">
+          in order to fly the cruel nail
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['vola in 'grɛmbo al katʃa'tor]
+        </div>
+        <div class="italia">
+          vola in grembo al cacciator.
+        </div>
+        <div class="englanti">
+          flies to the arms of the hunter.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          The little turtledove<br>
+          does not notice the peril<br>
+          when flying from the raptor –<br>
+          and flies to the hunter's snare.
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
 
   <script>
     function vaihdaAaniala() {
-      const aaniala = document.getElementById("aaniala").value;
-      const nuotti = document.getElementById("nuotti");
-      const soitin = document.getElementById("soitin");
+      const aaniala =
+        document.getElementById("aaniala").value;
 
-      nuotti.src = "img/nuottikuvat/1b_" + aaniala + ".jpg";
-      nuotti.alt = "Vaccaj 1b – " + aaniala;
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/1b_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 1b – " + aaniala;
 
       soitin.pause();
-      soitin.src = "aanet/1b_" + aaniala + ".mp3";
+
+      soitin.src =
+        "aanet/1b_" + aaniala + ".mp3";
+
       soitin.load();
     }
   </script>
