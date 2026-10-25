@@ -13,19 +13,45 @@
       padding: 20px;
       line-height: 1.6;
     }
-    h1 { color: #285b99; }
-    label { display: block; margin: 20px 0 8px; }
-    select { font-size: 18px; padding: 10px; }
-    img { width: 100%; height: auto; margin-top: 20px; }
-    audio { width: 100%; margin-top: 15px; }
+
+    h1 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
-  <p><a href="index.html">← Takaisin etusivulle</a></p>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
 
   <h1>Vaccaj – Harjoitus 1a</h1>
 
   <label for="aaniala">Valitse ääniala:</label>
+
   <select id="aaniala" onchange="vaihdaAaniala()">
     <option value="sopraano">Sopraano</option>
     <option value="mezzo">Mezzosopraano</option>
@@ -34,15 +60,22 @@
     <option value="baritoni2">Baritoni 2</option>
   </select>
 
-  <h2>Nuotit</h2>
-  <img id="nuotti"
-       src="img/nuottikuvat/1a_sopraano.jpg"
-       alt="Vaccaj 1a – nuotit">
-
   <h2>Kuuntele äänite</h2>
-  <audio id="soitin" controls preload="none"
-         src="aanet/1a_sopraano.mp3">
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/1a_sopraano.mp3">
+    Selaimesi ei tue äänisoitinta.
   </audio>
+
+  <h2>Nuotit</h2>
+
+  <img
+    id="nuotti"
+    src="img/nuottikuvat/1a_sopraano.jpg"
+    alt="Vaccaj 1a – sopraanon nuotit">
 
   <script>
     function vaihdaAaniala() {
@@ -58,5 +91,6 @@
       soitin.load();
     }
   </script>
+
 </body>
 </html>
