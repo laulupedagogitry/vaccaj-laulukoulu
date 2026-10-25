@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Harjoitus 11</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+      font-weight: bold;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .suomi {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
+
+  <h1>Vaccaj – Harjoitus 11</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="sopraano">Sopraano</option>
+    <option value="mezzo">Mezzosopraano</option>
+    <option value="altto">Altto</option>
+    <option value="tenori">Tenori</option>
+  </select>
+
+  <h2>Kuuntele äänite</h2>
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/11_sopraano.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <div class="sisalto">
+
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/11_sopraano.jpg"
+        alt="Vaccaj 11 – sopraanon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Tehtävä 11</h2>
+
+      <div class="aanne">
+        [introdu'tsjone al 'trillo]
+      </div>
+
+      <h3>Introduzione al trillo</h3>
+      <p>Johdatus trilliin</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">
+          [se 'povero il ruʃ'ʃɛllo]
+        </div>
+        <div class="italia">
+          Se povero il ruscello
+        </div>
+        <div class="suomi">
+          Jos surkea puronen
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['mormora 'lɛnto e 'basso]
+        </div>
+        <div class="italia">
+          mormora lento e basso;
+        </div>
+        <div class="suomi">
+          solisee hitaasti ja matalana,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [un ramoʃ'ʃɛllo un 'sasso]
+        </div>
+        <div class="italia">
+          un ramoscello, un sasso
+        </div>
+        <div class="suomi">
+          varpu, kivi
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['kwazi arres'tar lo fa]
+        </div>
+        <div class="italia">
+          quasi arrestar lo fa.
+        </div>
+        <div class="suomi">
+          melkeinpä vangitsee sen.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          Jos pieni puroparka solisee<br>
+          hitaana ja matalana,<br>
+          pikku oksa, kivikin melkein<br>
+          estää sen juoksun.
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    function vaihdaAaniala() {
+
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/11_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 11 – " + aaniala;
+
+      soitin.pause();
+
+      soitin.src =
+        "aanet/11_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+  </script>
+
+</body>
+</html>
