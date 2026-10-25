@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Harjoitus 10b</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+      font-weight: bold;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .suomi {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
+
+  <h1>Vaccaj – Harjoitus 10b</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="mezzo">Mezzosopraano</option>
+    <option value="tenori">Tenori</option>
+  </select>
+
+  <h2>Kuuntele äänite</h2>
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/10b_mezzo.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <div class="sisalto">
+
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/10b_mezzo.jpg"
+        alt="Vaccaj 10b – mezzosopraanon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Tehtävä 10b</h2>
+
+      <div class="aanne">
+        [il grup'petto]
+      </div>
+
+      <h3>Il gruppetto</h3>
+      <p>Kaksoishele</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">
+          ['pju non si 'trovano]
+        </div>
+        <div class="italia">
+          Più non si trovano
+        </div>
+        <div class="suomi">
+          Enää ei löydy
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [tra 'mille a'manti]
+        </div>
+        <div class="italia">
+          tra mille amanti
+        </div>
+        <div class="suomi">
+          joukosta tuhannen rakastavaisen
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [sol 'due bɛll 'anime]
+        </div>
+        <div class="italia">
+          sol due bell' anime
+        </div>
+        <div class="suomi">
+          ainoatakaan kahta jaloa sielua,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [ke 'sian kos'tanti]
+        </div>
+        <div class="italia">
+          che sian costanti,
+        </div>
+        <div class="suomi">
+          jotka olisivat pysyviä
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [e 'tutti 'parlano]
+        </div>
+        <div class="italia">
+          e tutti parlano
+        </div>
+        <div class="suomi">
+          ja kaikki puhuvat
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [di fedel'ta]
+        </div>
+        <div class="italia">
+          di fedeltà.
+        </div>
+        <div class="suomi">
+          uskollisuudesta.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          Enää ei löydy tuhannen rakastavaisen joukosta<br>
+          kahta jaloa sielua, jotka ovat uskollisia toisilleen<br>
+          – ja kaikki puhuvat uskollisuudesta.
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    function vaihdaAaniala() {
+
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/10b_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 10b – " + aaniala;
+
+      soitin.pause();
+
+      soitin.src =
+        "aanet/10b_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+  </script>
+
+</body>
+</html>
