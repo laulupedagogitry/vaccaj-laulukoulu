@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Harjoitus 4b</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .englanti {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
+
+  <h1>Vaccaj – Harjoitus 4b</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="mezzo">Mezzo</option>
+    <option value="baritoni">Baritone</option>
+  </select>
+
+  <h2>Kuuntele äänite</h2>
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/4b_mezzo.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <div class="sisalto">
+
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/4b_mezzo.jpg"
+        alt="Vaccaj 4b – mezzon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Exercise 4b</h2>
+
+      <div class="aanne">
+        [inter'valli di ot'tava]
+      </div>
+
+      <h3>Intervalli di ottava</h3>
+      <p>Octave intervals</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">
+          [kwell 'onda ke ru'ina]
+        </div>
+        <div class="italia">
+          Quell' onda che ruina,
+        </div>
+        <div class="englanti">
+          The wave that surges,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['baltsa si 'frandʒe e 'mormora]
+        </div>
+        <div class="italia">
+          balza, si frange e mormora,
+        </div>
+        <div class="englanti">
+          rises, breaks and rumbles,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          [ma 'limpida si fa]
+        </div>
+        <div class="italia">
+          ma limpida si fa.
+        </div>
+        <div class="englanti">
+          but then calms down again.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          Water running down (the Alps)<br>
+          splashes, spatters and grumbles<br>
+          but eventually calms down again.
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    function vaihdaAaniala() {
+
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/4b_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 4b – " + aaniala;
+
+      soitin.pause();
+
+      soitin.src =
+        "aanet/4b_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+  </script>
+
+</body>
+</html>
