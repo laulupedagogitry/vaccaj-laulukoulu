@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Harjoitus 14</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #285b99;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+      font-weight: bold;
+    }
+
+    select {
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .sisalto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .suomi {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    <a href="index.html">← Takaisin etusivulle</a>
+  </p>
+
+  <h1>Vaccaj – Harjoitus 14</h1>
+
+  <label for="aaniala">Valitse ääniala:</label>
+
+  <select id="aaniala" onchange="vaihdaAaniala()">
+    <option value="sopraano">Sopraano</option>
+    <option value="mezzo">Mezzosopraano</option>
+    <option value="baritoni">Baritoni</option>
+  </select>
+
+  <h2>Kuuntele äänite</h2>
+
+  <audio
+    id="soitin"
+    controls
+    preload="none"
+    src="aanet/14_sopraano.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <div class="sisalto">
+
+    <section class="nuottialue">
+
+      <h2>Nuotit</h2>
+
+      <img
+        id="nuotti"
+        src="img/nuottikuvat/14_sopraano.jpg"
+        alt="Vaccaj 14 – sopraanon nuotit">
+
+    </section>
+
+    <section class="tekstialue">
+
+      <h2>Tehtävä 14</h2>
+
+      <div class="aanne">
+        [il retʃita'tivo]
+      </div>
+
+      <h3>Il recitativo</h3>
+      <p>Resitatiivi</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">[la 'patrja ɛ un 'tutto]</div>
+        <div class="italia">La patria è un tutto</div>
+        <div class="suomi">Isänmaa on kokonaisuus</div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[di 'kui sjam 'parti]</div>
+        <div class="italia">di cui siam parti</div>
+        <div class="suomi">josta olemme osia.</div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[al tʃitta'dino ɛ 'fallo]</div>
+        <div class="italia">al cittadino è fallo</div>
+        <div class="suomi">Kansalaiselle on erehdys</div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[konside'rar se 'stesso]</div>
+        <div class="italia">considerar sè stesso</div>
+        <div class="suomi">pitää itseään</div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[sepa'rato da 'lɛi]</div>
+        <div class="italia">separato da lei.</div>
+        <div class="suomi">erillisenä siitä.</div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[l 'utile o il 'danno]</div>
+        <div class="italia">L´utile, o il danno,</div>
+        <div class="suomi">Hyöty tai vahinko,</div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[k 'ei ko'noʃʃer dee 'solo]</div>
+        <div class="italia">ch'ei conoscer dee solo</div>
+        <div class="suomi">jonka hän tuntee ainoastaan</div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[ɛ tʃɔ ke 'dʒova]</div>
+        <div class="italia">è ciò che giova</div>
+        <div class="suomi">
+          on se, joka auttaa (= kaikki tuo/se, joka)
+        </div>
+        <small>(ciò = tutto quello, che)</small>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[o 'nwɔtʃe 'alla 'sua 'patria]</div>
+        <div class="italia">o nuoce alla sua patria,</div>
+        <div class="suomi">
+          tai vahingoittaa hänen isänmaataan,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[a 'kui di 'tutto ɛ debi'tor]</div>
+        <div class="italia">a cui di tutto è debitor.</div>
+        <div class="suomi">
+          jolle kaikesta (hän) on velallinen.
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">['kwando i su'dori]</div>
+        <div class="italia">Quando i sudori,</div>
+        <div class="suomi">Milloin hikeä</div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[e il 'sangue 'spardʒe per 'lɛi]</div>
+        <div class="italia">e il sangue sparge per lei,</div>
+        <div class="suomi">
+          ja verta vuodattaa sen puolesta,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">['nulla del 'proprjo 'ei 'dona]</div>
+        <div class="italia">nulla del proprio ei dona:</div>
+        <div class="suomi">
+          ei mitään omastaan hän lahjoita,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">['rɛnde sol tʃo ke n'ɛbbe]</div>
+        <div class="italia">rende sol ciò che n'ebbe.</div>
+        <div class="suomi">
+          palauttaa vain sen, minkä on saanut.
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">['essa il pro'dusse]</div>
+        <div class="italia">Essa il produsse,</div>
+        <div class="suomi">Se on hänet synnyttänyt,</div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[l edu'kɔ lo nu'dri]</div>
+        <div class="italia">l'educò, lo nudrì.</div>
+        <div class="suomi">
+          hänet kasvattanut, hänet ravinnut.
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[kon le 'sue 'leddʒi]</div>
+        <div class="italia">Con le sue leggi</div>
+        <div class="suomi">Laeillaan</div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">
+          ['daʎʎ in'sulti do'mestitʃi il di'fɛnde]
+        </div>
+        <div class="italia">
+          dagl'insulti domestici il difende,
+        </div>
+        <div class="suomi">
+          loukkauksilta sisäisiltä häntä puolustaa,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">['daʎʎi es'tɛrni kon l 'armi]</div>
+        <div class="italia">dagli esterni con l'armi.</div>
+        <div class="suomi">
+          ulkopuolisilta armeijoin.
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">['ella ʎi 'presta 'nome]</div>
+        <div class="italia">Ella gli presta nome,</div>
+        <div class="suomi">
+          Se hänelle lainaa nimen,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">['grado ed o'nor]</div>
+        <div class="italia">grado, ed onor;</div>
+        <div class="suomi">arvon ja kunnian,</div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[ne 'premja il 'mɛrto]</div>
+        <div class="italia">ne premia il merto;</div>
+        <div class="suomi">palkitsee ansioita</div>
+        <small>(merto = merito)</small>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[ne 'vendika le of'feze]</div>
+        <div class="italia">ne vendica le offese,</div>
+        <div class="suomi">kostaa loukkauksia,</div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[e 'madre a'mante]</div>
+        <div class="italia">e madre amante</div>
+        <div class="suomi">
+          ja (kuin) äiti rakastava
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[a fabbri'kar s af'fanna]</div>
+        <div class="italia">a fabbricar s'affanna</div>
+        <div class="suomi">
+          rakentaa ponnistellen
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[la 'sua felitʃi'ta]</div>
+        <div class="italia">la sua felicità,</div>
+        <div class="suomi">
+          hänen onnellisuuttaan,
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[per 'kwanto 'litʃe]</div>
+        <div class="italia">per quanto lice</div>
+        <div class="suomi">
+          siinä määrin kuin sallii
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">[al des'tin de mor'tali]</div>
+        <div class="italia">al destin de' mortali</div>
+        <div class="suomi">
+          kohtalo kuolevaisten
+        </div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">['ɛsser fe'litʃe]</div>
+        <div class="italia">esser felice.</div>
+        <div class="suomi">
+          olla onnellisia.
+        </div>
+      </div>
+
+      <div class="yhteenveto">
+        <strong>
+          Isänmaa on kokonaisuus,<br>
+          josta olemme osia.<br>
+          Kansalaisen on virhe<br>
+          pitää itseään siitä erillisenä.<br>
+          Hyöty tai vahinko,<br>
+          joka hänen täytyy tuntea,<br>
+          on ainoastaan se kaikki,<br>
+          mikä auttaa tai vahingoittaa<br>
+          hänen isänmaataan,<br>
+          jolle hän on kaikesta velallinen.<br>
+          Kun hän vuodattaa sen puolesta hikeä tai verta,<br>
+          mitään omastaan hän ei anna,<br>
+          palauttaa vain sen, mitä on saanut.<br>
+          Isänmaa on hänet synnyttänyt,<br>
+          hänet kasvattanut, hänet ravinnut.<br>
+          Se puolustaa häntä laeillaan kotoisilta loukkauksilta,<br>
+          ulkoisilta armeijoillaan.<br>
+          Se lainaa hänelle nimen,<br>
+          arvon ja kunnian, palkitsee ansion,<br>
+          kostaa loukkauksen ja kuin rakastava äiti ponnistelee<br>
+          edistääkseen hänen onnellisuuttaan<br>
+          siinä määrin kuin<br>
+          kuolevaisen kohtalo voi olla onnellinen.
+        </strong>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    function vaihdaAaniala() {
+
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/14_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 14 – " + aaniala + " – nuotit";
+
+      soitin.pause();
+
+      soitin.src =
+        "aanet/14_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+  </script>
+
+</body>
+</html>
