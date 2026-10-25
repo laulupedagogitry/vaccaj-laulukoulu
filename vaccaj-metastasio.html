@@ -17,11 +17,9 @@
       line-height: 1.6;
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       color: #285b99;
     }
-
-    /* Sivuston ylävalikko */
 
     nav.paavalikko {
       display: flex;
@@ -49,8 +47,6 @@
       background: #285b99;
       color: white;
     }
-
-    /* Sivun omat välilehdet */
 
     .valilehdet {
       display: flex;
@@ -81,19 +77,51 @@
       border-color: #285b99;
     }
 
-    /* Välilehtien sisällöt */
-
     .sisalto {
       max-width: 850px;
       padding-top: 25px;
+    }
+
+    .valilehtisisalto[hidden] {
+      display: none;
+    }
+
+    .sisalto h3 {
+      margin-top: 35px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #d2e2f3;
+    }
+
+    .sisalto ul {
+      padding-left: 25px;
+      margin-bottom: 25px;
+    }
+
+    .sisalto li {
+      margin-bottom: 10px;
     }
 
     .sisalto p {
       margin-bottom: 22px;
     }
 
-    .valilehtisisalto[hidden] {
-      display: none;
+    blockquote {
+      margin: 25px 0;
+      padding: 15px 22px;
+      border-left: 4px solid #285b99;
+      background: #f1f6fb;
+    }
+
+    blockquote p:last-child {
+      margin-bottom: 0;
+    }
+
+    .lahde {
+      margin-top: 45px;
+      padding-top: 15px;
+      border-top: 1px solid #d2e2f3;
+      color: #555;
     }
 
     @media (max-width: 600px) {
@@ -116,35 +144,18 @@
 
 <body>
 
-  <!-- SIVUSTON YLÄVALIKKO -->
-
   <nav class="paavalikko" aria-label="Päävalikko">
-
-    <a href="index.html">
-      Harjoitukset
-    </a>
-
-    <a href="metodo-pratico.html">
-      Metodo pratico
-    </a>
-
+    <a href="index.html">Harjoitukset</a>
+    <a href="metodo-pratico.html">Metodo pratico</a>
     <a href="vaccaj-metastasio.html"
        class="aktiivinen"
-       aria-current="page">
-      Vaccaj ja Metastasio
-    </a>
-
-    <a href="tekijat.html">
-      Tekijät
-    </a>
-
+       aria-current="page">Vaccaj ja Metastasio</a>
+    <a href="tekijat.html">Tekijät</a>
   </nav>
 
   <main>
 
     <h1>Vaccaj ja Metastasio</h1>
-
-    <!-- KAKSI VÄLILEHTEÄ -->
 
     <div class="valilehdet"
          role="tablist"
@@ -173,7 +184,7 @@
 
     </div>
 
-    <!-- 1. VACCAJN ELÄMÄSTÄ -->
+    <!-- VACCAJN ELÄMÄSTÄ -->
 
     <section
       id="vaccaj"
@@ -181,15 +192,175 @@
       role="tabpanel"
       aria-labelledby="painike-vaccaj">
 
-      <h2>Vaccajn elämästä</h2>
+      <h2>Nicolo Vaccajn elämästä</h2>
 
-      <p>
-        Nicolo Vaccajn elämäkerta lisätään tähän.
-      </p>
+      <h3>1790</h3>
+      <ul>
+        <li>Syntyi yöllä, maaliskuussa Tolentinon kaupungissa Rooman koillispuolella.</li>
+        <li>Isä oli lääkäri ja kotoisin Toscanasta. Äiti oli kotoisin Frosinonesta.</li>
+        <li>Nicolo oli kolmesta pojasta nuorin</li>
+      </ul>
+
+      <h3>1797-1806</h3>
+      <ul>
+        <li>Perhe muutti Pesaroon, Rossinin syntymäkaupunkiin.</li>
+        <li>Nicolo osoitti varhain kiinnostusta kirjallisuuteen, mm. Metastasion teoksiin.</li>
+        <li>Kirjoitti jo teinivuosina omia näytelmiään runomittaan.</li>
+        <li>Oli musiikillisesti lahjakas ja alkoi säveltää.</li>
+      </ul>
+
+      <h3>1807-1810</h3>
+      <ul>
+        <li>Vaccaj joutui valitsemaan lähteekö opiskelemaan lääkäriksi vai lakimieheksi.</li>
+        <li>Sai lopulta luvan isältään opiskella musiikkia.</li>
+        <li>Kävi oopperassa ja kirkkokonserteissa niin usein kuin mahdollista ja kuuli sellaisten säveltäjien teoksia kuin Cimarosa, Farinelli, Paisiello, Pergolesi ja Zingarelli.</li>
+        <li>Opiskeli täysipäiväisesti <em>Accademia di Santa Ceciliassa</em> Roomassa lempiaineinaan laulu ja säveltämiseen tarvittava kontrapunkti</li>
+      </ul>
+
+      <h3>1811-1814</h3>
+      <ul>
+        <li>Päätti opiskelun arvosanalla <em>diploma di maestro</em>.</li>
+        <li>Täydensi opintojaan Giovanni Paisiellon johdolla Napolissa melkein kolme vuotta ja sai perusteellisen tuntuman erilaisista äänityypeistä ja laulutaidosta. (Paisiello arvosti suuresti Metastasion librettoja ja ylisti runoilijaa oppilaalle.)</li>
+        <li>Sai tilauksen oopperaan <em>I Solitari di Scozia</em> (Skotlannin erakot) ja 40 päivää työskentelyaikaa.</li>
+      </ul>
+
+      <p>Vaccajsta laulajana kertoo Alessandro Biaggi:</p>
+
+      <blockquote>
+        <p>"Vaccajlla ei ollut luonnostaan mikään kaunis ääni, mutta hän lauloi niin täydellisellä tavalla, että oli puhdasta mielihyvää kuunnella häntä. Äänenmuodostus oli selvää ja pakotonta, ääni oli kiinteä ja erinomainen, hengitys oli rauhallinen ja huomaamaton. Legato oli oikeanlainen, samoin hänen portamentonsa, joka ei laahannut. Hän oli kehittänyt ohentamisen täydelliseksi. Hänen fraseerauksensa olivat yhtä hiottuja kuin hänen ääntämisensä olivat selkeitä. Hän ei koskaan syyllistynyt liiallisuuteen tai teennäisyyteen. Näistä tuli tyyli, joka oli voimakas, puhdas ja klassillinen, sekä korostuksia täynnä elämää, väriä ja ilmaisua. Vaccajn laulu kävi yksiin antiikin kreikan filosofien määritelmän kanssa: <em>sielun nautinto</em>."</p>
+      </blockquote>
+
+      <h3>1815</h3>
+      <ul>
+        <li>Sai menestystä oopperan ensiesityksessä.</li>
+        <li>Johti esityksen omasta teoksestaan <em>Tantum ergo</em> Marian taivaaseen astumisen päivänä.</li>
+      </ul>
+
+      <h3>1816-22</h3>
+      <ul>
+        <li>Matkusti Paisiellon neuvosta Venetsiaan, jossa yleisöä kiinnosti kuitenkin vain Rossinin musiikki.</li>
+        <li>Alkoi antaa laulutunteja päästäkseen pyytämästä isältään rahaa.</li>
+      </ul>
+
+      <p>Vaccajsta laulajana ja laulunopettajana sanoi myöhemmin hänen poikansa Giulio Vaccaj:</p>
+
+      <blockquote>
+        <p>"Venetsiassa oltiin hyvin tietoisia siitä, että hän laulaa erinomaisen hyvin, vaikka hänellä ei ollutkaan moitteeton ääni. Siis on perusteltua uskoa, että venetsialaisista oli itsestään selvää, että hänestä saadaan laulunopettaja, sen jälkeen kun olivat kuulleet hänen laulavan. Ennen pitkää oli hän hyvin taitava opettamaan ja hänen oivallinen laulukoulunsa soi hänelle kauan suurta ja pysyväistä kunnioitusta. Kun Rossini 1851 kirjoitti markiisi Antaldi i Pesarolle Vaccajsta säveltäjänä lisäsi hän, että tämä 'teki itsestään yhtä suuren nimen opettajana. Syvällisellä tiedollaan ihmisäänen fysiologiasta ei hän särkenyt taidelajin rajoja, vaan opetti oppilailleen menetelmän, joka sai heidät laulamaan sellaisella tavalla, että kuuli sielun.'”</p>
+      </blockquote>
+
+      <ul>
+        <li>Tuli muotiin laulunopettajana.</li>
+        <li>Ei ollut taitava vain omalla taiteenalallaan, vaan oli Giulion mukaan myös sivistynyt, välitön ja ystävällinen.</li>
+        <li>Alkoi kaivata vaihtelua viiden Venetsiassa vietetyn vuoden jälkeen.</li>
+        <li>Hyväksyi kutsun Triesteen musiikinopettajaksi.</li>
+        <li>Sai yllin kyllin oppilaita ja viihtyi erinomaisesti.</li>
+        <li>Rakastui kiihkeästi oppilaaseen nimeltä Anna Corradini.</li>
+        <li>Matkusteli Euroopassa. Wien oli yksi kohteista.</li>
+      </ul>
+
+      <h3>1823-24</h3>
+      <ul>
+        <li>Jätti Triesten, koska rakas Anna pääsi Milanon konservatorioon</li>
+        <li>Koetti lyödä itsensä läpi oopperasäveltäjänä ja nyt paremmalla menestyksellä.</li>
+        <li>Onnistui molemmissa oopperoissaan <em>Pietro il Grande</em> (Pietari Suuri) ja <em>La pastorella feudataria</em> (Paimentyttö linnanrouvana) saamaan suosiota.</li>
+      </ul>
+
+      <h3>1825-28</h3>
+      <ul>
+        <li>Sai tilauksen Napolin <em>Teatro San Caro</em> -oopperasta, jossa ensiesitettiin <em>Zadig ed Astartea</em> (Zadig ja Astartea). Zadigin osassa esiintyi Anna.</li>
+        <li>Kirjoitti Annalle myös Romeon osan oopperaan <em>Giuletta e Romeo</em> (Julia ja Romeo), joka ensiesitettiin Milanossa ja josta tuli hänen suurin oopperamenestyksensä Italiassa ja muualla Euroopassa.</li>
+      </ul>
+
+      <h3>1829</h3>
+      <ul>
+        <li>Väsyi kirjoittamaan arvaamattomille italialaisille näyttämöille ja jätti maan koettaakseen onneaan Pariisissa, jossa oli jo saavuttanut nimeä oopperoillaan.</li>
+      </ul>
+
+      <h3>1830</h3>
+      <ul>
+        <li>Vallankumous esti toiveen koota loistelias ensemble Théatre Italieniin. Mukaan olisi kuulunut mm. Lablache, Maria Malibran, Giuditta Pasta, Henriette Sontag ja Tamburini.</li>
+      </ul>
+
+      <h3>1831</h3>
+      <ul>
+        <li>Matkusti kesän alussa Lontooseen ja sai pian niin paljon oppilaita että päätti jäädä pidemmäksi aikaa.</li>
+        <li>Oivalsi kuinka hedelmällistä olisi säveltää sarja lauluharjoituksia, joissa laulusääntöjen vaikeuksia ja kuivuutta lievennettäisiin sopivalla melodialla. Näistä ajatuksista syntyi myöhemmin <em>Metodo pratico.</em></li>
+      </ul>
+
+      <h3>1832</h3>
+      <ul>
+        <li>Sai ilon nähdä <em>Giulietta e Romeo</em> -oopperansa King's Theatressa. Vaikka myös Bellini oli kirjoittanut samasta teemasta oopperan, Vaccajn loppunäytöstä pidettiin parempana. (Bolognassa Bellinin ooppera lopetettiinkin Vaccajn hautakohtauksella. Idea tuli luultavasti Rossinilta ja sopi niin hyvin, että tätä käytäntöä jatkettiin monia vuosia.)</li>
+      </ul>
+
+      <p>Kirjeessä hyvälle ystävälleen Francesco Bennatille Vaccaj kertoi ajatuksestaan uudesta laulukoulusta näin:</p>
+
+      <blockquote>
+        <p>"Tarkoitusperäni esillä olevasta <em>käytännöllisestä menetelmästä</em> arvelen selkeästi lausuneeni lyhyesti johdannossa. Palvellakseni suurta joukkoa erilaisia ääniä, olen pakosta pidättäytynyt äänialaan, joka useimmilla on. Eräs laulutaiteen tärkeimmistä vaikeuksista on kuinka yhdistää äänen molemmat rekisterit, jos yhdistyminen ei ole luonnollinen.</p>
+
+        <p>Jos opettaja kieltäisi sitä, joka laulaa huviksensa, laulamasta lauluja siihen asti kunnes hän on saavuttanut täydellisen rekisteritasapainon, asianomainen olisi sillä välin menettänyt halun, ennen kuin hän oli edes aloittanut opintoja.</p>
+
+        <p>Siksi on paljon parempi, että jäsennellään nämä kepeämmällä ja miellyttävällä tavalla. (Se, joka on luonnostaan varustettu edellä mainitulla lahjalla voi käyttää niitä sääntöjä, jotka minä esittelen yli koko hänen äänensä laajuuden.)</p>
+
+        <p>Useimmat laulukoulut ovat todellakin koostuneet samoista harjoituksista erilaatuisille äänille. Skaalojen ja muiden juoksutusten jälkeen, siellä toinen muistuttaa toistaan, tulee joukko säveltapailuharjoituksia, siellä laulutaiteen kaikki koristelut ovat hyppyjä ja eivät eroa toinen toisestaan.</p>
+
+        <p>Minä arvelen, että sellainen eroavaisuus on välttämätön juuri siksi, että kaikilla ei ole samoja edellytyksiä. Siitä syystä pitää jokaisen luottaa oppitunteihin, jotka ovat raamien sisällä jokaisen mahdollisuutena. Nähtävänä olevista esimerkeistä voidaan edelleen nähdä, että välistä riittää yhdellä ainoalla koristeella olla mieliksi. Helpottaakseni ulkomaalaisia jakamaan tavuja kun lauletaan, ajattelin näyttää kuinka yhdistetään ne toisella tavalla kuin mitä italiankielen opettaja puheessa opettaa. Olen /nimittäin/ huomannut, että ulkomaalaiset panee erikoisesti painon laulaessaan tekstissä samalla tavalla kuin he lausuvat sen heidän kielenopettajansa. Mitä merkitsee vaikeus lausua sinänsä esimerkiksi sana <em>tutto</em>, voidaanhan se oppia vain matkimalla opettajaa. Siksi en ole tehnyt mitään ääntämisen sanakirjaa. Tämä on lyhykäisyydessään syy sille, että en ollut seikkaperäisempi viidessätoista oppitunnissa <em>Metodo praticossa</em>."</p>
+      </blockquote>
+
+      <p>Myöhemmin kirjeessään Vaccaj kertoo aikomuksestaan täydentää laulukoulua yhdellä teoreettisemmalla osalla, jossa pitäisi käsitellä mm. eri äänityyppejä. Hän toivoi myös siinä voivansa osoittaa kuinka teoria ja käytäntö yhdistetään parhaalla tavalla. Valitettavasti tämä idea ei koskaan toteutunut.</p>
+
+      <h3>1833</h3>
+      <ul>
+        <li>Sai Metodo praticon käsikirjoituksen valmiiksi jätti painettavaksi.</li>
+        <li>Halusi nähdä Skotlannin ja Irlannin. Sai oppilaita Edinburghista ja Dublinista.</li>
+        <li>Suunnitteli Händel-festivaalin jälkeen paluuta Italiaan.</li>
+      </ul>
+
+      <h3>1834</h3>
+      <ul>
+        <li>Lähti Italiaan nopeasti isän kuoleman takia.</li>
+      </ul>
+
+      <h3>1835-36</h3>
+      <ul>
+        <li>Meni naimisiin entisen oppilaansa Giulia Puppatin kanssa</li>
+        <li>Kirjoitti kolme oopperaa, joista <em>Giovanna Gray</em> nimiroolissaan Maria Malibran sai suuren menestyksen.</li>
+        <li>Antoi painaa liitteen laulukouluunsa (12 lauluharjoitusta ja 25 kadenssia) uudella Englannin matkallaan.</li>
+      </ul>
+
+      <h3>1837-43</h3>
+      <ul>
+        <li>Asettui asumaan Milanoon nuoren perheensä kanssa ja sävelsi yhdessä säveltäjien Coppola, Donizetti, Mercandante ja Pacini kanssa surukantaatin Malibranin muistolle.</li>
+      </ul>
+
+      <h3>1844</h3>
+      <ul>
+        <li>Toimi mm. sensorina Milanon konservatoriossa, mutta muutti takaisin Pesaroon.</li>
+      </ul>
+
+      <h3>1845-46</h3>
+      <ul>
+        <li>Kirjoitti oopperan <em>Virginia</em> Rooman Teatro Apollolle. Teoksesta tuli Giulio Vaccajn mukaan jakamaton menestys.</li>
+        <li>Kehitti mm. Rooman konservatoriota</li>
+      </ul>
+
+      <h3>1847</h3>
+      <ul>
+        <li>Johti muutamaa omaa kirkkoteostaan Tolentinossa .</li>
+      </ul>
+
+      <h3>1848</h3>
+      <ul>
+        <li>Terveys alkoi horjua ja elokuun kuudentena hän kuoli Pesarossa vaimon, kolmen lapsen ja monien ystävien suremana.</li>
+      </ul>
+
+      <div class="lahde">
+        <strong>Lähde</strong>
+        <p>Forshufvud, G. 1994. <em>Con lieve fiato</em>. Lärarhandledning till Nicola Vaccajs <em>Metodo pratico</em>. Göteborgs universitetet.</p>
+      </div>
 
     </section>
 
-    <!-- 2. METASTASION ELÄMÄSTÄ -->
+    <!-- METASTASION ELÄMÄSTÄ -->
 
     <section
       id="metastasio"
@@ -198,26 +369,87 @@
       aria-labelledby="painike-metastasio"
       hidden>
 
-      <h2>Metastasion elämästä</h2>
+      <h2>Pietro Metastasion elämästä</h2>
 
-      <p>
-        Metastasion elämäkerta lisätään tähän.
-      </p>
+      <h3>1698-1707</h3>
+      <ul>
+        <li>Syntyi Roomassa Felice ja Francesca Trapassin vanhimpana poikana. Äiti oli kotoisin Bolognasta. Isä oli syntynyt Assisissa ja ollut sotilaana paavin armeijassa, mutta avasi sittemmin ruokatavarakaupan. Mikään perheessä ei viitannut pojan mahdollisesti merkittävään tulevaisuuteen.</li>
+        <li>Kasteen yhteydessä sai yllättäen kardinaali Pietro Ottobonin kummikseen. Kardinaali järjesti pojalle tietyn mallin koulunkäyntiin. Ottoboni lienee huomioinut myös pojan poikkeuksellisen lahjakkuuden improvisoida säkeitä sekä puheen että laulun muodossa.</li>
+      </ul>
+
+      <h3>1708-1716</h3>
+      <ul>
+        <li>Elämä muuttui noin kymmenen vuotiaana kun lakitieteen professori Gran Vincenzo Gravina kiinnitti häneen huomiota seisoessaan kadunkulmassa viihdyttämässä ohikulkijoita. Professori ihastui niin että pyysi vanhemmilta saada adoptoida poika ja antaa tälle kunniallinen kasvatus.</li>
+        <li>Gravina oli suuri kulttuuripersoona tuon ajan Roomassa ja hänellä oli palava mielenkiinto mm. antiikin kirjallisuuteen. Pietro sai ensin opetella latinan ja kreikan kielet voidakseen lukea Horatiusta ja Homerosta.</li>
+        <li>Gravina määräsi että pojalla piti olla hienompi sukunimi ja käänsi Trapassin kreikaksi - Metastasio.</li>
+        <li>Vaikka Pietro oli <em>poeta nato</em> - syntynyt runoilijaksi - Gravina halusi kasvattaa hänestä asianajajan. Metastasio suorittikin ns. "ei sitovan lupauksen" - <em>i voti non vincolanti</em> - joka teki hänestä apotin. Ulkoisiin tunnusmerkkeihin kuului pitkä takki ja tonsuuri (paljaaksi ajeltu päälaki).</li>
+        <li>Huolimatta vaativista opinnoista Metastasio kehitti lakkaamatta kirjailijan kykyään. Hän improvisoi kuuluisassa tilaisuudessa 40 säkeistöä 8-säkeisesti oppineelle auditoriolle.</li>
+      </ul>
+
+      <h3>1717</h3>
+      <ul>
+        <li>Oli kypsä julkaisemaan ensimmäisen kirjansa, joka sai vaatimattomasti nimen <em>Poesie</em>.</li>
+      </ul>
+
+      <h3>1718-1719</h3>
+      <ul>
+        <li>Kirjoitti kasvatusisän kuoltua hänen muistolleen omistetun teoksen <em>La strada della gloria</em> (Kunniakas tie).</li>
+        <li>Epäonnistui viranhaussa kuuriaksi ja rakkausjutussa, ja muutti Napoliin jatkamaan lakitieteen opiskelua.</li>
+        <li>Runojensa ansiosta hänestä tuli aristokratian suosikki, mikä puolestaan johti hedelmällisempiin tehtäviin .</li>
+      </ul>
+
+      <h3>1720</h3>
+      <ul>
+        <li>Etelä-Italia kuului vuosina 1714-1735 Itävaltaan ja Metastasio sai keisari Karl VI:ltä tilauksen serenadiin ja lauloi tälle ylistyslaulua myös kantaatissa <em>Endimione</em>. Tämä keisarillinen tapahtuma toi Metastasion julkisuuteen monella tavalla.</li>
+      </ul>
+
+      <h3>1721-1728</h3>
+      <ul>
+        <li>Teki librettoja oopperoihin <em>Gli orti esperidi</em> (Hesperian puutarhat), <em>Didone abbandonata</em> (Hylätty Dido), <em>Siroe</em>, <em>Cantone Utica</em>, <em>Ezio</em>, <em>Semiramide</em> (Semiramis), <em>Alessandro nell' Indie</em> (Aleksanteri Intiassa) ja <em>Artaserse</em> (Artaxerxes) .</li>
+        <li>Työskenteli laulajista mm. Farinellin ja Marianna Bent-Bulgarellin kanssa. Säveltäjistä hänen työtovereihinsa kuuluivat mm. Porpora, Hasse, Leo, Vinci, Pergolesi.</li>
+      </ul>
+
+      <h3>1729</h3>
+      <ul>
+        <li>Kutsuttiin keisarilliseksi hovirunoilijaksi - <em>poeta cesarea</em> - Wieniin.</li>
+      </ul>
+
+      <h3>1730-1740</h3>
+      <ul>
+        <li>Keisarilliseen tapaan kuului tilata uusi <em>opera seria</em> jokaiseen suurempaan perhetapahtumaan. Ennen keisarin kuolemaa (1740) Metastasio sai runoilla <em>11 drammi per musicaa</em>: <em>Demetrio</em>, <em>Issipile</em>, <em>Adriano in Siri</em> (Hadrianus Syyriassa), <em>L'Olimpiade</em> (Olympialaiset), <em>La Clemenza di Tito</em> (Lempeä Titus), <em>Achille in Sciro</em> (Akilles Skyroksessa), <em>Ciro riconoscinto</em> (Tuntematon Kyros), <em>Temistocle</em>, <em>Zenobia</em> ja <em>Attilio Regolo</em> (Atilius Regulus).</li>
+        <li>Metastasion kymmentä vuotta Wienissä pidetään hänen suuruutensa aikana, yksistään <em>Demetrio</em> oli unohtumaton menestys. Itse Metastasio piti <em>Attilio Regoloa</em> (1740) parhaimpana näytelmänään.</li>
+        <li>Wienin hovissa puhuttiin italiaa, mikä suuressa määrin vaikutti siihen että Metastasio viihtyi maassa.</li>
+      </ul>
+
+      <h3>1741-1782</h3>
+      <ul>
+        <li>Metastasion hyvinvointiin vaikutti myös ystävyys kahteen Mariannaan.</li>
+        <li>Marianna von Althann vihki Metastasion hovirunoilijaksi. Hän oli erinomaisen älykäs ja hyvän kasvatuksen saanut ystävä, neuvonantaja ja suojelijatar. Metastasio omisti hänelle <em>Endimionensa</em> ja heidän syvä ystävyytensä kesti Mariannan kuolemaan saakka (1755).</li>
+        <li>Marianna Martinez oli syntynyt 1745 talon tytär. Metastasio antoi hänen musiikillisen lahjakkuutensa johdosta ottaa tunteja niin Haydnilta kuin Porporaltakin.</li>
+        <li>Kun keisari kuoli, hänen tyttärensä Maria Teresia nousi valtaistuimelle ja valtakunta joutui kalliiseen sotaan.</li>
+        <li>Jätti virkansa 1771 saatuaan valmiiksi kahdeksan draamaa: <em>Antigono</em>, <em>Ipermestra</em>, <em>Il re pastore</em> (Paimen kuninkaana), <em>L'eroe cinese</em> (Kiinalainen sankari), <em>Nitteti</em>, <em>Il trionfo di Clelia</em> (Clelian voitto), <em>Romolo ed Ersilia</em> (Romolo ja Ersilia) ja <em>Ruggiero</em>.</li>
+        <li>Yhteenlaskien Metastasio kirjoitti 27 drammi per musicaa ja suuren määrän lyhyempiä teatterikappaleita, kahdeksan oratoriota ja paljon erilaisia runoja, eikä vähiten sonetteja.</li>
+        <li>Vuosina 1745-1749 käänsi runoutta koska oopperatehtäviä oli vähemmän.</li>
+        <li>Metastasio kävi laajaa kirjeenvaihtoa ja vuosilta 1715-1783 jäljelle jäikin 2654 kirjettä, joista vajaa viidesosa on veljelle Leopoldo Trepassille Roomaan. Metastasio kävi myös mielenkiintoista kirjeenvaihtoa Farinellon kanssa.</li>
+        <li>Keisarinna Maria Teresia - joka nuoruudessaan oli taitava laulajatar - arvosti suuresti hovirunoilijaansa ja halusi aateloida tämän ja antaa hänelle Stefan-ritarimerkin. Myös kruunaamista Roomassa suunniteltiin, mutta Metastasio torjui kuitenkin kaikki kunnianosoitukset.</li>
+        <li>Keisarinnan kuoltua 1780, väheni runoilijan elämänhalu.</li>
+        <li>Metastasio kuoli 12. huhtikuuta 1782.</li>
+        <li>Hänen librettoihinsa on tehty noin 1200 sävellystä. Säveltäjistä hänen tekstejään käyttivät mm. Bellini, Donizetti, Rossini, Buononcini, Caccini, Caldera, Carissimi, Durante, Frescobaldi, Giordani, Händel, Marcello, Scarlatti, J.S. Bach, Haydn, Mozart, Beethoven, Schubert, Purcell, Weyse, Lindblad ja Kjerulf.</li>
+      </ul>
+
+      <div class="lahde">
+        <strong>Lähde</strong>
+        <p>Forshufvud, G. 1994. <em>Con lieve fiato</em>. Lärarhandledning till Nicola Vaccajs <em>Metodo pratico</em>. Göteborgs universitetet.</p>
+      </div>
 
     </section>
 
   </main>
 
-  <!-- VÄLILEHTIEN TOIMINTA -->
-
   <script>
     function avaaValilehti(tunnus) {
-
-      const sisallot =
-        document.querySelectorAll(".valilehtisisalto");
-
-      const painikkeet =
-        document.querySelectorAll(".valilehdet button");
+      const sisallot = document.querySelectorAll(".valilehtisisalto");
+      const painikkeet = document.querySelectorAll(".valilehdet button");
 
       sisallot.forEach(function(sisalto) {
         sisalto.hidden = true;
@@ -230,9 +462,7 @@
 
       document.getElementById(tunnus).hidden = false;
 
-      const valittuPainike =
-        document.getElementById("painike-" + tunnus);
-
+      const valittuPainike = document.getElementById("painike-" + tunnus);
       valittuPainike.classList.add("aktiivinen");
       valittuPainike.setAttribute("aria-selected", "true");
     }
