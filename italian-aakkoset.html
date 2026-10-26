@@ -2,949 +2,971 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Italian kielen aakkoset ja ääntäminen – Vaccaj-laulukoulu</title>
+  <title>Italian kielen aakkoset ja ääntäminen – Vaccaj-laulukoulu</title>
 
-<style>
-  html {
-    scroll-behavior: smooth;
-  }
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-  body {
-    font-family: Arial, sans-serif;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 20px;
-    line-height: 1.65;
-    color: #333;
-  }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.65;
+      color: #333;
+    }
 
-  h1, h2, h3 {
-    color: #285b99;
-  }
+    h1, h2, h3 {
+      color: #285b99;
+    }
 
-  .paavalikko {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 15px 0 35px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #d2e2f3;
-  }
+    /* SIVUSTON YLÄVALIKKO */
 
-  .paavalikko a {
-    padding: 10px 16px;
-    background: #f1f6fb;
-    border-radius: 6px;
-    color: #285b99;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .paavalikko a:hover {
-    background: #dceaf8;
-  }
-
-  .paavalikko a.aktiivinen {
-    background: #285b99;
-    color: white;
-  }
-
-  .tietolaatikko {
-    background: #f1f6fb;
-    border-radius: 10px;
-    padding: 20px 24px;
-    margin: 24px 0;
-  }
-
-  .aakkosnav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-    margin: 16px 0 26px;
-  }
-
-  .aakkosnav a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 35px;
-    min-height: 38px;
-    padding: 3px 6px;
-    border: 1px solid #b7cce2;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #285b99;
-    background: #f1f6fb;
-    font-weight: bold;
-  }
-
-  .aakkosnav a:hover,
-  .aakkosnav a:focus {
-    background: #dceaf8;
-  }
-
-  .taulukko-vieritys {
-    max-width: 100%;
-    overflow-x: auto;
-    margin: 20px 0 32px;
-  }
-
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    min-width: 820px;
-    font-size: 15px;
-  }
-
-  th, td {
-    border: 1px solid #d2e2f3;
-    padding: 10px;
-    vertical-align: top;
-    text-align: left;
-    overflow-wrap: anywhere;
-  }
-
-  th {
-    background: #e5effa;
-    color: #285b99;
-  }
-
-  tbody tr:nth-child(even) {
-    background: #f7faff;
-  }
-
-  tbody tr:target {
-    background: #fff2c8;
-    outline: 2px solid #285b99;
-    outline-offset: -2px;
-  }
-
-  .huomautus {
-    font-size: 14px;
-    color: #555;
-  }
-
-  @media (max-width: 600px) {
     .paavalikko {
-      flex-direction: column;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0 35px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #d2e2f3;
     }
 
     .paavalikko a {
-      text-align: center;
+      padding: 10px 16px;
+      background: #f1f6fb;
+      border-radius: 6px;
+      color: #285b99;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    h1 {
-      font-size: 28px;
+    .paavalikko a:hover {
+      background: #dceaf8;
     }
-  }
-</style>
+
+    .paavalikko a.aktiivinen {
+      background: #285b99;
+      color: white;
+    }
+
+    /* FONEETTISTEN MERKKIEN TIETOLAATIKKO */
+
+    .tietolaatikko {
+      background: #f1f6fb;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    /* AAKKOSVALIKKO */
+
+    .aakkosnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 16px 0 26px;
+    }
+
+    .aakkosnav a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 35px;
+      min-height: 38px;
+      padding: 3px 6px;
+      border: 1px solid #b7cce2;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #285b99;
+      background: #f1f6fb;
+      font-weight: bold;
+    }
+
+    .aakkosnav a:hover,
+    .aakkosnav a:focus {
+      background: #dceaf8;
+    }
+
+    /* ÄÄNTÄMISTAULUKOT */
+
+    .taulukko-vieritys {
+      max-width: 100%;
+      overflow-x: auto;
+      margin: 20px 0 32px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 820px;
+      font-size: 15px;
+    }
+
+    th, td {
+      border: 1px solid #d2e2f3;
+      padding: 10px;
+      vertical-align: top;
+      text-align: left;
+      overflow-wrap: anywhere;
+    }
+
+    th {
+      background: #e5effa;
+      color: #285b99;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f7faff;
+    }
+
+    tbody tr:target {
+      background: #fff2c8;
+      outline: 2px solid #285b99;
+      outline-offset: -2px;
+    }
+
+    .huomautus {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* MOBIILINÄKYMÄ */
+
+    @media (max-width: 600px) {
+      .paavalikko {
+        flex-direction: column;
+      }
+
+      .paavalikko a {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- YLÄVÄLILEHDET -->
-
-<nav class="paavalikko" aria-label="Päävalikko">
-
-  <a href="index.html">
-    Harjoitukset
-  </a>
-
-  <a href="metodo-pratico.html">
-    Metodo pratico
-  </a>
-
-  <a
-    href="italian-aakkoset.html"
-    class="aktiivinen"
-    aria-current="page">
-    Italian kielen aakkoset ja ääntäminen
-  </a>
-
-  <a href="vaccaj-metastasio.html">
-    Vaccaj ja Metastasio
-  </a>
-
-  <a href="tekijat.html">
-    Tekijät
-  </a>
-
-</nav>
-
-<main>
-
-<h1>Italian kielen aakkoset ja ääntäminen</h1>
-
-<p>
-  Tämä opas sisältää italian kirjainten ääntämisohjeita,
-  foneettisia merkintöjä ja esimerkkisanoja.
-  Merkintätapa noudattaa Vaccaj-laulukoulun
-  alkuperäistä aineistoa.
-</p>
-
-<!-- FONEETTISET MERKIT -->
-
-<section class="tietolaatikko" aria-labelledby="merkit">
-
-  <h2 id="merkit">Foneettisten merkkien selityksiä</h2>
-
-  <p>
-    Foneettiset merkit kirjoitetaan hakasulkeisiin [ ].
-  </p>
-
-  <p>
-    <strong>[z]</strong> = soinnillinen s;
-    <strong>[ʃ]</strong> = suhuäänne;
-    <strong>[ʒ]</strong> = soinnillinen suhuäänne;
-    <strong>[ʎ]</strong> = lj;
-    <strong>[ɲ]</strong> = nj;
-    <strong>[g]</strong> = g;
-    <strong>[w]</strong> = lyhyt, painoton u-vokaali
-    tavun alussa, poikkeuksena vieraskieliset lainasanat.
-  </p>
-
-  <p>
-    Merkintä ”(pitkä)” tarkoittaa, että vokaali on usein
-    sanapainon vaikutuksesta pitempi kuin lyhyt vokaali.
-    Tässä aineistossa vokaalin pidentymistä
-    <strong>ei merkitä [:]-merkillä</strong>,
-    vaan painotetun tavun edessä olevalla
-    <strong>[']-merkillä</strong>:
-    caro ['karo], fare ['fare].
-    Jos vokaalia seuraa kaksoiskonsonantti tai
-    kaksi eri konsonanttia, se ääntyy yleensä lyhyenä:
-    latte ['latte], corso ['corso],
-    Gherardo [ge'rardo].
-  </p>
-
-  <p>
-    <strong>Huom!</strong>
-    Italian kielessä sanapaino on pääsääntöisesti
-    toiseksi viimeisellä tavulla.
-  </p>
-
-</section>
-
-<!-- AAKKOSVALIKKO -->
-
-<section aria-labelledby="aakkosotsikko">
-
-<h2 id="aakkosotsikko">Aakkoset ja ääntämissäännöt</h2>
-
-<p>
-  Valitse kirjain siirtyäksesi sen kohdalle.
-  Taulukkoa voi vierittää vaakasuunnassa pienellä näytöllä.
-</p>
-
-<nav class="aakkosnav" aria-label="Siirry kirjaimeen">
-  <a href="#a">A</a>
-  <a href="#b">B</a>
-  <a href="#c">C</a>
-  <a href="#d">D</a>
-  <a href="#e">E</a>
-  <a href="#f">F</a>
-  <a href="#g">G</a>
-  <a href="#h">H</a>
-  <a href="#i">I</a>
-  <a href="#j">J</a>
-  <a href="#k">K</a>
-  <a href="#l">L</a>
-  <a href="#m">M</a>
-  <a href="#n">N</a>
-  <a href="#o">O</a>
-  <a href="#p">P</a>
-  <a href="#q">Q</a>
-  <a href="#r">R</a>
-  <a href="#s">S</a>
-  <a href="#t">T</a>
-  <a href="#u">U</a>
-  <a href="#v">V</a>
-  <a href="#vierasperaiset">W</a>
-  <a href="#vierasperaiset">X</a>
-  <a href="#vierasperaiset">Y</a>
-  <a href="#z">Z</a>
-</nav>
-
-<!-- ÄÄNTÄMISTAULUKKO -->
-
-<div
-  class="taulukko-vieritys"
-  tabindex="0"
-  aria-label="Ääntämistaulukko, vieritettävä">
-
-<table>
-
-<thead>
-<tr>
-  <th>Kirjain</th>
-  <th>Kirjaimen nimi</th>
-  <th>Kirjoitusasu</th>
-  <th>Ääntämys</th>
-  <th>Selitys</th>
-  <th>Esimerkit</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr id="a">
-  <td>A,a</td>
-  <td>[a]</td>
-  <td>a</td>
-  <td>[a]</td>
-  <td>lyhyt, (pitkä), suljettu</td>
-  <td>
-    [at'tʃɛnto, 'latte, a'maro, 'karo]<br>
-    (accento, latte, amaro, caro)
-  </td>
-</tr>
-
-<tr id="b">
-  <td>B,b</td>
-  <td>[b]</td>
-  <td>b</td>
-  <td>[b]</td>
-  <td></td>
-  <td>
-    [bal'lare, 'bɛne, 'bril'lare]<br>
-    (ballare, bene, brillare)
-  </td>
-</tr>
-
-<tr id="c">
-  <td>C,c</td>
-  <td>[tʃi]</td>
-  <td>c</td>
-  <td>[k]</td>
-  <td>ennen a, o, u</td>
-  <td>
-    ['karo,'korso, ku'tʃina]<br>
-    (caro, corso, cucina)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>c</td>
-  <td>[tʃi]</td>
-  <td>ennen e, i</td>
-  <td>
-    ['tʃɛnto, 'tʃɛlo, 'tʃirko]<br>
-    (cento, cielo, circo)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>ch</td>
-  <td>[k]</td>
-  <td>ennen e, i</td>
-  <td>
-    [ke, ki, 'kjɛza]<br>
-    (che, chi, chiesa)
-  </td>
-</tr>
-
-<tr id="d">
-  <td>D,d</td>
-  <td>[di]</td>
-  <td>d</td>
-  <td>[d]</td>
-  <td></td>
-  <td>
-    ['dare, a'dadʒo, edi'tore]<br>
-    (dare, adagio, editore)
-  </td>
-</tr>
-
-<tr id="e">
-  <td>E,e</td>
-  <td>[e]</td>
-  <td>e</td>
-  <td>[e]</td>
-  <td>lyhyt, (pitkä), suljettu</td>
-  <td>
-    ['stella, 'edera]<br>
-    (stella, edera)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>e</td>
-  <td>[ɛ]</td>
-  <td>lyhyt, (pitkä,) avoin</td>
-  <td>
-    [mɛddzo, 'ɛbano, ef''fɛtto]<br>
-    (mezzo, ebano, effetto)
-  </td>
-</tr>
-
-<tr id="f">
-  <td>F,f</td>
-  <td>['effe]</td>
-  <td>f</td>
-  <td>[f]</td>
-  <td></td>
-  <td>
-    ['afa, 'faro]<br>
-    (afa, faro)
-  </td>
-</tr>
-
-<tr id="g">
-  <td>G,g</td>
-  <td>[dʒi]</td>
-  <td>g</td>
-  <td>[g]</td>
-  <td>ennen a, o, u</td>
-  <td>
-    ['gabbja, 'gola, 'gusto]<br>
-    (gabbia, gola, gusto)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>g</td>
-  <td>[dʒ]</td>
-  <td>ennen e, i</td>
-  <td>
-    ['dʒɛnte, 'dʒita]<br>
-    (gente, gita)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>gh</td>
-  <td>[g]</td>
-  <td>ennen e, i</td>
-  <td>
-    [ge'rardo, 'gjotto]<br>
-    (Gherardo, ghiotto)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>gl</td>
-  <td>[ʎ]</td>
-  <td>sanan keskellä, ennen i</td>
-  <td>
-    ['fiʎo]<br>
-    (figlio)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>gl</td>
-  <td>[gl]</td>
-  <td>sanan alussa, ennen a, e, i, o, u</td>
-  <td>
-    [gla'diolo,'glɛba, glitʃe'rina,
-    glɔ'rja,' glutine]<br>
-    (gladiolo, glèba, glicerina,
-    gloria, glùtine)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td>
-    poikkeuksena<br>
-    1) persoonapronomini,<br>
-    2) maskuliinin määräävän artikkelin
-    lo monikkomuoto gli, ennen gn-, ps-,
-    sp-, ja z- alkuisia substantiiveja
-  </td>
-  <td>
-    [ʎi]<br>
-    (gli)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>gn</td>
-  <td>[ɲ]</td>
-  <td></td>
-  <td>
-    ['baɲo, 'ɲɔmo]<br>
-    (bagno, gnomo)
-  </td>
-</tr>
-
-<tr id="h">
-  <td>H,h</td>
-  <td>['akka]</td>
-  <td>h</td>
-  <td></td>
-  <td>ei äänny</td>
-  <td>
-    [ɔ, 'anno]<br>
-    (ho, hanno)
-  </td>
-</tr>
-
-<tr id="i">
-  <td>I,i</td>
-  <td>[i]</td>
-  <td>i</td>
-  <td>[i]</td>
-  <td>lyhyt, (pitkä,) kirkas</td>
-  <td>
-    [is'tante, 'bimbo, ti'rare, 'fine]<br>
-    (istante, bimbo, tirare, fine)
-  </td>
-</tr>
-
-<tr id="j">
-  <td>J,j</td>
-  <td>[i'lunga]</td>
-  <td>j</td>
-  <td>[j]</td>
-  <td>käytössä vain vieraskielisissä sanoissa,</td>
-  <td>
-    [dʒæz, dʒinz, 'jodel, 'junjor]<br>
-    (jazz, jeans, jodel, junior)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td>[j]</td>
-  <td>
-    mutta käytetään foneettisena merkkinä
-    merkisemään nopeata, painotonta i vokaalia
-  </td>
-  <td>
-    ['bujo, 'fjato, pja'tʃere]<br>
-    (buio, fiato, piacere)
-  </td>
-</tr>
-
-<tr id="k">
-  <td>K,k</td>
-  <td>['kappa]</td>
-  <td>k</td>
-  <td>[k]</td>
-  <td>vierasperäisissä sanoissa</td>
-  <td>
-    [ka'bul, ka'jak, ko'ala]<br>
-    (Kabul, kayak, koala)
-  </td>
-</tr>
-
-<tr id="l">
-  <td>L,l</td>
-  <td>['ɛlle]</td>
-  <td>l</td>
-  <td>[l]</td>
-  <td></td>
-  <td>
-    ['lɛtto, 'ala]<br>
-    (letto, ala)
-  </td>
-</tr>
-
-<tr id="m">
-  <td>M,m</td>
-  <td>['emme]</td>
-  <td>m</td>
-  <td>[m]</td>
-  <td></td>
-  <td>
-    ['madre, 'ramo]<br>
-    (madre, ramo)
-  </td>
-</tr>
-
-<tr id="n">
-  <td>N,n</td>
-  <td>['ɛnne]</td>
-  <td>n</td>
-  <td>[n]</td>
-  <td></td>
-  <td>
-    [nɔ, fu'mante]<br>
-    (no, fumante)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>ng</td>
-  <td>[ng]</td>
-  <td>
-    molemmat ääntyvät, (kielenkärki -n ja g,
-    eikä siten kuin suomenkielessä ng [ŋ]
-    sanassa kengät [keŋæt])
-  </td>
-  <td>
-    ['lungo, lanɠwendo]<br>
-    (lungo, languendo)
-  </td>
-</tr>
-
-<tr id="o">
-  <td>O,o</td>
-  <td>[ɔ]</td>
-  <td>o</td>
-  <td>[o]</td>
-  <td>lyhyt, (pitkä,) suljettu</td>
-  <td>
-    ['ponte, oŋ'ŋuno, 'ora]<br>
-    (ponte, ognuno, ora)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>o</td>
-  <td>[ɔ]</td>
-  <td>lyhyt, (pitkä,) avoin</td>
-  <td>
-    ['kɔsta, 'nɔto]<br>
-    (costa, noto)
-  </td>
-</tr>
-
-<tr id="p">
-  <td>P,p</td>
-  <td>[pi]</td>
-  <td>p</td>
-  <td>[p]</td>
-  <td></td>
-  <td>
-    ['padre, pala'tino]<br>
-    (padre, Palatino)
-  </td>
-</tr>
-
-<tr id="q">
-  <td>Q,q</td>
-  <td>[ku]</td>
-  <td>q</td>
-  <td>[k]</td>
-  <td>qua-, que, qui-, quo- alkuiset sanat</td>
-  <td>
-    ['kwando, 'kwesto, kwi, 'kwota]<br>
-    (quando, questo, qui, quota)
-  </td>
-</tr>
-
-<tr id="r">
-  <td>R,r</td>
-  <td>['erre]</td>
-  <td>r</td>
-  <td>[r]</td>
-  <td></td>
-  <td>
-    ['rapido, ritar'dare]<br>
-    (rapido, ritardare)
-  </td>
-</tr>
-
-<tr id="s">
-  <td>S,s</td>
-  <td>['esse]</td>
-  <td>s</td>
-  <td>[s]</td>
-  <td></td>
-  <td>
-    ['sano, 'sole, 'kasa, 'kosa]<br>
-    (sano, sole, casa, cosa)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>s</td>
-  <td>[z]</td>
-  <td>vokaalien välissä usein</td>
-  <td>
-    ['kazo, e'zame, 'zvago, 'skuza]<br>
-    (caso, esame, svago, scusa)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>sc</td>
-  <td>[sk]</td>
-  <td>ennen a, o, u</td>
-  <td>
-    ['skambjo, 'skonto, sku'zare]<br>
-    (scambio, sconto, scusare)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>sc</td>
-  <td>[ʃ]</td>
-  <td>ennen e, i</td>
-  <td>
-    ['ʃɛna, 'ʃimmja]<br>
-    (scena, scimmia)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>sch</td>
-  <td>[sk]</td>
-  <td>ennen e, i</td>
-  <td>
-    ['skertso, 'skjɛna]<br>
-    (scherzo, schiena)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>scia</td>
-  <td>[ʃa]</td>
-  <td>
-    i jää ääntymättä, mutta aiheuttaa ʃ-äänteen
-  </td>
-  <td>
-    [ʃa'gura]<br>
-    (sciagura)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>scio</td>
-  <td>[ʃo]</td>
-  <td></td>
-  <td>
-    ['ʃɔlto]<br>
-    (sciolto)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>sciu</td>
-  <td>[ʃu]</td>
-  <td></td>
-  <td>
-    [ʃu'pare]<br>
-    (sciupare)
-  </td>
-</tr>
-
-<tr id="t">
-  <td>T,t</td>
-  <td>[ti]</td>
-  <td>t</td>
-  <td>[t]</td>
-  <td></td>
-  <td>
-    [ta'tʃere, 'tɛrra, tro'vare]<br>
-    (tacere, terra, trovare)
-  </td>
-</tr>
-
-<tr id="u">
-  <td>U,u</td>
-  <td>[u]</td>
-  <td>u</td>
-  <td>[u]</td>
-  <td>lyhyt, (pitkä)</td>
-  <td>
-    ['kulto, 'muro]<br>
-    (culto, muro)
-  </td>
-</tr>
-
-<tr id="v">
-  <td>V,v</td>
-  <td>[vu]</td>
-  <td>v</td>
-  <td>[v]</td>
-  <td></td>
-  <td>
-    [va'kantsa, va'gare, 'vekkjo]<br>
-    (vacanza, vagare, vecchio)
-  </td>
-</tr>
-
-<tr id="z">
-  <td>Z,z</td>
-  <td>['zeta]</td>
-  <td>z</td>
-  <td>[ts]</td>
-  <td>vaihtelee ilman selkeää sääntöä</td>
-  <td>
-    ['tsuppa, av'vettso]<br>
-    (zuppa, avvezzo)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td>z</td>
-  <td>[dz]</td>
-  <td></td>
-  <td>
-    ['dzero, 'mɛddzo]<br>
-    (zero, mezzo)
-  </td>
-</tr>
-
-</tbody>
-</table>
-
-</div>
-
-</section>
-
-<!-- VIERASPERÄISET KIRJAIMET -->
-
-<section
-  id="vierasperaiset"
-  aria-labelledby="vierasotsikko">
-
-<h2 id="vierasotsikko">
-  Vierasperäisissä sanoissa esiintyvät kirjaimet
-</h2>
-
-<p>
-  Seuraavat kirjaimet ja ääntämisesimerkit
-  on esitetty alkuperäisen oppimateriaalin mukaan.
-</p>
-
-<div
-  class="taulukko-vieritys"
-  tabindex="0"
-  aria-label="Ääntämistaulukko, vieritettävä">
-
-<table>
-
-<thead>
-<tr>
-  <th>Kirjain</th>
-  <th>Kirjaimen nimi</th>
-  <th>Kirjoitusasu</th>
-  <th>Ääntämys</th>
-  <th>Selitys</th>
-  <th>Esimerkit</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-  <td>K,k</td>
-  <td>['kappa]</td>
-  <td>k</td>
-  <td>[k]</td>
-  <td></td>
-  <td>
-    ['kaki, 'karma, 'nou hau]<br>
-    (kaki, karma, know-how)
-  </td>
-</tr>
-
-<tr>
-  <td>W,w</td>
-  <td>['doppjo vu] tai ['doppja vi]</td>
-  <td>w</td>
-  <td>[w]</td>
-  <td></td>
-  <td>
-    ['wo:kmən, 'wiski. vat]<br>
-    (walkman, whisky, watt)
-  </td>
-</tr>
-
-<tr>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td>
-    foneettisena merkkinä [w] käytössä tarkoittamaan
-    nopeasti ja painottomasti ääntyvää u-vokaalia,
-    (esim. englannin kielessä we, why, well)
-  </td>
-  <td>
-    ['kwando,'kwello,'kwi, kwo'tare]<br>
-    (quando, quello, qui, quotare)
-  </td>
-</tr>
-
-<tr>
-  <td>X,x</td>
-  <td>[iks]</td>
-  <td>x</td>
-  <td>[ks]</td>
-  <td></td>
-  <td>
-    [ksero'kɔpja, ksi'lɔfono]<br>
-    (xerocopia, xilofono)
-  </td>
-</tr>
-
-<tr>
-  <td>Y,y</td>
-  <td>['ipsilon]<br>[i greca]</td>
-  <td>y</td>
-  <td>[i,j]</td>
-  <td>
-    ääntyy niin kuin se lainatussa kielessä ääntyy
-  </td>
-  <td>
-    [jɔt, 'jæŋki, 'jɔga, 'jɔgurt]<br>
-    (yacht, yankee, yoga, yogurt)
-  </td>
-</tr>
-
-</tbody>
-</table>
-
-</div>
-
-</section>
-
-<p class="huomautus">
-  Foneettiset kirjoitusasut ja esimerkit on säilytetty
-  toimitetun aineiston mukaisina. Merkinnöissä voi
-  esiintyä vanhaa käytäntöä tai tarkistettavia kohtia.
-</p>
-
-</main>
+  <!-- PÄIVITETTY SIVUSTON YLÄVALIKKO -->
+
+  <nav class="paavalikko" aria-label="Päävalikko">
+
+    <a href="index.html">
+      Harjoitukset
+    </a>
+
+    <a href="metodo-pratico.html">
+      Metodo pratico
+    </a>
+
+    <a
+      href="italian-aakkoset.html"
+      class="aktiivinen"
+      aria-current="page">
+      Italian kielen aakkoset ja ääntäminen
+    </a>
+
+    <a href="runojen-alkupera.html">
+      Runojen alkuperä
+    </a>
+
+    <a href="ohjeita-opettajalle.html">
+      Ohjeita opettajalle
+    </a>
+
+    <a href="vaccaj-metastasio.html">
+      Vaccaj ja Metastasio
+    </a>
+
+    <a href="tekijat.html">
+      Tekijät
+    </a>
+
+  </nav>
+
+  <main>
+
+    <h1>Italian kielen aakkoset ja ääntäminen</h1>
+
+    <p>
+      Tämä opas sisältää italian kirjainten ääntämisohjeita,
+      foneettisia merkintöjä ja esimerkkisanoja.
+      Merkintätapa noudattaa Vaccaj-laulukoulun
+      alkuperäistä aineistoa.
+    </p>
+
+    <!-- FONEETTISET MERKIT -->
+
+    <section class="tietolaatikko" aria-labelledby="merkit">
+
+      <h2 id="merkit">
+        Foneettisten merkkien selityksiä
+      </h2>
+
+      <p>
+        Foneettiset merkit kirjoitetaan hakasulkeisiin [ ].
+      </p>
+
+      <p>
+        <strong>[z]</strong> = soinnillinen s;
+        <strong>[ʃ]</strong> = suhuäänne;
+        <strong>[ʒ]</strong> = soinnillinen suhuäänne;
+        <strong>[ʎ]</strong> = lj;
+        <strong>[ɲ]</strong> = nj;
+        <strong>[g]</strong> = g;
+        <strong>[w]</strong> = lyhyt, painoton u-vokaali
+        tavun alussa, poikkeuksena vieraskieliset lainasanat.
+      </p>
+
+      <p>
+        Merkintä ”(pitkä)” tarkoittaa, että vokaali on usein
+        sanapainon vaikutuksesta pitempi kuin lyhyt vokaali.
+        Tässä aineistossa vokaalin pidentymistä
+        <strong>ei merkitä [:]-merkillä</strong>,
+        vaan painotetun tavun edessä olevalla
+        <strong>[']-merkillä</strong>:
+        caro ['karo], fare ['fare].
+        Jos vokaalia seuraa kaksoiskonsonantti tai
+        kaksi eri konsonanttia, se ääntyy yleensä lyhyenä:
+        latte ['latte], corso ['corso],
+        Gherardo [ge'rardo].
+      </p>
+
+      <p>
+        <strong>Huom!</strong>
+        Italian kielessä sanapaino on pääsääntöisesti
+        toiseksi viimeisellä tavulla.
+      </p>
+
+    </section>
+
+    <!-- AAKKOSVALIKKO -->
+
+    <section aria-labelledby="aakkosotsikko">
+
+      <h2 id="aakkosotsikko">
+        Aakkoset ja ääntämissäännöt
+      </h2>
+
+      <p>
+        Valitse kirjain siirtyäksesi sen kohdalle.
+        Taulukkoa voi vierittää vaakasuunnassa pienellä näytöllä.
+      </p>
+
+      <nav class="aakkosnav" aria-label="Siirry kirjaimeen">
+        <a href="#a">A</a>
+        <a href="#b">B</a>
+        <a href="#c">C</a>
+        <a href="#d">D</a>
+        <a href="#e">E</a>
+        <a href="#f">F</a>
+        <a href="#g">G</a>
+        <a href="#h">H</a>
+        <a href="#i">I</a>
+        <a href="#j">J</a>
+        <a href="#k">K</a>
+        <a href="#l">L</a>
+        <a href="#m">M</a>
+        <a href="#n">N</a>
+        <a href="#o">O</a>
+        <a href="#p">P</a>
+        <a href="#q">Q</a>
+        <a href="#r">R</a>
+        <a href="#s">S</a>
+        <a href="#t">T</a>
+        <a href="#u">U</a>
+        <a href="#v">V</a>
+        <a href="#vierasperaiset">W</a>
+        <a href="#vierasperaiset">X</a>
+        <a href="#vierasperaiset">Y</a>
+        <a href="#z">Z</a>
+      </nav>
+
+      <!-- ÄÄNTÄMISTAULUKKO -->
+
+      <div
+        class="taulukko-vieritys"
+        tabindex="0"
+        aria-label="Ääntämistaulukko, vieritettävä">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Kirjain</th>
+              <th>Kirjaimen nimi</th>
+              <th>Kirjoitusasu</th>
+              <th>Ääntämys</th>
+              <th>Selitys</th>
+              <th>Esimerkit</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr id="a">
+              <td>A,a</td>
+              <td>[a]</td>
+              <td>a</td>
+              <td>[a]</td>
+              <td>lyhyt, (pitkä), suljettu</td>
+              <td>
+                [at'tʃɛnto, 'latte, a'maro, 'karo]<br>
+                (accento, latte, amaro, caro)
+              </td>
+            </tr>
+
+            <tr id="b">
+              <td>B,b</td>
+              <td>[b]</td>
+              <td>b</td>
+              <td>[b]</td>
+              <td></td>
+              <td>
+                [bal'lare, 'bɛne, 'bril'lare]<br>
+                (ballare, bene, brillare)
+              </td>
+            </tr>
+
+            <tr id="c">
+              <td>C,c</td>
+              <td>[tʃi]</td>
+              <td>c</td>
+              <td>[k]</td>
+              <td>ennen a, o, u</td>
+              <td>
+                ['karo,'korso, ku'tʃina]<br>
+                (caro, corso, cucina)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>c</td>
+              <td>[tʃi]</td>
+              <td>ennen e, i</td>
+              <td>
+                ['tʃɛnto, 'tʃɛlo, 'tʃirko]<br>
+                (cento, cielo, circo)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>ch</td>
+              <td>[k]</td>
+              <td>ennen e, i</td>
+              <td>
+                [ke, ki, 'kjɛza]<br>
+                (che, chi, chiesa)
+              </td>
+            </tr>
+
+            <tr id="d">
+              <td>D,d</td>
+              <td>[di]</td>
+              <td>d</td>
+              <td>[d]</td>
+              <td></td>
+              <td>
+                ['dare, a'dadʒo, edi'tore]<br>
+                (dare, adagio, editore)
+              </td>
+            </tr>
+
+            <tr id="e">
+              <td>E,e</td>
+              <td>[e]</td>
+              <td>e</td>
+              <td>[e]</td>
+              <td>lyhyt, (pitkä), suljettu</td>
+              <td>
+                ['stella, 'edera]<br>
+                (stella, edera)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>e</td>
+              <td>[ɛ]</td>
+              <td>lyhyt, (pitkä,) avoin</td>
+              <td>
+                [mɛddzo, 'ɛbano, ef''fɛtto]<br>
+                (mezzo, ebano, effetto)
+              </td>
+            </tr>
+
+            <tr id="f">
+              <td>F,f</td>
+              <td>['effe]</td>
+              <td>f</td>
+              <td>[f]</td>
+              <td></td>
+              <td>
+                ['afa, 'faro]<br>
+                (afa, faro)
+              </td>
+            </tr>
+
+            <tr id="g">
+              <td>G,g</td>
+              <td>[dʒi]</td>
+              <td>g</td>
+              <td>[g]</td>
+              <td>ennen a, o, u</td>
+              <td>
+                ['gabbja, 'gola, 'gusto]<br>
+                (gabbia, gola, gusto)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>g</td>
+              <td>[dʒ]</td>
+              <td>ennen e, i</td>
+              <td>
+                ['dʒɛnte, 'dʒita]<br>
+                (gente, gita)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>gh</td>
+              <td>[g]</td>
+              <td>ennen e, i</td>
+              <td>
+                [ge'rardo, 'gjotto]<br>
+                (Gherardo, ghiotto)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>gl</td>
+              <td>[ʎ]</td>
+              <td>sanan keskellä, ennen i</td>
+              <td>
+                ['fiʎo]<br>
+                (figlio)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>gl</td>
+              <td>[gl]</td>
+              <td>sanan alussa, ennen a, e, i, o, u</td>
+              <td>
+                [gla'diolo,'glɛba, glitʃe'rina,
+                glɔ'rja,' glutine]<br>
+                (gladiolo, glèba, glicerina,
+                gloria, glùtine)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                poikkeuksena<br>
+                1) persoonapronomini,<br>
+                2) maskuliinin määräävän artikkelin
+                lo monikkomuoto gli, ennen gn-, ps-,
+                sp-, ja z- alkuisia substantiiveja
+              </td>
+              <td>
+                [ʎi]<br>
+                (gli)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>gn</td>
+              <td>[ɲ]</td>
+              <td></td>
+              <td>
+                ['baɲo, 'ɲɔmo]<br>
+                (bagno, gnomo)
+              </td>
+            </tr>
+
+            <tr id="h">
+              <td>H,h</td>
+              <td>['akka]</td>
+              <td>h</td>
+              <td></td>
+              <td>ei äänny</td>
+              <td>
+                [ɔ, 'anno]<br>
+                (ho, hanno)
+              </td>
+            </tr>
+
+            <tr id="i">
+              <td>I,i</td>
+              <td>[i]</td>
+              <td>i</td>
+              <td>[i]</td>
+              <td>lyhyt, (pitkä,) kirkas</td>
+              <td>
+                [is'tante, 'bimbo, ti'rare, 'fine]<br>
+                (istante, bimbo, tirare, fine)
+              </td>
+            </tr>
+
+            <tr id="j">
+              <td>J,j</td>
+              <td>[i'lunga]</td>
+              <td>j</td>
+              <td>[j]</td>
+              <td>käytössä vain vieraskielisissä sanoissa,</td>
+              <td>
+                [dʒæz, dʒinz, 'jodel, 'junjor]<br>
+                (jazz, jeans, jodel, junior)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>[j]</td>
+              <td>
+                mutta käytetään foneettisena merkkinä
+                merkisemään nopeata, painotonta i vokaalia
+              </td>
+              <td>
+                ['bujo, 'fjato, pja'tʃere]<br>
+                (buio, fiato, piacere)
+              </td>
+            </tr>
+
+            <tr id="k">
+              <td>K,k</td>
+              <td>['kappa]</td>
+              <td>k</td>
+              <td>[k]</td>
+              <td>vierasperäisissä sanoissa</td>
+              <td>
+                [ka'bul, ka'jak, ko'ala]<br>
+                (Kabul, kayak, koala)
+              </td>
+            </tr>
+
+            <tr id="l">
+              <td>L,l</td>
+              <td>['ɛlle]</td>
+              <td>l</td>
+              <td>[l]</td>
+              <td></td>
+              <td>
+                ['lɛtto, 'ala]<br>
+                (letto, ala)
+              </td>
+            </tr>
+
+            <tr id="m">
+              <td>M,m</td>
+              <td>['emme]</td>
+              <td>m</td>
+              <td>[m]</td>
+              <td></td>
+              <td>
+                ['madre, 'ramo]<br>
+                (madre, ramo)
+              </td>
+            </tr>
+
+            <tr id="n">
+              <td>N,n</td>
+              <td>['ɛnne]</td>
+              <td>n</td>
+              <td>[n]</td>
+              <td></td>
+              <td>
+                [nɔ, fu'mante]<br>
+                (no, fumante)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>ng</td>
+              <td>[ng]</td>
+              <td>
+                molemmat ääntyvät, (kielenkärki -n ja g,
+                eikä siten kuin suomenkielessä ng [ŋ]
+                sanassa kengät [keŋæt])
+              </td>
+              <td>
+                ['lungo, lanɠwendo]<br>
+                (lungo, languendo)
+              </td>
+            </tr>
+
+            <tr id="o">
+              <td>O,o</td>
+              <td>[ɔ]</td>
+              <td>o</td>
+              <td>[o]</td>
+              <td>lyhyt, (pitkä,) suljettu</td>
+              <td>
+                ['ponte, oŋ'ŋuno, 'ora]<br>
+                (ponte, ognuno, ora)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>o</td>
+              <td>[ɔ]</td>
+              <td>lyhyt, (pitkä,) avoin</td>
+              <td>
+                ['kɔsta, 'nɔto]<br>
+                (costa, noto)
+              </td>
+            </tr>
+
+            <tr id="p">
+              <td>P,p</td>
+              <td>[pi]</td>
+              <td>p</td>
+              <td>[p]</td>
+              <td></td>
+              <td>
+                ['padre, pala'tino]<br>
+                (padre, Palatino)
+              </td>
+            </tr>
+
+            <tr id="q">
+              <td>Q,q</td>
+              <td>[ku]</td>
+              <td>q</td>
+              <td>[k]</td>
+              <td>qua-, que, qui-, quo- alkuiset sanat</td>
+              <td>
+                ['kwando, 'kwesto, kwi, 'kwota]<br>
+                (quando, questo, qui, quota)
+              </td>
+            </tr>
+
+            <tr id="r">
+              <td>R,r</td>
+              <td>['erre]</td>
+              <td>r</td>
+              <td>[r]</td>
+              <td></td>
+              <td>
+                ['rapido, ritar'dare]<br>
+                (rapido, ritardare)
+              </td>
+            </tr>
+
+            <tr id="s">
+              <td>S,s</td>
+              <td>['esse]</td>
+              <td>s</td>
+              <td>[s]</td>
+              <td></td>
+              <td>
+                ['sano, 'sole, 'kasa, 'kosa]<br>
+                (sano, sole, casa, cosa)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>s</td>
+              <td>[z]</td>
+              <td>vokaalien välissä usein</td>
+              <td>
+                ['kazo, e'zame, 'zvago, 'skuza]<br>
+                (caso, esame, svago, scusa)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>sc</td>
+              <td>[sk]</td>
+              <td>ennen a, o, u</td>
+              <td>
+                ['skambjo, 'skonto, sku'zare]<br>
+                (scambio, sconto, scusare)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>sc</td>
+              <td>[ʃ]</td>
+              <td>ennen e, i</td>
+              <td>
+                ['ʃɛna, 'ʃimmja]<br>
+                (scena, scimmia)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>sch</td>
+              <td>[sk]</td>
+              <td>ennen e, i</td>
+              <td>
+                ['skertso, 'skjɛna]<br>
+                (scherzo, schiena)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>scia</td>
+              <td>[ʃa]</td>
+              <td>
+                i jää ääntymättä, mutta aiheuttaa ʃ-äänteen
+              </td>
+              <td>
+                [ʃa'gura]<br>
+                (sciagura)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>scio</td>
+              <td>[ʃo]</td>
+              <td></td>
+              <td>
+                ['ʃɔlto]<br>
+                (sciolto)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>sciu</td>
+              <td>[ʃu]</td>
+              <td></td>
+              <td>
+                [ʃu'pare]<br>
+                (sciupare)
+              </td>
+            </tr>
+
+            <tr id="t">
+              <td>T,t</td>
+              <td>[ti]</td>
+              <td>t</td>
+              <td>[t]</td>
+              <td></td>
+              <td>
+                [ta'tʃere, 'tɛrra, tro'vare]<br>
+                (tacere, terra, trovare)
+              </td>
+            </tr>
+
+            <tr id="u">
+              <td>U,u</td>
+              <td>[u]</td>
+              <td>u</td>
+              <td>[u]</td>
+              <td>lyhyt, (pitkä)</td>
+              <td>
+                ['kulto, 'muro]<br>
+                (culto, muro)
+              </td>
+            </tr>
+
+            <tr id="v">
+              <td>V,v</td>
+              <td>[vu]</td>
+              <td>v</td>
+              <td>[v]</td>
+              <td></td>
+              <td>
+                [va'kantsa, va'gare, 'vekkjo]<br>
+                (vacanza, vagare, vecchio)
+              </td>
+            </tr>
+
+            <tr id="z">
+              <td>Z,z</td>
+              <td>['zeta]</td>
+              <td>z</td>
+              <td>[ts]</td>
+              <td>vaihtelee ilman selkeää sääntöä</td>
+              <td>
+                ['tsuppa, av'vettso]<br>
+                (zuppa, avvezzo)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>z</td>
+              <td>[dz]</td>
+              <td></td>
+              <td>
+                ['dzero, 'mɛddzo]<br>
+                (zero, mezzo)
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+
+    </section>
+
+    <!-- VIERASPERÄISET KIRJAIMET -->
+
+    <section
+      id="vierasperaiset"
+      aria-labelledby="vierasotsikko">
+
+      <h2 id="vierasotsikko">
+        Vierasperäisissä sanoissa esiintyvät kirjaimet
+      </h2>
+
+      <p>
+        Seuraavat kirjaimet ja ääntämisesimerkit
+        on esitetty alkuperäisen oppimateriaalin mukaan.
+      </p>
+
+      <div
+        class="taulukko-vieritys"
+        tabindex="0"
+        aria-label="Ääntämistaulukko, vieritettävä">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Kirjain</th>
+              <th>Kirjaimen nimi</th>
+              <th>Kirjoitusasu</th>
+              <th>Ääntämys</th>
+              <th>Selitys</th>
+              <th>Esimerkit</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>K,k</td>
+              <td>['kappa]</td>
+              <td>k</td>
+              <td>[k]</td>
+              <td></td>
+              <td>
+                ['kaki, 'karma, 'nou hau]<br>
+                (kaki, karma, know-how)
+              </td>
+            </tr>
+
+            <tr>
+              <td>W,w</td>
+              <td>['doppjo vu] tai ['doppja vi]</td>
+              <td>w</td>
+              <td>[w]</td>
+              <td></td>
+              <td>
+                ['wo:kmən, 'wiski. vat]<br>
+                (walkman, whisky, watt)
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                foneettisena merkkinä [w] käytössä tarkoittamaan
+                nopeasti ja painottomasti ääntyvää u-vokaalia,
+                (esim. englannin kielessä we, why, well)
+              </td>
+              <td>
+                ['kwando,'kwello,'kwi, kwo'tare]<br>
+                (quando, quello, qui, quotare)
+              </td>
+            </tr>
+
+            <tr>
+              <td>X,x</td>
+              <td>[iks]</td>
+              <td>x</td>
+              <td>[ks]</td>
+              <td></td>
+              <td>
+                [ksero'kɔpja, ksi'lɔfono]<br>
+                (xerocopia, xilofono)
+              </td>
+            </tr>
+
+            <tr>
+              <td>Y,y</td>
+              <td>['ipsilon]<br>[i greca]</td>
+              <td>y</td>
+              <td>[i,j]</td>
+              <td>
+                ääntyy niin kuin se lainatussa kielessä ääntyy
+              </td>
+              <td>
+                [jɔt, 'jæŋki, 'jɔga, 'jɔgurt]<br>
+                (yacht, yankee, yoga, yogurt)
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+
+    </section>
+
+    <p class="huomautus">
+      Foneettiset kirjoitusasut ja esimerkit on säilytetty
+      toimitetun aineiston mukaisina. Merkinnöissä voi
+      esiintyä vanhaa käytäntöä tai tarkistettavia kohtia.
+    </p>
+
+  </main>
 
 </body>
 </html>
