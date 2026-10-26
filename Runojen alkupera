@@ -1,0 +1,689 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Runojen alkuperä – Vaccaj-laulukoulu</title>
+
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      color: #285b99;
+    }
+
+    /* YLÄVÄLILEHDET */
+
+    nav.paavalikko {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0 35px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #d2e2f3;
+    }
+
+    .paavalikko a {
+      padding: 10px 16px;
+      background: #f1f6fb;
+      border-radius: 6px;
+      color: #285b99;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .paavalikko a:hover {
+      background: #dceaf8;
+    }
+
+    .paavalikko a.aktiivinen {
+      background: #285b99;
+      color: white;
+    }
+
+    /* JOHDANTO */
+
+    .johdanto {
+      margin-bottom: 30px;
+    }
+
+    /* HARJOITUSVALIKKO */
+
+    .harjoitusvalinta {
+      margin: 25px 0 40px;
+      padding: 22px;
+      background: #f1f6fb;
+      border-radius: 10px;
+    }
+
+    .harjoitusvalinta label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .harjoitusvalinta select {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      border: 1px solid #b7cce2;
+      border-radius: 6px;
+      background: white;
+      cursor: pointer;
+    }
+
+    /* RUNOJEN ESITTELY */
+
+    .runot {
+      margin-top: 30px;
+    }
+
+    .runo {
+      margin-bottom: 20px;
+      padding: 22px 25px;
+      background: #f7faff;
+      border: 1px solid #d2e2f3;
+      border-radius: 8px;
+      scroll-margin-top: 20px;
+    }
+
+    .runo h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .runo p {
+      margin-bottom: 0;
+    }
+
+    .runo strong {
+      color: #285b99;
+    }
+
+    /* MOBIILINÄKYMÄ */
+
+    @media (max-width: 600px) {
+
+      nav.paavalikko {
+        flex-direction: column;
+      }
+
+      .paavalikko a {
+        text-align: center;
+      }
+
+      .runo {
+        padding: 18px;
+      }
+
+      .runo h2 {
+        font-size: 19px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- SIVUSTON YLÄVÄLILEHDET -->
+
+  <nav class="paavalikko" aria-label="Päävalikko">
+
+    <a href="index.html">
+      Harjoitukset
+    </a>
+
+    <a href="metodo-pratico.html">
+      Metodo pratico
+    </a>
+
+    <a href="italian-aakkoset.html">
+      Italian kielen aakkoset ja ääntäminen
+    </a>
+
+    <a
+      href="runojen-alkupera.html"
+      class="aktiivinen"
+      aria-current="page">
+      Runojen alkuperä
+    </a>
+
+    <a href="vaccaj-metastasio.html">
+      Vaccaj ja Metastasio
+    </a>
+
+    <a href="tekijat.html">
+      Tekijät
+    </a>
+
+  </nav>
+
+  <main>
+
+    <h1>Runojen alkuperä</h1>
+
+    <div class="johdanto">
+
+      <p>
+        Nicola Vaccajn <em>Metodo pratico</em> -laulukoulun
+        harjoitustekstit ovat peräisin useista oopperoista,
+        kantaateista, oratorioista ja muista
+        näyttämöllisistä teoksista.
+      </p>
+
+      <p>
+        Tällä sivulla esitellään harjoituksissa käytettyjen
+        runotekstien alkuperä sekä niiden alkuperäiset
+        esittäjät ja teosyhteydet.
+      </p>
+
+    </div>
+
+    <!-- RUNON VALINTA -->
+
+    <div class="harjoitusvalinta">
+
+      <label for="runovalinta">
+        Valitse runo:
+      </label>
+
+      <select
+        id="runovalinta"
+        onchange="siirryRunoon()">
+
+        <option value="" selected>
+          Valitse runo
+        </option>
+
+        <option value="runo-1a">
+          1a – Manca sollecita
+        </option>
+
+        <option value="runo-1b">
+          1b – Semplicetta tortorella
+        </option>
+
+        <option value="runo-2a">
+          2a – Lascia il lido
+        </option>
+
+        <option value="runo-2b">
+          2b – Avvezzo a vivere
+        </option>
+
+        <option value="runo-3">
+          3 – Bella prova è d'alma forte
+        </option>
+
+        <option value="runo-4a">
+          4a – Fra l'ombre un lampo solo
+        </option>
+
+        <option value="runo-4b">
+          4b – Quell'onda che ruina
+        </option>
+
+        <option value="runo-5">
+          5 – Delira dubbiosa
+        </option>
+
+        <option value="runo-6">
+          6 – Nel contrasto Amor s'accende
+        </option>
+
+        <option value="runo-7">
+          7 – Come il candore
+        </option>
+
+        <option value="runo-8a">
+          8a – Senza l'amabile
+        </option>
+
+        <option value="runo-8b">
+          8b – Benchè di senso privo
+        </option>
+
+        <option value="runo-9a">
+          9a – La gioia verace
+        </option>
+
+        <option value="runo-9b">
+          9b – L'augelletto in lacci stretto
+        </option>
+
+        <option value="runo-10a">
+          10a – Quando accende un nobil petto
+        </option>
+
+        <option value="runo-10b">
+          10b – Più non si trovano
+        </option>
+
+        <option value="runo-11">
+          11 – Se povero il ruscello
+        </option>
+
+        <option value="runo-12">
+          12 – Siam navi all'onde algenti
+        </option>
+
+        <option value="runo-13a">
+          13a – Vorrei spiegar l'affanno
+        </option>
+
+        <option value="runo-13b">
+          13b – O placido il mare
+        </option>
+
+        <option value="runo-14">
+          14 – La patria è un tutto
+        </option>
+
+        <option value="runo-15">
+          15 – Alla stagion de' fiori
+        </option>
+
+      </select>
+
+    </div>
+
+    <!-- RUNOJEN ALKUPERÄT -->
+
+    <div class="runot">
+
+      <section class="runo" id="runo-1a">
+
+        <h2>1a – Manca sollecita</h2>
+
+        <p>
+          Tämä teksti kuuluu oopperaan
+          <strong>Demetrio</strong>
+          (2. näytös, 13. kohtaus).
+          Sen laulaa Cleonice, Syyrian kuningatar.
+          Kantaesitys oli 4.11.1731 Wienissä
+          keisarinna Elisabethin käskystä, ja sillä
+          juhlistettiin keisari Kaarle VI:n nimipäivää.
+          Musiikin sävelsi Antonio Caldara.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-1b">
+
+        <h2>1b – Semplicetta tortorella</h2>
+
+        <p>
+          Myös tämä teksti on oopperasta
+          <strong>Demetrio</strong>
+          (3. näytös, 11. kohtaus).
+          Sen laulaa kuningatar Cleonicen uskottu
+          ystävätär nimeltään Barnese.
+          Tämä on A-osa hänen viidennessä ja
+          koko oopperan viimeisessä aariassa.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-2a">
+
+        <h2>2a – Lascia il lido</h2>
+
+        <p>
+          Tämä teksti on oopperasta
+          <strong>Siface</strong>,
+          johon Metastasio teki ensimmäisen
+          oopperalibrettonsa.
+          Aarian laulaa Erminio, Sifacen ylikomentaja.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-2b">
+
+        <h2>2b – Avvezzo a vivere</h2>
+
+        <p>
+          Tämäkin teksti on oopperasta
+          <strong>Demetrio</strong>
+          (3. näytös, 9. kohtaus).
+          Sen esittää kapteeni Mitrane
+          kuninkaallisen kaartin edessä.
+          Teksti on B-osa hänen kolmannesta aariastaan.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-3">
+
+        <h2>3 – Bella prova è d'alma forte</h2>
+
+        <p>
+          Tämä teksti löytyy oopperasta
+          <strong>Ezio</strong>
+          (3. näytös, 1. kohtaus).
+          Sen laulaa Ezio, joka on Länsi-Rooman
+          keisari Valentinianus III:n armeijan komentaja.
+          Tämä on B-osa hänen viidennestä aariastaan.
+          Säveltäjä on Nicola Porpora.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-4a">
+
+        <h2>4a – Fra l'ombre un lampo solo</h2>
+
+        <p>
+          Tämä teksti on oopperasta
+          <strong>Achille in Sciro</strong>
+          (Akilleus Skyrossa).
+          Kohtauksessa laulaa Odysseus, joka oleskelee
+          Akilleuksen kanssa Egeanmeren Skyros-saarella.
+          Tämä on A-osa ensimmäisessä hänen
+          kolmesta aariastaan.
+          Musiikin sävelsi Antonio Caldara.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-4b">
+
+        <h2>4b – Quell'onda che ruina</h2>
+
+        <p>
+          Tämä teksti tulee <em>festa teatralesta</em>
+          nimeltään
+          <strong>Alcide al bivio</strong>
+          (Herkules tienhaarassa).
+          Sen laulaa viidennessä kohtauksessa
+          siveyttä edustava tyttö nimeltään Aretea.
+          Tämä on A-osa hänen toisessa ja
+          viimeisessä aariassaan.
+          Musiikin sävelsi Johann Adolf Hasse.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-5">
+
+        <h2>5 – Delira dubbiosa</h2>
+
+        <p>
+          Tämä teksti on teatterikappaleesta
+          <strong>Il sogno di Scipione</strong>
+          (Scipion uni).
+          Sen laulaa Scipio itse.
+          Musiikin kirjoitti Luca Antonio Predieri.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-6">
+
+        <h2>6 – Nel contrasto Amor s'accende</h2>
+
+        <p>
+          Tämä teksti lopettaa
+          <em>componimento drammatico</em> -teoksen
+          eli dramaattisen kappaleen
+          <strong>Amor prigioniero</strong>
+          (Vangittu Amor).
+          Sen laulavat antiikin jumalhahmot
+          Amor ja Diana yhdessä.
+          Musiikin sävelsi Georg Reutter.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-7">
+
+        <h2>7 – Come il candore</h2>
+
+        <p>
+          Tämä teksti löytyy alkuperäisenä versiona
+          oopperasta
+          <strong>Alessandro nell'Indie</strong>
+          (Aleksanteri Suuri Intiassa).
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-8a">
+
+        <h2>8a – Senza l'amabile</h2>
+
+        <p>
+          Tämä teksti on teatterikappaleesta
+          <strong>L'asilo d'amore</strong>
+          (Rakkauden turvapaikka),
+          jossa sen laulaa Venus-jumalatar.
+          Tämä on hänen kolmas ja viimeinen aariansa.
+          Musiikin sävelsi Antonio Caldara vuonna 1732.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-8b">
+
+        <h2>8b – Benchè di senso privo</h2>
+
+        <p>
+          Tämä teksti sisältyy viidenteen kohtaukseen
+          teatterikappaleessa
+          <strong>L'isola disabitata</strong>
+          (Asumaton saari).
+          Sen laulaa Enrico ainoassa aariassaan.
+          Musiikin sävelsi Josef Bonno.
+          Kantaesitys oli Aranjuezissa 31.5.1753,
+          ja sen kapellimestarina toimi
+          suuri laulaja Farinelli.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-9a">
+
+        <h2>9a – La gioia verace</h2>
+
+        <p>
+          Tämä teksti on oratorion
+          <strong>Giuseppe riconosciuto</strong>
+          (Tuntematon Joosef) toisessa osassa.
+          Teos perustuu Ensimmäisen Mooseksen kirjan
+          kertomukseen.
+          Sen laulaa Joosefin vaimo Aseneta (Asenat).
+          Musiikin sävelsi Giuseppe Porsile.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-9b">
+
+        <h2>9b – L'augelletto in lacci stretto</h2>
+
+        <p>
+          Tämä teksti liittyy oopperan
+          <strong>Didone abbandonata</strong>
+          (Hylätty Dido) viidennen kohtauksen
+          alkuperäisversioon.
+          Siinä sen lauloi Araspe.
+          Musiikin sävelsi Domenico Natale Sarro
+          (Sarri).
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-10a">
+
+        <h2>10a – Quando accende un nobil petto</h2>
+
+        <p>
+          Tämä teksti on teoksen
+          <strong>Il trionfo di Clelia</strong>
+          (Clelian voitto)
+          toisen näytöksen kolmannesta kohtauksesta,
+          jossa duettoa laulavat Clelia ja Orazio.
+          Musiikin sävelsi Johann Adolf Hasse.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-10b">
+
+        <h2>10b – Più non si trovano</h2>
+
+        <p>
+          Tämä teksti on oopperan
+          <strong>L'olimpiade</strong>
+          (Olympialaiset)
+          ensimmäisen näytöksen seitsemännessä
+          kohtauksessa.
+          Sen laulaa Argene.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-11">
+
+        <h2>11 – Se povero il ruscello</h2>
+
+        <p>
+          Nämä sanat, samoin kuin teksti
+          <em>Bella prova</em> (harjoitus 3),
+          tulevat oopperasta
+          <strong>Ezio</strong>.
+          Ensimmäisen näytöksen kahdeksannessa
+          kohtauksessa ne laulaa Massimo.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-12">
+
+        <h2>12 – Siam navi all'onde algenti</h2>
+
+        <p>
+          Kuten sanat lauluun
+          <em>Più non si trovano</em>,
+          tämäkin teksti on oopperasta
+          <strong>L'olimpiade</strong>
+          (Olympialaiset).
+          Toisen näytöksen viidennessä kohtauksessa
+          sen laulaa kotiopettajatar Amonta.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-13a">
+
+        <h2>13a – Vorrei spiegar l'affanno</h2>
+
+        <p>
+          Tämä teksti löytyy oopperan
+          <strong>Semiramide</strong>
+          (Semiramis) tarkistetusta versiosta
+          (1. näytös, 4. kohtaus).
+          Sen laulaa intialainen ruhtinas Scitalce,
+          joka on rakastunut kuningatar Semiramisiin.
+          Kantaesitys oli luultavasti 6.2.1729
+          Roomassa Leonardo Vincin säveltämänä,
+          mutta on myös mahdollista, että
+          Nicola Porporan sävellys samaan tekstiin
+          kantaesitettiin jo sitä aiemmin Venetsiassa.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-13b">
+
+        <h2>13b – O placido il mare</h2>
+
+        <p>
+          Tämä teksti on oopperasta
+          <strong>Siroe</strong>
+          (1. näytös, 8. kohtaus).
+          Sen laulaa Leodice.
+          Musiikin sävelsi Leonardo Vinci.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-14">
+
+        <h2>14 – La patria è un tutto</h2>
+
+        <p>
+          Teksti <em>La patria è un tutto</em>
+          löytyy oopperan
+          <strong>Attilio Regolo</strong>
+          toisen näytöksen ensimmäisestä kohtauksesta.
+          Sen laulaa Regolo itse.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-15">
+
+        <h2>15 – Alla stagion de' fiori</h2>
+
+        <p>
+          Tämä teksti päättää lyhyen kantaatin
+          <strong>L'armonica</strong>
+          (Glasharmonikka),
+          jolla kunnioitettiin Itävallan
+          arkkiherttuatar Maria Amalian ja
+          Parman perintöherttua Ferdinandin
+          häitä vuonna 1769.
+          Musiikin sävelsi Johann Adolf Hasse.
+        </p>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <script>
+
+    // SIIRTYY VALITUN RUNON KOHDALLE
+
+    function siirryRunoon() {
+
+      const runo =
+        document.getElementById("runovalinta").value;
+
+      if (runo !== "") {
+
+        const kohde = document.getElementById(runo);
+
+        if (kohde) {
+          kohde.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
