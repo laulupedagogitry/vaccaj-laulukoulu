@@ -21,6 +21,8 @@
       color: #285b99;
     }
 
+    /* SIVUSTON YLÄVALIKKO */
+
     nav {
       display: flex;
       flex-wrap: wrap;
@@ -47,6 +49,8 @@
       background: #285b99;
       color: white;
     }
+
+    /* SIVUN SISÄLTÖ */
 
     .sisalto {
       max-width: 780px;
@@ -79,6 +83,8 @@
       color: #285b99;
     }
 
+    /* MOBIILINÄKYMÄ */
+
     @media (max-width: 600px) {
       nav {
         flex-direction: column;
@@ -93,14 +99,44 @@
 
 <body>
 
+  <!-- PÄIVITETTY SEITSEMÄN VÄLILEHDEN YLÄVALIKKO -->
+
   <nav aria-label="Päävalikko">
-    <a href="index.html">Harjoitukset</a>
-    <a href="metodo-pratico.html">Metodo pratico</a>
-    <a href="vaccaj-metastasio.html">Vaccaj ja Metastasio</a>
-    <a href="tekijat.html"
-       class="aktiivinen"
-       aria-current="page">Tekijät</a>
+
+    <a href="index.html">
+      Harjoitukset
+    </a>
+
+    <a href="metodo-pratico.html">
+      Metodo pratico
+    </a>
+
+    <a href="italian-aakkoset.html">
+      Italian kielen aakkoset ja ääntäminen
+    </a>
+
+    <a href="runojen-alkupera.html">
+      Runojen alkuperä
+    </a>
+
+    <a href="ohjeita-opettajalle.html">
+      Ohjeita opettajalle
+    </a>
+
+    <a href="vaccaj-metastasio.html">
+      Vaccaj ja Metastasio
+    </a>
+
+    <a
+      href="tekijat.html"
+      class="aktiivinen"
+      aria-current="page">
+      Tekijät
+    </a>
+
   </nav>
+
+  <!-- SIVUN VARSINAINEN SISÄLTÖ -->
 
   <main class="sisalto">
 
@@ -150,6 +186,8 @@
 
     </section>
 
+    <!-- ÄÄNITTEET JA TEKNINEN TOTEUTUS -->
+
     <section class="osio">
 
       <h2>Äänitteet ja tekninen toteutus</h2>
@@ -160,13 +198,14 @@
         tekninen toteutus 2020 asti.
       </p>
 
-        <p>
+      <p>
         <strong>Petteri Mansikka</strong><br>
         Verkkosivuston tekninen toteutus ja materiaalin uudelleen koodaus 2026.
       </p>
 
-
     </section>
+
+    <!-- KIITOKSET -->
 
     <section class="kiitokset">
 
@@ -184,6 +223,8 @@
 
     </section>
 
+    <!-- YHTEYSTIEDOT -->
+
     <section class="osio">
 
       <h2>Yhteystiedot</h2>
@@ -191,11 +232,10 @@
       <p>
         Palautetta ja kysymyksiä voi lähettää
         <a
-              href="https://laulupedagogit.fi/"
-              target="_blank"
-              rel="noopener noreferrer">
-              laulupedagogit.fi
-            </a>
+          href="https://laulupedagogit.fi/"
+          target="_blank"
+          rel="noopener noreferrer">
+          laulupedagogit.fi
         </a>.
       </p>
 
