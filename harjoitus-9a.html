@@ -25,7 +25,7 @@
       color: #285b99;
     }
 
-    /* SIVUSTON YLÄVÄLILEHDET */
+    /* SIVUSTON SEITSEMÄN YLÄVÄLILEHTEÄ */
 
     nav.paavalikko {
       display: flex;
@@ -159,6 +159,73 @@
       border-top: 1px solid #ccc;
     }
 
+    /* ESITYSOHJEET */
+
+    .esitysohjeet {
+      max-width: 1000px;
+      margin-top: 55px;
+      padding-top: 25px;
+      border-top: 2px solid #d2e2f3;
+    }
+
+    .esitysohjeet h2 {
+      margin-top: 0;
+    }
+
+    .esitysohjeet h3 {
+      margin-top: 35px;
+    }
+
+    .esitysohjeet p {
+      margin-bottom: 20px;
+    }
+
+    /* MELODIARUNKO */
+
+    .melodiarunko {
+      background: #f1f6fb;
+      padding: 20px;
+      border-left: 4px solid #285b99;
+      border-radius: 6px;
+      margin: 20px 0 25px;
+      line-height: 2;
+      overflow-wrap: anywhere;
+    }
+
+    .melodiarunko p {
+      margin: 0;
+    }
+
+    /* HARJOITUSESIMERKIN KUVA */
+
+    .harjoituskuva {
+      margin: 25px 0;
+    }
+
+    .harjoituskuva img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      background: white;
+    }
+
+    .harjoituskuva figcaption {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* LÄHDE */
+
+    .esitysohjeet .lahde {
+      margin-top: 35px;
+      padding-top: 15px;
+      border-top: 1px solid #d2e2f3;
+      color: #555;
+    }
+
     /* MOBIILINÄKYMÄ */
 
     @media (max-width: 800px) {
@@ -199,7 +266,7 @@
 
 <body>
 
-  <!-- SIVUSTON YLÄVÄLILEHDET -->
+  <!-- SEITSEMÄN VÄLILEHDEN YLÄVALIKKO -->
 
   <nav class="paavalikko" aria-label="Päävalikko">
 
@@ -211,6 +278,18 @@
 
     <a href="metodo-pratico.html">
       Metodo pratico
+    </a>
+
+    <a href="italian-aakkoset.html">
+      Italian kielen aakkoset ja ääntäminen
+    </a>
+
+    <a href="runojen-alkupera.html">
+      Runojen alkuperä
+    </a>
+
+    <a href="ohjeita-opettajalle.html">
+      Ohjeita opettajille
     </a>
 
     <a href="vaccaj-metastasio.html">
@@ -347,7 +426,8 @@
 
       </div>
 
-      <!-- ÄÄNIALAVALIKKO -->
+      <!-- ALKUPERÄISET NELJÄ ÄÄNIALAA.
+           ÄÄNIALOJA EI OLE MUUTETTU. -->
 
       <div class="valintaryhma aanialaryhma">
 
@@ -393,6 +473,8 @@
       Selaimesi ei tue äänisoitinta.
     </audio>
 
+    <!-- NUOTIT JA LAULUTEKSTI -->
+
     <div class="sisalto">
 
       <!-- NUOTIT -->
@@ -408,7 +490,7 @@
 
       </section>
 
-      <!-- LAULUTEKSTI JA SUOMENNOS -->
+      <!-- ALKUPERÄINEN LAULUTEKSTI JA SUOMENNOS -->
 
       <section class="tekstialue">
 
@@ -425,54 +507,71 @@
         <hr>
 
         <div class="sae">
+
           <div class="aanne">
             [la 'dʒɔja ve'ratʃe]
           </div>
+
           <div class="italia">
             la gioja verace,
           </div>
+
           <div class="suomi">
             Ilo todellinen,
           </div>
+
           <small>
             (Nykyisin kirjoitetaan gioia)
           </small>
+
         </div>
 
         <div class="sae">
+
           <div class="aanne">
             [per 'farsi pa'leze]
           </div>
+
           <div class="italia">
             per farsi palese,
           </div>
+
           <div class="suomi">
             tehdäkseen itsensä ilmeiseksi,
           </div>
+
         </div>
 
         <div class="sae">
+
           <div class="aanne">
             [d un 'labbro lo'kwatʃe]
           </div>
+
           <div class="italia">
             d´un labbro loquace
           </div>
+
           <div class="suomi">
             huulia puheliaita
           </div>
+
         </div>
 
         <div class="sae">
+
           <div class="aanne">
             [bi'zoɲɲo non a]
           </div>
+
           <div class="italia">
             bisogno non ha.
           </div>
+
           <div class="suomi">
             tarvitse ei omistaa.
           </div>
+
         </div>
 
         <!-- SUOMENNETTU YHTEENVETO -->
@@ -490,7 +589,158 @@
 
     </div>
 
+    <!-- ESITYSOHJEET HARJOITUSSIVUN ALLE -->
+
+    <section
+      class="esitysohjeet"
+      aria-labelledby="esitysohjeet-otsikko">
+
+      <h2 id="esitysohjeet-otsikko">
+        Esitysohjeet
+      </h2>
+
+      <p>
+        Tämä tehtävä on johdanto <em>mordentille</em>.
+        Laulusta ei kuitenkaan löydy yhtään
+        nykykäsityksen mukaista <em>mordenttia</em>
+        eli pralltrilliä, vaan joukko nk.
+        kaksoisjälkiheleitä.
+        Kun tehtävissä 8a ja 8b harjoitellaan
+        yhden äänen koristelua, tässä
+        harjoituksessa laajennetaan kahteen.
+        Iffert kuvaa tätä ornamenttia taipuisaksi
+        ja keveäksi yhteydeksi kahden äänen välillä
+        ilman terävää aksenttia ja listaa termille
+        myös ilmaisut kaksoisetuhele,
+        liukukaksoisetuhele ja kaksoishele.
+      </p>
+
+      <p>
+        Tempo pitää suhteuttaa sävellyksen
+        luonteeseen, mutta sen pitää olla
+        mieluummin nopea kuin hidas.
+      </p>
+
+      <h3>Ohjeita harjoitteluun</h3>
+
+      <p>
+        Ennen kuin laulat koko nuottikuvan
+        ”notkeudella ja tarmolla”, harjoittele
+        yksinkertaistetuilla muunnoksilla.
+        Aloita poistamalla kaikki pikkumelismat
+        ja laula jäljelle jäävä melodiarunko:
+      </p>
+
+      <!-- YKSINKERTAISTETTU MELODIARUNKO -->
+
+      <div class="melodiarunko">
+
+        <p>
+          <em>
+            mi - do2 - si - si - la - si<br>
+            mi - mi2 - re2 - do2 - si - la - sol - fa - mi<br>
+            mi - do2 - si - si - la - sol<br>
+            do2 - si - la - sol - fa - mi<br>
+            mi - mi - fa - sol - la - si - sol<br>
+            sol - sol - la - si - do2 - re2 - si<br>
+            mi - do2 - si - si - la - sol - fa<br>
+            re2 - si - la - mi - fa - sol - la - si - do2<br>
+            mi2 - re2 - do2 - si - la - sol - fa - mi - la - do2 - si - la
+          </em>
+        </p>
+
+      </div>
+
+      <!-- HARJOITUSESIMERKKI 9a_esim.gif -->
+
+      <figure class="harjoituskuva">
+
+        <img
+          src="https://web.uniarts.fi/vaccaj/img/9a_esim.gif"
+          alt="Harjoituksen 9a jälkiheleen rytminen muunnos"
+          loading="lazy">
+
+        <figcaption>
+          Harjoituksen 9a esimerkki: 9a_esim.gif
+        </figcaption>
+
+      </figure>
+
+      <p>
+        Tee sen jälkeen pehmeämpi versio
+        jälkiheleestä muuttamalla kuvio
+        pisteelliseksi kahdeksasosaksi ja
+        kahdeksi kolmaskymmeneskahdesosatrioliksi,
+        ja muut kolmaskymmeneskahdeksasosat
+        kuudestoistaosiksi.
+      </p>
+
+      <p>
+        Laula sitten alkuperäinen melodia
+        nuotista – jatkuvasti vokaliisina –
+        ja yritä säilyttää edellisen
+        harjoituksen tunnelma, jossa koristelu
+        korostaa seuraavaa ääntä.
+        Valitse tempo niin etteivät pikkunuotit
+        tule painotetuiksi.
+      </p>
+
+      <p>
+        Kokeile sen jälkeen laulaa kaikki
+        kolme eri versiota tekstin kanssa.
+        Kuusitavuisella runolla tämän pitäisi
+        periaatteessa olla pulmatonta.
+        Alkuperäisen nuotinnetun melodian kanssa
+        pitää varmuuden vuoksi suunnata fraasi
+        parittomien tahtien ykkösiin ja välttää
+        kolmosten painottamista.
+      </p>
+
+      <p>
+        Laulun rytmiikka täytyy huomioida
+        sanojen oikeaoppisen painotuksen
+        kustannuksella.
+        Kuten edellisessä harjoituksessa,
+        tässäkin pitää tehdä kompromisseja.
+        Onneksi runomitta on kuitenkin tässä
+        laulussa sallivampi.
+      </p>
+
+      <h3>Ajatuksia tulkinnasta</h3>
+
+      <p>
+        Laulun huolettoman ja iloisen
+        vaikutelman on noustava libreton
+        yläpuolelle.
+        Resitatiivi ennen aariaa antaa yleensä
+        ymmärtää, että valtava onnentunto
+        useammin johtaa kyyneliin kuin
+        puhumiseen.
+        ”Lörpöttelevä” melodia antaa pian
+        ironisen tulkinnan Metastasion runolle.
+      </p>
+
+      <!-- LÄHDE -->
+
+      <div class="lahde">
+
+        <strong>Lähde</strong>
+
+        <p>
+          Forshufvud, G. 1994.
+          <em>Con lieve fiato</em>.
+          Lärarhandledning till Nicola Vaccajs
+          <em>Metodo pratico</em>.
+          Göteborgs universitetet.
+        </p>
+
+      </div>
+
+    </section>
+
   </main>
+
+  <!-- HARJOITUKSEN JA ÄÄNIALAN VAIHTO -->
 
   <script>
 
