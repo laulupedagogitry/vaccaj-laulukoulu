@@ -25,7 +25,7 @@
       color: #285b99;
     }
 
-    /* SIVUSTON YLÄVÄLILEHDET */
+    /* SIVUSTON YLÄVALIKKO */
 
     nav.paavalikko {
       display: flex;
@@ -159,6 +159,59 @@
       border-top: 1px solid #ccc;
     }
 
+    /* ESITYSOHJEET */
+
+    .esitysohjeet {
+      max-width: 1000px;
+      margin-top: 55px;
+      padding-top: 25px;
+      border-top: 2px solid #d2e2f3;
+    }
+
+    .esitysohjeet h2 {
+      margin-top: 0;
+    }
+
+    .esitysohjeet h3 {
+      margin-top: 35px;
+    }
+
+    .esitysohjeet p {
+      margin-bottom: 20px;
+    }
+
+    .saveltapailu {
+      background: #f1f6fb;
+      border-left: 4px solid #285b99;
+      border-radius: 4px;
+      padding: 18px 22px;
+      margin: 20px 0 25px;
+      line-height: 2;
+      overflow-wrap: anywhere;
+    }
+
+    .saveltapailu p {
+      margin: 0;
+    }
+
+    .runoesimerkki {
+      padding: 10px 0 10px 20px;
+      margin: 20px 0;
+      border-left: 3px solid #d2e2f3;
+      font-style: italic;
+    }
+
+    .runoesimerkki p {
+      margin: 0;
+    }
+
+    .esitysohjeet .lahde {
+      margin-top: 35px;
+      padding-top: 15px;
+      border-top: 1px solid #d2e2f3;
+      color: #555;
+    }
+
     /* MOBIILINÄKYMÄ */
 
     @media (max-width: 800px) {
@@ -199,7 +252,7 @@
 
 <body>
 
-  <!-- SIVUSTON YLÄVÄLILEHDET -->
+  <!-- SEITSEMÄN VÄLILEHDEN YLÄVALIKKO -->
 
   <nav class="paavalikko" aria-label="Päävalikko">
 
@@ -211,6 +264,18 @@
 
     <a href="metodo-pratico.html">
       Metodo pratico
+    </a>
+
+    <a href="italian-aakkoset.html">
+      Italian kielen aakkoset ja ääntäminen
+    </a>
+
+    <a href="runojen-alkupera.html">
+      Runojen alkuperä
+    </a>
+
+    <a href="ohjeita-opettajalle.html">
+      Ohjeita opettajille
     </a>
 
     <a href="vaccaj-metastasio.html">
@@ -345,7 +410,7 @@
 
       </div>
 
-      <!-- ÄÄNIALAVALIKKO: VAIN KAKSI ÄÄNIALAA -->
+      <!-- KAKSI ÄÄNIALAA -->
 
       <div class="valintaryhma aanialaryhma">
 
@@ -382,6 +447,8 @@
       src="aanet/4b_mezzo.mp3">
       Selaimesi ei tue äänisoitinta.
     </audio>
+
+    <!-- NUOTIT JA LAULUTEKSTI -->
 
     <div class="sisalto">
 
@@ -466,7 +533,167 @@
 
     </div>
 
+    <!-- ESITYSOHJEET HARJOITUSSIVUN LOPUSSA -->
+
+    <section class="esitysohjeet" aria-labelledby="esitysohjeet-otsikko">
+
+      <h2 id="esitysohjeet-otsikko">Esitysohjeet</h2>
+
+      <p>
+        Tässä tehtävässä harjoitellaan oktaavi-intervallia.
+        Vaccaj on valinnut lauluun dramaattisen tekstin
+        ja samanhenkisen sävelasun
+        <em>tempo allegro</em>.
+      </p>
+
+      <p>
+        Tämä tehtävä on ainoa <em>Metodo praticossa</em>,
+        jossa säveltäjä ei ole käyttänyt Metastasion
+        runon kaikkia rivejä.
+        Vaccaj ottaa huomioon seitsentavuisen runon
+        vaihtelevat painotukset antamalla sanalle
+        <em>Quell'</em> nousutahdin mutta ei sanalle
+        <em>balza</em>.
+        Laulun kahdessa ensimmäisessä fraasissa
+        esiintyy aika paljon takapainotuksia.
+        Niitä tukee tekstissä esiintyvä ajatus
+        syöksähtelevästä vedestä, joka motivoi
+        myös oppilaan harjoittelulle välttämättömiä
+        ylös- ja alaspäisiä oktaavihyppyjä.
+        Koska italialaisessa lyriikassa ei suosita
+        peräkkäisiä painotuksia, sana <em>ma</em>,
+        joka esiintyy tahdin 6 ensimmäisellä iskulla,
+        estää sanan <em>limpida</em> ensimmäisen
+        tavun painottamisen.
+      </p>
+
+      <p>
+        Koska lopettava asteikko tässä tehtävässä
+        on käänteisesti sama kuin laulukoulun
+        aloittavassa <em>Manca sollecitassa</em>,
+        voidaan olettaa että Vaccaj haluaa näin
+        yhdistää laulut ja samalla sulkea
+        <em>Metodo praticon</em> ensimmäisen osan.
+      </p>
+
+      <h3>Ohjeita harjoitteluun</h3>
+
+      <p>
+        Aloita harjoitteleminen laulamalla kaikki
+        oktaavit priimeinä.
+        Jäljelle jää silloin seuraava ”melodia”:
+      </p>
+
+      <!-- OKTAAVIHARJOITUKSEN SÄVELESIMERKKI -->
+
+      <div class="saveltapailu">
+
+        <p>
+          <em>do - do - do - do - do - do - re - do</em><br>
+          <em>re - re - re - re - re - re - mi - re</em><br>
+          <em>mi - mi - mi - mi - mi - mi</em><br>
+          <em>fa - fa - mi - mi - re - re - do - do</em><br>
+          <em>do2 - si - la - sol - fa - mi - re - do</em>
+        </p>
+
+      </div>
+
+      <p>
+        Käytä hyväksesi neljän ensimmäisen fraasin
+        tavuja energiseen artikulointiin ja korosta
+        niitä suhteessa lopettavan asteikon
+        äärimmäisen tiiviiseen legatoon.
+      </p>
+
+      <p>
+        Laula tekstikin kolmessa ensimmäisessä
+        fraasissa muutetulla melodialla ja
+        ”mässäile” Vaccaj'n painotuksilla.
+      </p>
+
+      <!-- LAULUTEKSTIN HARJOITTELUESIMERKKI -->
+
+      <div class="runoesimerkki">
+
+        <p>
+          Quell'onda che ruina,<br>
+          balza, si frange e mormora,<br>
+          ma limpida si fa.
+        </p>
+
+      </div>
+
+      <p>
+        Myös oikea melodia pitää laulaa
+        <em>non legato</em> asteikkoon asti.
+        (Tärkeä poikkeus tähän on luonnollisesti
+        tehtävä silloin, jos on olemassa vaara
+        äänihygieenisesti kyseenalaiseen rekisterin
+        vaihtoon naisoppilaalla.)
+      </p>
+
+      <p>
+        Periaatteessa on mahdollista täyttää
+        osa 13 oktaavihypyistä kahdeksasosatriolein
+        tersseillä ja kvinteillä.
+        Käytännössä tämä huonontaa kuitenkin
+        sävellystä niin paljon, että oppilaan
+        on parempi laulaa helppo oktaavi-intervalli
+        alusta asti ilman apusäveliä.
+      </p>
+
+      <h3>Ajatuksia tulkinnasta</h3>
+
+      <p>
+        Neljässä ensimmäisessä fraasissa laulun
+        ihanteelliseen esittämiseen kuuluu
+        <em>non legato</em>, liikkuva tempo,
+        <em>forte</em>-nyanssi, liioiteltu
+        artikulaatio ja estoton painottaminen.
+      </p>
+
+      <p>
+        Pianistin 9. tahdin toisen triolikulun
+        viimeiselle äänelle voidaan lisätä fermaatti,
+        jotta laulaja ehtii hengittää sopivasti
+        huomioiden viimeisen fraasin uuden luonteen.
+      </p>
+
+      <p>
+        Laulajan ja pianistin täytyy sopeuttaa
+        9. tahdin aksentti viimeistä edellisen
+        tahdin <em>piano</em>-nyanssiin.
+      </p>
+
+      <h3>Muuta</h3>
+
+      <p>
+        Kokeile laulaa toiseksi viimeisen tahdin
+        tavu <em>-pi-</em> neljännellä
+        kahdeksasosalla.
+      </p>
+
+      <!-- LÄHDE -->
+
+      <div class="lahde">
+
+        <strong>Lähde</strong>
+
+        <p>
+          Forshufvud, G. 1994.
+          <em>Con lieve fiato</em>.
+          Lärarhandledning till Nicola Vaccajs
+          <em>Metodo pratico</em>.
+          Göteborgs universitetet.
+        </p>
+
+      </div>
+
+    </section>
+
   </main>
+
+  <!-- HARJOITUS- JA ÄÄNIALAVALINTOJEN TOIMINNOT -->
 
   <script>
 
