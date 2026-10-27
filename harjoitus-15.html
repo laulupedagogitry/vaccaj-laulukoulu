@@ -27,7 +27,7 @@
 
     /* YLÄVÄLILEHDET */
 
-    .paavalikko {
+    nav.paavalikko {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
@@ -159,6 +159,44 @@
       border-top: 1px solid #ccc;
     }
 
+    /* ESITYSOHJEET */
+
+    .esitysohjeet {
+      max-width: 1000px;
+      margin-top: 55px;
+      padding-top: 25px;
+      border-top: 2px solid #d2e2f3;
+    }
+
+    .esitysohjeet h2 {
+      margin-top: 0;
+    }
+
+    .esitysohjeet h3 {
+      margin-top: 35px;
+    }
+
+    .esitysohjeet p {
+      margin-bottom: 20px;
+    }
+
+    .esitysohjeet ol {
+      padding-left: 28px;
+      margin: 20px 0 25px;
+    }
+
+    .esitysohjeet li {
+      margin-bottom: 12px;
+      padding-left: 5px;
+    }
+
+    .esitysohjeet .lahde {
+      margin-top: 35px;
+      padding-top: 15px;
+      border-top: 1px solid #d2e2f3;
+      color: #555;
+    }
+
     /* MOBIILINÄKYMÄ */
 
     @media (max-width: 800px) {
@@ -182,7 +220,7 @@
     }
 
     @media (max-width: 600px) {
-      .paavalikko {
+      nav.paavalikko {
         flex-direction: column;
       }
 
@@ -199,19 +237,30 @@
 
 <body>
 
-  <!-- SIVUSTON YLÄVÄLILEHDET -->
+  <!-- SEITSEMÄN YLÄVÄLILEHTEÄ -->
 
   <nav class="paavalikko" aria-label="Päävalikko">
 
-    <a
-      href="index.html"
-      class="aktiivinen"
-      aria-current="page">
+    <a href="index.html"
+       class="aktiivinen"
+       aria-current="page">
       Harjoitukset
     </a>
 
     <a href="metodo-pratico.html">
       Metodo pratico
+    </a>
+
+    <a href="italian-aakkoset.html">
+      Italian kielen aakkoset ja ääntäminen
+    </a>
+
+    <a href="runojen-alkupera.html">
+      Runojen alkuperä
+    </a>
+
+    <a href="ohjeita-opettajalle.html">
+      Ohjeita opettajille
     </a>
 
     <a href="vaccaj-metastasio.html">
@@ -231,8 +280,6 @@
     <!-- HARJOITUKSEN JA ÄÄNIALAN VALINTA -->
 
     <div class="valinnat">
-
-      <!-- HARJOITUSVALIKKO -->
 
       <div class="valintaryhma harjoitusryhma">
 
@@ -348,7 +395,8 @@
 
       </div>
 
-      <!-- ÄÄNIALAVALIKKO -->
+      <!-- ALKUPERÄISET ÄÄNIALAT:
+           SOPRAANO, MEZZOSOPRAANO, ALTTO JA BARITONI -->
 
       <div class="valintaryhma aanialaryhma">
 
@@ -394,6 +442,8 @@
       Selaimesi ei tue äänisoitinta.
     </audio>
 
+    <!-- NUOTIT JA LAULUTEKSTI -->
+
     <div class="sisalto">
 
       <!-- NUOTIT -->
@@ -420,6 +470,7 @@
         </div>
 
         <h3>Riepilogo</h3>
+
         <p>Yhteenveto</p>
 
         <hr>
@@ -524,6 +575,7 @@
         <!-- SUOMENNETTU YHTEENVETO -->
 
         <div class="yhteenveto">
+
           <strong>
             Keveästi henkäilevä länsituuli<br>
             on mieluisa kukkien ja uusien<br>
@@ -533,13 +585,287 @@
             länsituuli joka taholla on<br>
             mielihyvän seuralainen.
           </strong>
+
         </div>
 
       </section>
 
     </div>
 
+    <!-- ESITYSOHJEET HARJOITUSSIVUN ALLE -->
+
+    <section
+      class="esitysohjeet"
+      aria-labelledby="esitysohjeet-otsikko">
+
+      <h2 id="esitysohjeet-otsikko">
+        Esitysohjeet
+      </h2>
+
+      <p>
+        Tämä laulukoulun viimeinen tehtävä
+        on yhteenveto kaikesta opitusta.
+        Laulussa voidaan soveltaa aiemmin
+        opittuja tekniikoita aarian tapaan.
+      </p>
+
+      <h3>Ohjeita harjoitteluun</h3>
+
+      <p>
+        Aloita yksinkertaistetusta melodiasta
+        tahdeissa 1–29 ja laula sopivilla
+        tavuilla. Lisää seuraavaksi joitakin
+        melodiasäveliä tahdeissa 11–12, 17,
+        21–24 ja 26–28. Yhdistä sitten teksti
+        melodiaan ja ota mukaan pianosäestys.
+        Hyppää takaisin alkuun tahdista 29
+        ja anna pianistin soittaa ensimmäinen
+        tahti välisoittona. Laula vasta nyt
+        koko nuottikuva sellaisenaan ja
+        kuvittele se improvisoinniksi
+        melodisen rungon päälle.
+      </p>
+
+      <p>
+        Kokeile seuraavia ehdotuksia:
+      </p>
+
+      <ol>
+
+        <li>
+          <strong>Tahdit 2, 4, 6 jne.:</strong>
+          Käytä <em>legaton</em> sijaan myös
+          <em>staccatoa</em> ja
+          <em>marcatoa</em> harjoitellessasi
+          juoksutuksia.
+        </li>
+
+        <li>
+          <strong>Tahti 7:</strong>
+          Nuottikuvio on hyvin vaativa.
+          Jätä viimeinen sävel aluksi
+          huomiotta ja laula jäljellä
+          olevat neljä kuudestoistaosaa
+          kaksoisheleenä. Poista sen jälkeen
+          puolestaan etuhelenuotti ja
+          pidä jäljellä olevat neljä
+          kaksoishelettä. Laula lopuksi
+          myös etuhelenuotti. Koska se
+          edeltää lyhyiden sävelten ryhmää,
+          se pitää esittää lyhyenä
+          etuheleenä.
+        </li>
+
+        <li>
+          <strong>Tahti 12:</strong>
+          Pidennä trilli koko tahdin
+          mittaiseksi ja lopeta se
+          sävelillä <em>sol</em> ja
+          <em>la</em>.
+        </li>
+
+        <li>
+          <strong>Tahdit 14–15:</strong>
+          Tullaksesi varmemmaksi
+          <em>portamento di sotton</em>
+          ja tavallisen portamenton
+          välisestä erosta, kokeile
+          ”liukua” kohotahdin vokaalilla.
+        </li>
+
+        <li>
+          <strong>Tahdit 16–17:</strong>
+          Jälkiheleiden terssiä ei
+          saa korostaa.
+        </li>
+
+        <li>
+          <strong>Tahdit 18–19:</strong>
+          Muista, että <em>portamentoa</em>
+          ei pidä laulaa niin, että
+          <em>lento</em> kuulostaa
+          <em>le-ento</em>lta.
+        </li>
+
+        <li>
+          <strong>Tahti 20:</strong>
+          Tee kevyt <em>marcato</em>
+          jokaisen neljän
+          kolmaskymmeneskahdesosanuottiryhmän
+          ensimmäisellä sävelellä.
+        </li>
+
+        <li>
+          <strong>Tahdit 22 ja 26:</strong>
+          Pitkä etuhele ottaa koko
+          päänuotin pituuden.
+        </li>
+
+        <li>
+          <strong>Tahdit 27–28:</strong>
+          Tässäkin ”mordentti”
+          korvaa päänuotin ja se
+          pitää esittää
+          kahdeksasosatriolina.
+        </li>
+
+      </ol>
+
+      <p>
+        Laulu <em>Alla stagion</em>
+        loppuu niin sanottuun
+        <em>strettaan</em>, joka tarkoittaa
+        ”vaikuttavasti huipentuvaa loppuosaa”.
+        Melodiarungon selkeä hahmottaminen
+        on suureksi avuksi. Laula siis
+        tahdit 29–31 ja 34–36 ensin
+        seuraavilla sävelillä:
+      </p>
+
+      <p>
+        <em>re – sol – si – mi</em><br>
+        <em>mi – la – do2 – fa</em><br>
+        <em>fa – la – re2 – re2</em>
+      </p>
+
+      <p>
+        Koska tahdeissa 33 ja 38 oleva
+        päänuotti on pisteellisenä
+        jaollinen kolmella, sen etuheleen
+        kesto on vain kolmasosa siitä.
+      </p>
+
+      <p>
+        Tempon tulee harjoiteltaessa
+        olla hyvin hillitty
+        (neljäsosa noin M.M. 72).
+      </p>
+
+      <p>
+        Laulun alkupuolella Vaccaj
+        on tapaansa huolehtinut siitä,
+        että fraasien välissä on
+        runsaasti taukoja hengitystä
+        varten. Sitä vastoin tahdeissa
+        29–39 on vaikea löytää kunnollista
+        paikkaa hengittää kunnolla.
+        Tässä laulunopettajan täytyy
+        siis merkitä hengityspaikat,
+        muuten laulun lopusta tulee
+        lähes mahdoton.
+      </p>
+
+      <p>
+        Yleisesti ottaen voidaan hengittää
+        jokaisen <em>compagnon</em>
+        jälkeen tahdeissa 30, 31, 35
+        ja 36 ja tietysti tauolla
+        tahdissa 34. Tarvittaessa
+        voidaan hengittää tahdin 38
+        ensimmäisen neljäsosan jälkeen.
+        Kohotin mukaan on sanan keskellä
+        voi hengittää, jos se yhdistyy
+        synkooppiin.
+      </p>
+
+      <p>
+        <em>Metodo praticon</em>
+        viimeisessä laulussa voidaan
+        soveltaa ”pehmeää hengitystä”.
+        Jo toisen tahdin ensimmäinen
+        juoksutus vaatii toisenlaista
+        keveyttä kuin hitaampi asteikko
+        fraasin alussa, ja ilman
+        ilmanpaineen joustavuutta on
+        tuskin mahdollista laulaa
+        esimerkiksi tahteja 7, 16 ja 20.
+      </p>
+
+      <p>
+        Myös pianistin joustavuus
+        on toinen edellytys sille,
+        että laulu toimii. Pianistin
+        täytyy olla valmis antamaan
+        laulajalle ylimääräistä aikaa
+        kaikissa vaikeammissa kohdissa
+        ja sitä paitsi ”hengittää mukana”
+        tahdeissa 29–39.
+      </p>
+
+      <p>
+        Paras perusnyanssi opiskeltaessa
+        on <em>mezzopiano</em>.
+      </p>
+
+      <h3>Ajatuksia tulkinnasta</h3>
+
+      <p>
+        <em>Alla stagion</em> -laulun
+        asettamista korkeista
+        lauluteknisistä vaatimuksista
+        huolimatta laulajan tulee
+        mahdollisimman pian yrittää
+        suhteuttaa korukuviot vastaavien
+        sanojen merkityksiin.
+        Asteikot, etuheleet, ”liukumat”
+        ynnä muut täytyy laulaa niin,
+        että kuulijalle käy selvästi
+        ilmi, että laulaja haluaa
+        viehkeästi vahvistaa sanojen
+        <em>fiori</em>, <em>amori</em>,
+        <em>zeffiro</em>,
+        <em>grato</em> jne. sisältöä.
+        Myös tahtien 29–31 ja 34–36
+        vaikeasti laulettavalla kuviolla
+        tulee olla yhteys ajatukseen
+        ”tuulen syleilystä”.
+      </p>
+
+      <p>
+        Yritä jo varhain sitoa yhteen
+        ajatusfraasit ja selventää
+        riimittelyä.
+      </p>
+
+      <p>
+        Vasta sitten, kun laulaja
+        hallitsee kutakuinkin koko
+        laulun rauhallisessa tempossa
+        ja hillityllä volyymillä,
+        hän voi antaa sille hieman
+        selkeämmän luonteen siten,
+        että ”antaa länsituulen puhaltaa
+        nopeammin ja voimakkaammin”.
+      </p>
+
+      <p>
+        Esityksestä ei saa kuitenkaan
+        koskaan tulla niin
+        virtuoosimainen, että sävellys
+        menettää viehätyksensä.
+      </p>
+
+      <!-- LÄHDE -->
+
+      <div class="lahde">
+
+        <strong>Lähde</strong>
+
+        <p>
+          Forshufvud, G. 1994.
+          <em>Con lieve fiato</em>.
+          Lärarhandledning till Nicola Vaccajs
+          <em>Metodo pratico</em>.
+          Göteborgs universitetet.
+        </p>
+
+      </div>
+
+    </section>
+
   </main>
+
+  <!-- HARJOITUKSEN JA ÄÄNIALAN VAIHTO -->
 
   <script>
 
