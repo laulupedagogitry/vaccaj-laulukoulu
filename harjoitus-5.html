@@ -25,7 +25,7 @@
       color: #285b99;
     }
 
-    /* SIVUSTON YLÄVÄLILEHDET */
+    /* SIVUSTON SEITSEMÄN YLÄVÄLILEHTEÄ */
 
     nav.paavalikko {
       display: flex;
@@ -159,6 +159,34 @@
       border-top: 1px solid #ccc;
     }
 
+    /* ESITYSOHJEET */
+
+    .esitysohjeet {
+      max-width: 1000px;
+      margin-top: 55px;
+      padding-top: 25px;
+      border-top: 2px solid #d2e2f3;
+    }
+
+    .esitysohjeet h2 {
+      margin-top: 0;
+    }
+
+    .esitysohjeet h3 {
+      margin-top: 35px;
+    }
+
+    .esitysohjeet p {
+      margin-bottom: 20px;
+    }
+
+    .esitysohjeet .lahde {
+      margin-top: 35px;
+      padding-top: 15px;
+      border-top: 1px solid #d2e2f3;
+      color: #555;
+    }
+
     /* MOBIILINÄKYMÄ */
 
     @media (max-width: 800px) {
@@ -199,7 +227,7 @@
 
 <body>
 
-  <!-- SIVUSTON YLÄVÄLILEHDET -->
+  <!-- SEITSEMÄN VÄLILEHDEN YLÄVALIKKO -->
 
   <nav class="paavalikko" aria-label="Päävalikko">
 
@@ -211,6 +239,18 @@
 
     <a href="metodo-pratico.html">
       Metodo pratico
+    </a>
+
+    <a href="italian-aakkoset.html">
+      Italian kielen aakkoset ja ääntäminen
+    </a>
+
+    <a href="runojen-alkupera.html">
+      Runojen alkuperä
+    </a>
+
+    <a href="ohjeita-opettajalle.html">
+      Ohjeita opettajille
     </a>
 
     <a href="vaccaj-metastasio.html">
@@ -345,7 +385,7 @@
 
       </div>
 
-      <!-- ÄÄNIALAN VALINTA -->
+      <!-- NELJÄ ÄÄNIALAA -->
 
       <div class="valintaryhma aanialaryhma">
 
@@ -390,6 +430,8 @@
       src="aanet/5_sopraano.mp3">
       Selaimesi ei tue äänisoitinta.
     </audio>
+
+    <!-- NUOTIT JA LAULUTEKSTI -->
 
     <div class="sisalto">
 
@@ -486,7 +528,108 @@
 
     </div>
 
+    <!-- ESITYSOHJEET HARJOITUSSIVUN ALLE -->
+
+    <section class="esitysohjeet" aria-labelledby="esitysohjeet-otsikko">
+
+      <h2 id="esitysohjeet-otsikko">Esitysohjeet</h2>
+
+      <p>
+        Tässä tehtävässä harjoitellaan pientä
+        sekunti-intervallia eli puolisävelaskelta,
+        joka on kromaattisen asteikon perusta.
+        Näitä puolisävelaskeleita esiintyy yhteensä
+        46 kappaletta laulun 19 tahdissa.
+        Puolisävelaskeleet saavat tehtävän melodiassa
+        esiintyvät yksinkertaiset toistot huomattavasti
+        nautittavammaksi. Voit kokeilla kuinka niukalta
+        laulu kuulostaa ilman kuudestoistaosia.
+      </p>
+
+      <p>
+        Vaccajn valitsema runo kuvaa epävarmuuden
+        ja epäröinnin tunteita ja sopii siksi myös
+        kromatiikan harjoittelemiseen.
+        Kuusitavuisen runon pysyvien painotuspaikkojen
+        ansiosta teksti ja musiikki sulautuvat
+        saumattomasti yhteen.
+      </p>
+
+      <h3>Ohjeita harjoitteluun</h3>
+
+      <p>
+        Harjoittele aluksi laulamalla pisteellinen
+        kahdeksasosa- ja kuudestoistaosanuotit
+        neljäsosina. Tee samoin neljän
+        kuudestoistaosanuotin kanssa.
+        Lisää sitten Metastasion teksti
+        yksinkertaistettuun melodiaan.
+        Yritä välttää useilla lopputavuilla
+        esiintyvien <em>a</em>-vokaalien painottamista.
+      </p>
+
+      <p>
+        Kun myöhemmin siirrytään laulamaan
+        nuottikuvan mukaisesti, täytyy varoa
+        etteivät kuudestoistaosat tule liian
+        merkitseviksi. Kaikkien lyhyiden äänten
+        tulee vaikuttaa kevyiltä niin laulajalla
+        kuin pianistillakin.
+      </p>
+
+      <p>
+        Jos hengittäminen tuntuu hätäiseltä,
+        voit nipistää hieman tahdin toiselle
+        neljäsosalle osuvasta loppusävelestä.
+      </p>
+
+      <p>
+        Pianistin täytyy niin pian kuin mahdollista
+        lopettaa soittamasta unisonossa laulajan
+        kanssa neljä puolisävelaskelta 8. ja
+        16. tahdin lopussa, koska muutoin on
+        vaara, että laulaja tukeutuu liikaa
+        pianon ääneen.
+      </p>
+
+      <h3>Ajatuksia tulkinnasta</h3>
+
+      <p>
+        Anna <em>andantinon</em> olla aluksi hidas
+        ja mietteliäs. Voit ajan mittaan tehdä
+        siitä halutessasi neuroottisemman.
+      </p>
+
+      <p>
+        Kuten laulunopettajat tietävät,
+        kromaattiset harjoitukset ovat lyömätön
+        apukeino mm. hiottaessa sävelpuhtautta.
+        Kromaattisen ja diatonisen asteikon
+        pitäisi olla osa jokapäiväistä
+        harjoittelua.
+      </p>
+
+      <!-- LÄHDE -->
+
+      <div class="lahde">
+
+        <strong>Lähde</strong>
+
+        <p>
+          Forshufvud, G. 1994.
+          <em>Con lieve fiato</em>.
+          Lärarhandledning till Nicola Vaccajs
+          <em>Metodo pratico</em>.
+          Göteborgs universitetet.
+        </p>
+
+      </div>
+
+    </section>
+
   </main>
+
+  <!-- HARJOITUS- JA ÄÄNIALAVALINTOJEN TOIMINNOT -->
 
   <script>
 
