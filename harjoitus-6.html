@@ -25,7 +25,7 @@
       color: #285b99;
     }
 
-    /* SIVUSTON YLÄVÄLILEHDET */
+    /* SIVUSTON SEITSEMÄN YLÄVÄLILEHTEÄ */
 
     nav.paavalikko {
       display: flex;
@@ -165,6 +165,52 @@
       margin-top: 12px;
     }
 
+    /* ESITYSOHJEET */
+
+    .esitysohjeet {
+      max-width: 1000px;
+      margin-top: 55px;
+      padding-top: 25px;
+      border-top: 2px solid #d2e2f3;
+    }
+
+    .esitysohjeet h2 {
+      margin-top: 0;
+    }
+
+    .esitysohjeet h3 {
+      margin-top: 35px;
+    }
+
+    .esitysohjeet p {
+      margin-bottom: 20px;
+    }
+
+    /* HARJOITTELUN SÄVELESIMERKKI */
+
+    .savelesimerkki {
+      background: #f1f6fb;
+      border-left: 4px solid #285b99;
+      border-radius: 4px;
+      padding: 18px 22px;
+      margin: 20px 0 25px;
+      line-height: 2;
+      overflow-wrap: anywhere;
+    }
+
+    .savelesimerkki p {
+      margin: 0;
+    }
+
+    /* LÄHDE */
+
+    .esitysohjeet .lahde {
+      margin-top: 35px;
+      padding-top: 15px;
+      border-top: 1px solid #d2e2f3;
+      color: #555;
+    }
+
     /* MOBIILINÄKYMÄ */
 
     @media (max-width: 800px) {
@@ -205,7 +251,7 @@
 
 <body>
 
-  <!-- SIVUSTON YLÄVÄLILEHDET -->
+  <!-- SEITSEMÄN VÄLILEHDEN YLÄVALIKKO -->
 
   <nav class="paavalikko" aria-label="Päävalikko">
 
@@ -217,6 +263,18 @@
 
     <a href="metodo-pratico.html">
       Metodo pratico
+    </a>
+
+    <a href="italian-aakkoset.html">
+      Italian kielen aakkoset ja ääntäminen
+    </a>
+
+    <a href="runojen-alkupera.html">
+      Runojen alkuperä
+    </a>
+
+    <a href="ohjeita-opettajalle.html">
+      Ohjeita opettajille
     </a>
 
     <a href="vaccaj-metastasio.html">
@@ -351,7 +409,7 @@
 
       </div>
 
-      <!-- ÄÄNIALAVALIKKO -->
+      <!-- ALKUPERÄISET KAKSI ÄÄNIALAA -->
 
       <div class="valintaryhma aanialaryhma">
 
@@ -389,6 +447,8 @@
       Selaimesi ei tue äänisoitinta.
     </audio>
 
+    <!-- NUOTIT JA LAULUTEKSTI -->
+
     <div class="sisalto">
 
       <!-- NUOTIT -->
@@ -404,7 +464,7 @@
 
       </section>
 
-      <!-- LAULUTEKSTI JA SUOMENNOS -->
+      <!-- ALKUPERÄINEN LAULUTEKSTI JA SUOMENNOS -->
 
       <section class="tekstialue">
 
@@ -476,7 +536,164 @@
 
     </div>
 
+    <!-- ESITYSOHJEET HARJOITUSSIVUN ALLE -->
+
+    <section
+      class="esitysohjeet"
+      aria-labelledby="esitysohjeet-otsikko">
+
+      <h2 id="esitysohjeet-otsikko">
+        Esitysohjeet
+      </h2>
+
+      <p>
+        Tässä tehtävässä harjoitellaan synkooppia
+        ja tutustutaan <em>tempo rubatoon</em>.
+        Vaccajn aikaan <em>tempo rubato</em>
+        tarkoitti sitä että laulaja, taustanaan
+        vakaa, tasatahtinen säestys, tulee jonkin
+        verran ajoissa tai myöhässä melodian
+        tärkeille sävelille.
+        Se ei vastaa termin modernia merkitystä,
+        jossa tempoa varioidaan vapaasti
+        hidastamalla (<em>rallentando</em>)
+        ja nopeuttamalla (<em>accelerando</em>).
+        Koska synkoopissa painotus tulee
+        tavanomaisesta poikkeavalle tahdinosalle,
+        <em>tempo rubato</em> voidaan nähdä
+        myös sen jalostettuna variaationa
+        tai muunnoksena.
+      </p>
+
+      <p>
+        Suurinta osaa laulun paristakymmenestä
+        synkoopista tukee pianistin oikea käsi.
+        Vain tahdeissa 12–16 laulaja on vapaa
+        kokeilemaan <em>mai</em>, <em>non</em>
+        ja <em>è</em> -sanojen sijoittamista niin,
+        etteivät ne ole aivan oikean käden
+        sointujen kohdalla.
+      </p>
+
+      <p>
+        Vaccaj painottaa neljättä tavua kullakin
+        runon kahdeksantavuisella rivillä.
+        Tästä syntyvät ristiriidat eivät kuitenkaan
+        ole mielenkiintoisia, koska synkopointi
+        häiritsee joka tapauksessa runon prosodiikkaa.
+      </p>
+
+      <p>
+        Sana <em>barbaro</em> sai luultavasti
+        Vaccaj'n valitsemaan tämän tekstin
+        hänen ”sivistymättömimpään” harjoitukseensa.
+      </p>
+
+      <h3>Ohjeita harjoitteluun</h3>
+
+      <p>
+        Kun tehtävän tasaisilla neljäsosilla oleva
+        melodiarunko otetaan esille, koetaan
+        ”villeys” ja ”sivistymättömyys” paljon
+        voimakkaampana kirjoitetussa nuottikuvassa.
+      </p>
+
+      <!-- HARJOITTELUN SÄVELESIMERKKI -->
+
+      <div class="savelesimerkki">
+
+        <p>
+          <em>si - la - sol - re - si - la - sol - re</em><br>
+          <em>do2 - si - la - re - do2 - si - la - re</em><br>
+          <em>re2 - do2 - si - la - sol - la - fa</em>
+        </p>
+
+      </div>
+
+      <p>
+        Nuottikuvan mukaisen laulun melodia
+        aiheuttaa helposti hengitysongelmia.
+        Tahtiin 5 voidaan tehdä hengityspaikka
+        ottamalla pois melodian ensimmäinen ääni.
+        Vaccaj tekee itse saman tahdissa 9.
+        Tahdissa 6 ei sen sijaan saa ottaa
+        hengitystaukoa vaikka alkuperäisessä
+        tekstissä tässä onkin pilkku.
+        Koska Vaccaj antaa lopputavulle sanassa
+        <em>cede</em> oman äänen, onnistuu
+        hengittäminen myös tahdissa 18.
+        Ennen kahta viimeistä fraasia pitää
+        pianistin yksinkertaisesti odottaa.
+      </p>
+
+      <p>
+        Naisäänillä on tässä harjoituksessa
+        hyvä mahdollisuus käyttää ”barbaarista”
+        rintarekisteriä.
+      </p>
+
+      <p>
+        Ensimmäinen vokaali diftongissa
+        <em>mai</em> pitää laulaa niin myöhään
+        kuin mahdollista.
+      </p>
+
+      <h3>Ajatuksia tulkinnasta</h3>
+
+      <p>
+        Voit kernaasti ajatella synkopointia
+        tahdeissa 1–11 ja 17–27 ihmisen
+        yrityksenä huitoa joka suuntaan
+        vastustaessaan epätoivoisena Amoria
+        eli rakkautta.
+        Kasvata vapauden tunnetta laulamalla
+        välillä pelkän vasemman käden säestyksellä.
+      </p>
+
+      <p>
+        Älä unohda painottaa sanaa
+        <em>no</em> tahdeissa 20 ja 24,
+        sanaa <em>si</em> tahdeissa 21 ja 25
+        ja sanaa <em>non</em> tahdeissa
+        23 ja 27.
+      </p>
+
+      <p>
+        Tahdeissa 12–16 pianistin täytyy
+        säilyttää tasainen tempo, eikä antaa
+        periksi laulajan mahdollisille
+        rytmisille hienouksille.
+        Jos temposta tulee liian liikkuva,
+        laulusta tulee helposti ”töpöttelevä”.
+      </p>
+
+      <p>
+        Äännä konsonantit sanassa
+        <em>barbaro</em> sellaisella energialla,
+        että sanan merkitys tulee selväksi.
+      </p>
+
+      <!-- LÄHDE -->
+
+      <div class="lahde">
+
+        <strong>Lähde</strong>
+
+        <p>
+          Forshufvud, G. 1994.
+          <em>Con lieve fiato</em>.
+          Lärarhandledning till Nicola Vaccajs
+          <em>Metodo pratico</em>.
+          Göteborgs universitetet.
+        </p>
+
+      </div>
+
+    </section>
+
   </main>
+
+  <!-- HARJOITUS- JA ÄÄNIALAVALINTOJEN TOIMINNOT -->
 
   <script>
 
