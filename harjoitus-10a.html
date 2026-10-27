@@ -25,7 +25,7 @@
       color: #285b99;
     }
 
-    /* YLÄVÄLILEHDET */
+    /* SEITSEMÄN YLÄVÄLILEHTEÄ */
 
     nav.paavalikko {
       display: flex;
@@ -159,6 +159,57 @@
       border-top: 1px solid #ccc;
     }
 
+    /* ESITYSOHJEET */
+
+    .esitysohjeet {
+      max-width: 1000px;
+      margin-top: 55px;
+      padding-top: 25px;
+      border-top: 2px solid #d2e2f3;
+    }
+
+    .esitysohjeet h2 {
+      margin-top: 0;
+    }
+
+    .esitysohjeet h3 {
+      margin-top: 35px;
+    }
+
+    .esitysohjeet p {
+      margin-bottom: 20px;
+    }
+
+    /* MELODIARUNGON ESIMERKKIKUVA */
+
+    .harjoituskuva {
+      margin: 25px 0;
+    }
+
+    .harjoituskuva img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      background: white;
+    }
+
+    .harjoituskuva figcaption {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* LÄHDE */
+
+    .esitysohjeet .lahde {
+      margin-top: 35px;
+      padding-top: 15px;
+      border-top: 1px solid #d2e2f3;
+      color: #555;
+    }
+
     /* MOBIILINÄKYMÄ */
 
     @media (max-width: 800px) {
@@ -199,19 +250,30 @@
 
 <body>
 
-  <!-- SIVUSTON YLÄVÄLILEHDET -->
+  <!-- SEITSEMÄN YLÄVÄLILEHTEÄ -->
 
   <nav class="paavalikko" aria-label="Päävalikko">
 
-    <a
-      href="index.html"
-      class="aktiivinen"
-      aria-current="page">
+    <a href="index.html"
+       class="aktiivinen"
+       aria-current="page">
       Harjoitukset
     </a>
 
     <a href="metodo-pratico.html">
       Metodo pratico
+    </a>
+
+    <a href="italian-aakkoset.html">
+      Italian kielen aakkoset ja ääntäminen
+    </a>
+
+    <a href="runojen-alkupera.html">
+      Runojen alkuperä
+    </a>
+
+    <a href="ohjeita-opettajalle.html">
+      Ohjeita opettajille
     </a>
 
     <a href="vaccaj-metastasio.html">
@@ -348,7 +410,7 @@
 
       </div>
 
-      <!-- ÄÄNIALAVALIKKO -->
+      <!-- ALKUPERÄISET ÄÄNIALAT: MEZZO JA TENORI -->
 
       <div class="valintaryhma aanialaryhma">
 
@@ -386,6 +448,8 @@
       Selaimesi ei tue äänisoitinta.
     </audio>
 
+    <!-- NUOTIT JA LAULUTEKSTI -->
+
     <div class="sisalto">
 
       <!-- NUOTIT -->
@@ -401,7 +465,7 @@
 
       </section>
 
-      <!-- LAULUTEKSTI JA SUOMENNOS -->
+      <!-- ALKUPERÄINEN LAULUTEKSTI JA SUOMENNOS -->
 
       <section class="tekstialue">
 
@@ -418,39 +482,51 @@
         <hr>
 
         <div class="sae">
+
           <div class="aanne">
             ['kwando at'tʃɛnde un 'nɔbil 'pɛtto]
           </div>
+
           <div class="italia">
             Quando accende un nobil petto
           </div>
+
           <div class="suomi">
             Kun syttyy jalo rinta
           </div>
+
         </div>
 
         <div class="sae">
+
           <div class="aanne">
             [ɛ innot'tʃɛnte ɛ 'puro af'fɛtto]
           </div>
+
           <div class="italia">
             è innocente, è puro affetto,
           </div>
+
           <div class="suomi">
             on se viatonta, on puhdasta kiintymystä,
           </div>
+
         </div>
 
         <div class="sae">
+
           <div class="aanne">
             [debo'lettsa a'mor non ɛ]
           </div>
+
           <div class="italia">
             debolezza amor non è.
           </div>
+
           <div class="suomi">
             heikkoutta rakkaus ei ole.
           </div>
+
         </div>
 
         <!-- SUOMENNETTU YHTEENVETO -->
@@ -469,7 +545,191 @@
 
     </div>
 
+    <!-- ESITYSOHJEET HARJOITUSSIVUN ALLE -->
+
+    <section
+      class="esitysohjeet"
+      aria-labelledby="esitysohjeet-otsikko">
+
+      <h2 id="esitysohjeet-otsikko">
+        Esitysohjeet
+      </h2>
+
+      <p>
+        Tässä tehtävässä harjoitellaan kaksoisheleitä
+        (yhteensä 25 kertaa), jotka ovat painotettuja
+        osuessaan painavalle tahdinosalle ja muualla
+        ei-painotettuja.
+        Tahdissa 27 tavataan vielä muunnelma,
+        jossa heleet tulevat päänuottinsa jälkeen.
+        Tämä koristetyyppi on varsinaisesti
+        laulun 10b aihe.
+      </p>
+
+      <p>
+        Vaccaj kirjoitti kaksoisheleet valmiiksi
+        kuudestoistaosiksi, mutta oppilas voi
+        tutustua myös perinteiseen merkintätapaan,
+        jossa korvataan nuottikuvan
+        kuudestoistaosakuviot.
+      </p>
+
+      <p>
+        Tahdeissa 9, 11 ja 16 kuvion ensimmäinen
+        ääni on painotukseltaan samanlainen
+        kuin etuhelenuotti.
+        Äänen tuottaminen tapahtuu tässä
+        samalla tavalla kuin neljäksi
+        kuudestoistaosaksi kirjoitetussa
+        kuviossakin.
+      </p>
+
+      <p>
+        Iffert käsittelee kaksoisheleitä kolmen
+        äänen koristeena, jossa äänet esiintyvät
+        järjestyksessä: yläpuolinen sekunti –
+        päänuotti – alapuolinen sekunti,
+        tai päinvastoin.
+        Korukuvion laajuus on yleensä pieni
+        terssi ja se voidaan esittää useilla
+        eri tavoilla.
+        Esimerkiksi ylhäältä tuleva kuvio,
+        jossa päänuotti on toinen ja neljäs
+        ääni, esiintyy tahdeissa
+        1, 2, 3, 9, 11, 16, 21, 22 ja 23.
+        Alhaalta tuleva kuvio löytyy
+        tahdeista 17, 18 ja 19.
+      </p>
+
+      <p>
+        Kaksoisheleen muunnelma, jota voidaan
+        kutsua myös ”rullaksi” tai
+        ”kylteripytyksi” (nimitys tulee
+        sotahistoriasta), esiintyy vanhassa
+        musiikissa.
+        Päänuotti tulee tässä variaatiossa
+        ensimmäisenä ja kolmantena äänenä.
+        Alaspäinen ”kylteripytty” löytyy
+        tahdeista 4, 5, 6, 13, 14 ja 15.
+        Ylöspäinen ”kylteripytty” esiintyy
+        puolestaan tahdeissa 25 ja 26.
+      </p>
+
+      <p>
+        Metastasio ajatteli tämän runonsa
+        alusta asti duetoksi.
+        Siksi siinä on vain kolme riviä.
+      </p>
+
+      <h3>Ohjeita harjoitteluun</h3>
+
+      <p>
+        Kun opettelet tätä laulua, ota ensin
+        esiin sen melodiarunko.
+        Tässä valmis ehdotus:
+      </p>
+
+      <!-- MELODIARUNGON ESIMERKKIKUVA -->
+
+      <figure class="harjoituskuva">
+
+        <img
+          src="https://web.uniarts.fi/vaccaj/img/10a_esim.gif"
+          alt="Harjoituksen 10a yksinkertaistettu melodiarunko"
+          loading="lazy">
+
+        <figcaption>
+          Harjoituksen 10a melodiarunko:
+          10a_esim.gif
+        </figcaption>
+
+      </figure>
+
+      <p>
+        Huomaat pian, että yksitoikkoinen
+        ja kulmikas melodia kaipaa koristelua.
+        Voit kokeilla lisätä improvisoiden
+        <em>gruppetto</em>-korukuvioita.
+      </p>
+
+      <p>
+        Vaccajn kirjoittamaa melodiaa pitää
+        aluksi laulaa pelkästään yhdellä tai
+        useammalla vokaalilla.
+        Artikuloinnin pitää olla kevyttä,
+        mutta ensimmäistä ääntä pitää sekä
+        pitkittää että painottaa, lukuun
+        ottamatta tahteja 5 ja 6,
+        joissa kaksoisheleen ensimmäinen
+        kuudestoistaosa on sama kuin sitä
+        edeltänyt ääni.
+      </p>
+
+      <p>
+        Kun harjoittelet hitaasti ja ajatuksella,
+        huomaat nuotinnuksen arvon.
+        Myös pelkkää tekstiä kannattaa lukea
+        rauhallisessa tempossa.
+        Lisää vähitellen nopeutta ja laula
+        melodiaa tekstin kanssa sekä ilman.
+        Joudut samalla kohottamaan
+        artikulointienergiaa kaksoisheleessä.
+      </p>
+
+      <h3>Ajatuksia tulkinnasta</h3>
+
+      <p>
+        Melodiarunko sopii tekstiin suhteellisen
+        hyvin ja vaatii sovittelua ykkösillä
+        vain tahdeissa 5, 9, 17, 21 ja 25.
+        Mahdottomalta tuntuu puolestaan yritys
+        antaa jokaisen kaksoishelekuvion
+        ensimmäiselle äänelle aksentti
+        ja samanaikaisesti toteuttaa luontevaa
+        sanapainotusta.
+        On luultavasti viisainta pitää
+        rytmistä vireyttä yllä tekstin
+        prosodian kustannuksella.
+      </p>
+
+      <p>
+        Sana <em>accende</em> saattoi inspiroida
+        Vaccajta valitsemaan juuri tämän tekstin
+        valmistavaan kaksoisheleharjoitukseen.
+        Koristelu voi huhun mukaan saada
+        päänuotin syttymään liekkeihin.
+      </p>
+
+      <p>
+        Tempon valinnassa kannattaa olla
+        maltillinen.
+        Hitaammin laulettaessa ehtii ilmaista
+        kuudestoistaosat intensiivisemmin.
+        Allegrossa laulusta tulee helposti
+        mitäänsanomaton.
+      </p>
+
+      <!-- LÄHDE -->
+
+      <div class="lahde">
+
+        <strong>Lähde</strong>
+
+        <p>
+          Forshufvud, G. 1994.
+          <em>Con lieve fiato</em>.
+          Lärarhandledning till Nicola Vaccajs
+          <em>Metodo pratico</em>.
+          Göteborgs universitetet.
+        </p>
+
+      </div>
+
+    </section>
+
   </main>
+
+  <!-- HARJOITUKSEN JA ÄÄNIALAN VAIHTO -->
 
   <script>
 
