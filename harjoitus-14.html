@@ -21,9 +21,13 @@
       color: #285b99;
     }
 
-    /* YLÄVÄLILEHDET */
+    a {
+      color: #285b99;
+    }
 
-    .paavalikko {
+    /* SEITSEMÄN YLÄVÄLILEHTEÄ */
+
+    nav.paavalikko {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
@@ -155,6 +159,44 @@
       border-top: 1px solid #ccc;
     }
 
+    /* ESITYSOHJEET */
+
+    .esitysohjeet {
+      max-width: 1000px;
+      margin-top: 55px;
+      padding-top: 25px;
+      border-top: 2px solid #d2e2f3;
+    }
+
+    .esitysohjeet h2 {
+      margin-top: 0;
+    }
+
+    .esitysohjeet h3 {
+      margin-top: 35px;
+    }
+
+    .esitysohjeet p {
+      margin-bottom: 20px;
+    }
+
+    .esitysohjeet ol {
+      padding-left: 28px;
+      margin: 20px 0 25px;
+    }
+
+    .esitysohjeet li {
+      margin-bottom: 12px;
+      padding-left: 5px;
+    }
+
+    .esitysohjeet .lahde {
+      margin-top: 35px;
+      padding-top: 15px;
+      border-top: 1px solid #d2e2f3;
+      color: #555;
+    }
+
     /* MOBIILINÄKYMÄ */
 
     @media (max-width: 800px) {
@@ -178,7 +220,7 @@
     }
 
     @media (max-width: 600px) {
-      .paavalikko {
+      nav.paavalikko {
         flex-direction: column;
       }
 
@@ -195,19 +237,30 @@
 
 <body>
 
-  <!-- SIVUSTON YLÄVÄLILEHDET -->
+  <!-- SEITSEMÄN YLÄVÄLILEHTEÄ -->
 
   <nav class="paavalikko" aria-label="Päävalikko">
 
-    <a
-      href="index.html"
-      class="aktiivinen"
-      aria-current="page">
+    <a href="index.html"
+       class="aktiivinen"
+       aria-current="page">
       Harjoitukset
     </a>
 
     <a href="metodo-pratico.html">
       Metodo pratico
+    </a>
+
+    <a href="italian-aakkoset.html">
+      Italian kielen aakkoset ja ääntäminen
+    </a>
+
+    <a href="runojen-alkupera.html">
+      Runojen alkuperä
+    </a>
+
+    <a href="ohjeita-opettajalle.html">
+      Ohjeita opettajille
     </a>
 
     <a href="vaccaj-metastasio.html">
@@ -227,8 +280,6 @@
     <!-- HARJOITUKSEN JA ÄÄNIALAN VALINTA -->
 
     <div class="valinnat">
-
-      <!-- HARJOITUSVALIKKO -->
 
       <div class="valintaryhma harjoitusryhma">
 
@@ -344,7 +395,8 @@
 
       </div>
 
-      <!-- ÄÄNIALAVALIKKO -->
+      <!-- ALKUPERÄISET ÄÄNIALAT:
+           SOPRAANO, MEZZOSOPRAANO JA BARITONI -->
 
       <div class="valintaryhma aanialaryhma">
 
@@ -386,6 +438,8 @@
       Selaimesi ei tue äänisoitinta.
     </audio>
 
+    <!-- NUOTIT JA LAULUTEKSTI -->
+
     <div class="sisalto">
 
       <!-- NUOTIT -->
@@ -412,6 +466,7 @@
         </div>
 
         <h3>Il recitativo</h3>
+
         <p>Resitatiivi</p>
 
         <hr>
@@ -631,6 +686,7 @@
         <!-- SUOMENNETTU YHTEENVETO -->
 
         <div class="yhteenveto">
+
           <strong>
             Isänmaa on kokonaisuus,<br>
             josta olemme osia.<br>
@@ -656,13 +712,175 @@
             siinä määrin kuin<br>
             kuolevaisen kohtalo voi olla onnellinen.
           </strong>
+
         </div>
 
       </section>
 
     </div>
 
+    <!-- ESITYSOHJEET HARJOITUSSIVUN ALLE -->
+
+    <section
+      class="esitysohjeet"
+      aria-labelledby="esitysohjeet-otsikko">
+
+      <h2 id="esitysohjeet-otsikko">
+        Esitysohjeet
+      </h2>
+
+      <p>
+        Tässä tehtävässä harjoitellaan
+        resitatiivia. Tavoitteena on ymmärtää
+        sanat ja sisältö ja tulkita ne
+        selkeästi kuulijoille.
+      </p>
+
+      <p>
+        Metastasion runossa puhuu
+        Atilius Regulus -niminen sankari,
+        joka tekee vaikutuksen suurenmoisella
+        ulkoasullaan vaikuttamatta kuitenkaan
+        komeilunhaluiselta. Hän on luonteeltaan
+        pohdiskeleva, hänellä on auktoriteettia,
+        mutta samalla hän on ystävällinen
+        ja hillitty. Atilius Regulus yrittää
+        vakuuttaa poikaansa siitä, että
+        oman hengen uhraaminen maansa hyväksi
+        on äärimmäisen kunnioitettavaa.
+      </p>
+
+      <h3>Ohjeita harjoitteluun</h3>
+
+      <p>
+        Suuresta tekstimassasta huolimatta
+        jokaisen sanan oikea ääntämys pitää
+        juurruttaa, samoin oikea ymmärtäminen.
+        Tämän vuoksi voi olla järkevää jakaa
+        harjoitus kolmeen osaan. Parasta on
+        aloittaa 11 ensimmäisellä tahdilla,
+        sen jälkeen on hyödyllistä jatkaa
+        6 viimeisellä, ja sitten voikin vain
+        toivoa, että lauluopiskelija on
+        kiinnostunut näiden väliin
+        jäävistä tahdeista.
+      </p>
+
+      <p>
+        Kannattaa kokeilla seuraavaa työtapaa:
+      </p>
+
+      <ol>
+
+        <li>
+          Lähtökohdaksi otetaan Vaccajn
+          fraseeraus ja teksti luetaan
+          normaalilla äänellä oikeita
+          sanapainoja harjoitellen.
+        </li>
+
+        <li>
+          ”Puhelaula” teksti samalla
+          kuivalla tavalla ”melodialtaan”
+          mutta ilman kaikkia etuheleitä.
+        </li>
+
+        <li>
+          Lue teksti uudelleen mahtipontisen
+          messuavalla teatteriäänellä.
+          Pane merkille, että tällainen
+          voi johtaa nuottikuvan
+          <em>appoggiaturaan</em>, johon
+          sisältyvät ”sisäänsävelletyt”
+          etuheleet.
+        </li>
+
+        <li>
+          Huomaa myös, että tämä on se
+          silta, joka auttaa laulajaa
+          yhdistämään puheen ja laulun.
+          Pariisin konservatorion
+          laulukoulun mukaan resitatiiveissa
+          täytyy olla jatkuvasti keskittynyt
+          siihen, että laulaja laulaa
+          ja puhuu yhdellä kertaa ja
+          että näitä toimintoja ei saa
+          koskaan erottaa toisistaan.
+        </li>
+
+        <li>
+          Tee lopuksi vain pieni harjoitus
+          teatteriäänellä ”laulamisesta”
+          ja esitä sillä tavalla koko
+          resitatiivi kaikkine
+          <em>appoggiaturoineen</em>.
+        </li>
+
+      </ol>
+
+      <h3>Ajatuksia tulkinnasta</h3>
+
+      <p>
+        Sekä puheen että laulun tempon
+        täytyy olla niin rauhallinen,
+        että fraasin lyhyys ei vaikuta
+        perusteettomalta. Tässä voi
+        ajatella Belgiojosoa, jonka mukaan
+        vakavat resitatiivit tulee esittää
+        ylhäisesti suurella tyylillä
+        ja syvällä tunteella.
+        (Bufforesitatiivit tulee sitä
+        vastoin tehdä kepeän liikkuvasti
+        ja räiskyen.) Hän on samaa mieltä
+        kuin Hauser siitä, että laulajan
+        tulee samaistua dramaattiseen
+        tilanteeseen, jotta hän voisi
+        lausua resitatiivin oikein.
+      </p>
+
+      <p>
+        ”Laulettaessa” ei tempo kuitenkaan
+        saa olla niin hidas, että
+        laulu/laulaja luisuu puhtaaseen
+        lauluun. Poikkeuksen tekee fraasi
+        <em>e madre amante</em> tahdeissa
+        27–29, joka on joukossa oleva
+        <em>arioso</em>.
+      </p>
+
+      <p>
+        Jotta laulaja uskaltaa sekoittaa
+        normaalin lauluäänen ”puheen”
+        kanssa, hänellä on oltava hyvin
+        selkeä käsitys melodiasta.
+      </p>
+
+      <p>
+        Etuheleen jälkeistä säveltä
+        ei saa korostaa eikä pidentää.
+      </p>
+
+      <!-- LÄHDE -->
+
+      <div class="lahde">
+
+        <strong>Lähde</strong>
+
+        <p>
+          Forshufvud, G. 1994.
+          <em>Con lieve fiato</em>.
+          Lärarhandledning till Nicola Vaccajs
+          <em>Metodo pratico</em>.
+          Göteborgs universitetet.
+        </p>
+
+      </div>
+
+    </section>
+
   </main>
+
+  <!-- HARJOITUKSEN JA ÄÄNIALAN VAIHTO -->
 
   <script>
 
