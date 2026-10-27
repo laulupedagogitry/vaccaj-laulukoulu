@@ -25,7 +25,7 @@
       color: #285b99;
     }
 
-    /* YLÄVÄLILEHDET */
+    /* SEITSEMÄN YLÄVÄLILEHTEÄ */
 
     nav.paavalikko {
       display: flex;
@@ -159,6 +159,43 @@
       border-top: 1px solid #ccc;
     }
 
+    /* ESITYSOHJEET */
+
+    .esitysohjeet {
+      max-width: 1000px;
+      margin-top: 55px;
+      padding-top: 25px;
+      border-top: 2px solid #d2e2f3;
+    }
+
+    .esitysohjeet h2 {
+      margin-top: 0;
+    }
+
+    .esitysohjeet h3 {
+      margin-top: 35px;
+    }
+
+    .esitysohjeet p {
+      margin-bottom: 20px;
+    }
+
+    .esitysohjeet ul {
+      padding-left: 28px;
+      margin: 20px 0 25px;
+    }
+
+    .esitysohjeet li {
+      margin-bottom: 8px;
+    }
+
+    .esitysohjeet .lahde {
+      margin-top: 35px;
+      padding-top: 15px;
+      border-top: 1px solid #d2e2f3;
+      color: #555;
+    }
+
     /* MOBIILINÄKYMÄ */
 
     @media (max-width: 800px) {
@@ -199,19 +236,30 @@
 
 <body>
 
-  <!-- SIVUSTON YLÄVÄLILEHDET -->
+  <!-- SEITSEMÄN YLÄVÄLILEHTEÄ -->
 
   <nav class="paavalikko" aria-label="Päävalikko">
 
-    <a
-      href="index.html"
-      class="aktiivinen"
-      aria-current="page">
+    <a href="index.html"
+       class="aktiivinen"
+       aria-current="page">
       Harjoitukset
     </a>
 
     <a href="metodo-pratico.html">
       Metodo pratico
+    </a>
+
+    <a href="italian-aakkoset.html">
+      Italian kielen aakkoset ja ääntäminen
+    </a>
+
+    <a href="runojen-alkupera.html">
+      Runojen alkuperä
+    </a>
+
+    <a href="ohjeita-opettajalle.html">
+      Ohjeita opettajille
     </a>
 
     <a href="vaccaj-metastasio.html">
@@ -231,8 +279,6 @@
     <!-- HARJOITUKSEN JA ÄÄNIALAN VALINTA -->
 
     <div class="valinnat">
-
-      <!-- HARJOITUSVALIKKO -->
 
       <div class="valintaryhma harjoitusryhma">
 
@@ -348,7 +394,8 @@
 
       </div>
 
-      <!-- ÄÄNIALAVALIKKO -->
+      <!-- ALKUPERÄISET ÄÄNIALAT:
+           MEZZOSOPRAANO, ALTTO JA BARITONI -->
 
       <div class="valintaryhma aanialaryhma">
 
@@ -389,6 +436,8 @@
       src="aanet/13a_mezzo.mp3">
       Selaimesi ei tue äänisoitinta.
     </audio>
+
+    <!-- NUOTIT JA LAULUTEKSTI -->
 
     <div class="sisalto">
 
@@ -564,7 +613,212 @@
 
     </div>
 
+    <!-- ESITYSOHJEET HARJOITUSSIVUN ALLE -->
+
+    <section
+      class="esitysohjeet"
+      aria-labelledby="esitysohjeet-otsikko">
+
+      <h2 id="esitysohjeet-otsikko">
+        Esitysohjeet
+      </h2>
+
+      <p>
+        Tässä tehtävässä yhdistetään
+        portamento-harjoitus legatoperiaatteeseen
+        avoimilla tavuilla, jotka Vaccaj esitteli
+        jo laulukoulun kahdessa ensimmäisessä
+        laulussa. Italiankielen sana
+        <em>portamento</em> on tärkeä mm.
+        kuljetuksessa. Harjoituksessa olevien
+        19 portamenton harjoittelemisella
+        oppilas saa nyt ”kuljettaa” ääntä
+        huomiota herättävämmällä tavalla
+        kuin aikaisemmin. Vaikka Vaccaj
+        varoittaa liioitellusta portamenton
+        käytöstä, oppilaan täytyy joka
+        tapauksessa ”kuljettaa” ääntä
+        pikkunuottien ja kaarten avulla
+        37 kertaa harjoituksen aikana.
+      </p>
+
+      <p>
+        Vaccajn valitsema runo on varsin
+        tunteikas. Vaikutelmaa lisäävät
+        myös melodian pitkät etuheleet
+        tahdeissa 6–7, 18–23 jne.
+        Edellytys kaikille
+        <em>appoggiaturille</em> ovat
+        tauot fraasien välillä.
+      </p>
+
+      <p>
+        37 pikkunuottia ja kaarta
+        esiintyvät laulussa seuraavalla
+        tavalla:
+      </p>
+
+      <ul>
+        <li>
+          7 kpl sekuntien välillä
+          (tahdeissa 6, 20, 26, 27, 28, 33, 34)
+        </li>
+
+        <li>
+          6 kpl terssien välillä
+          (4, 4, 4, 4, 34, 34)
+        </li>
+
+        <li>
+          5 kpl kvarttien välillä
+          (4, 4, 4, 14, 34)
+        </li>
+
+        <li>
+          5 kpl kvinttien välillä
+          (12, 25, 29, 30, 32)
+        </li>
+
+        <li>
+          9 kpl sekstien välillä
+          (1, 2, 11, 13, 16, 19, 21, 24, 26)
+        </li>
+
+        <li>
+          4 kpl septimien välillä
+          (2, 3, 23, 24)
+        </li>
+
+        <li>
+          1 kpl oktaavien välissä
+          (9)
+        </li>
+      </ul>
+
+      <p>
+        Huomaa puuttuvat melismat
+        tahdeissa 11–13. Voidaan vain
+        ihmetellä, miksi Vaccaj luopuu
+        kaaresta kahden ensimmäisen
+        melisman välillä tahdissa 4,
+        sekunnin välillä tahdissa 7,
+        terssin välillä tahdissa 15
+        ja sekunneissa tahdeissa 21 ja 22.
+      </p>
+
+      <p>
+        <em>Vorrei spiegar</em> on
+        seitsentavuinen runo vaihtelevalla
+        painotusprofiililla, jota Vaccaj
+        ei ole kuitenkaan voinut erilaisista
+        vaikeuksista johtuen noudattaa.
+        Sävellyksenä laulu on
+        <em>Metodo praticon</em>
+        parhaimmistoa ja samalla ainoa
+        mollisävellajissa alkava harjoitus.
+      </p>
+
+      <p>
+        Pieni kolmaskymmeneskahdesosanuotti
+        on jäänne vanhasta käytännöstä,
+        ja se voitaisiin hyvin myös
+        poistaa. Kaari on kuitenkin
+        tarpeellinen.
+      </p>
+
+      <h3>Ohjeita harjoitteluun</h3>
+
+      <p>
+        Harjoittele aluksi melodiaa
+        ilman tekstiä ja ilman
+        portamentokaaria. Käytä
+        vokaaleita <em>u</em> ja
+        <em>o</em>, jotka parhaiten
+        sopivat tämän laulun vaatimaan
+        pehmeään äänenmuodostukseen.
+      </p>
+
+      <p>
+        Tutustu huolellisesti tekstiin
+        ja sen sisältöön. Lue se ääneen
+        monia kertoja ja ota esiin
+        kaikki tunteellisuus ja
+        sentimentaalisuus.
+      </p>
+
+      <p>
+        Laula sen jälkeen italialainen
+        teksti <em>legatissimo</em>.
+        Huomaat, että ääni ”kuljettaa”
+        spontaanisti myös oktaavihypyssä
+        tahdissa 9. Tässä auttaa myös
+        soiva kaksoiskonsonantti sanassa
+        <em>vanno</em>, joka voi
+        elämyksenä auttaa ymmärtämään
+        portamenton käyttöä musiikissa.
+      </p>
+
+      <p>
+        Toinen oivallus voi syntyä
+        tahdissa 11, kun vertaat
+        legatoa kolmesävelisessä
+        melismassa sanalla
+        <em>spiegar</em> tahdissa 11
+        sanoihin <em>tutto</em> ja
+        <em>oso</em>, joissa
+        viimeiselle sävelelle tulee
+        uusi tavu. Alaspäisten
+        intervallien tulee olla
+        kaikissa kolmessa sanassa
+        yhtä tiiviitä. Voit kokeilla
+        tätä myös tahdissa 13.
+      </p>
+
+      <p>
+        Työskentele aluksi vain
+        parilla fraasilla kerrallaan.
+        Äänen todellinen ”kannattelu”
+        vaatii nimittäin erittäin
+        suurta keskittymistä.
+      </p>
+
+      <h3>Ajatuksia tulkinnasta</h3>
+
+      <p>
+        Huomaa, että Vaccaj muistuttaa
+        <em>piano</em>-nyanssista
+        tahdissa 4.
+      </p>
+
+      <p>
+        Tempon täytyy olla
+        <em>Vorrei spiegar</em>
+        -laulussa niin rauhallinen,
+        että ”kannattelulle” löytyy
+        aikaa.
+      </p>
+
+      <!-- LÄHDE -->
+
+      <div class="lahde">
+
+        <strong>Lähde</strong>
+
+        <p>
+          Forshufvud, G. 1994.
+          <em>Con lieve fiato</em>.
+          Lärarhandledning till Nicola Vaccajs
+          <em>Metodo pratico</em>.
+          Göteborgs universitetet.
+        </p>
+
+      </div>
+
+    </section>
+
   </main>
+
+  <!-- HARJOITUKSEN JA ÄÄNIALAN VAIHTO -->
 
   <script>
 
