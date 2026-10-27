@@ -25,7 +25,7 @@
       color: #285b99;
     }
 
-    /* SIVUSTON SEITSEMÄN YLÄVÄLILEHTEÄ */
+    /* YLÄVALIKKO */
 
     nav.paavalikko {
       display: flex;
@@ -54,7 +54,7 @@
       color: white;
     }
 
-    /* HARJOITUKSEN JA ÄÄNIALAN VALINTA */
+    /* HARJOITUS- JA ÄÄNIALAVALINNAT */
 
     label {
       display: block;
@@ -186,8 +186,6 @@
       margin-bottom: 20px;
     }
 
-    /* HARJOITTELUN SÄVELESIMERKKI */
-
     .savelesimerkki {
       background: #f1f6fb;
       border-left: 4px solid #285b99;
@@ -201,8 +199,6 @@
     .savelesimerkki p {
       margin: 0;
     }
-
-    /* LÄHDE */
 
     .esitysohjeet .lahde {
       margin-top: 35px;
@@ -251,7 +247,7 @@
 
 <body>
 
-  <!-- SEITSEMÄN VÄLILEHDEN YLÄVALIKKO -->
+  <!-- SEITSEMÄN YLÄVÄLILEHTEÄ -->
 
   <nav class="paavalikko" aria-label="Päävalikko">
 
@@ -409,7 +405,8 @@
 
       </div>
 
-      <!-- ALKUPERÄISET KAKSI ÄÄNIALAA -->
+      <!-- VAIN ALKUPERÄISET ÄÄNIALAT:
+           MEZZOSOPRAANO JA BARITONI -->
 
       <div class="valintaryhma aanialaryhma">
 
@@ -435,7 +432,7 @@
 
     </div>
 
-    <!-- ÄÄNITE -->
+    <!-- OLETUSÄÄNITE: MEZZOSOPRAANO -->
 
     <h2>Kuuntele äänite</h2>
 
@@ -451,8 +448,6 @@
 
     <div class="sisalto">
 
-      <!-- NUOTIT -->
-
       <section class="nuottialue">
 
         <h2>Nuotit</h2>
@@ -463,8 +458,6 @@
           alt="Vaccaj 6 – mezzosopraanon nuotit">
 
       </section>
-
-      <!-- ALKUPERÄINEN LAULUTEKSTI JA SUOMENNOS -->
 
       <section class="tekstialue">
 
@@ -516,8 +509,6 @@
           </div>
         </div>
 
-        <!-- SUOMENNETTU YHTEENVETO -->
-
         <div class="yhteenveto">
 
           <strong>
@@ -536,7 +527,7 @@
 
     </div>
 
-    <!-- ESITYSOHJEET HARJOITUSSIVUN ALLE -->
+    <!-- ESITYSOHJEET -->
 
     <section
       class="esitysohjeet"
@@ -598,16 +589,12 @@
         voimakkaampana kirjoitetussa nuottikuvassa.
       </p>
 
-      <!-- HARJOITTELUN SÄVELESIMERKKI -->
-
       <div class="savelesimerkki">
-
         <p>
           <em>si - la - sol - re - si - la - sol - re</em><br>
           <em>do2 - si - la - re - do2 - si - la - re</em><br>
           <em>re2 - do2 - si - la - sol - la - fa</em>
         </p>
-
       </div>
 
       <p>
@@ -673,8 +660,6 @@
         että sanan merkitys tulee selväksi.
       </p>
 
-      <!-- LÄHDE -->
-
       <div class="lahde">
 
         <strong>Lähde</strong>
@@ -693,11 +678,9 @@
 
   </main>
 
-  <!-- HARJOITUS- JA ÄÄNIALAVALINTOJEN TOIMINNOT -->
+  <!-- HARJOITUKSEN JA ÄÄNIALAN VAIHTO -->
 
   <script>
-
-    // SIIRTYMINEN TOISEEN HARJOITUKSEEN
 
     function vaihdaHarjoitus() {
       const harjoitus =
@@ -708,8 +691,6 @@
           "harjoitus-" + harjoitus + ".html";
       }
     }
-
-    // ÄÄNIALAN, NUOTIN JA ÄÄNITTEEN VAIHTAMINEN
 
     function vaihdaAaniala() {
       const aaniala =
