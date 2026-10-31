@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="fi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +22,41 @@
       color: #285b99;
     }
 
-    /* YLÄVÄLILEHDET */
+    a {
+      color: #285b99;
+    }
+
+    /* KIELIVALINTA */
+
+    .kielivalinta {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 15px;
+    }
+
+    .kielivalinta button {
+      padding: 8px 16px;
+      border: 1px solid #b7cce2;
+      border-radius: 6px;
+      background: white;
+      color: #285b99;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .kielivalinta button:hover {
+      background: #dceaf8;
+    }
+
+    .kielivalinta button[aria-pressed="true"] {
+      background: #285b99;
+      color: white;
+    }
+
+    /* SEITSEMÄN YLÄVÄLILEHTEÄ */
 
     nav.paavalikko {
       display: flex;
@@ -123,10 +158,6 @@
       object-fit: contain;
     }
 
-    .logokortti a {
-      color: #285b99;
-    }
-
     .logokortti p {
       overflow-wrap: anywhere;
     }
@@ -151,14 +182,39 @@
 
 <body>
 
-  <!-- SIVUSTON PÄIVITETTY YLÄVALIKKO -->
+  <!-- KIELIVALINTA -->
+
+  <div
+    class="kielivalinta"
+    role="group"
+    aria-label="Kieli / Language">
+
+    <button
+      type="button"
+      data-lang="fi"
+      aria-pressed="true">
+      Suomi
+    </button>
+
+    <button
+      type="button"
+      data-lang="en"
+      aria-pressed="false">
+      English
+    </button>
+
+  </div>
+
+  <!-- SEITSEMÄN YLÄVÄLILEHTEÄ -->
 
   <nav class="paavalikko" aria-label="Päävalikko">
 
     <a
       href="index.html"
       class="aktiivinen"
-      aria-current="page">
+      aria-current="page"
+      data-fi="Harjoitukset"
+      data-en="Exercises">
       Harjoitukset
     </a>
 
@@ -166,23 +222,38 @@
       Metodo pratico
     </a>
 
-    <a href="italian-aakkoset.html">
+    <a
+      href="italian-aakkoset.html"
+      data-fi="Italian kielen aakkoset ja ääntäminen"
+      data-en="Italian alphabet and pronunciation">
       Italian kielen aakkoset ja ääntäminen
     </a>
 
-    <a href="runojen-alkupera.html">
+    <a
+      href="runojen-alkupera.html"
+      data-fi="Runojen alkuperä"
+      data-en="Origins of the poems">
       Runojen alkuperä
     </a>
 
-    <a href="ohjeita-opettajalle.html">
-      Ohjeita opettajalle
+    <a
+      href="ohjeita-opettajalle.html"
+      data-fi="Ohjeita opettajille"
+      data-en="Guidance for teachers">
+      Ohjeita opettajille
     </a>
 
-    <a href="vaccaj-metastasio.html">
+    <a
+      href="vaccaj-metastasio.html"
+      data-fi="Vaccaj ja Metastasio"
+      data-en="Vaccaj and Metastasio">
       Vaccaj ja Metastasio
     </a>
 
-    <a href="tekijat.html">
+    <a
+      href="tekijat.html"
+      data-fi="Tekijät"
+      data-en="Credits">
       Tekijät
     </a>
 
@@ -190,11 +261,17 @@
 
   <main>
 
-    <h1>
+    <!-- TERVETULOTEKSTI -->
+
+    <h1
+      data-fi="Tervetuloa Vaccaj-laulukouluun – Metodo pratico"
+      data-en="Welcome to the Vaccaj Singing School – Metodo pratico">
       Tervetuloa Vaccaj-laulukouluun – Metodo pratico
     </h1>
 
-    <p>
+    <p
+      data-fi="Sivusto sisältää Nicolo Vaccajn Metodo pratico -kokoelman laulujen nuotit, sanat ääntämisohjeineen ja suomennoksineen, lauluesimerkit sekä taustatiedot. Materiaali on tarkoitettu kaikille klassisen laulun opiskelijoille ja opettajille, laulajien kanssa työskenteleville pianisteille ja muille alasta kiinnostuneille."
+      data-en="This website provides sheet music, song texts with pronunciation guides and Finnish translations, audio examples, and background information for the exercises in Nicolo Vaccaj's Metodo pratico. The material is intended for students and teachers of classical singing, pianists working with singers, and anyone interested in vocal music.">
       Sivusto sisältää Nicolo Vaccajn Metodo pratico
       -kokoelman laulujen nuotit, sanat ääntämisohjeineen
       ja suomennoksineen, lauluesimerkit sekä taustatiedot.
@@ -204,20 +281,29 @@
       kiinnostuneille.
     </p>
 
-    <p>
+    <p
+      data-fi="Valitse lauluharjoitus alla olevasta valikosta. Harjoitus avautuu automaattisesti valinnan jälkeen. Jokaisessa harjoituksessa voit valita äänialan, katsella nuotteja ja kuunnella äänitteen."
+      data-en="Choose a vocal exercise from the menu below. The exercise page opens automatically when you make a selection. On each exercise page, you can choose a voice type, view the sheet music, and listen to an audio recording.">
       Valitse lauluharjoitus alla olevasta valikosta.
       Harjoitus avautuu automaattisesti valinnan jälkeen.
       Jokaisessa harjoituksessa voit valita äänialan,
       katsella nuotteja ja kuunnella äänitteen.
     </p>
 
-    <h2>Lauluharjoitukset</h2>
+    <!-- LAULUHARJOITUKSET -->
 
-    <!-- HARJOITUKSEN VALINTA -->
+    <h2
+      data-fi="Lauluharjoitukset"
+      data-en="Vocal exercises">
+      Lauluharjoitukset
+    </h2>
 
     <div class="harjoitusvalinta">
 
-      <label for="harjoitus">
+      <label
+        for="harjoitus"
+        data-fi="Valitse harjoitus:"
+        data-en="Choose an exercise:">
         Valitse harjoitus:
       </label>
 
@@ -225,105 +311,190 @@
         id="harjoitus"
         onchange="vaihdaHarjoitus()">
 
-        <option value="" selected>
+        <option
+          value=""
+          selected
+          data-fi="Valitse harjoitus"
+          data-en="Choose an exercise">
           Valitse harjoitus
         </option>
 
-        <optgroup label="I–IV – Intervallit">
+        <!-- I–IV -->
 
-          <option value="1a">
+        <optgroup
+          label="I–IV – Intervallit"
+          data-fi-label="I–IV – Intervallit"
+          data-en-label="I–IV – Intervals">
+
+          <option
+            value="1a"
+            data-fi="I / 1a – Manca sollecita... – La scala – asteikko"
+            data-en="I / 1a – Manca sollecita... – La scala – scale">
             I / 1a – Manca sollecita... – La scala – asteikko
           </option>
 
-          <option value="1b">
+          <option
+            value="1b"
+            data-fi="I / 1b – Semplicetta tortorella... – Intervalli di terza – terssi"
+            data-en="I / 1b – Semplicetta tortorella... – Intervalli di terza – third">
             I / 1b – Semplicetta tortorella... – Intervalli di terza – terssi
           </option>
 
-          <option value="2a">
+          <option
+            value="2a"
+            data-fi="II / 2a – Lascia il lido, e il mare infido... – Intervalli di quarta – kvartti"
+            data-en="II / 2a – Lascia il lido, e il mare infido... – Intervalli di quarta – fourth">
             II / 2a – Lascia il lido, e il mare infido... – Intervalli di quarta – kvartti
           </option>
 
-          <option value="2b">
+          <option
+            value="2b"
+            data-fi="II / 2b – Avvezzo a vivere... – Intervalli di quinta – kvintti"
+            data-en="II / 2b – Avvezzo a vivere... – Intervalli di quinta – fifth">
             II / 2b – Avvezzo a vivere... – Intervalli di quinta – kvintti
           </option>
 
-          <option value="3">
+          <option
+            value="3"
+            data-fi="III / 3 – Bella prova è d'alma forte... – Intervalli di sesta – seksti"
+            data-en="III / 3 – Bella prova è d'alma forte... – Intervalli di sesta – sixth">
             III / 3 – Bella prova è d'alma forte... – Intervalli di sesta – seksti
           </option>
 
-          <option value="4a">
+          <option
+            value="4a"
+            data-fi="IV / 4a – Fra l'ombre un lampo solo... – Intervalli di settima – septimi"
+            data-en="IV / 4a – Fra l'ombre un lampo solo... – Intervalli di settima – seventh">
             IV / 4a – Fra l'ombre un lampo solo... – Intervalli di settima – septimi
           </option>
 
-          <option value="4b">
+          <option
+            value="4b"
+            data-fi="IV / 4b – Quell' onda che ruina... – Intervalli di ottava – oktaavi"
+            data-en="IV / 4b – Quell' onda che ruina... – Intervalli di ottava – octave">
             IV / 4b – Quell' onda che ruina... – Intervalli di ottava – oktaavi
           </option>
 
         </optgroup>
 
-        <optgroup label="V–XIII – Koristeet ja laulutekniikka">
+        <!-- V–XIII -->
 
-          <option value="5">
+        <optgroup
+          label="V–XIII – Koristeet ja laulutekniikka"
+          data-fi-label="V–XIII – Koristeet ja laulutekniikka"
+          data-en-label="V–XIII – Ornamentation and vocal technique">
+
+          <option
+            value="5"
+            data-fi="V / 5 – Delira dubbiosa... – I semitoni – puolisävelaskel"
+            data-en="V / 5 – Delira dubbiosa... – I semitoni – semitone">
             V / 5 – Delira dubbiosa... – I semitoni – puolisävelaskel
           </option>
 
-          <option value="6">
+          <option
+            value="6"
+            data-fi="VI / 6 – Nel contrasto amor accende... – Modo sincopato – synkooppi"
+            data-en="VI / 6 – Nel contrasto amor accende... – Modo sincopato – syncopation">
             VI / 6 – Nel contrasto amor accende... – Modo sincopato – synkooppi
           </option>
 
-          <option value="7">
+          <option
+            value="7"
+            data-fi="VII / 7 – Come il candore... – Introduzione alle volate – johdatus juoksutukseen"
+            data-en="VII / 7 – Come il candore... – Introduzione alle volate – introduction to runs">
             VII / 7 – Come il candore... – Introduzione alle volate – johdatus juoksutukseen
           </option>
 
-          <option value="8a">
+          <option
+            value="8a"
+            data-fi="VIII / 8a – Senza l'amabile... – Le appoggiatura sopra e sotto – pitkä etuhele"
+            data-en="VIII / 8a – Senza l'amabile... – Le appoggiatura sopra e sotto – long appoggiatura">
             VIII / 8a – Senza l'amabile... – Le appoggiatura sopra e sotto – pitkä etuhele
           </option>
 
-          <option value="8b">
+          <option
+            value="8b"
+            data-fi="VIII / 8b – Benchè di senso privo... – L'acciaccatura – lyhyt etuhele"
+            data-en="VIII / 8b – Benchè di senso privo... – L'acciaccatura – short grace note">
             VIII / 8b – Benchè di senso privo... – L'acciaccatura – lyhyt etuhele
           </option>
 
-          <option value="9a">
+          <option
+            value="9a"
+            data-fi="IX / 9a – La gioia verace... – Introduzione al Mordente – johdatus jälkiheleeseen"
+            data-en="IX / 9a – La gioia verace... – Introduzione al Mordente – introduction to the mordent">
             IX / 9a – La gioia verace... – Introduzione al Mordente – johdatus jälkiheleeseen
           </option>
 
-          <option value="9b">
+          <option
+            value="9b"
+            data-fi="IX / 9b – L'augelletto in lacci stretto... – Mordente in diversi modi – jälkihele, kaksoishele"
+            data-en="IX / 9b – L'augelletto in lacci stretto... – Mordente in diversi modi – mordent, turn">
             IX / 9b – L'augelletto in lacci stretto... – Mordente in diversi modi – jälkihele, kaksoishele
           </option>
 
-          <option value="10a">
+          <option
+            value="10a"
+            data-fi="X / 10a – Quando accende un nobil petto... – Introduzione al grupetto – johdatus kaksoisheleeseen"
+            data-en="X / 10a – Quando accende un nobil petto... – Introduzione al grupetto – introduction to the turn">
             X / 10a – Quando accende un nobil petto... – Introduzione al grupetto – johdatus kaksoisheleeseen
           </option>
 
-          <option value="10b">
+          <option
+            value="10b"
+            data-fi="X / 10b – Più non si trovano... – Il gruppetto – kaksoishele"
+            data-en="X / 10b – Più non si trovano... – Il gruppetto – turn">
             X / 10b – Più non si trovano... – Il gruppetto – kaksoishele
           </option>
 
-          <option value="11">
+          <option
+            value="11"
+            data-fi="XI / 11 – Se povero il ruscello... – Introduzione al trillo – johdatus trilliin"
+            data-en="XI / 11 – Se povero il ruscello... – Introduzione al trillo – introduction to the trill">
             XI / 11 – Se povero il ruscello... – Introduzione al trillo – johdatus trilliin
           </option>
 
-          <option value="12">
+          <option
+            value="12"
+            data-fi="XII / 12 – Siam navi all' onde algenti... – Le volate – pitkä 16-osajuoksutus"
+            data-en="XII / 12 – Siam navi all' onde algenti... – Le volate – extended sixteenth-note run">
             XII / 12 – Siam navi all' onde algenti... – Le volate – pitkä 16-osajuoksutus
           </option>
 
-          <option value="13a">
+          <option
+            value="13a"
+            data-fi="XIII / 13a – Vorrei spiegar l'affanno... – Portamento I - Modo per portare la voce – kannattelu I"
+            data-en="XIII / 13a – Vorrei spiegar l'affanno... – Portamento I - Modo per portare la voce – portamento I">
             XIII / 13a – Vorrei spiegar l'affanno... – Portamento I - Modo per portare la voce – kannattelu I
           </option>
 
-          <option value="13b">
+          <option
+            value="13b"
+            data-fi="XIII / 13b – O placido il mare... – Portamento II - Altro modo – kannattelu II"
+            data-en="XIII / 13b – O placido il mare... – Portamento II - Altro modo – portamento II">
             XIII / 13b – O placido il mare... – Portamento II - Altro modo – kannattelu II
           </option>
 
         </optgroup>
 
-        <optgroup label="XIV–XV – Resitatiivi ja kertaus">
+        <!-- XIV–XV -->
 
-          <option value="14">
+        <optgroup
+          label="XIV–XV – Resitatiivi ja kertaus"
+          data-fi-label="XIV–XV – Resitatiivi ja kertaus"
+          data-en-label="XIV–XV – Recitative and review">
+
+          <option
+            value="14"
+            data-fi="XIV / 14 – La patria è un tutto... – Il recitativo – resitatiivi"
+            data-en="XIV / 14 – La patria è un tutto... – Il recitativo – recitative">
             XIV / 14 – La patria è un tutto... – Il recitativo – resitatiivi
           </option>
 
-          <option value="15">
+          <option
+            value="15"
+            data-fi="XV / 15 – Alla stagion de' fiori... – Riepilogo – kertaus"
+            data-en="XV / 15 – Alla stagion de' fiori... – Riepilogo – review">
             XV / 15 – Alla stagion de' fiori... – Riepilogo – kertaus
           </option>
 
@@ -335,21 +506,31 @@
 
     <!-- SIVUSTON HISTORIA -->
 
-    <h2>Sivuston historia</h2>
+    <h2
+      data-fi="Sivuston historia"
+      data-en="History of the website">
+      Sivuston historia
+    </h2>
 
-    <p>
+    <p
+      data-fi="Tämä verkkojulkaisu syntyi Sibelius-Akatemian laulumusiikin osaston ja innovaatiokeskuksen yhteistyönä."
+      data-en="This online publication was originally developed through a collaboration between the Sibelius Academy's Department of Vocal Music and its Innovation Centre.">
       Tämä verkkojulkaisu syntyi Sibelius-Akatemian
       laulumusiikin osaston ja innovaatiokeskuksen
       yhteistyönä.
     </p>
 
-    <p>
+    <p
+      data-fi="Sivuston päivittäminen päättyi vuonna 2012, ja Flash-tuen päättyminen vuonna 2020 uhkasi jättää arvokkaan oppimateriaalin historiaan."
+      data-en="Updates to the website ended in 2012, and the discontinuation of Flash support in 2020 threatened to make this valuable educational material inaccessible.">
       Sivuston päivittäminen päättyi vuonna 2012,
       ja Flash-tuen päättyminen vuonna 2020 uhkasi
       jättää arvokkaan oppimateriaalin historiaan.
     </p>
 
-    <p>
+    <p
+      data-fi="Laulupedagogit ry teki aloitteen sivuston herättämisestä uudelleen henkiin ja otti yhteyttä Outi Parkkilaan. Sibelius-Akatemia luovutti Vaccaj-oppimateriaalin yhdistyksen haltuun."
+      data-en="Laulupedagogit ry, the Finnish Association of Singing Teachers, initiated the revival of the website and contacted Outi Parkkila. The Sibelius Academy transferred the Vaccaj educational material to the association.">
       Laulupedagogit ry teki aloitteen sivuston
       herättämisestä uudelleen henkiin ja otti
       yhteyttä Outi Parkkilaan. Sibelius-Akatemia
@@ -357,19 +538,34 @@
       haltuun.
     </p>
 
-    <p>
-      Vuonna 2026 Laulupedagogit ryn tuottajan Petteri Mansikan toimesta sivuston
-      teknisen toteutuksen uudistettiin ja materiaali palautettiin
-      jälleen käyttökuntoon ja kaikkien saataville.
+    <p
+      data-fi="Vuonna 2026 Laulupedagogit ry:n tuottaja Petteri Mansikka uudisti sivuston teknisen toteutuksen, ja materiaali palautettiin jälleen käyttökuntoon ja kaikkien saataville."
+      data-en="In 2026, Petteri Mansikka, producer for Laulupedagogit ry, renewed the website's technical implementation, making the material accessible and usable once again.">
+      Vuonna 2026 Laulupedagogit ry:n tuottaja
+      Petteri Mansikka uudisti sivuston teknisen
+      toteutuksen, ja materiaali palautettiin jälleen
+      käyttökuntoon ja kaikkien saataville.
     </p>
 
     <!-- KÄYTTÖOIKEUDET -->
 
-    <h2>Käyttöoikeudet</h2>
+    <h2
+      data-fi="Käyttöoikeudet"
+      data-en="Licensing">
+      Käyttöoikeudet
+    </h2>
 
     <p>
-      Tämän teoksen käyttöoikeutta koskee
-      <a href="http://creativecommons.org/licenses/by-nd-nc/1.0/fi/">
+      <span
+        data-fi="Tämän teoksen käyttöoikeutta koskee"
+        data-en="This work is licensed under the">
+        Tämän teoksen käyttöoikeutta koskee
+      </span>
+
+      <a
+        href="http://creativecommons.org/licenses/by-nd-nc/1.0/fi/"
+        data-fi="Creative Commons Nimeä–Epäkaupallinen–Ei muutettuja teoksia 1.0 Suomi -lisenssi"
+        data-en="Creative Commons Attribution–NonCommercial–NoDerivatives 1.0 Finland licence">
         Creative Commons Nimeä–Epäkaupallinen–Ei muutettuja
         teoksia 1.0 Suomi -lisenssi
       </a>.
@@ -381,7 +577,10 @@
       class="yhteistyotahot"
       aria-labelledby="yhteistyotahot-otsikko">
 
-      <h2 id="yhteistyotahot-otsikko">
+      <h2
+        id="yhteistyotahot-otsikko"
+        data-fi="Laulupedagogit ry ja Sibelius-Akatemia"
+        data-en="Laulupedagogit ry and the Sibelius Academy">
         Laulupedagogit ry ja Sibelius-Akatemia
       </h2>
 
@@ -398,7 +597,7 @@
             href="https://laulupedagogit.fi/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Laulupedagogit ry:n verkkosivut">
+            aria-label="Laulupedagogit ry">
 
             <img
               src="img/LP_logo_pyorea.png"
@@ -406,8 +605,14 @@
 
           </a>
 
-          <p>
-            Laulupedagogit ry on valtakunnallinen laulunopettajien yhdistys, jonka tarkoituksena on laulutaiteen, sen opetuksen ja laulupedagogiikan kehittäminen Suomessa. Tutustu Laulupedagogit ryn toimintaan.
+          <p
+            data-fi="Laulupedagogit ry on valtakunnallinen laulunopettajien yhdistys, jonka tarkoituksena on laulutaiteen, sen opetuksen ja laulupedagogiikan kehittäminen Suomessa. Tutustu Laulupedagogit ry:n toimintaan."
+            data-en="Laulupedagogit ry is a national association of singing teachers dedicated to developing the art of singing, singing instruction and vocal pedagogy in Finland. Learn more about the association's activities.">
+            Laulupedagogit ry on valtakunnallinen
+            laulunopettajien yhdistys, jonka tarkoituksena
+            on laulutaiteen, sen opetuksen ja laulupedagogiikan
+            kehittäminen Suomessa. Tutustu Laulupedagogit ry:n
+            toimintaan.
           </p>
 
           <p>
@@ -425,7 +630,11 @@
 
         <div class="logokortti">
 
-          <h3>Sibelius-Akatemia</h3>
+          <h3
+            data-fi="Sibelius-Akatemia"
+            data-en="Sibelius Academy">
+            Sibelius-Akatemia
+          </h3>
 
           <a
             class="logolinkki"
@@ -440,7 +649,9 @@
 
           </a>
 
-          <p>
+          <p
+            data-fi="Vaccaj-laulukoulun alkuperäinen verkkojulkaisu toteutettiin Sibelius-Akatemiassa."
+            data-en="The original online edition of the Vaccaj Singing School was developed at the Sibelius Academy.">
             Vaccaj-laulukoulun alkuperäinen
             verkkojulkaisu toteutettiin
             Sibelius-Akatemiassa.
@@ -450,7 +661,9 @@
             <a
               href="https://web.uniarts.fi/vaccaj/index-2.html"
               target="_blank"
-              rel="noopener noreferrer">
+              rel="noopener noreferrer"
+              data-fi="Alkuperäinen Vaccaj-laulukoulu"
+              data-en="Original Vaccaj Singing School">
               Alkuperäinen Vaccaj-laulukoulu
             </a>
           </p>
@@ -463,9 +676,11 @@
 
   </main>
 
+  <!-- JAVASCRIPT -->
+
   <script>
 
-    // AVAA HARJOITUKSEN HETI VALINNAN JÄLKEEN
+    // HARJOITUKSEN AVAAMINEN
 
     function vaihdaHarjoitus() {
 
@@ -473,12 +688,105 @@
         document.getElementById("harjoitus").value;
 
       if (harjoitus !== "") {
-
         window.location.href =
           "harjoitus-" + harjoitus + ".html";
-
       }
+
     }
+
+    // KIELEN VAIHTAMINEN
+
+    function asetaKieli(kieli) {
+
+      const lang = kieli === "en" ? "en" : "fi";
+
+      // Päivitetään HTML-sivun kieli.
+      document.documentElement.lang = lang;
+
+      // Vaihdetaan kaikki käännettävät tekstit.
+      document.querySelectorAll(
+        "[data-fi][data-en]"
+      ).forEach(function(elementti) {
+
+        elementti.textContent =
+          elementti.getAttribute("data-" + lang);
+
+      });
+
+      // Vaihdetaan harjoitusryhmien otsikot.
+      document.querySelectorAll(
+        "[data-fi-label][data-en-label]"
+      ).forEach(function(elementti) {
+
+        elementti.label =
+          elementti.getAttribute(
+            "data-" + lang + "-label"
+          );
+
+      });
+
+      // Päivitetään kielipainikkeiden tila.
+      document.querySelectorAll(
+        ".kielivalinta button"
+      ).forEach(function(painike) {
+
+        const aktiivinen =
+          painike.getAttribute("data-lang") === lang;
+
+        painike.setAttribute(
+          "aria-pressed",
+          String(aktiivinen)
+        );
+
+      });
+
+      // Tallennetaan valinta selaimeen.
+      try {
+        localStorage.setItem(
+          "vaccaj-kieli",
+          lang
+        );
+      } catch (virhe) {
+        // Sivusto toimii myös ilman tallennusta.
+      }
+
+    }
+
+    // KIELIPAINIKKEIDEN TOIMINTA
+
+    document.querySelectorAll(
+      ".kielivalinta button"
+    ).forEach(function(painike) {
+
+      painike.addEventListener(
+        "click",
+        function() {
+
+          asetaKieli(
+            painike.getAttribute("data-lang")
+          );
+
+        }
+      );
+
+    });
+
+    // PALAUTETAAN AIEMMIN VALITTU KIELI
+
+    let tallennettuKieli = "fi";
+
+    try {
+
+      tallennettuKieli =
+        localStorage.getItem("vaccaj-kieli") || "fi";
+
+    } catch (virhe) {
+
+      tallennettuKieli = "fi";
+
+    }
+
+    asetaKieli(tallennettuKieli);
 
   </script>
 
