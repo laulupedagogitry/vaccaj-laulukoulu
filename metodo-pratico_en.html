@@ -1,0 +1,874 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Metodo pratico – Vaccaj Singing School</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      color: #285b99;
+    }
+
+    /* LANGUAGE SELECTION */
+
+    .kielivalinta {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin: 0 0 15px;
+    }
+
+    .kielivalinta a {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #b7cce2;
+      border-radius: 6px;
+      background: white;
+      color: #285b99;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .kielivalinta a:hover {
+      background: #dceaf8;
+    }
+
+    .kielivalinta a.aktiivinen {
+      background: #285b99;
+      border-color: #285b99;
+      color: white;
+    }
+
+    /* MAIN NAVIGATION */
+
+    nav.paavalikko {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0 35px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #d2e2f3;
+    }
+
+    .paavalikko a {
+      padding: 10px 16px;
+      background: #f1f6fb;
+      border-radius: 6px;
+      color: #285b99;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .paavalikko a:hover {
+      background: #dceaf8;
+    }
+
+    .paavalikko a.aktiivinen {
+      background: #285b99;
+      color: white;
+    }
+
+    /* METODO PRATICO TABS */
+
+    .valilehdet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 30px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #d2e2f3;
+    }
+
+    .valilehdet button {
+      background: #f1f6fb;
+      color: #285b99;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font: bold 16px Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    .valilehdet button:hover {
+      background: #dceaf8;
+    }
+
+    .valilehdet button.aktiivinen {
+      background: #285b99;
+      color: white;
+      border-color: #285b99;
+    }
+
+    /* TAB CONTENT */
+
+    .sisalto {
+      padding-top: 25px;
+      max-width: 850px;
+    }
+
+    .sisalto p {
+      margin-bottom: 22px;
+    }
+
+    .valilehtisisalto[hidden] {
+      display: none;
+    }
+
+    .allekirjoitus {
+      text-align: right;
+      font-weight: bold;
+    }
+
+    .aaniala-kuva {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 25px 0;
+    }
+
+    .lainaus {
+      border-left: 4px solid #285b99;
+      padding: 12px 20px;
+      background: #f1f6fb;
+      margin: 25px 0;
+    }
+
+    .lainaus p {
+      margin: 0;
+    }
+
+    .lahde {
+      margin-top: 35px;
+      padding-top: 15px;
+      border-top: 1px solid #d2e2f3;
+      color: #555;
+    }
+
+    /* EXERCISE STRUCTURE TABLE */
+
+    .taulukko-kehys {
+      width: 100%;
+      overflow-x: auto;
+      margin: 25px 0;
+    }
+
+    .rakenne-taulukko {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .rakenne-taulukko th {
+      text-align: left;
+      padding: 12px 9px;
+      color: #285b99;
+      background: #e7f0fa;
+      border-bottom: 2px solid #b7cce2;
+      vertical-align: bottom;
+    }
+
+    .rakenne-taulukko td {
+      padding: 11px 9px;
+      border-bottom: 1px solid #e0e8f1;
+      vertical-align: top;
+    }
+
+    .rakenne-taulukko tbody tr:hover {
+      background: #f7faff;
+    }
+
+    .rakenne-taulukko .ryhmaraja td {
+      border-top: 2px solid #9eafc2;
+    }
+
+    .rakenne-taulukko .numero {
+      font-weight: bold;
+      color: #285b99;
+      white-space: nowrap;
+    }
+
+    .rakenne-taulukko .laulu {
+      font-style: italic;
+    }
+
+    .rakenne-taulukko a {
+      color: #285b99;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .rakenne-taulukko a:hover {
+      color: #173b67;
+    }
+
+    .huomautukset {
+      font-size: 14px;
+      color: #555;
+      margin-top: 25px;
+    }
+
+    /* MOBILE VIEW */
+
+    @media (max-width: 600px) {
+      nav.paavalikko,
+      .valilehdet {
+        flex-direction: column;
+      }
+
+      .paavalikko a,
+      .valilehdet button {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .rakenne-taulukko {
+        min-width: 720px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LANGUAGE SELECTION -->
+
+  <div
+    class="kielivalinta"
+    role="group"
+    aria-label="Language">
+
+    <a href="metodo-pratico.html" lang="fi">
+      Suomi
+    </a>
+
+    <a
+      href="metodo-pratico_en.html"
+      class="aktiivinen"
+      lang="en"
+      aria-current="page">
+      English
+    </a>
+
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+
+  <nav class="paavalikko" aria-label="Main navigation">
+
+    <a href="index_en.html">
+      Exercises
+    </a>
+
+    <a
+      href="metodo-pratico_en.html"
+      class="aktiivinen"
+      aria-current="page">
+      Metodo pratico
+    </a>
+
+    <a href="italian-aakkoset_en.html">
+      Italian alphabet and pronunciation
+    </a>
+
+    <a href="runojen-alkupera_en.html">
+      Origins of the poems
+    </a>
+
+    <a href="ohjeita-opettajalle_en.html">
+      Guidance for teachers
+    </a>
+
+    <a href="vaccaj-metastasio_en.html">
+      Vaccaj and Metastasio
+    </a>
+
+    <a href="tekijat_en.html">
+      Credits
+    </a>
+
+  </nav>
+
+  <main>
+
+    <h1>Metodo pratico</h1>
+
+    <!-- FOUR INTERNAL TABS -->
+
+    <div
+      class="valilehdet"
+      role="tablist"
+      aria-label="Metodo pratico topics">
+
+      <button
+        type="button"
+        id="painike-metodo"
+        class="aktiivinen"
+        role="tab"
+        aria-selected="true"
+        aria-controls="metodo"
+        onclick="avaaValilehti('metodo')">
+        Metodo pratico
+      </button>
+
+      <button
+        type="button"
+        id="painike-esipuhe"
+        role="tab"
+        aria-selected="false"
+        aria-controls="esipuhe"
+        onclick="avaaValilehti('esipuhe')">
+        The author's preface
+      </button>
+
+      <button
+        type="button"
+        id="painike-rakenne"
+        role="tab"
+        aria-selected="false"
+        aria-controls="rakenne"
+        onclick="avaaValilehti('rakenne')">
+        Structure of exercises
+      </button>
+
+      <button
+        type="button"
+        id="painike-kamarilaulajat"
+        role="tab"
+        aria-selected="false"
+        aria-controls="kamarilaulajat"
+        onclick="avaaValilehti('kamarilaulajat')">
+        Amateurs
+      </button>
+
+    </div>
+
+    <!-- 1. METODO PRATICO -->
+
+    <section
+      id="metodo"
+      class="sisalto valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-metodo">
+
+      <h2>Metodo pratico</h2>
+
+      <p>
+        Published first in London in 1834,
+        Nicolo Vaccaj's
+        <em>Metodo pratico di canto italiano per
+        camera diviso in 15 lezioni</em>
+        (A practical method of Italian chamber singing,
+        divided into 15 lessons) is the most popular
+        vocal method in the world. To date, it has
+        been published in over 40 editions.
+      </p>
+
+      <p>
+        The meaning of the Italian word
+        <em>metodo</em> is "a way."
+        Vaccaj apparently wanted to introduce
+        an organized approach to learning to sing.
+      </p>
+
+      <p>
+        He divided his method into 15 lessons
+        or 15 exercises with a total of 22 songs.
+      </p>
+
+    </section>
+
+    <!-- 2. THE AUTHOR'S PREFACE -->
+
+    <section
+      id="esipuhe"
+      class="sisalto valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-esipuhe"
+      hidden>
+
+      <h2>The author's preface</h2>
+
+      <p>
+        "Such are the advantages offered by the
+        Italian language that it is unquestionably
+        advisable to learn to sing in this idiom first,
+        after which it will be easy to sing in the
+        other languages. Learning to sing in another
+        language does not offer these benefits.
+      </p>
+
+      <p>
+        I have come across many people in my
+        experience – in Germany, France, England,
+        and Italy – who, desiring simply to learn
+        to sing for their own pleasure, are unwilling
+        to embark on long exercises and solfèges,
+        and as a result, their study lacks any method.
+      </p>
+
+      <p>
+        I therefore decided to prepare a new and
+        entirely new method, which might prove both
+        useful and enjoyable and – while avoiding
+        the boredom of long studies – would achieve
+        the same end.
+      </p>
+
+      <p>
+        Since the principal difficulty for foreigners
+        (even after doing vocalizes and solfèges)
+        lies in singing a language which is not
+        their own, I thought that it was a good idea
+        that they should get used to the language
+        right from the beginning of their studies.
+        Rather than have them sing meaningless
+        syllables I chose the most suitable of
+        Metastasio's splendid poems as a means of
+        inculcating those basic rules which most
+        students neglect because they find them boring.
+      </p>
+
+      <p>
+        There is no doubt that this method will prove
+        useful not only to amateurs, but also to those
+        who wish to make this Art their profession.
+        It may well help to clarify points made in
+        other methods, thanks to the use of examples."
+      </p>
+
+      <p class="allekirjoitus">
+        Nicolo Vaccaj
+      </p>
+
+      <h2>Vocal range</h2>
+
+      <img
+        class="aaniala-kuva"
+        src="img/aaniala.gif"
+        alt="Vocal range of the Vaccaj singing method">
+
+      <div class="lainaus">
+        <p>
+          "Throughout the method I have made use of
+          a limited extension which should prove
+          comfortable for most voices. Moreover it
+          is always a good idea to start by practising
+          in the centre of the voice. Indeed all the
+          rules can be learnt in this part of the voice,
+          and if one should so desire, any of the lessons
+          can be transposed a tone higher or lower at will."
+        </p>
+      </div>
+
+      <div class="lahde">
+        <strong>Source</strong>
+
+        <p>
+          Vaccaj, N. 1833.
+          <em>Metodo pratico.</em>
+          Edition Peters.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- 3. STRUCTURE OF EXERCISES -->
+
+    <section
+      id="rakenne"
+      class="sisalto valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-rakenne"
+      hidden>
+
+      <h2>Structure of exercises</h2>
+
+      <p>
+        Metodo pratico includes 22 songs introducing
+        three types of skills: intervals, ornaments,
+        and separate exercises on recitative and arias.
+      </p>
+
+      <div class="taulukko-kehys">
+
+        <table class="rakenne-taulukko">
+
+          <thead>
+            <tr>
+              <th scope="col">Numbers by Vaccaj</th>
+              <th scope="col">S–A</th>
+              <th scope="col">Beginning</th>
+              <th scope="col">Topics</th>
+              <th scope="col">Exercises</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <!-- INTERVALS -->
+
+            <tr>
+              <td class="numero" rowspan="2">I</td>
+              <td>
+                <a href="harjoitus-1a_en.html">1a</a>
+              </td>
+              <td class="laulu">Manca sollecita...</td>
+              <td>La scala</td>
+              <td>the scale</td>
+            </tr>
+
+            <tr>
+              <td>
+                <a href="harjoitus-1b_en.html">1b</a>
+              </td>
+              <td class="laulu">
+                Semplicetta tortorella...
+              </td>
+              <td>Intervalli di terza</td>
+              <td>thirds</td>
+            </tr>
+
+            <tr>
+              <td class="numero" rowspan="2">II</td>
+              <td>
+                <a href="harjoitus-2a_en.html">2a</a>
+              </td>
+              <td class="laulu">
+                Lascia il lido, e il mare infido...
+              </td>
+              <td>Intervalli di quarta</td>
+              <td>fourths</td>
+            </tr>
+
+            <tr>
+              <td>
+                <a href="harjoitus-2b_en.html">2b</a>
+              </td>
+              <td class="laulu">Avvezzo a vivere...</td>
+              <td>Intervalli di quinta</td>
+              <td>fifths</td>
+            </tr>
+
+            <tr>
+              <td class="numero">III</td>
+              <td>
+                <a href="harjoitus-3_en.html">3</a>
+              </td>
+              <td class="laulu">
+                Bella prova é d'alma forte...
+              </td>
+              <td>Intervalli di sesta</td>
+              <td>sixths</td>
+            </tr>
+
+            <tr>
+              <td class="numero" rowspan="2">IV</td>
+              <td>
+                <a href="harjoitus-4a_en.html">4a</a>
+              </td>
+              <td class="laulu">
+                Fra l'ombre un lampo solo...
+              </td>
+              <td>Intervalli di settima</td>
+              <td>sevenths</td>
+            </tr>
+
+            <tr>
+              <td>
+                <a href="harjoitus-4b_en.html">4b</a>
+              </td>
+              <td class="laulu">
+                Quell' onda che ruina...
+              </td>
+              <td>Intervalli di ottava</td>
+              <td>eighths</td>
+            </tr>
+
+            <!-- ORNAMENTATION -->
+
+            <tr class="ryhmaraja">
+              <td class="numero">V</td>
+              <td>
+                <a href="harjoitus-5_en.html">5</a>
+              </td>
+              <td class="laulu">Delira dubbiosa...</td>
+              <td>I semitoni</td>
+              <td>semitones</td>
+            </tr>
+
+            <tr>
+              <td class="numero">VI</td>
+              <td>
+                <a href="harjoitus-6_en.html">6</a>
+              </td>
+              <td class="laulu">
+                Nel contrasto amor accende...
+              </td>
+              <td>Modo sincopato</td>
+              <td>syncopation</td>
+            </tr>
+
+            <tr>
+              <td class="numero">VII</td>
+              <td>
+                <a href="harjoitus-7_en.html">7</a>
+              </td>
+              <td class="laulu">Come il candore...</td>
+              <td>Introduzione alle volate</td>
+              <td>introduction to roulades</td>
+            </tr>
+
+            <tr>
+              <td class="numero" rowspan="2">VIII</td>
+              <td>
+                <a href="harjoitus-8a_en.html">8a</a>
+              </td>
+              <td class="laulu">Senza l'amabile...</td>
+              <td>Le appoggiatura sopra e sotto</td>
+              <td>appoggiaturas (*</td>
+            </tr>
+
+            <tr>
+              <td>
+                <a href="harjoitus-8b_en.html">8b</a>
+              </td>
+              <td class="laulu">
+                Benchè di senso privo...
+              </td>
+              <td>L'acciaccatura</td>
+              <td>acciaccaturas</td>
+            </tr>
+
+            <tr>
+              <td class="numero" rowspan="2">IX</td>
+              <td>
+                <a href="harjoitus-9a_en.html">9a</a>
+              </td>
+              <td class="laulu">La gioia verace...</td>
+              <td>Introduzione al Mordente</td>
+              <td>introduction to mordents</td>
+            </tr>
+
+            <tr>
+              <td>
+                <a href="harjoitus-9b_en.html">9b</a>
+              </td>
+              <td class="laulu">
+                L'augelletto in lacci stretto...
+              </td>
+              <td>Mordente in diversi modi</td>
+              <td>mordents</td>
+            </tr>
+
+            <tr>
+              <td class="numero" rowspan="2">X</td>
+              <td>
+                <a href="harjoitus-10a_en.html">10a</a>
+              </td>
+              <td class="laulu">
+                Quando accende un nobil petto...
+              </td>
+              <td>Introduzione al grupetto</td>
+              <td>introduction to turns</td>
+            </tr>
+
+            <tr>
+              <td>
+                <a href="harjoitus-10b_en.html">10b</a>
+              </td>
+              <td class="laulu">
+                Più non si trovano...
+              </td>
+              <td>Il gruppetto</td>
+              <td>turns</td>
+            </tr>
+
+            <tr>
+              <td class="numero">XI</td>
+              <td>
+                <a href="harjoitus-11_en.html">11</a>
+              </td>
+              <td class="laulu">
+                Se povero il ruscello...
+              </td>
+              <td>Introduzione al trillo</td>
+              <td>introduction to trills or shakes</td>
+            </tr>
+
+            <tr>
+              <td class="numero">XII</td>
+              <td>
+                <a href="harjoitus-12_en.html">12</a>
+              </td>
+              <td class="laulu">
+                Siam navi all' onde algenti...
+              </td>
+              <td>Le volate</td>
+              <td>roulades 2 (with semiquavers)</td>
+            </tr>
+
+            <tr>
+              <td class="numero" rowspan="2">XIII</td>
+              <td>
+                <a href="harjoitus-13a_en.html">13a</a>
+              </td>
+              <td class="laulu">
+                Vorrei spiegar l'affanno...
+              </td>
+              <td>
+                Portamento I - Modo per portare la voce
+              </td>
+              <td>
+                portamento I – anticipating a note by
+                carrying the voice legato up or down
+                from the preceding syllable
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <a href="harjoitus-13b_en.html">13b</a>
+              </td>
+              <td class="laulu">
+                O placido il mare...
+              </td>
+              <td>Portamento II - Altro modo</td>
+              <td>
+                portamento II – sliding up
+                (like a wave)
+              </td>
+            </tr>
+
+            <!-- RECITATIVE AND ARIA -->
+
+            <tr class="ryhmaraja">
+              <td class="numero">XIV</td>
+              <td>
+                <a href="harjoitus-14_en.html">14</a>
+              </td>
+              <td class="laulu">
+                La patria è un tutto...
+              </td>
+              <td>Il recitativo</td>
+              <td>the recitative</td>
+            </tr>
+
+            <tr>
+              <td class="numero">XV</td>
+              <td>
+                <a href="harjoitus-15_en.html">15</a>
+              </td>
+              <td class="laulu">
+                Alla stagion de' fiori...
+              </td>
+              <td>Riepilogo</td>
+              <td>recapitulation</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="huomautukset">
+
+        <p>
+          (* The terms upper mordent, lower mordent
+          and turn are also used for certain ornaments.
+        </p>
+
+        <p>
+          Vaccaj used the Roman numerals I–XV,
+          seven of which include two songs
+          (I, II, IV, VIII, IX, X and XIII).
+        </p>
+
+        <p>
+          At the Sibelius Academy (SA), we use
+          Vaccaj's system of 1–15 (I–XV)
+          but add the letters "a" and "b"
+          to distinguish between the songs
+          and indicate their order.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- 4. AMATEURS -->
+
+    <section
+      id="kamarilaulajat"
+      class="sisalto valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-kamarilaulajat"
+      hidden>
+
+      <h2>Amateurs</h2>
+
+      <p>
+        In his preface to <em>Metodo pratico</em>,
+        Vaccaj names amateurs as his target group.
+        This group of students wanted to sing
+        less demanding songs, not arias from
+        operas or oratorios. Thus, Vaccaj's
+        method is more a chamber singing than
+        an opera singing school. This is why
+        <em>Metodo pratico</em> is not considered
+        a difficult method, and it has gained
+        great popularity.
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- TAB FUNCTIONALITY -->
+
+  <script>
+    function avaaValilehti(tunnus) {
+
+      const sisallot =
+        document.querySelectorAll(".valilehtisisalto");
+
+      const painikkeet =
+        document.querySelectorAll(".valilehdet button");
+
+      sisallot.forEach(function(sisalto) {
+        sisalto.hidden = true;
+      });
+
+      painikkeet.forEach(function(painike) {
+        painike.classList.remove("aktiivinen");
+        painike.setAttribute("aria-selected", "false");
+      });
+
+      document.getElementById(tunnus).hidden = false;
+
+      const valittuPainike =
+        document.getElementById("painike-" + tunnus);
+
+      valittuPainike.classList.add("aktiivinen");
+      valittuPainike.setAttribute("aria-selected", "true");
+    }
+  </script>
+
+</body>
+</html>
