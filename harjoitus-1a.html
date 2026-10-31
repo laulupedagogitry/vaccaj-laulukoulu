@@ -2,965 +2,628 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Vaccaj – Tehtävä 1a</title>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 20px;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    h1, h2, h3 {
-      color: #285b99;
-    }
-
-    a {
-      color: #285b99;
-    }
-
-    /* SIVUSTON YLÄVALIKKO */
-
-    nav.paavalikko {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 15px 0 35px;
-      padding-bottom: 15px;
-      border-bottom: 2px solid #d2e2f3;
-    }
-
-    .paavalikko a {
-      padding: 10px 16px;
-      background: #f1f6fb;
-      border-radius: 6px;
-      color: #285b99;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .paavalikko a:hover {
-      background: #dceaf8;
-    }
-
-    .paavalikko a.aktiivinen {
-      background: #285b99;
-      color: white;
-    }
-
-    /* HARJOITUKSEN JA ÄÄNIALAN VALINTA */
-
-    label {
-      display: block;
-      margin: 0 0 8px;
-      font-weight: bold;
-    }
-
-    select {
-      font-size: 16px;
-      padding: 12px;
-      max-width: 100%;
-      border: 1px solid #b7cce2;
-      border-radius: 6px;
-      background: white;
-    }
-
-    .valinnat {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin: 25px 0;
-      padding: 20px;
-      background: #f1f6fb;
-      border-radius: 10px;
-    }
-
-    .valintaryhma {
-      min-width: 0;
-    }
-
-    .harjoitusryhma {
-      flex: 1 1 650px;
-    }
-
-    .aanialaryhma {
-      flex: 0 1 220px;
-    }
-
-    #harjoitus {
-      width: 100%;
-    }
-
-    #aaniala {
-      width: 100%;
-    }
-
-    /* ÄÄNITE */
-
-    audio {
-      display: block;
-      width: 100%;
-      margin: 15px 0 25px;
-    }
-
-    /* NUOTIT JA LAULUTEKSTI */
-
-    .sisalto {
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1.4fr) minmax(280px, 1fr);
-      gap: 35px;
-      align-items: start;
-    }
-
-    .nuottialue img {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin-top: 20px;
-    }
-
-    .tekstialue {
-      background: #f1f6fb;
-      padding: 25px;
-      border-radius: 10px;
-    }
-
-    .tekstialue h2 {
-      margin-top: 0;
-    }
-
-    .sae {
-      margin-bottom: 22px;
-    }
-
-    .aanne {
-      color: #666;
-      font-size: 15px;
-      font-style: italic;
-    }
-
-    .italia {
-      font-size: 19px;
-      font-weight: bold;
-    }
-
-    .suomi {
-      font-size: 16px;
-      color: #555;
-    }
-
-    .yhteenveto {
-      margin-top: 30px;
-      padding-top: 15px;
-      border-top: 1px solid #ccc;
-    }
-
-    /* ESITYSOHJEET */
-
-    .esitysohjeet {
-      max-width: 1000px;
-      margin-top: 55px;
-      padding-top: 25px;
-      border-top: 2px solid #d2e2f3;
-    }
-
-    .esitysohjeet h2 {
-      margin-top: 0;
-    }
-
-    .esitysohjeet h3 {
-      margin-top: 35px;
-    }
-
-    .esitysohjeet p {
-      margin-bottom: 20px;
-    }
-
-    .saveltapailu {
-      background: #f1f6fb;
-      border-left: 4px solid #285b99;
-      border-radius: 4px;
-      padding: 18px 22px;
-      margin: 20px 0 25px;
-      line-height: 2;
-    }
-
-    .saveltapailu p {
-      margin: 0;
-    }
-
-    .esitysohjeet .lahde {
-      margin-top: 35px;
-      padding-top: 15px;
-      border-top: 1px solid #d2e2f3;
-      color: #555;
-    }
-
-    /* MOBIILINÄKYMÄ */
-
-    @media (max-width: 800px) {
-      .sisalto {
-        grid-template-columns: 1fr;
-      }
-
-      .valinnat {
-        flex-direction: column;
-      }
-
-      .harjoitusryhma,
-      .aanialaryhma {
-        flex: auto;
-        width: 100%;
-      }
-
-      .tekstialue {
-        padding: 20px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      nav.paavalikko {
-        flex-direction: column;
-      }
-
-      .paavalikko a {
-        text-align: center;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      .saveltapailu {
-        padding: 15px;
-        overflow-wrap: anywhere;
-      }
-    }
-
-    /* KIELIVALINTA */
-
-    .kielivalinta {
-      display: flex;
-      justify-content: flex-end;
-      gap: 8px;
-      margin: 0 0 15px;
-    }
-
-    .kielivalinta a {
-      display: inline-block;
-      padding: 8px 16px;
-      border: 1px solid #b7cce2;
-      border-radius: 6px;
-      background: white;
-      color: #285b99;
-      font-size: 15px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .kielivalinta a:hover {
-      background: #dceaf8;
-    }
-
-    .kielivalinta a.aktiivinen {
-      background: #285b99;
-      border-color: #285b99;
-      color: white;
-    }
-
-    /* HARJOITUS- JA ESITYSOHJEVÄLILEHDET */
-
-    .alavalilehdet {
-      display: flex;
-      gap: 8px;
-      margin: 20px 0;
-      border-bottom: 2px solid #d2e2f3;
-      padding-bottom: 12px;
-    }
-
-    .alavalilehdet button {
-      padding: 10px 18px;
-      border: 0;
-      border-radius: 6px;
-      background: #f1f6fb;
-      color: #285b99;
-      font: inherit;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .alavalilehdet button:hover {
-      background: #dceaf8;
-    }
-
-    .alavalilehdet button[aria-selected="true"] {
-      background: #285b99;
-      color: white;
-    }
-
-    .valilehtisisalto[hidden] {
-      display: none;
-    }
-
-    /* PÄÄVALIKON ALAVALIKKO */
-
-    .paavalikko .alasvetovalikko {
-      position: relative;
-    }
-
-    .paavalikko .alasvetovalikko > a {
-      display: block;
-    }
-
-    .paavalikko .alavalikko {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 270px;
-      background: white;
-      border: 1px solid #d2e2f3;
-      border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0,0,0,.12);
-      z-index: 10;
-      padding: 6px;
-    }
-
-    .paavalikko .alavalikko a {
-      display: block;
-      margin: 3px 0;
-    }
-
-    .paavalikko .alasvetovalikko:hover .alavalikko,
-    .paavalikko .alasvetovalikko:focus-within .alavalikko {
-      display: block;
-    }
-
-    @media (max-width: 600px) {
-      .paavalikko .alavalikko {
-        position: static;
-        box-shadow: none;
-        min-width: 0;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vaccaj: Tehtävä 1a</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.6;
+  color: #333;
+}
+h1, h2, h3 { color: #285b99; }
+a { color: #285b99; }
+
+/* SIVUSTON YLÄVALIKKO */
+nav.paavalikko {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0 35px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #d2e2f3;
+}
+.paavalikko a {
+  padding: 10px 16px;
+  background: #f1f6fb;
+  border-radius: 6px;
+  color: #285b99;
+  text-decoration: none;
+  font-weight: bold;
+}
+.paavalikko a:hover { background: #dceaf8; }
+.paavalikko a.aktiivinen {
+  background: #285b99;
+  color: white;
+}
+
+/* HARJOITUKSEN JA ÄÄNIALAN VALINTA */
+label {
+  display: block;
+  margin: 0 0 8px;
+  font-weight: bold;
+}
+select {
+  font-size: 16px;
+  padding: 12px;
+  max-width: 100%;
+  border: 1px solid #b7cce2;
+  border-radius: 6px;
+  background: white;
+}
+.valinnat {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 25px 0;
+  padding: 20px;
+  background: #f1f6fb;
+  border-radius: 10px;
+}
+.valintaryhma { min-width: 0; }
+.harjoitusryhma { flex: 1 1 650px; }
+.aanialaryhma { flex: 0 1 220px; }
+#harjoitus, #aaniala { width: 100%; }
+
+/* ÄÄNITE */
+audio {
+  display: block;
+  width: 100%;
+  margin: 15px 0 25px;
+}
+
+/* NUOTIT JA LAULUTEKSTI */
+.sisalto {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+  gap: 35px;
+  align-items: start;
+}
+.nuottialue img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+.tekstialue {
+  background: #f1f6fb;
+  padding: 25px;
+  border-radius: 10px;
+}
+.tekstialue h2 { margin-top: 0; }
+.sae { margin-bottom: 22px; }
+.aanne {
+  color: #666;
+  font-size: 15px;
+  font-style: italic;
+}
+.italia {
+  font-size: 19px;
+  font-weight: bold;
+}
+.suomi {
+  font-size: 16px;
+  color: #555;
+}
+.yhteenveto {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+}
+
+/* ESITYSOHJEET */
+.esitysohjeet {
+  max-width: 1000px;
+  margin-top: 55px;
+  padding-top: 25px;
+  border-top: 2px solid #d2e2f3;
+}
+.esitysohjeet h2 { margin-top: 0; }
+.esitysohjeet h3 { margin-top: 35px; }
+.esitysohjeet p { margin-bottom: 20px; }
+.saveltapailu {
+  background: #f1f6fb;
+  border-left: 4px solid #285b99;
+  border-radius: 4px;
+  padding: 18px 22px;
+  margin: 20px 0 25px;
+  line-height: 2;
+}
+.saveltapailu p { margin: 0; }
+.esitysohjeet .lahde {
+  margin-top: 35px;
+  padding-top: 15px;
+  border-top: 1px solid #d2e2f3;
+  color: #555;
+}
+
+/* MOBIILINÄKYMÄ */
+@media (max-width: 800px) {
+  .sisalto { grid-template-columns: 1fr; }
+  .valinnat { flex-direction: column; }
+  .harjoitusryhma, .aanialaryhma {
+    flex: auto;
+    width: 100%;
+  }
+  .tekstialue { padding: 20px; }
+}
+@media (max-width: 600px) {
+  nav.paavalikko { flex-direction: column; }
+  .paavalikko a { text-align: center; }
+  h1 { font-size: 28px; }
+  .saveltapailu {
+    padding: 15px;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* OTSIKON ÄÄNTÄMISEN JA SUOMENNOKSEN RIVIVÄLIT */
+.tekstialue > .aanne,
+.tekstialue > h3,
+.tekstialue > p:first-of-type {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+/* KIELIVALINTA */
+.kielivalinta {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin: 0 0 15px;
+}
+.kielivalinta a {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #b7cce2;
+  border-radius: 6px;
+  background: white;
+  color: #285b99;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.kielivalinta a:hover { background: #dceaf8; }
+.kielivalinta a.aktiivinen {
+  background: #285b99;
+  border-color: #285b99;
+  color: white;
+}
+
+/* NUOTIT JA SANAT / ESITYSOHJEET */
+.alavalilehdet {
+  display: flex;
+  gap: 8px;
+  margin: 20px 0;
+  border-bottom: 2px solid #d2e2f3;
+  padding-bottom: 12px;
+}
+.alavalilehdet button {
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 6px;
+  background: #f1f6fb;
+  color: #285b99;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+.alavalilehdet button:hover { background: #dceaf8; }
+.alavalilehdet button[aria-selected="true"] {
+  background: #285b99;
+  color: white;
+}
+.valilehtisisalto[hidden] { display: none; }
+
+/* PÄÄVALIKON ALAVALIKKO */
+.paavalikko .alasvetovalikko { position: relative; }
+.paavalikko .alasvetovalikko > a { display: block; }
+.paavalikko .alavalikko {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 270px;
+  background: white;
+  border: 1px solid #d2e2f3;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  z-index: 10;
+  padding: 6px;
+}
+.paavalikko .alavalikko a {
+  display: block;
+  margin: 3px 0;
+}
+.paavalikko .alasvetovalikko:hover .alavalikko,
+.paavalikko .alasvetovalikko:focus-within .alavalikko {
+  display: block;
+}
+@media (max-width: 600px) {
+  .paavalikko .alavalikko {
+    position: static;
+    box-shadow: none;
+    min-width: 0;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- KIELIVALINTA -->
+<!-- KIELIVALINTA -->
+<div class="kielivalinta" role="group" aria-label="Kieli / Language">
+  <a href="harjoitus-1a.html" class="aktiivinen" lang="fi" aria-current="page">Suomi</a>
+  <a href="harjoitus-1a_en.html" lang="en">English</a>
+</div>
 
-  <div class="kielivalinta" role="group" aria-label="Kieli / Language">
-    <a href="harjoitus-1a.html"
-       class="aktiivinen"
-       lang="fi"
-       aria-current="page">Suomi</a>
+<!-- PÄÄVALIKKO -->
+<nav class="paavalikko" aria-label="Päävalikko">
+  <a href="index.html">Etusivu</a>
+  <a href="metodo-pratico.html">Metodo pratico</a>
 
-    <a href="harjoitus-1a_en.html"
-       lang="en">English</a>
+  <div class="alasvetovalikko">
+    <a href="harjoitukset.html" class="aktiivinen" aria-current="page" aria-haspopup="true">Laulut ▾</a>
+    <div class="alavalikko" aria-label="Laulujen alavalikko">
+      <a href="harjoitukset.html">Tehtävät</a>
+      <a href="italian-aakkoset.html">Italian kielen aakkoset ja ääntäminen</a>
+      <a href="runojen-alkupera.html">Runojen alkuperä</a>
+      <a href="ohjeita-opettajalle.html">Ohjeita opettajalle</a>
+    </div>
   </div>
 
-  <!-- SIVUSTON PÄIVITETTY YLÄVALIKKO -->
+  <a href="vaccaj-metastasio.html">Vaccaj ja Metastasio</a>
+  <a href="tekijat.html">Tekijät</a>
+</nav>
 
-  <nav class="paavalikko" aria-label="Päävalikko">
+<main>
 
-    <a href="index.html">Etusivu</a>
+<h1>Vaccaj: Tehtävä 1a</h1>
 
-    <a href="metodo-pratico.html">Metodo pratico</a>
+<!-- SISÄLTÖVÄLILEHDET -->
+<div class="alavalilehdet" role="tablist" aria-label="Tehtävän sisältö">
+  <button type="button" id="valilehti-harjoitus" role="tab"
+          aria-controls="sisalto-harjoitus" aria-selected="true"
+          onclick="vaihdaValilehti('harjoitus')">Nuotit ja sanat</button>
+  <button type="button" id="valilehti-esitysohjeet" role="tab"
+          aria-controls="sisalto-esitysohjeet" aria-selected="false"
+          onclick="vaihdaValilehti('esitysohjeet')">Esitysohjeet</button>
+</div>
 
-    <div class="alasvetovalikko">
+<!-- NUOTIT JA SANAT -->
+<div id="sisalto-harjoitus" class="valilehtisisalto"
+     role="tabpanel" aria-labelledby="valilehti-harjoitus">
 
-      <a href="harjoitukset.html"
-         class="aktiivinen"
-         aria-current="page"
-         aria-haspopup="true">
-        Laulut ▾
-      </a>
+  <!-- TEHTÄVÄN JA ÄÄNIALAN VALINTA -->
+  <div class="valinnat">
+    <div class="valintaryhma harjoitusryhma">
+      <label for="harjoitus">Valitse tehtävä:</label>
+      <select id="harjoitus" onchange="vaihdaHarjoitus()">
 
-      <div class="alavalikko"
-           aria-label="Laulujen alavalikko">
+        <optgroup label="I–IV – Intervallit">
+          <option value="1a" selected>I / 1a – Manca sollecita... – La scala – asteikko</option>
+          <option value="1b">I / 1b – Semplicetta tortorella... – Intervalli di terza – terssi</option>
+          <option value="2a">II / 2a – Lascia il lido, e il mare infido... – Intervalli di quarta – kvartti</option>
+          <option value="2b">II / 2b – Avvezzo a vivere... – Intervalli di quinta – kvintti</option>
+          <option value="3">III / 3 – Bella prova é d'alma forte... – Intervalli di sesta – seksti</option>
+          <option value="4a">IV / 4a – Fra l'ombre un lampo solo... – Intervalli di settima – septimi</option>
+          <option value="4b">IV / 4b – Quell' onda che ruina... – Intervalli di ottava – oktaavi</option>
+        </optgroup>
 
-        <a href="harjoitukset.html">
-          Tehtävät
-        </a>
+        <optgroup label="V–XIII – Koristeet ja laulutekniikka">
+          <option value="5">V / 5 – Delira dubbiosa... – I semitoni – puolisävelaskel</option>
+          <option value="6">VI / 6 – Nel contrasto amor accende... – Modo sincopato – synkooppi</option>
+          <option value="7">VII / 7 – Come il candore... – Introduzione alle volate – johdatus juoksutukseen</option>
+          <option value="8a">VIII / 8a – Senza l'amabile... – Le appoggiatura sopra e sotto – pitkä etuhele</option>
+          <option value="8b">VIII / 8b – Benchè di senso privo... – L'acciaccatura – lyhyt etuhele</option>
+          <option value="9a">IX / 9a – La gioia verace... – Introduzione al Mordente – johdatus jälkiheleeseen</option>
+          <option value="9b">IX / 9b – L'augelletto in lacci stretto... – Mordente in diversi modi – jälkihele, kaksoishele</option>
+          <option value="10a">X / 10a – Quando accende un nobil petto... – Introduzione al grupetto – johdatus kaksoisheleeseen</option>
+          <option value="10b">X / 10b – Più non si trovano... – Il gruppetto – kaksoishele</option>
+          <option value="11">XI / 11 – Se povero il ruscello... – Introduzione al trillo – johdatus trilliin</option>
+          <option value="12">XII / 12 – Siam navi all' onde algenti... – Le volate – pitkä 16-osajuoksutus</option>
+          <option value="13a">XIII / 13a – Vorrei spiegar l'affanno... – Portamento I - Modo per portare la voce – kannattelu I</option>
+          <option value="13b">XIII / 13b – O placido il mare... – Portamento II - Altro modo – kannattelu II</option>
+        </optgroup>
 
-        <a href="italian-aakkoset.html">
-          Italian kielen aakkoset ja ääntäminen
-        </a>
+        <optgroup label="XIV–XV – Resitatiivi ja kertaus">
+          <option value="14">XIV / 14 – La patria è un tutto... – Il recitativo – resitatiivi</option>
+          <option value="15">XV / 15 – Alla stagion de' fiori... – Riepilogo – kertaus</option>
+        </optgroup>
 
-        <a href="runojen-alkupera.html">
-          Runojen alkuperä
-        </a>
+      </select>
+    </div>
 
-        <a href="ohjeita-opettajalle.html">
-          Ohjeita opettajalle
-        </a>
+    <div class="valintaryhma aanialaryhma">
+      <label for="aaniala">Valitse ääniala:</label>
+      <select id="aaniala" onchange="vaihdaAaniala()">
+        <option value="sopraano">Sopraano</option>
+        <option value="mezzo">Mezzosopraano</option>
+        <option value="altto">Altto</option>
+        <option value="baritoni1">Baritoni 1</option>
+        <option value="baritoni2">Baritoni 2</option>
+      </select>
+    </div>
+  </div>
 
+  <!-- ÄÄNITE -->
+  <h2>Kuuntele äänite</h2>
+  <audio id="soitin" controls preload="none" src="aanet/1a_sopraano.mp3">
+    Selaimesi ei tue äänisoitinta.
+  </audio>
+
+  <!-- NUOTIT JA LAULUTEKSTI -->
+  <div class="sisalto">
+
+    <section class="nuottialue">
+      <h2>Nuotit</h2>
+      <img id="nuotti"
+           src="img/nuottikuvat/1a_sopraano.jpg"
+           alt="Vaccaj 1a – sopraanon nuotit">
+    </section>
+
+    <section class="tekstialue">
+
+      <div class="aanne">[la 'skala]</div>
+      <h3>La scala</h3>
+      <p>Asteikko</p>
+
+      <hr>
+
+      <div class="sae">
+        <div class="aanne">['manka sol'letʃita]</div>
+        <div class="italia">Manca sollecita</div>
+        <div class="suomi">Sammuu nopeasti</div>
       </div>
 
-    </div>
-
-    <a href="vaccaj-metastasio.html">
-      Vaccaj ja Metastasio
-    </a>
-
-    <a href="tekijat.html">
-      Tekijät
-    </a>
-
-  </nav>
-
-  <main>
-
-    <h1>Vaccaj – Tehtävä 1a</h1>
-
-    <!-- ALEMPI VÄLILEHTIVALIKKO -->
-
-    <div class="alavalilehdet"
-         role="tablist"
-         aria-label="Tehtävän sisältö">
-
-      <button
-        type="button"
-        id="valilehti-harjoitus"
-        role="tab"
-        aria-controls="sisalto-harjoitus"
-        aria-selected="true"
-        onclick="vaihdaValilehti('harjoitus')">
-        Nuotit ja sanat
-      </button>
-
-      <button
-        type="button"
-        id="valilehti-esitysohjeet"
-        role="tab"
-        aria-controls="sisalto-esitysohjeet"
-        aria-selected="false"
-        onclick="vaihdaValilehti('esitysohjeet')">
-        Esitysohjeet
-      </button>
-
-    </div>
-
-    <div id="sisalto-harjoitus"
-         class="valilehtisisalto"
-         role="tabpanel"
-         aria-labelledby="valilehti-harjoitus">
-
-      <!-- TEHTÄVÄN JA ÄÄNIALAN VALINTA -->
-
-      <div class="valinnat">
-
-        <div class="valintaryhma harjoitusryhma">
-
-          <label for="harjoitus">
-            Valitse tehtävä:
-          </label>
-
-          <select
-            id="harjoitus"
-            onchange="vaihdaHarjoitus()">
-
-            <optgroup label="I–IV – Intervallit">
-
-              <option value="1a" selected>
-                I / 1a – Manca sollecita... – La scala – asteikko
-              </option>
-
-              <option value="1b">
-                I / 1b – Semplicetta tortorella... – Intervalli di terza – terssi
-              </option>
-
-              <option value="2a">
-                II / 2a – Lascia il lido, e il mare infido... – Intervalli di quarta – kvartti
-              </option>
-
-              <option value="2b">
-                II / 2b – Avvezzo a vivere... – Intervalli di quinta – kvintti
-              </option>
-
-              <option value="3">
-                III / 3 – Bella prova é d'alma forte... – Intervalli di sesta – seksti
-              </option>
-
-              <option value="4a">
-                IV / 4a – Fra l'ombre un lampo solo... – Intervalli di settima – septimi
-              </option>
-
-              <option value="4b">
-                IV / 4b – Quell' onda che ruina... – Intervalli di ottava – oktaavi
-              </option>
-
-            </optgroup>
-
-            <optgroup label="V–XIII – Koristeet ja laulutekniikka">
-
-              <option value="5">
-                V / 5 – Delira dubbiosa... – I semitoni – puolisävelaskel
-              </option>
-
-              <option value="6">
-                VI / 6 – Nel contrasto amor accende... – Modo sincopato – synkooppi
-              </option>
-
-              <option value="7">
-                VII / 7 – Come il candore... – Introduzione alle volate – johdatus juoksutukseen
-              </option>
-
-              <option value="8a">
-                VIII / 8a – Senza l'amabile... – Le appoggiatura sopra e sotto – pitkä etuhele
-              </option>
-
-              <option value="8b">
-                VIII / 8b – Benchè di senso privo... – L'acciaccatura – lyhyt etuhele
-              </option>
-
-              <option value="9a">
-                IX / 9a – La gioia verace... – Introduzione al Mordente – johdatus jälkiheleeseen
-              </option>
-
-              <option value="9b">
-                IX / 9b – L'augelletto in lacci stretto... – Mordente in diversi modi – jälkihele, kaksoishele
-              </option>
-
-              <option value="10a">
-                X / 10a – Quando accende un nobil petto... – Introduzione al grupetto – johdatus kaksoisheleeseen
-              </option>
-
-              <option value="10b">
-                X / 10b – Più non si trovano... – Il gruppetto – kaksoishele
-              </option>
-
-              <option value="11">
-                XI / 11 – Se povero il ruscello... – Introduzione al trillo – johdatus trilliin
-              </option>
-
-              <option value="12">
-                XII / 12 – Siam navi all' onde algenti... – Le volate – pitkä 16-osajuoksutus
-              </option>
-
-              <option value="13a">
-                XIII / 13a – Vorrei spiegar l'affanno... – Portamento I - Modo per portare la voce – kannattelu I
-              </option>
-
-              <option value="13b">
-                XIII / 13b – O placido il mare... – Portamento II - Altro modo – kannattelu II
-              </option>
-
-            </optgroup>
-
-            <optgroup label="XIV–XV – Resitatiivi ja kertaus">
-
-              <option value="14">
-                XIV / 14 – La patria è un tutto... – Il recitativo – resitatiivi
-              </option>
-
-              <option value="15">
-                XV / 15 – Alla stagion de' fiori... – Riepilogo – kertaus
-              </option>
-
-            </optgroup>
-
-          </select>
-
-        </div>
-
-        <div class="valintaryhma aanialaryhma">
-
-          <label for="aaniala">
-            Valitse ääniala:
-          </label>
-
-          <select
-            id="aaniala"
-            onchange="vaihdaAaniala()">
-
-            <option value="sopraano">Sopraano</option>
-            <option value="mezzo">Mezzosopraano</option>
-            <option value="altto">Altto</option>
-            <option value="baritoni1">Baritoni 1</option>
-            <option value="baritoni2">Baritoni 2</option>
-
-          </select>
-
-        </div>
-
+      <div class="sae">
+        <div class="aanne">[pju del u'zato]</div>
+        <div class="italia">più dell´usato,</div>
+        <div class="suomi">tavallista nopeammin,</div>
       </div>
 
-      <!-- ÄÄNITE -->
-
-      <h2>Kuuntele äänite</h2>
-
-      <audio
-        id="soitin"
-        controls
-        preload="none"
-        src="aanet/1a_sopraano.mp3">
-        Selaimesi ei tue äänisoitinta.
-      </audio>
-
-      <!-- NUOTIT JA LAULUTEKSTI -->
-
-      <div class="sisalto">
-
-        <!-- NUOTIT -->
-
-        <section class="nuottialue">
-
-          <h2>Nuotit</h2>
-
-          <img
-            id="nuotti"
-            src="img/nuottikuvat/1a_sopraano.jpg"
-            alt="Vaccaj 1a – sopraanon nuotit">
-
-        </section>
-
-        <!-- LAULUTEKSTI -->
-
-        <section class="tekstialue">
-
-          <h2>Tehtävä 1a</h2>
-
-          <div class="aanne">[la 'skala]</div>
-          <h3>La scala</h3>
-          <p>Asteikko</p>
-
-          <hr>
-
-          <div class="sae">
-            <div class="aanne">
-              ['manka sol'letʃita]
-            </div>
-            <div class="italia">
-              Manca sollecita
-            </div>
-            <div class="suomi">
-              Sammuu nopeasti
-            </div>
-          </div>
-
-          <div class="sae">
-            <div class="aanne">
-              [pju del u'zato]
-            </div>
-            <div class="italia">
-              più dell´usato,
-            </div>
-            <div class="suomi">
-              tavallista nopeammin,
-            </div>
-          </div>
-
-          <div class="sae">
-            <div class="aanne">
-              [an'korke s'adʒiti]
-            </div>
-            <div class="italia">
-              ancor che s'agiti
-            </div>
-            <div class="suomi">
-              vaikka sitä liikuttaa
-            </div>
-          </div>
-
-          <div class="sae">
-            <div class="aanne">
-              [kon 'ljeve 'fjato]
-            </div>
-            <div class="italia">
-              con lieve fiato,
-            </div>
-            <div class="suomi">
-              keveä tuuli,
-            </div>
-          </div>
-
-          <div class="sae">
-            <div class="aanne">
-              ['fatʃe ke 'palpita]
-            </div>
-            <div class="italia">
-              face che palpita
-            </div>
-            <div class="suomi">
-              liekki, joka värisee
-            </div>
-          </div>
-
-          <div class="sae">
-            <div class="aanne">
-              ['prɛsso al mo'rir]
-            </div>
-            <div class="italia">
-              presso al morir.
-            </div>
-            <div class="suomi">
-              lähellä kuolemaa.
-            </div>
-          </div>
-
-          <!-- YHTEENVETO -->
-
-          <div class="yhteenveto">
-
-            <strong>
-              Liekki värisee<br>
-              lähellä kuolemaa,<br>
-              ja sammuu odottamatta<br>
-              keveästä tuulesta<br>
-              huolimatta
-            </strong>
-
-          </div>
-
-        </section>
-
+      <div class="sae">
+        <div class="aanne">[an'korke s'adʒiti]</div>
+        <div class="italia">ancor che s'agiti</div>
+        <div class="suomi">vaikka sitä liikuttaa</div>
       </div>
 
+      <div class="sae">
+        <div class="aanne">[kon 'ljeve 'fjato]</div>
+        <div class="italia">con lieve fiato,</div>
+        <div class="suomi">keveä tuuli,</div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">['fatʃe ke 'palpita]</div>
+        <div class="italia">face che palpita</div>
+        <div class="suomi">liekki, joka värisee</div>
+      </div>
+
+      <div class="sae">
+        <div class="aanne">['prɛsso al mo'rir]</div>
+        <div class="italia">presso al morir.</div>
+        <div class="suomi">lähellä kuolemaa.</div>
+      </div>
+
+      <!-- YHTEENVETO -->
+      <div class="yhteenveto">
+        <strong>
+          Liekki värisee<br>
+          lähellä kuolemaa,<br>
+          ja sammuu odottamatta<br>
+          keveästä tuulesta<br>
+          huolimatta
+        </strong>
+      </div>
+
+    </section>
+  </div>
+</div>
+
+<!-- ESITYSOHJEET -->
+<div id="sisalto-esitysohjeet" class="valilehtisisalto"
+     role="tabpanel" aria-labelledby="valilehti-esitysohjeet" hidden>
+
+  <section class="esitysohjeet" aria-labelledby="esitysohjeet-otsikko">
+
+    <h2 id="esitysohjeet-otsikko">Esitysohjeet</h2>
+
+    <p>
+      Tässä tehtävässä harjoitellaan sekunti-intervalleja ja
+      asteikkoja. Laulu on säveltapailuharjoitus, mutta se
+      toimii samalla johdantona legaton harjoittelemiseen.
+    </p>
+
+    <p>
+      Exercisen alussa (tahdit 1–2 ja 3–4) on kaksi ylös
+      nousevaa kuuden sävelen asteikkoa eli
+      <em>heksakordia</em> ja sen jälkeen niiden käännökset.
+      Havainnollistaakseen sitä, että tehtävä on laulettava
+      <em>sempre legato</em>, Vaccaj jakoi sanat siten,
+      että kaikki tavut ovat avoimia eli päättyvät
+      vokaaliin ja mahdollinen tavun loppukonsonantti
+      liitetään seuraavan tavun alkuun.
+    </p>
+
+    <p>
+      Runon rivit ovat viisitavuisia. Pääpaino on
+      neljännellä tavulla, sivupaino ensimmäisellä
+      tai toisella. Melodian rytminen muoto sopii
+      riveille 1, 2, 5 ja 6. Itse asiassa runon
+      riveillä 1, 3 ja 5 on kuusi tavua, mikä
+      onkin hyvä peruste alun heksakordille,
+      mutta aiheuttaa toisen ja neljännen fraasin
+      täydentämisen melismalla, jotta melodinen
+      ajatus säilyy. Myös sanassa
+      <em>palpita</em> täytyy tehdä melisma
+      jotta tekstin riittää asteikkoon.
+    </p>
+
+    <h3>Harjoitteluohjeita</h3>
+
+    <p>
+      Ensimmäisen tehtävän melodian rakenne ja
+      tempomerkintä <em>adagio</em> asettavat
+      laulajalle suuria vaatimuksia. Vaikeutta
+      lisää vielä tekstin sanapainotukset ja
+      erityisen harmillinen i-vokaali tahdissa 12.
+      Siksi on tärkeää antaa aikaa esityöhön,
+      joka helpottaa runon liittämistä melodiaan.
+    </p>
+
+    <p>
+      Erinomainen tapa pohjustaa tehtävän laulamista
+      on työskennellä sellaisilla tavuilla kuin
+      no, vo, la ja le. Vaikka Vaccaj haluaa
+      laulukoulullaan antaa vaihtoehdon perinteisille
+      säveltapailutehtäville, voidaan harjoittelussa
+      käyttää myös tuttuja säveltapailunimiä, joihin
+      sisältyy variaatio vokaali- ja
+      konsonanttiäänteitä. Kaikki tavut,
+      poikkeuksena <em>sol</em>, ovat avoimia.
+      Niinpä voitkin laulaa tehtävän:
+    </p>
+
+    <div class="saveltapailu">
+      <p>
+        <em>do - re - mi - fa - sol - la</em><br>
+        <em>re - mi - fa - sol - la - si</em><br>
+        <em>re2 - do2 - si - la - sol - fa</em><br>
+        <em>la - sol - fa - mi - re - do</em><br>
+        <em>do - re - mi - fa - sol - la - si - do2 - re2 - re2 - mi2</em><br>
+        <em>mi2 re2 do2 - si - la - sol - fa - mi - re - re - do</em>
+      </p>
     </div>
 
-    <div id="sisalto-esitysohjeet"
-         class="valilehtisisalto"
-         role="tabpanel"
-         aria-labelledby="valilehti-esitysohjeet"
-         hidden>
+    <p>
+      Tavujen <em>do</em> tai esimerkiksi <em>re</em>
+      vokaaleissa on italiankielessä sinänsä avoin
+      ominaisuus, mutta usein saavutetaan parempi
+      (korkeampi) äänensijoitus laulamalla ne
+      suljettuina. Voit korostaa legatomaista
+      elämystä laulamalla melismaattisesti.
+    </p>
 
-      <!-- ESITYSOHJEET -->
+    <p>
+      Metastasion tekstin virheetön ääntäminen
+      ja ymmärtäminen on ensisijaista. Tekstin
+      lukemista voi harjoitella mm.
+      "legatolukemisen" avulla.
+    </p>
 
-      <section class="esitysohjeet"
-               aria-labelledby="esitysohjeet-otsikko">
+    <p>
+      Kahdessa viimeisessä fraasissa
+      <em>palpita</em>-sanan jälkeen tuntuu
+      usein, ettei hengitykselle ei ole
+      tarpeeksi aikaa. Ensimmäiselle sävelelle
+      tahdeissa 11 ja 15 voidaan kuitenkin
+      hyvin tulla myöhässä.
+    </p>
 
-        <h2 id="esitysohjeet-otsikko">Esitysohjeet</h2>
+    <p>
+      Vokaalien kohdatessa (kaksi tavua samalla
+      sävelellä) <em>-so al</em>,
+      (tahdit 11 ja 15) täytyy a-vokaalille
+      antaa lähes koko nuottiarvo.
+    </p>
 
-        <p>
-          Tässä tehtävässä harjoitellaan sekunti-intervalleja ja
-          asteikkoja. Laulu on säveltapailuharjoitus, mutta se
-          toimii samalla johdantona legaton harjoittelemiseen.
-        </p>
+    <p>
+      Korkea ääni tahdissa 12 kuulostaa usein
+      pakotetulta, eivätkä korostukset tahdeissa
+      11 ja 12 tee asiaa helpommaksi.
+      Nuoret miesäänet voivatkin käyttää
+      diminuendoa ja falsettia päästäkseen
+      ääneen <em>mi</em>. 13. tahdin
+      ensimmäisellä nuotilla a-vokaalin
+      ansiosta onnistutaan ehkä saamaan
+      toimiva täysi ääni.
+    </p>
 
-        <p>
-          Exercisen alussa (tahdit 1–2 ja 3–4) on kaksi ylös
-          nousevaa kuuden sävelen asteikkoa eli
-          <em>heksakordia</em> ja sen jälkeen niiden käännökset.
-          Havainnollistaakseen sitä, että tehtävä on laulettava
-          <em>sempre legato</em>, Vaccaj jakoi sanat siten,
-          että kaikki tavut ovat avoimia eli päättyvät
-          vokaaliin ja mahdollinen tavun loppukonsonantti
-          liitetään seuraavan tavun alkuun.
-        </p>
+    <p>
+      Pianisti voi auttaa epävarmaa laulajaa
+      tahdissa 2 lisäämällä viimeisellä
+      neljäsosalla äänet
+      <em>sol-fa-mi</em> kahdeksasosatriolilla.
+      Tahdissa neljä voidaan soittaa
+      <em>do2</em> ja kuudennessa
+      <em>sol</em> viimeisellä neljäsosalla.
+      Vähitellen pianisti luopuu kokonaan
+      melodian soittamisesta.
+    </p>
 
-        <p>
-          Runon rivit ovat viisitavuisia. Pääpaino on
-          neljännellä tavulla, sivupaino ensimmäisellä
-          tai toisella. Melodian rytminen muoto sopii
-          riveille 1, 2, 5 ja 6. Itse asiassa runon
-          riveillä 1, 3 ja 5 on kuusi tavua, mikä
-          onkin hyvä peruste alun heksakordille,
-          mutta aiheuttaa toisen ja neljännen fraasin
-          täydentämisen melismalla, jotta melodinen
-          ajatus säilyy. Myös sanassa
-          <em>palpita</em> täytyy tehdä melisma
-          jotta tekstin riittää asteikkoon.
-        </p>
+    <h3>Ajatuksia tulkinnasta</h3>
 
-        <h3>Harjoitteluohjeita</h3>
+    <p>
+      <em>Morir</em> on keskeinen sana runossa
+      ja sen täytyy olla lähtöpiste tekstin
+      sisällön tulkinnalle. Tästäkin syystä
+      täytyy olla pidättyväinen aksentin
+      suhteen tahdissa 11. Painoton
+      prepositio <em>con</em> on myös
+      pidettävä aisoissa (tahti 7).
+    </p>
 
-        <p>
-          Ensimmäisen tehtävän melodian rakenne ja
-          tempomerkintä <em>adagio</em> asettavat
-          laulajalle suuria vaatimuksia. Vaikeutta
-          lisää vielä tekstin sanapainotukset ja
-          erityisen harmillinen i-vokaali tahdissa 12.
-          Siksi on tärkeää antaa aikaa esityöhön,
-          joka helpottaa runon liittämistä melodiaan.
-        </p>
+    <p>
+      Ajatus suurtahdeista tarkoittaa että
+      vältämme ykkösten painotusta parittomilla
+      tahdeilla, ja on usein hyvä ratkaisu.
+    </p>
 
-        <p>
-          Erinomainen tapa pohjustaa tehtävän laulamista
-          on työskennellä sellaisilla tavuilla kuin
-          no, vo, la ja le. Vaikka Vaccaj haluaa
-          laulukoulullaan antaa vaihtoehdon perinteisille
-          säveltapailutehtäville, voidaan harjoittelussa
-          käyttää myös tuttuja säveltapailunimiä, joihin
-          sisältyy variaatio vokaali- ja
-          konsonanttiäänteitä. Kaikki tavut,
-          poikkeuksena <em>sol</em>, ovat avoimia.
-          Niinpä voitkin laulaa tehtävän:
-        </p>
-
-        <div class="saveltapailu">
-
-          <p>
-            <em>do - re - mi - fa - sol - la</em><br>
-            <em>re - mi - fa - sol - la - si</em><br>
-            <em>re2 - do2 - si - la - sol - fa</em><br>
-            <em>la - sol - fa - mi - re - do</em><br>
-            <em>do - re - mi - fa - sol - la - si - do2 - re2 - re2 - mi2</em><br>
-            <em>mi2 re2 do2 - si - la - sol - fa - mi - re - re - do</em>
-          </p>
-
-        </div>
-
-        <p>
-          Tavujen <em>do</em> tai esimerkiksi <em>re</em>
-          vokaaleissa on italiankielessä sinänsä avoin
-          ominaisuus, mutta usein saavutetaan parempi
-          (korkeampi) äänensijoitus laulamalla ne
-          suljettuina. Voit korostaa legatomaista
-          elämystä laulamalla melismaattisesti.
-        </p>
-
-        <p>
-          Metastasion tekstin virheetön ääntäminen
-          ja ymmärtäminen on ensisijaista. Tekstin
-          lukemista voi harjoitella mm.
-          "legatolukemisen" avulla.
-        </p>
-
-        <p>
-          Kahdessa viimeisessä fraasissa
-          <em>palpita</em>-sanan jälkeen tuntuu
-          usein, ettei hengitykselle ei ole
-          tarpeeksi aikaa. Ensimmäiselle sävelelle
-          tahdeissa 11 ja 15 voidaan kuitenkin
-          hyvin tulla myöhässä.
-        </p>
-
-        <p>
-          Vokaalien kohdatessa (kaksi tavua samalla
-          sävelellä) <em>-so al</em>,
-          (tahdit 11 ja 15) täytyy a-vokaalille
-          antaa lähes koko nuottiarvo.
-        </p>
-
-        <p>
-          Korkea ääni tahdissa 12 kuulostaa usein
-          pakotetulta, eivätkä korostukset tahdeissa
-          11 ja 12 tee asiaa helpommaksi.
-          Nuoret miesäänet voivatkin käyttää
-          diminuendoa ja falsettia päästäkseen
-          ääneen <em>mi</em>. 13. tahdin
-          ensimmäisellä nuotilla a-vokaalin
-          ansiosta onnistutaan ehkä saamaan
-          toimiva täysi ääni.
-        </p>
-
-        <p>
-          Pianisti voi auttaa epävarmaa laulajaa
-          tahdissa 2 lisäämällä viimeisellä
-          neljäsosalla äänet
-          <em>sol-fa-mi</em> kahdeksasosatriolilla.
-          Tahdissa neljä voidaan soittaa
-          <em>do2</em> ja kuudennessa
-          <em>sol</em> viimeisellä neljäsosalla.
-          Vähitellen pianisti luopuu kokonaan
-          melodian soittamisesta.
-        </p>
-
-        <h3>Ajatuksia tulkinnasta</h3>
-
-        <p>
-          <em>Morir</em> on keskeinen sana runossa
-          ja sen täytyy olla lähtöpiste tekstin
-          sisällön tulkinnalle. Tästäkin syystä
-          täytyy olla pidättyväinen aksentin
-          suhteen tahdissa 11. Painoton
-          prepositio <em>con</em> on myös
-          pidettävä aisoissa (tahti 7).
-        </p>
-
-        <p>
-          Ajatus suurtahdeista tarkoittaa että
-          vältämme ykkösten painotusta parittomilla
-          tahdeilla, ja on usein hyvä ratkaisu.
-        </p>
-
-        <div class="lahde">
-
-          <strong>Lähde</strong>
-
-          <p>
-            Forshufvud, G. 1994.
-            <em>Con lieve fiato</em>.
-            Lärarhandledning till Nicola Vaccajs
-            <em>Metodo pratico</em>.
-            Göteborgs universitetet.
-          </p>
-
-        </div>
-
-      </section>
-
+    <div class="lahde">
+      <strong>Lähde</strong>
+      <p>
+        Forshufvud, G. 1994.
+        <em>Con lieve fiato</em>.
+        Lärarhandledning till Nicola Vaccajs
+        <em>Metodo pratico</em>.
+        Göteborgs universitetet.
+      </p>
     </div>
 
-  </main>
+  </section>
+</div>
 
-  <!-- HARJOITUS- JA ÄÄNIALAVALINTOJEN TOIMINNOT -->
+</main>
 
-  <script>
+<script>
+/* ALEMPIEN VÄLILEHTIEN VAIHTAMINEN */
+function vaihdaValilehti(valilehti) {
+  const harjoitus = valilehti === 'harjoitus';
+  document.getElementById('sisalto-harjoitus').hidden = !harjoitus;
+  document.getElementById('sisalto-esitysohjeet').hidden = harjoitus;
+  document.getElementById('valilehti-harjoitus')
+    .setAttribute('aria-selected', String(harjoitus));
+  document.getElementById('valilehti-esitysohjeet')
+    .setAttribute('aria-selected', String(!harjoitus));
+}
 
-    // ALEMPIEN VÄLILEHTIEN VAIHTAMINEN
+/* SIIRTYMINEN TOISEEN TEHTÄVÄÄN */
+function vaihdaHarjoitus() {
+  const harjoitus = document.getElementById("harjoitus").value;
+  if (harjoitus !== "1a") {
+    window.location.href = "harjoitus-" + harjoitus + ".html";
+  }
+}
 
-    function vaihdaValilehti(valilehti) {
-      const harjoitus = valilehti === 'harjoitus';
+/* ÄÄNIALAN, NUOTIN JA ÄÄNITTEEN VAIHTAMINEN */
+function vaihdaAaniala() {
+  const aaniala = document.getElementById("aaniala").value;
+  const nuotti = document.getElementById("nuotti");
+  const soitin = document.getElementById("soitin");
 
-      document.getElementById('sisalto-harjoitus').hidden = !harjoitus;
-      document.getElementById('sisalto-esitysohjeet').hidden = harjoitus;
+  nuotti.src = "img/nuottikuvat/1a_" + aaniala + ".jpg";
+  nuotti.alt = "Vaccaj 1a – " + aaniala + " – nuotit";
 
-      document.getElementById('valilehti-harjoitus')
-        .setAttribute('aria-selected', String(harjoitus));
-
-      document.getElementById('valilehti-esitysohjeet')
-        .setAttribute('aria-selected', String(!harjoitus));
-    }
-
-    // SIIRTYMINEN TOISEEN HARJOITUKSEEN
-
-    function vaihdaHarjoitus() {
-      const harjoitus =
-        document.getElementById("harjoitus").value;
-
-      if (harjoitus !== "1a") {
-        window.location.href =
-          "harjoitus-" + harjoitus + ".html";
-      }
-    }
-
-    // ÄÄNIALAN, NUOTIN JA ÄÄNITTEEN VAIHTAMINEN
-
-    function vaihdaAaniala() {
-      const aaniala =
-        document.getElementById("aaniala").value;
-
-      const nuotti =
-        document.getElementById("nuotti");
-
-      const soitin =
-        document.getElementById("soitin");
-
-      nuotti.src =
-        "img/nuottikuvat/1a_" + aaniala + ".jpg";
-
-      nuotti.alt =
-        "Vaccaj 1a – " + aaniala + " – nuotit";
-
-      soitin.pause();
-
-      soitin.src =
-        "aanet/1a_" + aaniala + ".mp3";
-
-      soitin.load();
-    }
-
-  </script>
+  soitin.pause();
+  soitin.src = "aanet/1a_" + aaniala + ".mp3";
+  soitin.load();
+}
+</script>
 
 </body>
 </html>
