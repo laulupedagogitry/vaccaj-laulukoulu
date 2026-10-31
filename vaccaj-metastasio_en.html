@@ -139,10 +139,63 @@
         font-size: 28px;
       }
     }
+
+    /* LANGUAGE SELECTION */
+
+    .kielivalinta {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin: 0 0 15px;
+    }
+
+    .kielivalinta a {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #b7cce2;
+      border-radius: 6px;
+      background: white;
+      color: #285b99;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .kielivalinta a:hover {
+      background: #dceaf8;
+    }
+
+    .kielivalinta a.aktiivinen {
+      background: #285b99;
+      border-color: #285b99;
+      color: white;
+    }
+
   </style>
 </head>
 
 <body>
+
+  <!-- LANGUAGE SELECTION -->
+
+  <div
+    class="kielivalinta"
+    role="group"
+    aria-label="Language">
+
+    <a href="vaccaj-metastasio.html" lang="fi">
+      Suomi
+    </a>
+
+    <a
+      href="vaccaj-metastasio_en.html"
+      class="aktiivinen"
+      lang="en"
+      aria-current="page">
+      English
+    </a>
+
+  </div>
 
   <!-- UPDATED SEVEN-ITEM MAIN NAVIGATION -->
 
