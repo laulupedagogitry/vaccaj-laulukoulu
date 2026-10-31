@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj and Metastasio – Vaccaj Singing School</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      color: #285b99;
+    }
+
+    nav.paavalikko {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0 35px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #d2e2f3;
+    }
+
+    .paavalikko a {
+      padding: 10px 16px;
+      background: #f1f6fb;
+      border-radius: 6px;
+      color: #285b99;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .paavalikko a:hover {
+      background: #dceaf8;
+    }
+
+    .paavalikko a.aktiivinen {
+      background: #285b99;
+      color: white;
+    }
+
+    .valilehdet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 30px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #d2e2f3;
+    }
+
+    .valilehdet button {
+      background: #f1f6fb;
+      color: #285b99;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font: bold 16px Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    .valilehdet button:hover {
+      background: #dceaf8;
+    }
+
+    .valilehdet button.aktiivinen {
+      background: #285b99;
+      color: white;
+      border-color: #285b99;
+    }
+
+    .sisalto {
+      max-width: 850px;
+      padding-top: 25px;
+    }
+
+    .valilehtisisalto[hidden] {
+      display: none;
+    }
+
+    .sisalto h3 {
+      margin-top: 35px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #d2e2f3;
+    }
+
+    .sisalto ul {
+      padding-left: 25px;
+      margin-bottom: 25px;
+    }
+
+    .sisalto li {
+      margin-bottom: 10px;
+    }
+
+    .sisalto p {
+      margin-bottom: 22px;
+    }
+
+    blockquote {
+      margin: 25px 0;
+      padding: 15px 22px;
+      border-left: 4px solid #285b99;
+      background: #f1f6fb;
+    }
+
+    blockquote p:last-child {
+      margin-bottom: 0;
+    }
+
+    .lahde {
+      margin-top: 45px;
+      padding-top: 15px;
+      border-top: 1px solid #d2e2f3;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      nav.paavalikko,
+      .valilehdet {
+        flex-direction: column;
+      }
+
+      .paavalikko a,
+      .valilehdet button {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- UPDATED SEVEN-ITEM MAIN NAVIGATION -->
+
+  <nav class="paavalikko" aria-label="Main navigation">
+    <a href="index_en.html">Exercises</a>
+    <a href="metodo-pratico_en.html">Metodo pratico</a>
+    <a href="italian-aakkoset_en.html">Italian alphabet and pronunciation</a>
+    <a href="runojen-alkupera_en.html">Origins of the poems</a>
+    <a href="ohjeita-opettajalle_en.html">Instructions for teachers</a>
+    <a href="vaccaj-metastasio_en.html"
+       class="aktiivinen"
+       aria-current="page">Vaccaj and Metastasio</a>
+    <a href="tekijat_en.html">Authors</a>
+  </nav>
+
+  <main>
+
+    <h1>Vaccaj and Metastasio</h1>
+
+    <div class="valilehdet"
+         role="tablist"
+         aria-label="Biographies">
+
+      <button
+        type="button"
+        id="painike-vaccaj"
+        class="aktiivinen"
+        role="tab"
+        aria-selected="true"
+        aria-controls="vaccaj"
+        onclick="avaaValilehti('vaccaj')">
+        About the life of Vaccaj
+      </button>
+
+      <button
+        type="button"
+        id="painike-metastasio"
+        role="tab"
+        aria-selected="false"
+        aria-controls="metastasio"
+        onclick="avaaValilehti('metastasio')">
+        About the life of Metastasio
+      </button>
+
+    </div>
+
+    <!-- ABOUT THE LIFE OF VACCAJ -->
+
+    <section
+      id="vaccaj"
+      class="sisalto valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-vaccaj">
+
+      <h2>About the life of Nicolo Vaccaj</h2>
+
+      <h3>1790</h3>
+      <ul>
+        <li>Niccolo Vaccaj was born in Tolentino, northeast of Rome, during the early hours of a night in March.</li>
+        <li>His father was a medical doctor from Tuscany. His mother came from Frosinone.</li>
+        <li>Nicolo was the youngest of three sons.</li>
+      </ul>
+
+      <h3>1797-1806</h3>
+      <ul>
+        <li>The family moved to Pesaro, the birth city of Rossini.</li>
+        <li>Nicolo showed interest in literature, for example works by Metastasio, at an early age.</li>
+        <li>When still a teenager, he wrote plays in verse form.</li>
+        <li>He was gifted in music and began to write music.</li>
+      </ul>
+
+      <h3>1807-1810</h3>
+      <ul>
+        <li>Vaccaj was confronted with the choice of whether to become a medical doctor or a lawyer.</li>
+        <li>His father finally allowed him to study music.</li>
+        <li>He frequented the opera and church concerts to hear works by Cimarosa, Farinelli, Paisiello, Pergolesi, and Zingarelli.</li>
+        <li>He conducted full-time studies at the <em>Accademia di Santa Cecilia</em> in Rome, where he especially enjoyed vocal studies and studies in counterpoint, necessary for composing.</li>
+      </ul>
+
+      <h3>1811-1814</h3>
+      <ul>
+        <li>He graduated with a <em>diploma di maestro</em> honours.</li>
+        <li>He continued his studies with Giovanni Paisiello in Naples for almost three years and became thoroughly acquainted with different voice types and skills. (Paisiello was a great admirer of Metastasio's libretti and spoke in praise of the poet in his discussions with Vaccaj).</li>
+        <li>He was commissioned to write the opera <em>I Solitari di Scozia</em> in 40 days.</li>
+      </ul>
+
+      <p>Vaccaj as a singer is described by Alessandro Biaggi:</p>
+
+      <blockquote>
+        <p>"Vaccaj's voice was not naturally beautiful, but his singing technique was so perfect that it was sheer pleasure listening to him. His voice was clear and spontaneous with an excellent, continuous flow; his breathing was calm and unnoticed. His legato and portamento were faultless; his portamento did not drag. His head register was perfect. His phrasing was as polished as his diction. He never lapsed to exaggeration or mannerisms. The result was a powerful, pure, and classic style with lively, vivid, and expressive accentuation. Vaccaj's singing agreed with the Greek philosophers' definition: <em>enjoyment of the soul</em>."</p>
+      </blockquote>
+
+      <h3>1815</h3>
+      <ul>
+        <li>Vaccaj was hailed at the première.</li>
+        <li>He conducted his own composition <em>Tantum ergo</em> on the feast of the Assumption of Virgin Mary.</li>
+      </ul>
+
+      <h3>1816-22</h3>
+      <ul>
+        <li>On the advice of Paisiello, he travelled to Venice; however, the audiences there were interested solely in music by Rossini.</li>
+        <li>He began to give voice lessons to avoid asking his father for money.</li>
+      </ul>
+
+      <p>On his father as a singer and a vocal coach, Giulio Vaccaj commented later:</p>
+
+      <blockquote>
+        <p>"Everyone in Venice knew that he was an excellent singer, even if his voice was not impeccable. Thus, there is reason to believe that after having heard my father sing, Venetians expected him to start giving voice lessons. He soon became a skilled voice teacher and his excellent school earned him long-standing respect. When Rossini in 1851 wrote to marquis Antaldi in Pesaro about Vaccaj as a composer, he mentioned that 'he was as renowned as a teacher. With his thorough knowledge about the physiology of the human voice, he left the boundaries of the art intact and taught a method which made his students sing and reveal their souls.'"</p>
+      </blockquote>
+
+      <ul>
+        <li>He won popularity as a voice tutor.</li>
+        <li>According to his son Giulio, he was not only skilled in his own field but also civilized, sociable, and amiable.</li>
+        <li>After five years in Venice, he was looking for a change.</li>
+        <li>He accepted an invitation to start working as a music teacher in Trieste.</li>
+        <li>Pupils were queuing for his tuition and he enjoyed life.</li>
+        <li>He fell passionately in love with a pupil named Anna Corradini.</li>
+        <li>He travelled Europe extensively, visiting cities such as Vienna.</li>
+      </ul>
+
+      <h3>1823-24</h3>
+      <ul>
+        <li>He left Trieste because his beloved Anna was admitted to the conservatory in Milan.</li>
+        <li>He tried to establish himself as an opera composer, and now with more success.</li>
+        <li>He was hailed for both his operas <em>Pietro il Grande</em> and <em>La pastorella feudataria</em>.</li>
+      </ul>
+
+      <h3>1825-28</h3>
+      <ul>
+        <li>He was commissioned by the opera <em>Teatro San Caro</em> in Naples, which premièred his work <em>Zadig ed Astartea</em>. The role of Zadig was sung by Anna.</li>
+        <li>He also wrote for Anna the part of Romeo in his opera <em>Giulietta e Romeo</em>, which premièred in Milan and became his greatest success in opera all through Italy and the rest of Europe.</li>
+      </ul>
+
+      <h3>1829</h3>
+      <ul>
+        <li>He grew tired of writing for the unpredictable Italian stages and left for Paris, where he, having already established himself in the opera scene, wanted to try his luck.</li>
+      </ul>
+
+      <h3>1830</h3>
+      <ul>
+        <li>The revolution pre-empted his plans of gathering an accomplished ensemble for the <em>Théatre Italien</em>. The ensemble would have included Lablache, Maria Malibran, Giuditta Pasta, Henriette Sontag, and Tamburini.</li>
+      </ul>
+
+      <h3>1831</h3>
+      <ul>
+        <li>In the early summer, he went to London and, with a crowd of pupils soon wanting his tuition, decided to stay for a longer period.</li>
+        <li>He soon decided to compose a series of vocal exercises with a suitable melody to reduce the difficulties of and boredom caused by the rules of singing. This decision resulted in the <em>Metodo pratico</em>.</li>
+      </ul>
+
+      <h3>1832</h3>
+      <ul>
+        <li>He was exhilarated to see his opera <em>Giulietta e Romeo</em> at the King's Theatre. While Bellini had written an opera on the same theme, Vaccaj's final act was considered superior. (In Bologna, Bellini's opera ended in a scene with Vaccaj's funeral. The idea was probably Rossini's and so well conceived that it was used for years.)</li>
+      </ul>
+
+      <p>In a letter to Francesco Bennati, a good friend of his, Vaccaj wrote about the idea of a new voice school like this:</p>
+
+      <blockquote>
+        <p>"My objectives for the <em>practical method</em> I believe I have stated clearly in the preface. To serve a great number of different voices, I have kept to the most common vocal range. One of the most serious difficulties in the vocal art is how to combine the two different registers if it does not happen naturally.</p>
+
+        <p>If a teacher forbade eager students to sing until they have reached a perfect balance of registers, they would lose their interest in singing before they even started.</p>
+
+        <p>Therefore it is better to define them in a lighter and more pleasant way. (Those that have a natural gift for combining the registers may follow these rules for the total range of their voice.)</p>
+
+        <p>Most vocal schools consist of a single type of exercises for different types of voices. After a number of scales and similar other runs they introduce a number of exercises on solfège, where leaps are the only ornaments and all exercises resemble one another.</p>
+
+        <p>I believe there must be variation for varied talents. That is why everybody needs to believe that lessons with a frame are an opportunity for all. As the examples show, sometimes it is enough to please the audience with just one ornament. In order to help foreign students divide the syllables correctly when singing, I aim to show how to combine them in a way different from the way Italian teachers teach for spoken Italian. You see, I have noticed that foreigners stress the words in a peculiar manner if they pronounce them in the way their Italian teacher has told them to. Difficulties in pronouncing, for example, the word <em>tutto</em> are of minor importance – it can be learned just by imitating the teacher. That is why I have not prepared a pronunciation dictionary. This, in short, is the reason for not being more specific with the fifteen lessons of <em>Metodo pratico</em>."</p>
+      </blockquote>
+
+      <p>Later Vaccaj tells about his idea of adding a more theoretical section to his singing school, where he would discuss, for example, different types of voices. He was hopeful for being able to show how theory and practice can be combined best. Unfortunately, this idea never materialized.</p>
+
+      <h3>1833</h3>
+      <ul>
+        <li>He finished the manuscript for <em>Metodo pratico</em> and submitted it for printing.</li>
+        <li>He gave voice lessons in Edinburgh and Dublin to fulfil his desire to travel to Scotland and Ireland.</li>
+        <li>After the Handel Festival, he started planning his return to Italy.</li>
+      </ul>
+
+      <h3>1834</h3>
+      <ul>
+        <li>Because of the death of his father, he left for Italy abruptly.</li>
+      </ul>
+
+      <h3>1835-36</h3>
+      <ul>
+        <li>He married his former pupil Giulia Puppati.</li>
+        <li>He wrote three operas, of which <em>Giovanna Gray</em> with Maria Malibran in the title role was a great success.</li>
+        <li>He had a supplement printed to his method (12 vocal exercises and 25 cadenzas) during his trip to England.</li>
+      </ul>
+
+      <h3>1837-43</h3>
+      <ul>
+        <li>He settled in Milan with his family and composed a funeral cantata for Malibran with composers Coppola, Donizetti, Mercandante, and Pacini.</li>
+      </ul>
+
+      <h3>1844</h3>
+      <ul>
+        <li>Having performed several duties in Milan, for example, as a censor in the Milan conservatory, he moved back to Pesaro.</li>
+      </ul>
+
+      <h3>1845-46</h3>
+      <ul>
+        <li>He wrote the opera <em>Virginia</em> for the Teatro Apollo in Rome. According to Giulio Vaccaj, the opera was an undivided success.</li>
+        <li>Employment by the conservatory in Rome resulted in several improvements in the operations of the institution.</li>
+      </ul>
+
+      <h3>1847</h3>
+      <ul>
+        <li>He conducted a few of his own church music compositions in Tolentino.</li>
+      </ul>
+
+      <h3>1848</h3>
+      <ul>
+        <li>His health failing, he passed away in Pesaro on 6 August, grieved by his wife, three children and numerous friends.</li>
+      </ul>
+
+      <div class="lahde">
+        <strong>Source</strong>
+        <p>Forshufvud, G. 1994. <em>Con lieve fiato</em>. Lärarhandledning till Nicola Vaccajs <em>Metodo pratico</em>. Göteborgs universitetet.</p>
+      </div>
+
+    </section>
+
+    <!-- ABOUT THE LIFE OF METASTASIO -->
+
+    <section
+      id="metastasio"
+      class="sisalto valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-metastasio"
+      hidden>
+
+      <h2>About the life of Pietro Metastasio</h2>
+
+      <h3>1698-1707</h3>
+      <ul>
+        <li>Pietro Metastasio was the eldest son of Felice and Francesca Trapassi, born in Rome. His mother came from Bologna. His father was born in Assisi and served in the Pope's army, but later opened a grocery shop. Nothing in the family's history had any reference to Pietro's possibly remarkable future.</li>
+        <li>Surprisingly, Cardinal Pietro Ottoboni became his godfather and upon christening, the cardinal arranged Metastasio's education. It seems that Ottoboni noticed the boy's exceptional talent in improvising verse, both spoken and sung.</li>
+      </ul>
+
+      <h3>1708-1716</h3>
+      <ul>
+        <li>At the age of ten, his life changed when Professor of Laws Gran Vincenzo Gravina noticed him at a street corner, entertaining passers-by. The professor was so overwhelmed that he asked the parents for permission to adopt their son and give him a proper education.</li>
+        <li>Gravina was a cultural icon in contemporary Rome with a burning interest in ancient literature. Pietro first learned Latin and Greek in order to be able to read Horatio and Homer.</li>
+        <li>Gravina wanted the boy to have a more distinguished last name and translated Trapassi into Greek – Metastasio.</li>
+        <li>Even though a <em>poeta nato</em> – natural-born poet, Pietro was educated by Gravina to become a lawyer. Metastasio took the "non-binding oath" – <em>i voti non vincolanti</em> – and became an abbot. As an abbot, he wore a long coat and a tonsure (shaving of the head or the crown of the head only).</li>
+        <li>Despite the demanding studies, Metastasio worked on his literary skills constantly. On one remarkable occasion, he improvised 40 eight-line stanzas in front of an auditorium of scholars.</li>
+      </ul>
+
+      <h3>1717</h3>
+      <ul>
+        <li>He was ready to publish his first book, with the humble title <em>Poesie</em>.</li>
+      </ul>
+
+      <h3>1718-1719</h3>
+      <ul>
+        <li>After the death of his foster father, Gravina, he wrote <em>La strada della gloria</em> and dedicated it to him.</li>
+        <li>He had misfortunes both in love and in applying for the office of Curia and moved to Naples to continue his law studies.</li>
+        <li>His poems made him the pet of the aristocracy, which led him to more fruitful tasks.</li>
+      </ul>
+
+      <h3>1720</h3>
+      <ul>
+        <li>In 1714-1735, Southern Italy was part of Austria, and Metastasio was commissioned by Emperor Charles VI to write a serenade; he also sang the emperor's praises in his cantata <em>Endimione</em>. This imperial occasion brought Metastasio to fame in various ways.</li>
+      </ul>
+
+      <h3>1721-1728</h3>
+      <ul>
+        <li>Metastasio wrote libretti to operas <em>Gli orti esperidi</em>, <em>Didone abbandonata</em>, <em>Siroe</em>, <em>Cantone Utica</em>, <em>Ezio</em>, <em>Semiramide</em>, <em>Alessandro nell' Indie</em> and <em>Artaserse</em>.</li>
+        <li>He collaborated with singers Farinelli and Marianna Bent-Bulgarelli. He also collaborated with composers Porpora, Hasse, Leo, Vinci, and Pergolesi.</li>
+      </ul>
+
+      <h3>1729</h3>
+      <ul>
+        <li>He was summoned to become the Imperial Poet Laureate – <em>poeta cesarea</em> – in Vienna.</li>
+      </ul>
+
+      <h3>1730-1740</h3>
+      <ul>
+        <li>The imperial tradition was to commission a new <em>opera seria</em> for every major family occasion. Prior to the emperor's death in 1740, Metastasio wrote 11 <em>drammi per musica</em>: <em>Demetrio</em>, <em>Issipile</em>, <em>Adriano in Siri</em>, <em>L'Olimpiade</em>, <em>La Clemenza di Tito</em>, <em>Achille in Sciro</em>, <em>Ciro riconoscinto</em>, <em>Temistocle</em>, <em>Zenobia</em> and <em>Attilio Regolo</em>.</li>
+        <li>The ten years in Vienna were Metastasio's time of glory; <em>Demetrio</em> by itself was an unforgettable success. Metastasio considered <em>Attilio Regolo</em> (1740) his best play.</li>
+        <li>The court in Vienna spoke Italian, which made Metastasio feel at home in Austria.</li>
+      </ul>
+
+      <h3>1741-1782</h3>
+      <ul>
+        <li>His friendship with two Mariannas was an important health factor for Metastasio.</li>
+        <li>He was inaugurated as poet laureate by Marianna von Althann. She was a friend, counsellor, and patroness with enormous wit and an extensive education. Metastasio dedicated his <em>Endimione</em> to Marianna, and their deep friendship lasted till her death in 1755.</li>
+        <li>Marianna Martinez was a lady born in 1745. She was musically gifted, and with Metastasio's permission took lessons from both Haydn and Porpora.</li>
+        <li>When the emperor died, his daughter Maria Theresa took the throne and led the nation to an expensive war.</li>
+        <li>Metastasio left his office in 1771 after having completed eight dramas: <em>Antigono</em>, <em>Ipermestra</em>, <em>Il re pastore</em>, <em>L'eroe cinese</em>, <em>Nitteti</em>, <em>Il trionfo di Clelia</em>, <em>Romolo ed Ersilia</em> and <em>Ruggiero</em>.</li>
+        <li>Metastasio wrote a total of 27 <em>drammi per musica</em> and a number of short pieces for theatre, eight oratorios, and various poems, several of which were sonnets.</li>
+        <li>In 1745-1749, he translated poetry as opera commissions were scarce.</li>
+        <li>Metastasio was an avid correspondent; 2654 letters from 1715-1783 survived, less than a fifth of which were written to his brother Leopoldo Trapassi in Rome. An interesting exchange of letters was also conducted between Metastasio and Farinello.</li>
+        <li>Empress Maria Theresa, a skilled singer in her youth, had a keen appreciation of her poet laureate; she wanted to knight him with the Royal Hungarian Order of St Stefan. Also a crowning in Rome was planned, but Metastasio rejected all ceremonies.</li>
+        <li>After the empress's death in 1780, the poet lost his zest for life.</li>
+        <li>Metastasio died on 12 April 1782.</li>
+        <li>Approximately 1200 compositions have been written to his libretti by Bellini, Donizetti, Rossini, Buononcini, Caccini, Caldera, Carissimi, Durante, Frescobaldi, Giordani, Händel, Marcello, Scarlatti, J.S. Bach, Haydn, Mozart, Beethoven, Schubert, Purcell, Weyse, Lindblad, and Kjerulf.</li>
+      </ul>
+
+      <div class="lahde">
+        <strong>Source</strong>
+        <p>Forshufvud, G. 1994. <em>Con lieve fiato</em>. Lärarhandledning till Nicola Vaccajs <em>Metodo pratico</em>. Göteborgs universitetet.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+    function avaaValilehti(tunnus) {
+      const sisallot = document.querySelectorAll(".valilehtisisalto");
+      const painikkeet = document.querySelectorAll(".valilehdet button");
+
+      sisallot.forEach(function(sisalto) {
+        sisalto.hidden = true;
+      });
+
+      painikkeet.forEach(function(painike) {
+        painike.classList.remove("aktiivinen");
+        painike.setAttribute("aria-selected", "false");
+      });
+
+      document.getElementById(tunnus).hidden = false;
+
+      const valittuPainike = document.getElementById("painike-" + tunnus);
+      valittuPainike.classList.add("aktiivinen");
+      valittuPainike.setAttribute("aria-selected", "true");
+    }
+  </script>
+
+</body>
+</html>
