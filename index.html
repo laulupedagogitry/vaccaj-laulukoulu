@@ -7,17 +7,29 @@
   <title>Vaccaj-laulukoulu – Metodo pratico</title>
 
   <style>
+    html {
+      min-height: 100%;
+      background-color: #21154e;
+      background-image: url("img/tausta.jpg");
+      background-position: center top;
+      background-repeat: repeat;
+      background-size: 1000px auto;
+    }
+
     body {
       font-family: Arial, sans-serif;
       max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
+      margin: 30px auto;
+      padding: 30px;
       color: #222;
       line-height: 1.6;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
     }
 
     h1, h2, h3 {
-      color: #285b99;
+      color: #21154e;
     }
 
     /* KIELIVALINTA */
@@ -32,22 +44,23 @@
     .kielivalinta a {
       display: inline-block;
       padding: 8px 16px;
-      border: 1px solid #b7cce2;
+      border: 1px solid #d4cde7;
       border-radius: 6px;
-      background: white;
-      color: #285b99;
+      background: #eeeaf6;
+      color: #21154e;
       font-size: 15px;
       font-weight: bold;
       text-decoration: none;
     }
 
     .kielivalinta a:hover {
-      background: #dceaf8;
+      background: #ddd5ee;
+      color: #21154e;
     }
 
     .kielivalinta a.aktiivinen {
-      background: #285b99;
-      border-color: #285b99;
+      background: #21154e;
+      border-color: #21154e;
       color: white;
     }
 
@@ -59,24 +72,25 @@
       gap: 8px;
       margin: 15px 0 35px;
       padding-bottom: 15px;
-      border-bottom: 2px solid #d2e2f3;
+      border-bottom: 2px solid #d4cde7;
     }
 
     .paavalikko a {
       padding: 10px 16px;
-      background: #f1f6fb;
+      background: #eeeaf6;
       border-radius: 6px;
-      color: #285b99;
+      color: #21154e;
       text-decoration: none;
       font-weight: bold;
     }
 
     .paavalikko a:hover {
-      background: #dceaf8;
+      background: #ddd5ee;
+      color: #21154e;
     }
 
     .paavalikko a.aktiivinen {
-      background: #285b99;
+      background: #21154e;
       color: white;
     }
 
@@ -97,9 +111,9 @@
       left: 0;
       min-width: 270px;
       background: white;
-      border: 1px solid #d2e2f3;
+      border: 1px solid #d4cde7;
       border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+      box-shadow: 0 4px 12px rgba(33, 21, 78, 0.18);
       z-index: 10;
       padding: 6px;
     }
@@ -205,39 +219,6 @@
 
     /* MOBIILINÄKYMÄ */
 
-    @media (max-width: 600px) {
-      nav.paavalikko {
-        flex-direction: column;
-      }
-
-      .paavalikko a {
-        text-align: center;
-      }
-
-      .logokortit {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* TAUSTAKUVA JA VALKOINEN SISÄLTÖLAATIKKO */
-
-    html {
-      min-height: 100%;
-      background-color: #21154e;
-      background-image: url("img/tausta.jpg");
-      background-position: center top;
-      background-repeat: repeat;
-      background-size: 1000px auto;
-    }
-
-    body {
-      background: white;
-      margin: 30px auto;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
-    }
-
     @media (max-width: 1100px) {
       body {
         margin: 20px;
@@ -249,6 +230,18 @@
         margin: 12px;
         padding: 18px;
         border-radius: 8px;
+      }
+
+      nav.paavalikko {
+        flex-direction: column;
+      }
+
+      .paavalikko a {
+        text-align: center;
+      }
+
+      .logokortit {
+        grid-template-columns: 1fr;
       }
     }
   </style>
