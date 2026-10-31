@@ -1,0 +1,838 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj – Exercise 1a</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      color: #285b99;
+    }
+
+    a {
+      color: #285b99;
+    }
+
+    /* MAIN NAVIGATION */
+
+    nav.paavalikko {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0 35px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #d2e2f3;
+    }
+
+    .paavalikko a {
+      padding: 10px 16px;
+      background: #f1f6fb;
+      border-radius: 6px;
+      color: #285b99;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .paavalikko a:hover {
+      background: #dceaf8;
+    }
+
+    .paavalikko a.aktiivinen {
+      background: #285b99;
+      color: white;
+    }
+
+    /* EXERCISE AND VOICE TYPE SELECTION */
+
+    label {
+      display: block;
+      margin: 0 0 8px;
+      font-weight: bold;
+    }
+
+    select {
+      font-size: 16px;
+      padding: 12px;
+      max-width: 100%;
+      border: 1px solid #b7cce2;
+      border-radius: 6px;
+      background: white;
+    }
+
+    .valinnat {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 25px 0;
+      padding: 20px;
+      background: #f1f6fb;
+      border-radius: 10px;
+    }
+
+    .valintaryhma {
+      min-width: 0;
+    }
+
+    .harjoitusryhma {
+      flex: 1 1 650px;
+    }
+
+    .aanialaryhma {
+      flex: 0 1 220px;
+    }
+
+    #harjoitus {
+      width: 100%;
+    }
+
+    #aaniala {
+      width: 100%;
+    }
+
+    /* AUDIO RECORDING */
+
+    audio {
+      display: block;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    /* SHEET MUSIC AND LYRICS */
+
+    .sisalto {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.4fr) minmax(280px, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .nuottialue img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .tekstialue {
+      background: #f1f6fb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .tekstialue h2 {
+      margin-top: 0;
+    }
+
+    .sae {
+      margin-bottom: 22px;
+    }
+
+    .aanne {
+      color: #666;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .italia {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .suomi {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .yhteenveto {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    /* PERFORMANCE INSTRUCTIONS */
+
+    .esitysohjeet {
+      max-width: 1000px;
+      margin-top: 55px;
+      padding-top: 25px;
+      border-top: 2px solid #d2e2f3;
+    }
+
+    .esitysohjeet h2 {
+      margin-top: 0;
+    }
+
+    .esitysohjeet h3 {
+      margin-top: 35px;
+    }
+
+    .esitysohjeet p {
+      margin-bottom: 20px;
+    }
+
+    .saveltapailu {
+      background: #f1f6fb;
+      border-left: 4px solid #285b99;
+      border-radius: 4px;
+      padding: 18px 22px;
+      margin: 20px 0 25px;
+      line-height: 2;
+    }
+
+    .saveltapailu p {
+      margin: 0;
+    }
+
+    .esitysohjeet .lahde {
+      margin-top: 35px;
+      padding-top: 15px;
+      border-top: 1px solid #d2e2f3;
+      color: #555;
+    }
+
+    /* MOBILE VIEW */
+
+    @media (max-width: 800px) {
+      .sisalto {
+        grid-template-columns: 1fr;
+      }
+
+      .valinnat {
+        flex-direction: column;
+      }
+
+      .harjoitusryhma,
+      .aanialaryhma {
+        flex: auto;
+        width: 100%;
+      }
+
+      .tekstialue {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav.paavalikko {
+        flex-direction: column;
+      }
+
+      .paavalikko a {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .saveltapailu {
+        padding: 15px;
+        overflow-wrap: anywhere;
+      }
+    }
+
+    /* LANGUAGE SELECTION */
+
+    .kielivalinta {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin: 0 0 15px;
+    }
+
+    .kielivalinta a {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #b7cce2;
+      border-radius: 6px;
+      background: white;
+      color: #285b99;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .kielivalinta a:hover {
+      background: #dceaf8;
+    }
+
+    .kielivalinta a.aktiivinen {
+      background: #285b99;
+      border-color: #285b99;
+      color: white;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- LANGUAGE SELECTION -->
+
+  <div
+    class="kielivalinta"
+    role="group"
+    aria-label="Language">
+
+    <a href="harjoitus-1a.html" lang="fi">
+      Suomi
+    </a>
+
+    <a
+      href="harjoitus-1a_en.html"
+      class="aktiivinen"
+      lang="en"
+      aria-current="page">
+      English
+    </a>
+
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+
+  <nav class="paavalikko" aria-label="Main navigation">
+
+    <a href="index_en.html"
+       class="aktiivinen"
+       aria-current="page">
+      Exercises
+    </a>
+
+    <a href="metodo-pratico_en.html">
+      Metodo pratico
+    </a>
+
+    <a href="italian-aakkoset_en.html">
+      Italian alphabet and pronunciation
+    </a>
+
+    <a href="runojen-alkupera_en.html">
+      Origins of the poems
+    </a>
+
+    <a href="ohjeita-opettajalle_en.html">
+      Instructions for teachers
+    </a>
+
+    <a href="vaccaj-metastasio_en.html">
+      Vaccaj and Metastasio
+    </a>
+
+    <a href="tekijat_en.html">
+      Authors
+    </a>
+
+  </nav>
+
+  <main>
+
+    <h1>Vaccaj – Exercise 1a</h1>
+
+    <!-- EXERCISE AND VOICE TYPE SELECTION -->
+
+    <div class="valinnat">
+
+      <div class="valintaryhma harjoitusryhma">
+
+        <label for="harjoitus">
+          Select an exercise:
+        </label>
+
+        <select
+          id="harjoitus"
+          onchange="vaihdaHarjoitus()">
+
+          <optgroup label="I–IV – Intervals">
+
+            <option value="1a" selected>
+              I / 1a – Manca sollecita... – La scala – the scale
+            </option>
+
+            <option value="1b">
+              I / 1b – Semplicetta tortorella... – Intervalli di terza – third
+            </option>
+
+            <option value="2a">
+              II / 2a – Lascia il lido, e il mare infido... – Intervalli di quarta – fourth
+            </option>
+
+            <option value="2b">
+              II / 2b – Avvezzo a vivere... – Intervalli di quinta – fifth
+            </option>
+
+            <option value="3">
+              III / 3 – Bella prova é d'alma forte... – Intervalli di sesta – sixth
+            </option>
+
+            <option value="4a">
+              IV / 4a – Fra l'ombre un lampo solo... – Intervalli di settima – seventh
+            </option>
+
+            <option value="4b">
+              IV / 4b – Quell' onda che ruina... – Intervalli di ottava – octave
+            </option>
+
+          </optgroup>
+
+          <optgroup label="V–XIII – Ornamentation and vocal technique">
+
+            <option value="5">
+              V / 5 – Delira dubbiosa... – I semitoni – semitone
+            </option>
+
+            <option value="6">
+              VI / 6 – Nel contrasto amor accende... – Modo sincopato – syncopation
+            </option>
+
+            <option value="7">
+              VII / 7 – Come il candore... – Introduzione alle volate – introduction to runs
+            </option>
+
+            <option value="8a">
+              VIII / 8a – Senza l'amabile... – Le appoggiatura sopra e sotto – long appoggiatura
+            </option>
+
+            <option value="8b">
+              VIII / 8b – Benchè di senso privo... – L'acciaccatura – short appoggiatura
+            </option>
+
+            <option value="9a">
+              IX / 9a – La gioia verace... – Introduzione al Mordente – introduction to the mordent
+            </option>
+
+            <option value="9b">
+              IX / 9b – L'augelletto in lacci stretto... – Mordente in diversi modi – mordent, turn
+            </option>
+
+            <option value="10a">
+              X / 10a – Quando accende un nobil petto... – Introduzione al grupetto – introduction to the turn
+            </option>
+
+            <option value="10b">
+              X / 10b – Più non si trovano... – Il gruppetto – turn
+            </option>
+
+            <option value="11">
+              XI / 11 – Se povero il ruscello... – Introduzione al trillo – introduction to the trill
+            </option>
+
+            <option value="12">
+              XII / 12 – Siam navi all' onde algenti... – Le volate – long sixteenth-note run
+            </option>
+
+            <option value="13a">
+              XIII / 13a – Vorrei spiegar l'affanno... – Portamento I - Modo per portare la voce – portamento I
+            </option>
+
+            <option value="13b">
+              XIII / 13b – O placido il mare... – Portamento II - Altro modo – portamento II
+            </option>
+
+          </optgroup>
+
+          <optgroup label="XIV–XV – Recitative and review">
+
+            <option value="14">
+              XIV / 14 – La patria è un tutto... – Il recitativo – recitative
+            </option>
+
+            <option value="15">
+              XV / 15 – Alla stagion de' fiori... – Riepilogo – review
+            </option>
+
+          </optgroup>
+
+        </select>
+
+      </div>
+
+      <div class="valintaryhma aanialaryhma">
+
+        <label for="aaniala">
+          Select a voice type:
+        </label>
+
+        <select
+          id="aaniala"
+          onchange="vaihdaAaniala()">
+
+          <option value="sopraano">Soprano</option>
+          <option value="mezzo">Mezzo-soprano</option>
+          <option value="altto">Alto</option>
+          <option value="baritoni1">Baritone 1</option>
+          <option value="baritoni2">Baritone 2</option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+    <!-- AUDIO RECORDING -->
+
+    <h2>Listen to the recording</h2>
+
+    <audio
+      id="soitin"
+      controls
+      preload="none"
+      src="aanet/1a_sopraano.mp3">
+      Your browser does not support the audio player.
+    </audio>
+
+    <!-- SHEET MUSIC AND LYRICS -->
+
+    <div class="sisalto">
+
+      <!-- SHEET MUSIC -->
+
+      <section class="nuottialue">
+
+        <h2>Sheet music</h2>
+
+        <img
+          id="nuotti"
+          src="img/nuottikuvat/1a_sopraano.jpg"
+          alt="Vaccaj 1a – soprano sheet music">
+
+      </section>
+
+      <!-- LYRICS -->
+
+      <section class="tekstialue">
+
+        <h2>Exercise 1a</h2>
+
+        <div class="aanne">[la 'skala]</div>
+        <h3>La scala</h3>
+        <p>The scale</p>
+
+        <hr>
+
+        <div class="sae">
+          <div class="aanne">
+            ['manka sol'letʃita]
+          </div>
+          <div class="italia">
+            Manca sollecita
+          </div>
+          <div class="suomi">
+            Dies quickly
+          </div>
+        </div>
+
+        <div class="sae">
+          <div class="aanne">
+            [pju del u'zato]
+          </div>
+          <div class="italia">
+            più dell´usato,
+          </div>
+          <div class="suomi">
+            more quickly than usual,
+          </div>
+        </div>
+
+        <div class="sae">
+          <div class="aanne">
+            [an'korke s'adʒiti]
+          </div>
+          <div class="italia">
+            ancor che s'agiti
+          </div>
+          <div class="suomi">
+            even if it is moved
+          </div>
+        </div>
+
+        <div class="sae">
+          <div class="aanne">
+            [kon 'ljeve 'fjato]
+          </div>
+          <div class="italia">
+            con lieve fiato,
+          </div>
+          <div class="suomi">
+            by a light wind,
+          </div>
+        </div>
+
+        <div class="sae">
+          <div class="aanne">
+            ['fatʃe ke 'palpita]
+          </div>
+          <div class="italia">
+            face che palpita
+          </div>
+          <div class="suomi">
+            makes it flicker
+          </div>
+        </div>
+
+        <div class="sae">
+          <div class="aanne">
+            ['prɛsso al mo'rir]
+          </div>
+          <div class="italia">
+            presso al morir.
+          </div>
+          <div class="suomi">
+            close to death.
+          </div>
+        </div>
+
+        <!-- SUMMARY -->
+
+        <div class="yhteenveto">
+
+          <strong>
+            The flame flickers close to death<br>
+            and dies unexpectedly<br>
+            even though<br>
+            the wind is light
+          </strong>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- PERFORMANCE INSTRUCTIONS -->
+
+    <section class="esitysohjeet" aria-labelledby="esitysohjeet-otsikko">
+
+      <h2 id="esitysohjeet-otsikko">Performance instructions</h2>
+
+      <p>
+        This exercise focuses on intervals of a second
+        and scales. The song is a solfège exercise,
+        but it also serves as an introduction to
+        practising legato.
+      </p>
+
+      <p>
+        At the beginning of the exercise (bars 1–2 and 3–4),
+        there are two ascending six-note scales, or
+        <em>hexachords</em>, followed by their inversions.
+        To demonstrate that the exercise should be sung
+        <em>sempre legato</em>, Vaccaj divided the words
+        so that all syllables are open, meaning that
+        they end in a vowel and any final consonant
+        of a syllable is attached to the beginning
+        of the next syllable.
+      </p>
+
+      <p>
+        The lines of the poem have five syllables.
+        The primary stress falls on the fourth syllable,
+        with a secondary stress on the first or second.
+        The rhythmic structure of the melody suits
+        lines 1, 2, 5 and 6. In fact, lines 1, 3 and 5
+        of the poem contain six syllables, which provides
+        a good basis for the opening hexachord.
+        However, this requires the second and fourth
+        phrases to be completed with a melisma
+        in order to preserve the melodic idea.
+        A melisma is also needed on the word
+        <em>palpita</em> so that the text fits the scale.
+      </p>
+
+      <h3>Practice suggestions</h3>
+
+      <p>
+        The melodic structure of the first exercise
+        and the tempo marking <em>adagio</em>
+        place considerable demands on the singer.
+        The word stresses in the text and the
+        particularly troublesome vowel <em>i</em>
+        in bar 12 add to the difficulty.
+        It is therefore important to allow time
+        for preliminary work, which makes it easier
+        to combine the poem with the melody.
+      </p>
+
+      <p>
+        An excellent way to prepare for singing
+        the exercise is to work with syllables
+        such as <em>no</em>, <em>vo</em>,
+        <em>la</em> and <em>le</em>.
+        Although Vaccaj intended his singing method
+        to offer an alternative to traditional
+        solfège exercises, familiar solfège syllables,
+        which provide a variety of vowel and consonant
+        sounds, can also be used in practice.
+        All the syllables, except <em>sol</em>,
+        are open. You can therefore sing the exercise
+        as follows:
+      </p>
+
+      <div class="saveltapailu">
+
+        <p>
+          <em>do - re - mi - fa - sol - la</em><br>
+          <em>re - mi - fa - sol - la - si</em><br>
+          <em>re2 - do2 - si - la - sol - fa</em><br>
+          <em>la - sol - fa - mi - re - do</em><br>
+          <em>do - re - mi - fa - sol - la - si - do2 - re2 - re2 - mi2</em><br>
+          <em>mi2 re2 do2 - si - la - sol - fa - mi - re - re - do</em>
+        </p>
+
+      </div>
+
+      <p>
+        In Italian, the vowels in syllables such as
+        <em>do</em> and <em>re</em> are inherently
+        open in quality, but better (higher)
+        vocal placement is often achieved by
+        singing them as closed vowels.
+        You can emphasise the legato sensation
+        by singing melismatically.
+      </p>
+
+      <p>
+        Correct pronunciation and thorough
+        understanding of Metastasio's text
+        are essential. Reading the text can
+        be practised, for example, through
+        "legato reading".
+      </p>
+
+      <p>
+        In the last two phrases, after the word
+        <em>palpita</em>, it often feels as though
+        there is not enough time to breathe.
+        However, it is quite possible to enter
+        slightly late on the first note
+        of bars 11 and 15.
+      </p>
+
+      <p>
+        When two vowels meet (two syllables
+        on the same note), as in <em>-so al</em>
+        (bars 11 and 15), the vowel <em>a</em>
+        should be given almost the entire
+        note value.
+      </p>
+
+      <p>
+        The high note in bar 12 often sounds
+        forced, and the accents in bars 11 and 12
+        do not make matters easier.
+        Young male voices can therefore use
+        diminuendo and falsetto to reach
+        the note <em>mi</em>.
+        On the first note of bar 13,
+        the vowel <em>a</em> may make it
+        possible to produce an effective
+        full voice.
+      </p>
+
+      <p>
+        The pianist can help an uncertain singer
+        in bar 2 by adding the notes
+        <em>sol-fa-mi</em> as an eighth-note
+        triplet on the last quarter-note beat.
+        In bar 4, <em>do2</em> can be played,
+        and in bar 6, <em>sol</em> can be played
+        on the last quarter-note beat.
+        Gradually, the pianist should stop
+        playing the melody altogether.
+      </p>
+
+      <h3>Ideas for interpretation</h3>
+
+      <p>
+        <em>Morir</em> is the central word
+        of the poem and should be the starting
+        point for interpreting the meaning
+        of the text. For this reason, too,
+        the accent in bar 11 should be restrained.
+        The unstressed preposition <em>con</em>
+        must also be kept under control (bar 7).
+      </p>
+
+      <p>
+        Thinking in larger metrical units,
+        which means avoiding an emphasis on
+        the first beats of odd-numbered bars,
+        is often a good solution.
+      </p>
+
+      <div class="lahde">
+
+        <strong>Source</strong>
+
+        <p>
+          Forshufvud, G. 1994.
+          <em>Con lieve fiato</em>.
+          Lärarhandledning till Nicola Vaccajs
+          <em>Metodo pratico</em>.
+          Göteborgs universitetet.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- EXERCISE AND VOICE TYPE SELECTION FUNCTIONS -->
+
+  <script>
+
+    // SWITCH TO ANOTHER EXERCISE
+
+    function vaihdaHarjoitus() {
+      const harjoitus =
+        document.getElementById("harjoitus").value;
+
+      if (harjoitus !== "1a") {
+        window.location.href =
+          "harjoitus-" + harjoitus + "_en.html";
+      }
+    }
+
+    // CHANGE VOICE TYPE, SHEET MUSIC AND RECORDING
+
+    function vaihdaAaniala() {
+      const aaniala =
+        document.getElementById("aaniala").value;
+
+      const nuotti =
+        document.getElementById("nuotti");
+
+      const soitin =
+        document.getElementById("soitin");
+
+      nuotti.src =
+        "img/nuottikuvat/1a_" + aaniala + ".jpg";
+
+      nuotti.alt =
+        "Vaccaj 1a – " + aaniala + " – sheet music";
+
+      soitin.pause();
+
+      soitin.src =
+        "aanet/1a_" + aaniala + ".mp3";
+
+      soitin.load();
+    }
+
+  </script>
+
+</body>
+</html>
