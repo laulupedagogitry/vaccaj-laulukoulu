@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vaccaj: Exercises</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    h1, h2, h3 {
+      color: #285b99;
+    }
+
+    a {
+      color: #285b99;
+    }
+
+    /* LANGUAGE SELECTION */
+
+    .kielivalinta {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin: 0 0 15px;
+    }
+
+    .kielivalinta a {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #b7cce2;
+      border-radius: 6px;
+      background: white;
+      color: #285b99;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .kielivalinta a:hover {
+      background: #dceaf8;
+    }
+
+    .kielivalinta a.aktiivinen {
+      background: #285b99;
+      border-color: #285b99;
+      color: white;
+    }
+
+    /* MAIN NAVIGATION */
+
+    nav.paavalikko {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0 35px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #d2e2f3;
+    }
+
+    .paavalikko a {
+      padding: 10px 16px;
+      background: #f1f6fb;
+      border-radius: 6px;
+      color: #285b99;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .paavalikko a:hover {
+      background: #dceaf8;
+    }
+
+    .paavalikko a.aktiivinen {
+      background: #285b99;
+      color: white;
+    }
+
+    /* SONGS DROPDOWN MENU */
+
+    .paavalikko .alasvetovalikko {
+      position: relative;
+    }
+
+    .paavalikko .alasvetovalikko > a {
+      display: block;
+    }
+
+    .paavalikko .alavalikko {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 270px;
+      background: white;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+      z-index: 10;
+      padding: 6px;
+    }
+
+    .paavalikko .alavalikko a {
+      display: block;
+      margin: 3px 0;
+    }
+
+    .paavalikko .alasvetovalikko:hover .alavalikko,
+    .paavalikko .alasvetovalikko:focus-within .alavalikko {
+      display: block;
+    }
+
+    .paavalikko .alavalikko a.aktiivinen {
+      background: #285b99;
+      color: white;
+    }
+
+    /* EXERCISE SELECTION */
+
+    .harjoitusvalinta {
+      margin: 25px 0 40px;
+      padding: 22px;
+      background: #f1f6fb;
+      border-radius: 10px;
+    }
+
+    .harjoitusvalinta label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .harjoitusvalinta select {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      border: 1px solid #b7cce2;
+      border-radius: 6px;
+      background: white;
+      cursor: pointer;
+    }
+
+    /* MOBILE VIEW */
+
+    @media (max-width: 600px) {
+      nav.paavalikko {
+        flex-direction: column;
+      }
+
+      .paavalikko a {
+        text-align: center;
+      }
+
+      .paavalikko .alavalikko {
+        position: static;
+        box-shadow: none;
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LANGUAGE SELECTION -->
+
+  <div class="kielivalinta"
+       role="group"
+       aria-label="Kieli / Language">
+
+    <a href="tehtavat.html" lang="fi">
+      Suomi
+    </a>
+
+    <a href="tehtavat_en.html"
+       class="aktiivinen"
+       lang="en"
+       aria-current="page">
+      English
+    </a>
+
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+
+  <nav class="paavalikko" aria-label="Main navigation">
+
+    <a href="index_en.html">
+      Home
+    </a>
+
+    <a href="metodo-pratico_en.html">
+      Metodo pratico
+    </a>
+
+    <div class="alasvetovalikko">
+
+      <a href="tehtavat_en.html"
+         class="aktiivinen"
+         aria-haspopup="true">
+        Songs ▾
+      </a>
+
+      <!-- SECOND-LEVEL MENU -->
+
+      <div class="alavalikko"
+           aria-label="Songs submenu">
+
+        <a href="tehtavat_en.html"
+           class="aktiivinen"
+           aria-current="page">
+          Exercises
+        </a>
+
+        <a href="italian-aakkoset_en.html">
+          Italian Alphabet and Pronunciation
+        </a>
+
+        <a href="runojen-alkupera_en.html">
+          Origins of the Poems
+        </a>
+
+        <a href="ohjeita-opettajalle_en.html">
+          Notes for Teachers
+        </a>
+
+      </div>
+
+    </div>
+
+    <a href="vaccaj-metastasio_en.html">
+      Vaccaj and Metastasio
+    </a>
+
+    <a href="tekijat_en.html">
+      Authors
+    </a>
+
+  </nav>
+
+  <main>
+
+    <h1>Vaccaj: Exercises</h1>
+
+    <p>
+      Select an exercise from the menu below.
+      The exercise page will open automatically
+      after you make your selection.
+      On the exercise page, you can select
+      your voice type, view the sheet music,
+      read the lyrics with pronunciation guides
+      and English translations, listen to
+      the recording, and explore the
+      performance notes.
+    </p>
+
+    <!-- EXERCISE DROPDOWN MENU -->
+
+    <h2>Exercises</h2>
+
+    <div class="harjoitusvalinta">
+
+      <label for="harjoitus">
+        Select exercise:
+      </label>
+
+      <select
+        id="harjoitus"
+        onchange="vaihdaHarjoitus()">
+
+        <option value="" selected>
+          Select an exercise
+        </option>
+
+        <optgroup label="I–IV – Intervals">
+
+          <option value="1a">
+            I / 1a – Manca sollecita... – La scala – scale
+          </option>
+
+          <option value="1b">
+            I / 1b – Semplicetta tortorella... – Intervalli di terza – thirds
+          </option>
+
+          <option value="2a">
+            II / 2a – Lascia il lido, e il mare infido... – Intervalli di quarta – fourths
+          </option>
+
+          <option value="2b">
+            II / 2b – Avvezzo a vivere... – Intervalli di quinta – fifths
+          </option>
+
+          <option value="3">
+            III / 3 – Bella prova è d'alma forte... – Intervalli di sesta – sixths
+          </option>
+
+          <option value="4a">
+            IV / 4a – Fra l'ombre un lampo solo... – Intervalli di settima – sevenths
+          </option>
+
+          <option value="4b">
+            IV / 4b – Quell' onda che ruina... – Intervalli di ottava – octaves
+          </option>
+
+        </optgroup>
+
+        <optgroup label="V–XIII – Ornamentation and Vocal Technique">
+
+          <option value="5">
+            V / 5 – Delira dubbiosa... – I semitoni – semitones
+          </option>
+
+          <option value="6">
+            VI / 6 – Nel contrasto amor accende... – Modo sincopato – syncopation
+          </option>
+
+          <option value="7">
+            VII / 7 – Come il candore... – Introduzione alle volate – introduction to runs
+          </option>
+
+          <option value="8a">
+            VIII / 8a – Senza l'amabile... – Le appoggiatura sopra e sotto – long appoggiatura
+          </option>
+
+          <option value="8b">
+            VIII / 8b – Benchè di senso privo... – L'acciaccatura – short grace note
+          </option>
+
+          <option value="9a">
+            IX / 9a – La gioia verace... – Introduzione al Mordente – introduction to the mordent
+          </option>
+
+          <option value="9b">
+            IX / 9b – L'augelletto in lacci stretto... – Mordente in diversi modi – mordents and turns
+          </option>
+
+          <option value="10a">
+            X / 10a – Quando accende un nobil petto... – Introduzione al grupetto – introduction to the turn
+          </option>
+
+          <option value="10b">
+            X / 10b – Più non si trovano... – Il gruppetto – the turn
+          </option>
+
+          <option value="11">
+            XI / 11 – Se povero il ruscello... – Introduzione al trillo – introduction to the trill
+          </option>
+
+          <option value="12">
+            XII / 12 – Siam navi all' onde algenti... – Le volate – long sixteenth-note runs
+          </option>
+
+          <option value="13a">
+            XIII / 13a – Vorrei spiegar l'affanno... – Portamento I - Modo per portare la voce – portamento I
+          </option>
+
+          <option value="13b">
+            XIII / 13b – O placido il mare... – Portamento II - Altro modo – portamento II
+          </option>
+
+        </optgroup>
+
+        <optgroup label="XIV–XV – Recitative and Review">
+
+          <option value="14">
+            XIV / 14 – La patria è un tutto... – Il recitativo – recitative
+          </option>
+
+          <option value="15">
+            XV / 15 – Alla stagion de' fiori... – Riepilogo – review
+          </option>
+
+        </optgroup>
+
+      </select>
+
+    </div>
+
+  </main>
+
+  <!-- EXERCISE SELECTION -->
+
+  <script>
+
+    function vaihdaHarjoitus() {
+      const harjoitus =
+        document.getElementById("harjoitus").value;
+
+      if (harjoitus !== "") {
+        window.location.href =
+          "harjoitus-" + harjoitus + "_en.html";
+      }
+    }
+
+  </script>
+
+</body>
+</html>
