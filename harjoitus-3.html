@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Vaccaj – Harjoitus 3</title>
+  <title>Vaccaj: Tehtävä 3</title>
 
   <style>
     body {
@@ -222,47 +222,172 @@
         font-size: 28px;
       }
     }
+
     /* KIELIVALINTA */
-    .kielivalinta { display: flex; justify-content: flex-end; gap: 8px; margin: 0 0 15px; }
-    .kielivalinta a { display: inline-block; padding: 8px 16px; border: 1px solid #b7cce2; border-radius: 6px; background: white; color: #285b99; font-size: 15px; font-weight: bold; text-decoration: none; }
-    .kielivalinta a:hover { background: #dceaf8; }
-    .kielivalinta a.aktiivinen { background: #285b99; border-color: #285b99; color: white; }
+
+    .kielivalinta {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin: 0 0 15px;
+    }
+
+    .kielivalinta a {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #b7cce2;
+      border-radius: 6px;
+      background: white;
+      color: #285b99;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .kielivalinta a:hover {
+      background: #dceaf8;
+    }
+
+    .kielivalinta a.aktiivinen {
+      background: #285b99;
+      border-color: #285b99;
+      color: white;
+    }
+
+    /* LAULUTEKSTIN OTSIKON RIVIVÄLIT */
+
+    .tekstialue > .aanne,
+    .tekstialue > h3,
+    .tekstialue > p:first-of-type {
+      margin-top: 0;
+      margin-bottom: 4px;
+    }
+
+    /* ALEMPIEN VÄLILEHTIEN TYYLIT */
+
+    .alavalilehdet {
+      display: flex;
+      gap: 8px;
+      margin: 20px 0;
+      border-bottom: 2px solid #d2e2f3;
+      padding-bottom: 12px;
+    }
+
+    .alavalilehdet button {
+      padding: 10px 18px;
+      border: 0;
+      border-radius: 6px;
+      background: #f1f6fb;
+      color: #285b99;
+      font: inherit;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .alavalilehdet button:hover {
+      background: #dceaf8;
+    }
+
+    .alavalilehdet button[aria-selected="true"] {
+      background: #285b99;
+      color: white;
+    }
+
+    .valilehtisisalto[hidden] {
+      display: none;
+    }
+
+    /* PÄÄVALIKON ALAVALIKKO */
+
+    .paavalikko .alasvetovalikko {
+      position: relative;
+    }
+
+    .paavalikko .alasvetovalikko > a {
+      display: block;
+    }
+
+    .paavalikko .alavalikko {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 270px;
+      background: white;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+      z-index: 10;
+      padding: 6px;
+    }
+
+    .paavalikko .alavalikko a {
+      display: block;
+      margin: 3px 0;
+    }
+
+    .paavalikko .alasvetovalikko:hover .alavalikko,
+    .paavalikko .alasvetovalikko:focus-within .alavalikko {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .paavalikko .alavalikko {
+        position: static;
+        box-shadow: none;
+        min-width: 0;
+      }
+    }
   </style>
 </head>
 
 <body>
+
   <!-- KIELIVALINTA -->
+
   <div class="kielivalinta" role="group" aria-label="Kieli / Language">
     <a href="harjoitus-3.html" class="aktiivinen" lang="fi" aria-current="page">Suomi</a>
     <a href="harjoitus-3_en.html" lang="en">English</a>
   </div>
 
-
-  <!-- SEITSEMÄN VÄLILEHDEN YLÄVALIKKO -->
+  <!-- PÄÄVALIKKO JA LAULUJEN ALAVALIKKO -->
 
   <nav class="paavalikko" aria-label="Päävalikko">
 
-    <a href="index.html"
-       class="aktiivinen"
-       aria-current="page">
-      Harjoitukset
-    </a>
+    <a href="index.html">Etusivu</a>
 
-    <a href="metodo-pratico.html">
-      Metodo pratico
-    </a>
+    <a href="metodo-pratico.html">Metodo pratico</a>
 
-    <a href="italian-aakkoset.html">
-      Italian kielen aakkoset ja ääntäminen
-    </a>
+    <div class="alasvetovalikko">
 
-    <a href="runojen-alkupera.html">
-      Runojen alkuperä
-    </a>
+      <a href="laulut.html"
+         class="aktiivinen"
+         aria-current="page"
+         aria-haspopup="true">
+        Laulut ▾
+      </a>
 
-    <a href="ohjeita-opettajalle.html">
-      Ohjeita opettajille
-    </a>
+      <div class="alavalikko" aria-label="Laulujen alavalikko">
+
+        <a href="laulut.html">
+          Tehtävät
+        </a>
+
+        <a href="italian-aakkoset.html">
+          Italian kielen aakkoset ja ääntäminen
+        </a>
+
+        <a href="runojen-alkupera.html">
+          Runojen alkuperä
+        </a>
+
+        <a href="ohjeita-opettajalle.html">
+          Ohjeita opettajalle
+        </a>
+
+      </div>
+
+    </div>
 
     <a href="vaccaj-metastasio.html">
       Vaccaj ja Metastasio
@@ -276,417 +401,478 @@
 
   <main>
 
-    <h1>Vaccaj – Harjoitus 3</h1>
+    <h1>Vaccaj: Tehtävä 3</h1>
 
-    <!-- HARJOITUKSEN JA ÄÄNIALAN VALINTA -->
+    <!-- ALEMPIEN VÄLILEHTIEN VALIKKO -->
 
-    <div class="valinnat">
+    <div class="alavalilehdet"
+         role="tablist"
+         aria-label="Tehtävän sisältö">
 
-      <div class="valintaryhma harjoitusryhma">
+      <button
+        type="button"
+        id="valilehti-harjoitus"
+        role="tab"
+        aria-controls="sisalto-harjoitus"
+        aria-selected="true"
+        onclick="vaihdaValilehti('harjoitus')">
+        Nuotit ja sanat
+      </button>
 
-        <label for="harjoitus">
-          Valitse harjoitus:
-        </label>
+      <button
+        type="button"
+        id="valilehti-esitysohjeet"
+        role="tab"
+        aria-controls="sisalto-esitysohjeet"
+        aria-selected="false"
+        onclick="vaihdaValilehti('esitysohjeet')">
+        Esitysohjeet
+      </button>
 
-        <select
-          id="harjoitus"
-          onchange="vaihdaHarjoitus()">
+    </div>
 
-          <optgroup label="I–IV – Intervallit">
+    <!-- NUOTIT JA SANAT -VÄLILEHTI -->
 
-            <option value="1a">
-              I / 1a – Manca sollecita... – La scala – asteikko
+    <div id="sisalto-harjoitus"
+         class="valilehtisisalto"
+         role="tabpanel"
+         aria-labelledby="valilehti-harjoitus">
+
+      <!-- HARJOITUKSEN JA ÄÄNIALAN VALINTA -->
+
+      <div class="valinnat">
+
+        <div class="valintaryhma harjoitusryhma">
+
+          <label for="harjoitus">
+            Valitse tehtävä:
+          </label>
+
+          <select
+            id="harjoitus"
+            onchange="vaihdaHarjoitus()">
+
+            <optgroup label="I–IV – Intervallit">
+
+              <option value="1a">
+                I / 1a – Manca sollecita... – La scala – asteikko
+              </option>
+
+              <option value="1b">
+                I / 1b – Semplicetta tortorella... – Intervalli di terza – terssi
+              </option>
+
+              <option value="2a">
+                II / 2a – Lascia il lido, e il mare infido... – Intervalli di quarta – kvartti
+              </option>
+
+              <option value="2b">
+                II / 2b – Avvezzo a vivere... – Intervalli di quinta – kvintti
+              </option>
+
+              <option value="3" selected>
+                III / 3 – Bella prova é d'alma forte... – Intervalli di sesta – seksti
+              </option>
+
+              <option value="4a">
+                IV / 4a – Fra l'ombre un lampo solo... – Intervalli di settima – septimi
+              </option>
+
+              <option value="4b">
+                IV / 4b – Quell' onda che ruina... – Intervalli di ottava – oktaavi
+              </option>
+
+            </optgroup>
+
+            <optgroup label="V–XIII – Koristeet ja laulutekniikka">
+
+              <option value="5">
+                V / 5 – Delira dubbiosa... – I semitoni – puolisävelaskel
+              </option>
+
+              <option value="6">
+                VI / 6 – Nel contrasto amor accende... – Modo sincopato – synkooppi
+              </option>
+
+              <option value="7">
+                VII / 7 – Come il candore... – Introduzione alle volate – johdatus juoksutukseen
+              </option>
+
+              <option value="8a">
+                VIII / 8a – Senza l'amabile... – Le appoggiatura sopra e sotto – pitkä etuhele
+              </option>
+
+              <option value="8b">
+                VIII / 8b – Benchè di senso privo... – L'acciaccatura – lyhyt etuhele
+              </option>
+
+              <option value="9a">
+                IX / 9a – La gioia verace... – Introduzione al Mordente – johdatus jälkiheleeseen
+              </option>
+
+              <option value="9b">
+                IX / 9b – L'augelletto in lacci stretto... – Mordente in diversi modi – jälkihele, kaksoishele
+              </option>
+
+              <option value="10a">
+                X / 10a – Quando accende un nobil petto... – Introduzione al grupetto – johdatus kaksoisheleeseen
+              </option>
+
+              <option value="10b">
+                X / 10b – Più non si trovano... – Il gruppetto – kaksoishele
+              </option>
+
+              <option value="11">
+                XI / 11 – Se povero il ruscello... – Introduzione al trillo – johdatus trilliin
+              </option>
+
+              <option value="12">
+                XII / 12 – Siam navi all' onde algenti... – Le volate – pitkä 16-osajuoksutus
+              </option>
+
+              <option value="13a">
+                XIII / 13a – Vorrei spiegar l'affanno... – Portamento I - Modo per portare la voce – kannattelu I
+              </option>
+
+              <option value="13b">
+                XIII / 13b – O placido il mare... – Portamento II - Altro modo – kannattelu II
+              </option>
+
+            </optgroup>
+
+            <optgroup label="XIV–XV – Resitatiivi ja kertaus">
+
+              <option value="14">
+                XIV / 14 – La patria è un tutto... – Il recitativo – resitatiivi
+              </option>
+
+              <option value="15">
+                XV / 15 – Alla stagion de' fiori... – Riepilogo – kertaus
+              </option>
+
+            </optgroup>
+
+          </select>
+
+        </div>
+
+        <!-- KAKSI ÄÄNIALAA -->
+
+        <div class="valintaryhma aanialaryhma">
+
+          <label for="aaniala">
+            Valitse ääniala:
+          </label>
+
+          <select
+            id="aaniala"
+            onchange="vaihdaAaniala()">
+
+            <option value="mezzo" selected>
+              Mezzosopraano
             </option>
 
-            <option value="1b">
-              I / 1b – Semplicetta tortorella... – Intervalli di terza – terssi
+            <option value="baritoni">
+              Baritoni
             </option>
 
-            <option value="2a">
-              II / 2a – Lascia il lido, e il mare infido... – Intervalli di quarta – kvartti
-            </option>
+          </select>
 
-            <option value="2b">
-              II / 2b – Avvezzo a vivere... – Intervalli di quinta – kvintti
-            </option>
-
-            <option value="3" selected>
-              III / 3 – Bella prova é d'alma forte... – Intervalli di sesta – seksti
-            </option>
-
-            <option value="4a">
-              IV / 4a – Fra l'ombre un lampo solo... – Intervalli di settima – septimi
-            </option>
-
-            <option value="4b">
-              IV / 4b – Quell' onda che ruina... – Intervalli di ottava – oktaavi
-            </option>
-
-          </optgroup>
-
-          <optgroup label="V–XIII – Koristeet ja laulutekniikka">
-
-            <option value="5">
-              V / 5 – Delira dubbiosa... – I semitoni – puolisävelaskel
-            </option>
-
-            <option value="6">
-              VI / 6 – Nel contrasto amor accende... – Modo sincopato – synkooppi
-            </option>
-
-            <option value="7">
-              VII / 7 – Come il candore... – Introduzione alle volate – johdatus juoksutukseen
-            </option>
-
-            <option value="8a">
-              VIII / 8a – Senza l'amabile... – Le appoggiatura sopra e sotto – pitkä etuhele
-            </option>
-
-            <option value="8b">
-              VIII / 8b – Benchè di senso privo... – L'acciaccatura – lyhyt etuhele
-            </option>
-
-            <option value="9a">
-              IX / 9a – La gioia verace... – Introduzione al Mordente – johdatus jälkiheleeseen
-            </option>
-
-            <option value="9b">
-              IX / 9b – L'augelletto in lacci stretto... – Mordente in diversi modi – jälkihele, kaksoishele
-            </option>
-
-            <option value="10a">
-              X / 10a – Quando accende un nobil petto... – Introduzione al grupetto – johdatus kaksoisheleeseen
-            </option>
-
-            <option value="10b">
-              X / 10b – Più non si trovano... – Il gruppetto – kaksoishele
-            </option>
-
-            <option value="11">
-              XI / 11 – Se povero il ruscello... – Introduzione al trillo – johdatus trilliin
-            </option>
-
-            <option value="12">
-              XII / 12 – Siam navi all' onde algenti... – Le volate – pitkä 16-osajuoksutus
-            </option>
-
-            <option value="13a">
-              XIII / 13a – Vorrei spiegar l'affanno... – Portamento I - Modo per portare la voce – kannattelu I
-            </option>
-
-            <option value="13b">
-              XIII / 13b – O placido il mare... – Portamento II - Altro modo – kannattelu II
-            </option>
-
-          </optgroup>
-
-          <optgroup label="XIV–XV – Resitatiivi ja kertaus">
-
-            <option value="14">
-              XIV / 14 – La patria è un tutto... – Il recitativo – resitatiivi
-            </option>
-
-            <option value="15">
-              XV / 15 – Alla stagion de' fiori... – Riepilogo – kertaus
-            </option>
-
-          </optgroup>
-
-        </select>
+        </div>
 
       </div>
 
-      <!-- KAKSI ÄÄNIALAA -->
+      <!-- ÄÄNITE -->
 
-      <div class="valintaryhma aanialaryhma">
+      <h2>Kuuntele äänite</h2>
 
-        <label for="aaniala">
-          Valitse ääniala:
-        </label>
+      <audio
+        id="soitin"
+        controls
+        preload="none"
+        src="aanet/3_mezzo.mp3">
+        Selaimesi ei tue äänisoitinta.
+      </audio>
 
-        <select
-          id="aaniala"
-          onchange="vaihdaAaniala()">
+      <!-- NUOTIT JA LAULUTEKSTI -->
 
-          <option value="mezzo" selected>
-            Mezzosopraano
-          </option>
+      <div class="sisalto">
 
-          <option value="baritoni">
-            Baritoni
-          </option>
+        <!-- NUOTIT -->
 
-        </select>
+        <section class="nuottialue">
+
+          <h2>Nuotit</h2>
+
+          <img
+            id="nuotti"
+            src="img/nuottikuvat/3_mezzo.jpg"
+            alt="Vaccaj 3 – mezzosopraanon nuotit">
+
+        </section>
+
+        <!-- LAULUTEKSTI JA SUOMENNOS -->
+
+        <section class="tekstialue">
+
+          <h2>Sanat</h2>
+
+          <div class="aanne">
+            [inter'valli di 'sɛsta]
+          </div>
+
+          <h3>Intervalli di sesta</h3>
+
+          <p>Seksti-intervalleja</p>
+
+          <hr>
+
+          <div class="sae">
+            <div class="aanne">
+              ['bɛlla 'prɔva ɛ d'alma 'fɔrte]
+            </div>
+            <div class="italia">
+              Bella prova è d'alma forte
+            </div>
+            <div class="suomi">
+              Hyvä todiste on sielulle vahvalle
+            </div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              [l'ɛsser 'platʃida e se'rena]
+            </div>
+            <div class="italia">
+              l'esser placida e serena
+            </div>
+            <div class="suomi">
+              olla rauhallinen ja tyyni
+            </div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              [nel sof'frir l in'dʒusta 'pena]
+            </div>
+            <div class="italia">
+              nel soffrir l'ingiusta pena
+            </div>
+            <div class="suomi">
+              kärsiessään epäoikeudenmukaista tuskaa
+            </div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              [d'una 'kolpa ke non a]
+            </div>
+            <div class="italia">
+              d'una colpa, che non ha.
+            </div>
+            <div class="suomi">
+              syystä, joka ei ole hänen.
+            </div>
+          </div>
+
+          <!-- SUOMENNETTU YHTEENVETO -->
+
+          <div class="yhteenveto">
+
+            <strong>
+              Vahvan sielun hieno todiste<br>
+              on olla rauhallinen ja hillitty,<br>
+              kärsiessään syyttömänä<br>
+              epäoikeudenmukaista rangaistusta.
+            </strong>
+
+          </div>
+
+        </section>
 
       </div>
 
     </div>
 
-    <!-- ÄÄNITE -->
+    <!-- ESITYSOHJEET-VÄLILEHTI -->
 
-    <h2>Kuuntele äänite</h2>
+    <div id="sisalto-esitysohjeet"
+         class="valilehtisisalto"
+         role="tabpanel"
+         aria-labelledby="valilehti-esitysohjeet"
+         hidden>
 
-    <audio
-      id="soitin"
-      controls
-      preload="none"
-      src="aanet/3_mezzo.mp3">
-      Selaimesi ei tue äänisoitinta.
-    </audio>
+      <section class="esitysohjeet"
+               aria-labelledby="esitysohjeet-otsikko">
 
-    <!-- NUOTIT JA LAULUTEKSTI -->
-
-    <div class="sisalto">
-
-      <!-- NUOTIT -->
-
-      <section class="nuottialue">
-
-        <h2>Nuotit</h2>
-
-        <img
-          id="nuotti"
-          src="img/nuottikuvat/3_mezzo.jpg"
-          alt="Vaccaj 3 – mezzosopraanon nuotit">
-
-      </section>
-
-      <!-- LAULUTEKSTI JA SUOMENNOS -->
-
-      <section class="tekstialue">
-
-        <h2>Tehtävä 3</h2>
-
-        <div class="aanne">
-          [inter'valli di 'sɛsta]
-        </div>
-
-        <h3>Intervalli di sesta</h3>
-
-        <p>Seksti-intervalleja</p>
-
-        <hr>
-
-        <div class="sae">
-          <div class="aanne">
-            ['bɛlla 'prɔva ɛ d'alma 'fɔrte]
-          </div>
-          <div class="italia">
-            Bella prova è d'alma forte
-          </div>
-          <div class="suomi">
-            Hyvä todiste on sielulle vahvalle
-          </div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            [l'ɛsser 'platʃida e se'rena]
-          </div>
-          <div class="italia">
-            l'esser placida e serena
-          </div>
-          <div class="suomi">
-            olla rauhallinen ja tyyni
-          </div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            [nel sof'frir l in'dʒusta 'pena]
-          </div>
-          <div class="italia">
-            nel soffrir l'ingiusta pena
-          </div>
-          <div class="suomi">
-            kärsiessään epäoikeudenmukaista tuskaa
-          </div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            [d'una 'kolpa ke non a]
-          </div>
-          <div class="italia">
-            d'una colpa, che non ha.
-          </div>
-          <div class="suomi">
-            syystä, joka ei ole hänen.
-          </div>
-        </div>
-
-        <!-- SUOMENNETTU YHTEENVETO -->
-
-        <div class="yhteenveto">
-
-          <strong>
-            Vahvan sielun hieno todiste<br>
-            on olla rauhallinen ja hillitty,<br>
-            kärsiessään syyttömänä<br>
-            epäoikeudenmukaista rangaistusta.
-          </strong>
-
-        </div>
-
-      </section>
-
-    </div>
-
-    <!-- ESITYSOHJEET HARJOITUSSIVUN LOPUSSA -->
-
-    <section class="esitysohjeet" aria-labelledby="esitysohjeet-otsikko">
-
-      <h2 id="esitysohjeet-otsikko">Esitysohjeet</h2>
-
-      <p>
-        Kolmas tehtävä sisältää 17 tahdissa kokonaista
-        25 seksti-intervallia. Monet suuret hypyt yhdessä
-        6/8-tahdissa tekevät <em>legatosta</em>
-        haasteellisen ja laulusta yhden vaativimmista
-        harjoituksista koko laulukoulussa.
-        Lisäksi melodiassa on yhteensä 18 ääntä
-        do2:n yläpuolella ja siksi laulu voidaan
-        kokea ”nalkuttavana”. Sillä on toisin
-        sanoen korkea <em>tessitura</em>.
-      </p>
-
-      <p>
-        Vaccaj säveltää kahdeksantavuisen runon
-        korostetusta runomitasta, vaikka Metastaasiolla
-        on vaihtelevampi painotusmalli.
-        Onkin epäselvää miksi juuri tämä runo on
-        valittu seksti-harjoitukseen.
-        Yksi mahdollinen syy voi olla Vaccajn omaksuma
-        moderni ajatus, jonka mukaan korkeat äänet
-        ovat helpompia laulettaessa <em>forte</em>.
-      </p>
-
-      <p>
-        Niin kuin <em>Semplicetta tortorella</em>
-        ja <em>Lascia il lido</em>, alkaa tämäkin
-        harjoitus tahdin puolivälistä ja fraasien
-        täytyy siis käynnistyä ”nousutahtitunteella”.
-        Tämä on erinomainen muistutus siitä,
-        ettei ensimmäinen ääni jokaisessa fraasissa
-        ole automaattisesti voimakas vain siksi,
-        että keuhkot on täynnä ilmaa.
-      </p>
-
-      <h3>Ohjeita harjoitteluun</h3>
-
-      <p>
-        Työskentele aluksi tekstin kanssa laulamalla
-        sitä <em>parlando</em> yhdellä tai useammalla
-        mukavalla sävelellä sopivalla sävelkorkeudella.
-      </p>
-
-      <p>
-        Voit harjoitella melodiaa ensin joillakin
-        sopivilla tavuilla.
-        Kokeile esim. <em>la</em>-tavua
-        <em>do2:n</em> yläpuolella olevissa äänissä
-        ja tavuja <em>le</em> tai <em>lo</em> muissa.
-        (Syy tavulle <em>la</em> korkeissa äänissä
-        ei ole mahdollisimman suuri äänenvoimakkuus,
-        vaan se että <em>a</em>-vokaali auttaa
-        oppilasta löytämään syvyyden tunnun
-        äänessään.)
-      </p>
-
-      <p>
-        Laulustemman tahtiin 3 voi kirjoittaa
-        kuudestoistaosatauon samaan tapaan kuin
-        tahdissa 11. Luultavasti tahtiin 7 pitää
-        tehdä tilaa hengitykselle sanan
-        <em>pena</em> jälkeen ilman että sen vuoksi
-        muutetaan taukoa tahdissa 8.
-        (Viimeksi mainittu on todennäköisesti
-        paikallaan korostamassa, että kahdeksantavuisella
-        runolla on <em>cesur</em> eli lyhyt
-        hengitystauko keskellä säeriviä.)
-      </p>
-
-      <p>
-        Seksti-intervallin voi täyttää kvarteilla,
-        kvinteillä tai sävellajin asteikolla,
-        mutta oikeastaan se vain monimutkaistaa
-        laulua entisestään.
-        On parempi keskittyä <em>legatoon</em>
-        niin paljon kuin mahdollista.
-        Tässä helpottaa vokaalien pitkittäminen
-        neljäsosilla ja sekstiin johtavien
-        kahdeksasosien laulaminen jonkin verran
-        liian pitkäksi.
-      </p>
-
-      <p>
-        Laula mahdollisimman pitkät a-vokaalit
-        kahden vokaalin kohdatessa
-        <em>-da e</em> tahdissa 4 ja 12.
-      </p>
-
-      <h3>Ajatuksia tulkinnasta</h3>
-
-      <p>
-        Runo on aiheeltaan vakava ja siksi on tärkeää
-        sovittaa tempo siihen, eikä laulaa liian
-        nopeasti. Muussa tapauksessa laulu antaa
-        turhan kepeän vaikutelman.
-      </p>
-
-      <p>
-        Koska fraasijako voi olla vähän epäselvä,
-        kannattaa tässäkin suuntautua runorivin
-        viimeiseen painotettuun tavuun.
-        Samoin pitää tietoisesti varoa,
-        ettei hengityksen jälkeinen ensimmäinen
-        tavu tule liian voimakkaaksi.
-      </p>
-
-      <p>
-        Ottaen huomioon tekstisisällön voi mainiosti
-        antaa runon kahdelle ensiriville positiivisemman
-        tulkinnan kuin kahdelle viimeiselle riville.
-      </p>
-
-      <p>
-        Sävellys ei ole varsinaisesti nautinnollinen,
-        ennen kuin se lauletaan tyylikkäällä
-        portamentolla.
-      </p>
-
-      <p>
-        Kokeile pitkää etuhelettä sanoissa
-        <em>serena</em> (5),
-        <em>colpa</em> (8),
-        <em>forte</em> (11),
-        <em>serena</em> (13) ja
-        <em>pena</em> (15).
-      </p>
-
-      <!-- LÄHDE -->
-
-      <div class="lahde">
-
-        <strong>Lähde</strong>
+        <h2 id="esitysohjeet-otsikko">Esitysohjeet</h2>
 
         <p>
-          Forshufvud, G. 1994.
-          <em>Con lieve fiato</em>.
-          Lärarhandledning till Nicola Vaccajs
-          <em>Metodo pratico</em>.
-          Göteborgs universitetet.
+          Kolmas tehtävä sisältää 17 tahdissa kokonaista
+          25 seksti-intervallia. Monet suuret hypyt yhdessä
+          6/8-tahdissa tekevät <em>legatosta</em>
+          haasteellisen ja laulusta yhden vaativimmista
+          harjoituksista koko laulukoulussa.
+          Lisäksi melodiassa on yhteensä 18 ääntä
+          do2:n yläpuolella ja siksi laulu voidaan
+          kokea ”nalkuttavana”. Sillä on toisin
+          sanoen korkea <em>tessitura</em>.
         </p>
 
-      </div>
+        <p>
+          Vaccaj säveltää kahdeksantavuisen runon
+          korostetusta runomitasta, vaikka Metastaasiolla
+          on vaihtelevampi painotusmalli.
+          Onkin epäselvää miksi juuri tämä runo on
+          valittu seksti-harjoitukseen.
+          Yksi mahdollinen syy voi olla Vaccajn omaksuma
+          moderni ajatus, jonka mukaan korkeat äänet
+          ovat helpompia laulettaessa <em>forte</em>.
+        </p>
 
-    </section>
+        <p>
+          Niin kuin <em>Semplicetta tortorella</em>
+          ja <em>Lascia il lido</em>, alkaa tämäkin
+          harjoitus tahdin puolivälistä ja fraasien
+          täytyy siis käynnistyä ”nousutahtitunteella”.
+          Tämä on erinomainen muistutus siitä,
+          ettei ensimmäinen ääni jokaisessa fraasissa
+          ole automaattisesti voimakas vain siksi,
+          että keuhkot on täynnä ilmaa.
+        </p>
+
+        <h3>Ohjeita harjoitteluun</h3>
+
+        <p>
+          Työskentele aluksi tekstin kanssa laulamalla
+          sitä <em>parlando</em> yhdellä tai useammalla
+          mukavalla sävelellä sopivalla sävelkorkeudella.
+        </p>
+
+        <p>
+          Voit harjoitella melodiaa ensin joillakin
+          sopivilla tavuilla.
+          Kokeile esim. <em>la</em>-tavua
+          <em>do2:n</em> yläpuolella olevissa äänissä
+          ja tavuja <em>le</em> tai <em>lo</em> muissa.
+          (Syy tavulle <em>la</em> korkeissa äänissä
+          ei ole mahdollisimman suuri äänenvoimakkuus,
+          vaan se että <em>a</em>-vokaali auttaa
+          oppilasta löytämään syvyyden tunnun
+          äänessään.)
+        </p>
+
+        <p>
+          Laulustemman tahtiin 3 voi kirjoittaa
+          kuudestoistaosatauon samaan tapaan kuin
+          tahdissa 11. Luultavasti tahtiin 7 pitää
+          tehdä tilaa hengitykselle sanan
+          <em>pena</em> jälkeen ilman että sen vuoksi
+          muutetaan taukoa tahdissa 8.
+          (Viimeksi mainittu on todennäköisesti
+          paikallaan korostamassa, että kahdeksantavuisella
+          runolla on <em>cesur</em> eli lyhyt
+          hengitystauko keskellä säeriviä.)
+        </p>
+
+        <p>
+          Seksti-intervallin voi täyttää kvarteilla,
+          kvinteillä tai sävellajin asteikolla,
+          mutta oikeastaan se vain monimutkaistaa
+          laulua entisestään.
+          On parempi keskittyä <em>legatoon</em>
+          niin paljon kuin mahdollista.
+          Tässä helpottaa vokaalien pitkittäminen
+          neljäsosilla ja sekstiin johtavien
+          kahdeksasosien laulaminen jonkin verran
+          liian pitkäksi.
+        </p>
+
+        <p>
+          Laula mahdollisimman pitkät a-vokaalit
+          kahden vokaalin kohdatessa
+          <em>-da e</em> tahdissa 4 ja 12.
+        </p>
+
+        <h3>Ajatuksia tulkinnasta</h3>
+
+        <p>
+          Runo on aiheeltaan vakava ja siksi on tärkeää
+          sovittaa tempo siihen, eikä laulaa liian
+          nopeasti. Muussa tapauksessa laulu antaa
+          turhan kepeän vaikutelman.
+        </p>
+
+        <p>
+          Koska fraasijako voi olla vähän epäselvä,
+          kannattaa tässäkin suuntautua runorivin
+          viimeiseen painotettuun tavuun.
+          Samoin pitää tietoisesti varoa,
+          ettei hengityksen jälkeinen ensimmäinen
+          tavu tule liian voimakkaaksi.
+        </p>
+
+        <p>
+          Ottaen huomioon tekstisisällön voi mainiosti
+          antaa runon kahdelle ensiriville positiivisemman
+          tulkinnan kuin kahdelle viimeiselle riville.
+        </p>
+
+        <p>
+          Sävellys ei ole varsinaisesti nautinnollinen,
+          ennen kuin se lauletaan tyylikkäällä
+          portamentolla.
+        </p>
+
+        <p>
+          Kokeile pitkää etuhelettä sanoissa
+          <em>serena</em> (5),
+          <em>colpa</em> (8),
+          <em>forte</em> (11),
+          <em>serena</em> (13) ja
+          <em>pena</em> (15).
+        </p>
+
+        <!-- LÄHDE -->
+
+        <div class="lahde">
+
+          <strong>Lähde</strong>
+
+          <p>
+            Forshufvud, G. 1994.
+            <em>Con lieve fiato</em>.
+            Lärarhandledning till Nicola Vaccajs
+            <em>Metodo pratico</em>.
+            Göteborgs universitetet.
+          </p>
+
+        </div>
+
+      </section>
+
+    </div>
 
   </main>
 
   <!-- HARJOITUS- JA ÄÄNIALAVALINTOJEN TOIMINNOT -->
 
   <script>
+
+    /* ALEMPIEN VÄLILEHTIEN VAIHTAMINEN */
+
+    function vaihdaValilehti(valilehti) {
+      const harjoitus = valilehti === 'harjoitus';
+
+      document.getElementById('sisalto-harjoitus').hidden = !harjoitus;
+      document.getElementById('sisalto-esitysohjeet').hidden = harjoitus;
+
+      document.getElementById('valilehti-harjoitus')
+        .setAttribute('aria-selected', String(harjoitus));
+
+      document.getElementById('valilehti-esitysohjeet')
+        .setAttribute('aria-selected', String(!harjoitus));
+    }
 
     // SIIRTYMINEN TOISEEN HARJOITUKSEEN
 
