@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Vaccaj – Exercise 15</title>
+  <title>Vaccaj: Exercise 15</title>
 
   <style>
     body {
@@ -52,6 +52,48 @@
     .paavalikko a.aktiivinen {
       background: #285b99;
       color: white;
+    }
+
+    /* SONGS DROPDOWN MENU */
+
+    .paavalikko .alasvetovalikko {
+      position: relative;
+    }
+
+    .paavalikko .alasvetovalikko > a {
+      display: block;
+    }
+
+    .paavalikko .alavalikko {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 270px;
+      background: white;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+      z-index: 10;
+      padding: 6px;
+    }
+
+    .paavalikko .alavalikko a {
+      display: block;
+      margin: 3px 0;
+    }
+
+    .paavalikko .alasvetovalikko:hover .alavalikko,
+    .paavalikko .alasvetovalikko:focus-within .alavalikko {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .paavalikko .alavalikko {
+        position: static;
+        box-shadow: none;
+        min-width: 0;
+      }
     }
 
     /* EXERCISE AND VOICE TYPE SELECTION */
@@ -197,6 +239,57 @@
       color: #555;
     }
 
+    /* LOWER TABS */
+
+    .valilehdet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 30px 0 25px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #d2e2f3;
+    }
+
+    .valilehdet button {
+      background: #f1f6fb;
+      color: #285b99;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font: bold 16px Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    .valilehdet button:hover {
+      background: #dceaf8;
+    }
+
+    .valilehdet button.aktiivinen {
+      background: #285b99;
+      color: white;
+      border-color: #285b99;
+    }
+
+    .valilehtisisalto[hidden] {
+      display: none;
+    }
+
+    /* EXERCISE HEADING LINE SPACING */
+
+    .tekstialue > .aanne {
+      line-height: 1.6;
+    }
+
+    .tekstialue > h3 {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .tekstialue > p {
+      margin: 0 0 16px;
+      line-height: 1.6;
+    }
+
     /* MOBILE VIEW */
 
     @media (max-width: 800px) {
@@ -220,11 +313,13 @@
     }
 
     @media (max-width: 600px) {
-      nav.paavalikko {
+      nav.paavalikko,
+      .valilehdet {
         flex-direction: column;
       }
 
-      .paavalikko a {
+      .paavalikko a,
+      .valilehdet button {
         text-align: center;
       }
 
@@ -232,6 +327,7 @@
         font-size: 28px;
       }
     }
+
     /* LANGUAGE SELECTION */
     .kielivalinta { display: flex; justify-content: flex-end; gap: 8px; margin: 0 0 15px; }
     .kielivalinta a { display: inline-block; padding: 8px 16px; border: 1px solid #b7cce2; border-radius: 6px; background: white; color: #285b99; font-size: 15px; font-weight: bold; text-decoration: none; }
@@ -248,31 +344,48 @@
     <a href="harjoitus-15_en.html" class="aktiivinen" lang="en" aria-current="page">English</a>
   </div>
 
-  <!-- SEVEN MAIN NAVIGATION TABS -->
+  <!-- MAIN NAVIGATION -->
 
   <nav class="paavalikko" aria-label="Main navigation">
 
-    <a href="index_en.html"
-       class="aktiivinen"
-       aria-current="page">
-      Exercises
+    <a href="index_en.html">
+      Home
     </a>
 
     <a href="metodo-pratico_en.html">
       Metodo pratico
     </a>
 
-    <a href="italian-aakkoset_en.html">
-      Italian alphabet and pronunciation
-    </a>
+    <div class="alasvetovalikko">
 
-    <a href="runojen-alkupera_en.html">
-      Origins of the poems
-    </a>
+      <a href="tehtavat_en.html"
+         class="aktiivinen"
+         aria-haspopup="true">
+        Songs ▾
+      </a>
 
-    <a href="ohjeita-opettajalle_en.html">
-      Instructions for teachers
-    </a>
+      <div class="alavalikko"
+           aria-label="Songs submenu">
+
+        <a href="tehtavat_en.html">
+          Exercises
+        </a>
+
+        <a href="italian-aakkoset_en.html">
+          Italian Alphabet and Pronunciation
+        </a>
+
+        <a href="runojen-alkupera_en.html">
+          Origins of the Poems
+        </a>
+
+        <a href="ohjeita-opettajalle_en.html">
+          Instructions for Teachers
+        </a>
+
+      </div>
+
+    </div>
 
     <a href="vaccaj-metastasio_en.html">
       Vaccaj and Metastasio
@@ -286,7 +399,7 @@
 
   <main>
 
-    <h1>Vaccaj – Exercise 15</h1>
+    <h1>Vaccaj: Exercise 15</h1>
 
     <!-- EXERCISE AND VOICE TYPE SELECTION -->
 
@@ -441,177 +554,227 @@
 
     </div>
 
-    <!-- AUDIO RECORDING -->
+    <!-- LOWER TABS -->
 
-    <h2>Listen to the recording</h2>
+    <div
+      class="valilehdet"
+      role="tablist"
+      aria-label="Exercise content">
 
-    <audio
-      id="soitin"
-      controls
-      preload="none"
-      src="aanet/15_sopraano.mp3">
-      Your browser does not support the audio player.
-    </audio>
+      <button
+        type="button"
+        id="painike-harjoitus"
+        class="aktiivinen"
+        role="tab"
+        aria-selected="true"
+        aria-controls="harjoitussisalto"
+        onclick="avaaValilehti('harjoitussisalto')">
+        Sheet Music and Lyrics
+      </button>
 
-    <!-- SHEET MUSIC AND LYRICS -->
-
-    <div class="sisalto">
-
-      <!-- SHEET MUSIC -->
-
-      <section class="nuottialue">
-
-        <h2>Sheet music</h2>
-
-        <img
-          id="nuotti"
-          src="img/nuottikuvat/15_sopraano.jpg"
-          alt="Vaccaj 15 – soprano sheet music">
-
-      </section>
-
-      <!-- LYRICS AND ENGLISH TRANSLATION -->
-
-      <section class="tekstialue">
-
-        <h2>Exercise 15</h2>
-
-        <div class="aanne">
-          [rie'pilogo]
-        </div>
-
-        <h3>Riepilogo</h3>
-
-        <p>Recapitulation</p>
-
-        <hr>
-
-        <div class="sae">
-          <div class="aanne">
-            ['alla sta'dʒon de 'fjori]
-          </div>
-          <div class="italia">
-            Alla stagion de' fiori
-          </div>
-          <div class="suomi">
-            To the season of flowers
-          </div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            [e de no'vɛlli a'mori]
-          </div>
-          <div class="italia">
-            e de' novelli amori
-          </div>
-          <div class="suomi">
-            and new loves
-          </div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            [ɛ 'grato il 'mɔlle 'fjato]
-          </div>
-          <div class="italia">
-            è grato il molle fiato
-          </div>
-          <div class="suomi">
-            is welcome a soft breath
-          </div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            [dun 'dzɛffiro leg'gɛr]
-          </div>
-          <div class="italia">
-            d'un zeffiro legger.
-          </div>
-          <div class="suomi">
-            of the west wind light.
-          </div>
-          <small>(archaic: leggier)</small>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            [o 'dʒɛma fra le 'fronde]
-          </div>
-          <div class="italia">
-            O gema fra le fronde
-          </div>
-          <div class="suomi">
-            Either it sighs among the sprigs
-          </div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            [o 'lɛnto in'krespi l'onde]
-          </div>
-          <div class="italia">
-            o lento increspi l'onde:
-          </div>
-          <div class="suomi">
-            or slowly bends the waves:
-          </div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            ['dzɛffiro in 'oɲɲi 'lato]
-          </div>
-          <div class="italia">
-            zeffiro in ogni lato
-          </div>
-          <div class="suomi">
-            the west wind all over
-          </div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            [kom'paɲɲo ɛ del pja'tʃer]
-          </div>
-          <div class="italia">
-            compagno è del piacer.
-          </div>
-          <div class="suomi">
-            accompanies pleasure.
-          </div>
-        </div>
-
-        <!-- ENGLISH SUMMARY -->
-
-        <div class="yhteenveto">
-
-          <strong>
-            The soft light wind from the west<br>
-            is welcome to the season of flowers<br>
-            and new loves.<br>
-            Whether it blows among sprigs<br>
-            or slowly bends the waves,<br>
-            the west wind is a companion of<br>
-            pleasure everywhere.
-          </strong>
-
-        </div>
-
-      </section>
+      <button
+        type="button"
+        id="painike-esitysohjeet"
+        role="tab"
+        aria-selected="false"
+        aria-controls="esitysohjeet"
+        onclick="avaaValilehti('esitysohjeet')">
+        Performance instructions
+      </button>
 
     </div>
 
-    <!-- PERFORMANCE INSTRUCTIONS BELOW THE EXERCISE -->
+    <!-- SHEET MUSIC AND LYRICS TAB -->
 
-    <section class="esitysohjeet" aria-labelledby="esitysohjeet-otsikko">
-      <h2 id="esitysohjeet-otsikko">Performance instructions</h2>
+    <div
+      id="harjoitussisalto"
+      class="valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-harjoitus">
+
+      <!-- AUDIO RECORDING -->
+
+      <h2>Listen to the recording</h2>
+
+      <audio
+        id="soitin"
+        controls
+        preload="none"
+        src="aanet/15_sopraano.mp3">
+        Your browser does not support the audio player.
+      </audio>
+
+      <!-- SHEET MUSIC AND LYRICS -->
+
+      <div class="sisalto">
+
+        <!-- SHEET MUSIC -->
+
+        <section class="nuottialue">
+
+          <h2>Sheet music</h2>
+
+          <img
+            id="nuotti"
+            src="img/nuottikuvat/15_sopraano.jpg"
+            alt="Vaccaj 15 – soprano sheet music">
+
+        </section>
+
+        <!-- LYRICS AND ENGLISH TRANSLATION -->
+
+        <section class="tekstialue">
+
+          <h2>Lyrics</h2>
+
+          <div class="aanne">
+            [rie'pilogo]
+          </div>
+
+          <h3>Riepilogo</h3>
+
+          <p>Recapitulation</p>
+
+          <hr>
+
+          <div class="sae">
+            <div class="aanne">
+              ['alla sta'dʒon de 'fjori]
+            </div>
+            <div class="italia">
+              Alla stagion de' fiori
+            </div>
+            <div class="suomi">
+              To the season of flowers
+            </div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              [e de no'vɛlli a'mori]
+            </div>
+            <div class="italia">
+              e de' novelli amori
+            </div>
+            <div class="suomi">
+              and new loves
+            </div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              [ɛ 'grato il 'mɔlle 'fjato]
+            </div>
+            <div class="italia">
+              è grato il molle fiato
+            </div>
+            <div class="suomi">
+              is welcome a soft breath
+            </div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              [dun 'dzɛffiro leg'gɛr]
+            </div>
+            <div class="italia">
+              d'un zeffiro legger.
+            </div>
+            <div class="suomi">
+              of the west wind light.
+            </div>
+            <small>(archaic: leggier)</small>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              [o 'dʒɛma fra le 'fronde]
+            </div>
+            <div class="italia">
+              O gema fra le fronde
+            </div>
+            <div class="suomi">
+              Either it sighs among the sprigs
+            </div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              [o 'lɛnto in'krespi l'onde]
+            </div>
+            <div class="italia">
+              o lento increspi l'onde:
+            </div>
+            <div class="suomi">
+              or slowly bends the waves:
+            </div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              ['dzɛffiro in 'oɲɲi 'lato]
+            </div>
+            <div class="italia">
+              zeffiro in ogni lato
+            </div>
+            <div class="suomi">
+              the west wind all over
+            </div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              [kom'paɲɲo ɛ del pja'tʃer]
+            </div>
+            <div class="italia">
+              compagno è del piacer.
+            </div>
+            <div class="suomi">
+              accompanies pleasure.
+            </div>
+          </div>
+
+          <!-- ENGLISH SUMMARY -->
+
+          <div class="yhteenveto">
+
+            <strong>
+              The soft light wind from the west<br>
+              is welcome to the season of flowers<br>
+              and new loves.<br>
+              Whether it blows among sprigs<br>
+              or slowly bends the waves,<br>
+              the west wind is a companion of<br>
+              pleasure everywhere.
+            </strong>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+    <!-- PERFORMANCE INSTRUCTIONS TAB -->
+
+    <section
+      id="esitysohjeet"
+      class="esitysohjeet valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-esitysohjeet"
+      hidden>
+
+      <h2>Performance instructions</h2>
+
       <p>This final exercise in the singing method is a review of everything learned. The song allows previously learned techniques to be applied in the manner of an aria.</p>
 
       <h3>Practice suggestions</h3>
+
       <p>Begin with the simplified melody in bars 1–29, singing on suitable syllables. Next, add some melodic notes in bars 11–12, 17, 21–24 and 26–28. Then combine the text with the melody and add piano accompaniment. Return to the beginning from bar 29 and let the pianist play the first bar as an interlude. Only now sing the complete score as written, imagining it as an improvisation over the melodic framework.</p>
+
       <p>Try the following suggestions:</p>
+
       <ol>
         <li><strong>Bars 2, 4, 6, etc.:</strong> When practising the runs, use <em>staccato</em> and <em>marcato</em> as well as <em>legato</em>.</li>
         <li><strong>Bar 7:</strong> The musical figure is very demanding. Initially omit the last note and sing the remaining four sixteenth notes as a turn. Next, omit the grace note instead and retain the remaining four notes of the turn. Finally, sing the grace note as well. Because it precedes a group of short notes, it should be performed as a short appoggiatura.</li>
@@ -623,25 +786,39 @@
         <li><strong>Bars 22 and 26:</strong> The long appoggiatura takes the entire duration of the principal note.</li>
         <li><strong>Bars 27–28:</strong> Here, too, the "mordent" replaces the principal note and should be performed as an eighth-note triplet.</li>
       </ol>
+
       <p><em>Alla stagion</em> ends with a so-called <em>stretta</em>, meaning an "impressively climactic final section". A clear understanding of the underlying melody is very helpful. First sing bars 29–31 and 34–36 using the following notes:</p>
+
       <p><em>re – sol – si – mi</em><br>
          <em>mi – la – do2 – fa</em><br>
          <em>fa – la – re2 – re2</em></p>
+
       <p>Because the dotted principal note in bars 33 and 38 can be divided into three, the duration of its appoggiatura is only one-third of that note.</p>
+
       <p>During practice, the tempo should be very restrained (quarter note approximately M.M. 72).</p>
+
       <p>In the first part of the song, Vaccaj has, as usual, provided ample rests between phrases for breathing. By contrast, in bars 29–39 it is difficult to find a proper place to take a full breath. The singing teacher must therefore mark the breathing points; otherwise the end of the song becomes almost impossible.</p>
+
       <p>Generally, one can breathe after each <em>compagno</em> in bars 30, 31, 35 and 36, and of course during the rest in bar 34. If necessary, a breath can be taken after the first quarter note of bar 38. According to Kohotin, it is possible to breathe in the middle of a word if the breath is combined with a syncopation.</p>
+
       <p>In the final song of <em>Metodo pratico</em>, "soft breathing" can be applied. The first run in the second bar already requires a different kind of lightness from the slower scale at the beginning of the phrase, and without flexibility in breath pressure it is hardly possible to sing bars 7, 16 and 20, for example.</p>
+
       <p>The pianist's flexibility is another prerequisite for making the song work. The pianist must be prepared to give the singer extra time in all the more difficult passages and, moreover, to "breathe along" in bars 29–39.</p>
+
       <p>The best basic dynamic for study is <em>mezzopiano</em>.</p>
 
       <h3>Ideas for interpretation</h3>
+
       <p>Despite the high technical demands of <em>Alla stagion</em>, the singer should try as early as possible to relate the ornaments to the meanings of the corresponding words. Scales, appoggiaturas, "slides" and other devices must be sung so that the listener clearly understands that the singer wishes to enhance gracefully the meanings of <em>fiori</em>, <em>amori</em>, <em>zeffiro</em>, <em>grato</em>, and so on. The difficult figure in bars 29–31 and 34–36 should likewise be connected to the idea of an "embrace of the wind".</p>
+
       <p>From an early stage, try to connect the phrases of thought and make the rhymes clear.</p>
+
       <p>Only when the singer has more or less mastered the entire song at a calm tempo and restrained volume should they give it a somewhat more distinct character by "letting the west wind blow faster and more strongly".</p>
+
       <p>However, the performance must never become so virtuosic that the composition loses its charm.</p>
 
       <!-- SOURCE -->
+
       <div class="lahde">
         <strong>Source</strong>
         <p>Forshufvud, G. 1994.
@@ -650,6 +827,7 @@
           <em>Metodo pratico</em>.
           Göteborgs universitetet.</p>
       </div>
+
     </section>
 
   </main>
@@ -697,6 +875,38 @@
         "aanet/15_" + aaniala + ".mp3";
 
       soitin.load();
+    }
+
+    // SWITCH BETWEEN SHEET MUSIC AND PERFORMANCE INSTRUCTIONS
+
+    function avaaValilehti(tunnus) {
+      const sisallot =
+        document.querySelectorAll(".valilehtisisalto");
+
+      const painikkeet =
+        document.querySelectorAll(".valilehdet button");
+
+      sisallot.forEach(function(sisalto) {
+        sisalto.hidden = true;
+      });
+
+      painikkeet.forEach(function(painike) {
+        painike.classList.remove("aktiivinen");
+        painike.setAttribute("aria-selected", "false");
+      });
+
+      document.getElementById(tunnus).hidden = false;
+
+      const painikeId =
+        tunnus === "harjoitussisalto"
+          ? "painike-harjoitus"
+          : "painike-esitysohjeet";
+
+      const valittuPainike =
+        document.getElementById(painikeId);
+
+      valittuPainike.classList.add("aktiivinen");
+      valittuPainike.setAttribute("aria-selected", "true");
     }
 
   </script>
