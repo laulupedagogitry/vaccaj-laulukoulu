@@ -218,6 +218,39 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* TAUSTAKUVA JA VALKOINEN SISÄLTÖLAATIKKO */
+
+    html {
+      min-height: 100%;
+      background-color: #21154e;
+      background-image: url("img/tausta.jpg");
+      background-position: center top;
+      background-repeat: repeat;
+      background-size: 1000px auto;
+    }
+
+    body {
+      background: white;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 1100px) {
+      body {
+        margin: 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        margin: 12px;
+        padding: 18px;
+        border-radius: 8px;
+      }
+    }
   </style>
 </head>
 
