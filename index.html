@@ -20,6 +20,37 @@
       color: #285b99;
     }
 
+    /* KIELIVALINTA */
+
+    .kielivalinta {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin: 0 0 15px;
+    }
+
+    .kielivalinta a {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #b7cce2;
+      border-radius: 6px;
+      background: white;
+      color: #285b99;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .kielivalinta a:hover {
+      background: #dceaf8;
+    }
+
+    .kielivalinta a.aktiivinen {
+      background: #285b99;
+      border-color: #285b99;
+      color: white;
+    }
+
     /* YLÄVÄLILEHDET */
 
     nav.paavalikko {
@@ -47,6 +78,48 @@
     .paavalikko a.aktiivinen {
       background: #285b99;
       color: white;
+    }
+
+    /* LAULUT-ALASVETOVALIKKO */
+
+    .paavalikko .alasvetovalikko {
+      position: relative;
+    }
+
+    .paavalikko .alasvetovalikko > a {
+      display: block;
+    }
+
+    .paavalikko .alavalikko {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 270px;
+      background: white;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+      z-index: 10;
+      padding: 6px;
+    }
+
+    .paavalikko .alavalikko a {
+      display: block;
+      margin: 3px 0;
+    }
+
+    .paavalikko .alasvetovalikko:hover .alavalikko,
+    .paavalikko .alasvetovalikko:focus-within .alavalikko {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .paavalikko .alavalikko {
+        position: static;
+        box-shadow: none;
+        min-width: 0;
+      }
     }
 
     /* HARJOITUSVALIKKO */
@@ -150,6 +223,27 @@
 
 <body>
 
+  <!-- KIELIVALINTA -->
+
+  <div
+    class="kielivalinta"
+    role="group"
+    aria-label="Kieli">
+
+    <a
+      href="index.html"
+      class="aktiivinen"
+      lang="fi"
+      aria-current="page">
+      Suomi
+    </a>
+
+    <a href="index_en.html" lang="en">
+      English
+    </a>
+
+  </div>
+
   <!-- SIVUSTON YLÄVÄLILEHDET -->
 
   <nav class="paavalikko" aria-label="Päävalikko">
@@ -165,9 +259,37 @@
       Metodo pratico
     </a>
 
-    <a href="tehtavat.html">
-      Laulut
-    </a>
+    <div class="alasvetovalikko">
+
+      <a href="tehtavat.html"
+         aria-haspopup="true">
+        Laulut ▾
+      </a>
+
+      <!-- TOISEN TASON VALIKKO -->
+
+      <div class="alavalikko"
+           aria-label="Laulujen alavalikko">
+
+        <a href="tehtavat.html">
+          Tehtävät
+        </a>
+
+        <a href="italian-aakkoset.html">
+          Italian kielen aakkoset ja ääntäminen
+        </a>
+
+        <a href="runojen-alkupera.html">
+          Runojen alkuperä
+        </a>
+
+        <a href="ohjeita-opettajalle.html">
+          Ohjeita opettajalle
+        </a>
+
+      </div>
+
+    </div>
 
     <a href="vaccaj-metastasio.html">
       Vaccaj ja Metastasio
@@ -179,47 +301,10 @@
 
   </nav>
 
-  <nav class="paavalikko" aria-label="Alavalikko">
-
-    <a href="tehtavat.html">
-      Tehtävät
-    </a>
-
-    <a href="italian-aakkoset.html">
-      Italian kielen aakkoset ja ääntäminen
-    </a>
-
-    <a href="runojen-alkupera.html">
-      Runojen alkuperä
-    </a>
-
-    <a href="ohjeita-opettajalle.html">
-      Ohjeita opettajalle
-    </a>
-
-  </nav>
-
-  <nav class="paavalikko" aria-label="Kielivalinta">
-
-    <a
-      href="index.html"
-      lang="fi"
-      hreflang="fi"
-      class="aktiivinen"
-      aria-current="page">
-      Suomi
-    </a>
-
-    <a href="index-en.html" lang="en" hreflang="en">
-      English
-    </a>
-
-  </nav>
-
   <main>
 
     <h1>
-      Vaccajn-laulukoulu – Metodo pratico
+      Vaccajn-laulukouluun – Metodo pratico
     </h1>
 
     <p>
