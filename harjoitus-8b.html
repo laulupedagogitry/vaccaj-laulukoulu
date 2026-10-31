@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Vaccaj – Harjoitus 8b</title>
+  <title>Vaccaj: Tehtävä 8b</title>
 
   <style>
     body {
@@ -236,6 +236,66 @@
     .kielivalinta a { display: inline-block; padding: 8px 16px; border: 1px solid #b7cce2; border-radius: 6px; background: white; color: #285b99; font-size: 15px; font-weight: bold; text-decoration: none; }
     .kielivalinta a:hover { background: #dceaf8; }
     .kielivalinta a.aktiivinen { background: #285b99; border-color: #285b99; color: white; }
+
+    /* LAULUTEKSTIN OTSIKON RIVIVÄLIT */
+    .tekstialue > .aanne,
+    .tekstialue > h3,
+    .tekstialue > p:first-of-type {
+      margin-top: 0;
+      margin-bottom: 4px;
+    }
+
+    /* ALEMPIEN VÄLILEHTIEN TYYLIT */
+    .alavalilehdet {
+      display: flex;
+      gap: 8px;
+      margin: 20px 0;
+      border-bottom: 2px solid #d2e2f3;
+      padding-bottom: 12px;
+    }
+    .alavalilehdet button {
+      padding: 10px 18px;
+      border: 0;
+      border-radius: 6px;
+      background: #f1f6fb;
+      color: #285b99;
+      font: inherit;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .alavalilehdet button:hover { background: #dceaf8; }
+    .alavalilehdet button[aria-selected="true"] {
+      background: #285b99;
+      color: white;
+    }
+    .valilehtisisalto[hidden] { display: none; }
+
+    /* PÄÄVALIKON ALAVALIKKO */
+    .paavalikko .alasvetovalikko { position: relative; }
+    .paavalikko .alasvetovalikko > a { display: block; }
+    .paavalikko .alavalikko {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 270px;
+      background: white;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+      z-index: 10;
+      padding: 6px;
+    }
+    .paavalikko .alavalikko a { display: block; margin: 3px 0; }
+    .paavalikko .alasvetovalikko:hover .alavalikko,
+    .paavalikko .alasvetovalikko:focus-within .alavalikko { display: block; }
+    @media (max-width: 600px) {
+      .paavalikko .alavalikko {
+        position: static;
+        box-shadow: none;
+        min-width: 0;
+      }
+    }
   </style>
 </head>
 
@@ -247,31 +307,27 @@
   </div>
 
 
-  <!-- SEITSEMÄN VÄLILEHDEN YLÄVALIKKO -->
+  <!-- PÄÄVALIKKO -->
 
   <nav class="paavalikko" aria-label="Päävalikko">
 
-    <a href="index.html"
-       class="aktiivinen"
-       aria-current="page">
-      Harjoitukset
-    </a>
+    <a href="index.html">Etusivu</a>
 
     <a href="metodo-pratico.html">
       Metodo pratico
     </a>
 
-    <a href="italian-aakkoset.html">
-      Italian kielen aakkoset ja ääntäminen
-    </a>
-
-    <a href="runojen-alkupera.html">
-      Runojen alkuperä
-    </a>
-
-    <a href="ohjeita-opettajalle.html">
-      Ohjeita opettajille
-    </a>
+    <div class="alasvetovalikko">
+      <a href="tehtavat.html" class="aktiivinen" aria-current="page" aria-haspopup="true">
+        Laulut ▾
+      </a>
+      <div class="alavalikko" aria-label="Laulujen alavalikko">
+        <a href="tehtavat.html">Tehtävät</a>
+        <a href="italian-aakkoset.html">Italian kielen aakkoset ja ääntäminen</a>
+        <a href="runojen-alkupera.html">Runojen alkuperä</a>
+        <a href="ohjeita-opettajalle.html">Ohjeita opettajalle</a>
+      </div>
+    </div>
 
     <a href="vaccaj-metastasio.html">
       Vaccaj ja Metastasio
@@ -285,7 +341,20 @@
 
   <main>
 
-    <h1>Vaccaj – Harjoitus 8b</h1>
+    <h1>Vaccaj: Tehtävä 8b</h1>
+    <!-- ALEMPIEN VÄLILEHTIEN VALIKKO -->
+    <div class="alavalilehdet" role="tablist" aria-label="Tehtävän sisältö">
+      <button type="button" id="valilehti-harjoitus" role="tab"
+              aria-controls="sisalto-harjoitus" aria-selected="true"
+              onclick="vaihdaValilehti('harjoitus')">Nuotit ja sanat</button>
+      <button type="button" id="valilehti-esitysohjeet" role="tab"
+              aria-controls="sisalto-esitysohjeet" aria-selected="false"
+              onclick="vaihdaValilehti('esitysohjeet')">Esitysohjeet</button>
+    </div>
+
+    <div id="sisalto-harjoitus" class="valilehtisisalto" role="tabpanel"
+         aria-labelledby="valilehti-harjoitus">
+
 
     <!-- HARJOITUKSEN JA ÄÄNIALAN VALINTA -->
 
@@ -296,7 +365,7 @@
       <div class="valintaryhma harjoitusryhma">
 
         <label for="harjoitus">
-          Valitse harjoitus:
+          Valitse tehtävä:
         </label>
 
         <select
@@ -478,7 +547,7 @@
 
       <section class="tekstialue">
 
-        <h2>Tehtävä 8b</h2>
+        <h2>Sanat</h2>
 
         <div class="aanne">
           [l atʃakka'tura]
@@ -603,6 +672,11 @@
       </section>
 
     </div>
+
+    </div>
+
+    <div id="sisalto-esitysohjeet" class="valilehtisisalto" role="tabpanel"
+         aria-labelledby="valilehti-esitysohjeet" hidden>
 
     <!-- ESITYSOHJEET HARJOITUSSIVUN ALLE -->
 
@@ -748,11 +822,25 @@
 
     </section>
 
+    </div>
+
   </main>
 
   <!-- HARJOITUS- JA ÄÄNIALAVALINTOJEN TOIMINNOT -->
 
   <script>
+
+    /* ALEMPIEN VÄLILEHTIEN VAIHTAMINEN */
+    function vaihdaValilehti(valilehti) {
+      const harjoitus = valilehti === 'harjoitus';
+      document.getElementById('sisalto-harjoitus').hidden = !harjoitus;
+      document.getElementById('sisalto-esitysohjeet').hidden = harjoitus;
+      document.getElementById('valilehti-harjoitus')
+        .setAttribute('aria-selected', String(harjoitus));
+      document.getElementById('valilehti-esitysohjeet')
+        .setAttribute('aria-selected', String(!harjoitus));
+    }
+
 
     // SIIRTYMINEN TOISEEN HARJOITUKSEEN
 
