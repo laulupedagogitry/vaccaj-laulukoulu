@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Vaccaj – Exercise 1a</title>
+  <title>Vaccaj: Exercise 1a</title>
 
   <style>
     body {
@@ -52,6 +52,48 @@
     .paavalikko a.aktiivinen {
       background: #285b99;
       color: white;
+    }
+
+    /* SONGS DROPDOWN MENU */
+
+    .paavalikko .alasvetovalikko {
+      position: relative;
+    }
+
+    .paavalikko .alasvetovalikko > a {
+      display: block;
+    }
+
+    .paavalikko .alavalikko {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 270px;
+      background: white;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+      z-index: 10;
+      padding: 6px;
+    }
+
+    .paavalikko .alavalikko a {
+      display: block;
+      margin: 3px 0;
+    }
+
+    .paavalikko .alasvetovalikko:hover .alavalikko,
+    .paavalikko .alasvetovalikko:focus-within .alavalikko {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .paavalikko .alavalikko {
+        position: static;
+        box-shadow: none;
+        min-width: 0;
+      }
     }
 
     /* EXERCISE AND VOICE TYPE SELECTION */
@@ -203,6 +245,57 @@
       color: #555;
     }
 
+    /* LOWER TABS */
+
+    .valilehdet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 30px 0 25px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #d2e2f3;
+    }
+
+    .valilehdet button {
+      background: #f1f6fb;
+      color: #285b99;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font: bold 16px Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    .valilehdet button:hover {
+      background: #dceaf8;
+    }
+
+    .valilehdet button.aktiivinen {
+      background: #285b99;
+      color: white;
+      border-color: #285b99;
+    }
+
+    .valilehtisisalto[hidden] {
+      display: none;
+    }
+
+    /* EXERCISE HEADING LINE SPACING */
+
+    .tekstialue > .aanne {
+      line-height: 1.6;
+    }
+
+    .tekstialue > h3 {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .tekstialue > p {
+      margin: 0 0 16px;
+      line-height: 1.6;
+    }
+
     /* MOBILE VIEW */
 
     @media (max-width: 800px) {
@@ -226,11 +319,13 @@
     }
 
     @media (max-width: 600px) {
-      nav.paavalikko {
+      nav.paavalikko,
+      .valilehdet {
         flex-direction: column;
       }
 
-      .paavalikko a {
+      .paavalikko a,
+      .valilehdet button {
         text-align: center;
       }
 
@@ -305,27 +400,44 @@
 
   <nav class="paavalikko" aria-label="Main navigation">
 
-    <a href="index_en.html"
-       class="aktiivinen"
-       aria-current="page">
-      Exercises
+    <a href="index_en.html">
+      Home
     </a>
 
     <a href="metodo-pratico_en.html">
       Metodo pratico
     </a>
 
-    <a href="italian-aakkoset_en.html">
-      Italian alphabet and pronunciation
-    </a>
+    <div class="alasvetovalikko">
 
-    <a href="runojen-alkupera_en.html">
-      Origins of the poems
-    </a>
+      <a
+        href="tehtavat_en.html"
+        class="aktiivinen"
+        aria-haspopup="true">
+        Songs ▾
+      </a>
 
-    <a href="ohjeita-opettajalle_en.html">
-      Instructions for teachers
-    </a>
+      <div class="alavalikko" aria-label="Songs submenu">
+
+        <a href="tehtavat_en.html">
+          Exercises
+        </a>
+
+        <a href="italian-aakkoset_en.html">
+          Italian Alphabet and Pronunciation
+        </a>
+
+        <a href="runojen-alkupera_en.html">
+          Origins of the Poems
+        </a>
+
+        <a href="ohjeita-opettajalle_en.html">
+          Instructions for Teachers
+        </a>
+
+      </div>
+
+    </div>
 
     <a href="vaccaj-metastasio_en.html">
       Vaccaj and Metastasio
@@ -339,7 +451,7 @@
 
   <main>
 
-    <h1>Vaccaj – Exercise 1a</h1>
+    <h1>Vaccaj: Exercise 1a</h1>
 
     <!-- EXERCISE AND VOICE TYPE SELECTION -->
 
@@ -481,141 +593,186 @@
 
     </div>
 
-    <!-- AUDIO RECORDING -->
+    <!-- LOWER TABS -->
 
-    <h2>Listen to the recording</h2>
+    <div
+      class="valilehdet"
+      role="tablist"
+      aria-label="Exercise content">
 
-    <audio
-      id="soitin"
-      controls
-      preload="none"
-      src="aanet/1a_sopraano.mp3">
-      Your browser does not support the audio player.
-    </audio>
+      <button
+        type="button"
+        id="painike-harjoitus"
+        class="aktiivinen"
+        role="tab"
+        aria-selected="true"
+        aria-controls="harjoitussisalto"
+        onclick="avaaValilehti('harjoitussisalto')">
+        Sheet Music and Lyrics
+      </button>
 
-    <!-- SHEET MUSIC AND LYRICS -->
-
-    <div class="sisalto">
-
-      <!-- SHEET MUSIC -->
-
-      <section class="nuottialue">
-
-        <h2>Sheet music</h2>
-
-        <img
-          id="nuotti"
-          src="img/nuottikuvat/1a_sopraano.jpg"
-          alt="Vaccaj 1a – soprano sheet music">
-
-      </section>
-
-      <!-- LYRICS -->
-
-      <section class="tekstialue">
-
-        <h2>Exercise 1a</h2>
-
-        <div class="aanne">[la 'skala]</div>
-        <h3>La scala</h3>
-        <p>The scale</p>
-
-        <hr>
-
-        <div class="sae">
-          <div class="aanne">
-            ['manka sol'letʃita]
-          </div>
-          <div class="italia">
-            Manca sollecita
-          </div>
-          <div class="suomi">
-            Dies quickly
-          </div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            [pju del u'zato]
-          </div>
-          <div class="italia">
-            più dell´usato,
-          </div>
-          <div class="suomi">
-            more quickly than usual,
-          </div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            [an'korke s'adʒiti]
-          </div>
-          <div class="italia">
-            ancor che s'agiti
-          </div>
-          <div class="suomi">
-            even if it is moved
-          </div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            [kon 'ljeve 'fjato]
-          </div>
-          <div class="italia">
-            con lieve fiato,
-          </div>
-          <div class="suomi">
-            by a light wind,
-          </div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            ['fatʃe ke 'palpita]
-          </div>
-          <div class="italia">
-            face che palpita
-          </div>
-          <div class="suomi">
-            makes it flicker
-          </div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            ['prɛsso al mo'rir]
-          </div>
-          <div class="italia">
-            presso al morir.
-          </div>
-          <div class="suomi">
-            close to death.
-          </div>
-        </div>
-
-        <!-- SUMMARY -->
-
-        <div class="yhteenveto">
-
-          <strong>
-            The flame flickers close to death<br>
-            and dies unexpectedly<br>
-            even though<br>
-            the wind is light
-          </strong>
-
-        </div>
-
-      </section>
+      <button
+        type="button"
+        id="painike-esitysohjeet"
+        role="tab"
+        aria-selected="false"
+        aria-controls="esitysohjeet"
+        onclick="avaaValilehti('esitysohjeet')">
+        Performance instructions
+      </button>
 
     </div>
 
-    <!-- PERFORMANCE INSTRUCTIONS -->
+    <!-- SHEET MUSIC AND LYRICS TAB -->
 
-    <section class="esitysohjeet" aria-labelledby="esitysohjeet-otsikko">
+    <div
+      id="harjoitussisalto"
+      class="valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-harjoitus">
 
-      <h2 id="esitysohjeet-otsikko">Performance instructions</h2>
+      <!-- AUDIO RECORDING -->
+
+      <h2>Listen to the recording</h2>
+
+      <audio
+        id="soitin"
+        controls
+        preload="none"
+        src="aanet/1a_sopraano.mp3">
+        Your browser does not support the audio player.
+      </audio>
+
+      <!-- SHEET MUSIC AND LYRICS -->
+
+      <div class="sisalto">
+
+        <!-- SHEET MUSIC -->
+
+        <section class="nuottialue">
+
+          <h2>Sheet music</h2>
+
+          <img
+            id="nuotti"
+            src="img/nuottikuvat/1a_sopraano.jpg"
+            alt="Vaccaj 1a – soprano sheet music">
+
+        </section>
+
+        <!-- LYRICS -->
+
+        <section class="tekstialue">
+
+          <h2>Lyrics</h2>
+
+          <div class="aanne">[la 'skala]</div>
+          <h3>La scala</h3>
+          <p>The scale</p>
+
+          <hr>
+
+          <div class="sae">
+            <div class="aanne">
+              ['manka sol'letʃita]
+            </div>
+            <div class="italia">
+              Manca sollecita
+            </div>
+            <div class="suomi">
+              Dies quickly
+            </div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              [pju del u'zato]
+            </div>
+            <div class="italia">
+              più dell´usato,
+            </div>
+            <div class="suomi">
+              more quickly than usual,
+            </div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              [an'korke s'adʒiti]
+            </div>
+            <div class="italia">
+              ancor che s'agiti
+            </div>
+            <div class="suomi">
+              even if it is moved
+            </div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              [kon 'ljeve 'fjato]
+            </div>
+            <div class="italia">
+              con lieve fiato,
+            </div>
+            <div class="suomi">
+              by a light wind,
+            </div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              ['fatʃe ke 'palpita]
+            </div>
+            <div class="italia">
+              face che palpita
+            </div>
+            <div class="suomi">
+              makes it flicker
+            </div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              ['prɛsso al mo'rir]
+            </div>
+            <div class="italia">
+              presso al morir.
+            </div>
+            <div class="suomi">
+              close to death.
+            </div>
+          </div>
+
+          <!-- SUMMARY -->
+
+          <div class="yhteenveto">
+
+            <strong>
+              The flame flickers close to death<br>
+              and dies unexpectedly<br>
+              even though<br>
+              the wind is light
+            </strong>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+    <!-- PERFORMANCE INSTRUCTIONS TAB -->
+
+    <section
+      id="esitysohjeet"
+      class="esitysohjeet valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-esitysohjeet"
+      hidden>
+
+      <h2>Performance instructions</h2>
 
       <p>
         This exercise focuses on intervals of a second
@@ -830,6 +987,38 @@
         "aanet/1a_" + aaniala + ".mp3";
 
       soitin.load();
+    }
+
+    // SWITCH BETWEEN SHEET MUSIC AND PERFORMANCE INSTRUCTIONS
+
+    function avaaValilehti(tunnus) {
+      const sisallot =
+        document.querySelectorAll(".valilehtisisalto");
+
+      const painikkeet =
+        document.querySelectorAll(".valilehdet button");
+
+      sisallot.forEach(function(sisalto) {
+        sisalto.hidden = true;
+      });
+
+      painikkeet.forEach(function(painike) {
+        painike.classList.remove("aktiivinen");
+        painike.setAttribute("aria-selected", "false");
+      });
+
+      document.getElementById(tunnus).hidden = false;
+
+      const painikeId =
+        tunnus === "harjoitussisalto"
+          ? "painike-harjoitus"
+          : "painike-esitysohjeet";
+
+      const valittuPainike =
+        document.getElementById(painikeId);
+
+      valittuPainike.classList.add("aktiivinen");
+      valittuPainike.setAttribute("aria-selected", "true");
     }
 
   </script>
