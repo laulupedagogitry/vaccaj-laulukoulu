@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Vaccaj – Exercise 14</title>
+  <title>Vaccaj: Exercise 14</title>
 
   <style>
     body {
@@ -25,7 +25,7 @@
       color: #285b99;
     }
 
-    /* SEVEN MAIN NAVIGATION TABS */
+    /* MAIN NAVIGATION */
 
     nav.paavalikko {
       display: flex;
@@ -52,6 +52,48 @@
     .paavalikko a.aktiivinen {
       background: #285b99;
       color: white;
+    }
+
+    /* SONGS DROPDOWN MENU */
+
+    .paavalikko .alasvetovalikko {
+      position: relative;
+    }
+
+    .paavalikko .alasvetovalikko > a {
+      display: block;
+    }
+
+    .paavalikko .alavalikko {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 270px;
+      background: white;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+      z-index: 10;
+      padding: 6px;
+    }
+
+    .paavalikko .alavalikko a {
+      display: block;
+      margin: 3px 0;
+    }
+
+    .paavalikko .alasvetovalikko:hover .alavalikko,
+    .paavalikko .alasvetovalikko:focus-within .alavalikko {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .paavalikko .alavalikko {
+        position: static;
+        box-shadow: none;
+        min-width: 0;
+      }
     }
 
     /* EXERCISE AND VOICE TYPE SELECTION */
@@ -197,6 +239,57 @@
       color: #555;
     }
 
+    /* LOWER TABS */
+
+    .valilehdet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 30px 0 25px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #d2e2f3;
+    }
+
+    .valilehdet button {
+      background: #f1f6fb;
+      color: #285b99;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font: bold 16px Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    .valilehdet button:hover {
+      background: #dceaf8;
+    }
+
+    .valilehdet button.aktiivinen {
+      background: #285b99;
+      color: white;
+      border-color: #285b99;
+    }
+
+    .valilehtisisalto[hidden] {
+      display: none;
+    }
+
+    /* EXERCISE HEADING LINE SPACING */
+
+    .tekstialue > .aanne {
+      line-height: 1.6;
+    }
+
+    .tekstialue > h3 {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .tekstialue > p {
+      margin: 0 0 16px;
+      line-height: 1.6;
+    }
+
     /* MOBILE VIEW */
 
     @media (max-width: 800px) {
@@ -220,11 +313,13 @@
     }
 
     @media (max-width: 600px) {
-      nav.paavalikko {
+      nav.paavalikko,
+      .valilehdet {
         flex-direction: column;
       }
 
-      .paavalikko a {
+      .paavalikko a,
+      .valilehdet button {
         text-align: center;
       }
 
@@ -249,31 +344,48 @@
     <a href="harjoitus-14_en.html" class="aktiivinen" lang="en" aria-current="page">English</a>
   </div>
 
-  <!-- SEVEN MAIN NAVIGATION TABS -->
+  <!-- MAIN NAVIGATION -->
 
   <nav class="paavalikko" aria-label="Main navigation">
 
-    <a href="index_en.html"
-       class="aktiivinen"
-       aria-current="page">
-      Exercises
+    <a href="index_en.html">
+      Home
     </a>
 
     <a href="metodo-pratico_en.html">
       Metodo pratico
     </a>
 
-    <a href="italian-aakkoset_en.html">
-      Italian alphabet and pronunciation
-    </a>
+    <div class="alasvetovalikko">
 
-    <a href="runojen-alkupera_en.html">
-      Origins of the poems
-    </a>
+      <a href="tehtavat_en.html"
+         class="aktiivinen"
+         aria-haspopup="true">
+        Songs ▾
+      </a>
 
-    <a href="ohjeita-opettajalle_en.html">
-      Instructions for teachers
-    </a>
+      <div class="alavalikko"
+           aria-label="Songs submenu">
+
+        <a href="tehtavat_en.html">
+          Exercises
+        </a>
+
+        <a href="italian-aakkoset_en.html">
+          Italian Alphabet and Pronunciation
+        </a>
+
+        <a href="runojen-alkupera_en.html">
+          Origins of the Poems
+        </a>
+
+        <a href="ohjeita-opettajalle_en.html">
+          Instructions for Teachers
+        </a>
+
+      </div>
+
+    </div>
 
     <a href="vaccaj-metastasio_en.html">
       Vaccaj and Metastasio
@@ -287,7 +399,7 @@
 
   <main>
 
-    <h1>Vaccaj – Exercise 14</h1>
+    <h1>Vaccaj: Exercise 14</h1>
 
     <!-- EXERCISE AND VOICE TYPE SELECTION -->
 
@@ -438,274 +550,317 @@
 
     </div>
 
-    <!-- AUDIO RECORDING -->
+    <!-- LOWER TABS -->
 
-    <h2>Listen to the recording</h2>
+    <div
+      class="valilehdet"
+      role="tablist"
+      aria-label="Exercise content">
 
-    <audio
-      id="soitin"
-      controls
-      preload="none"
-      src="aanet/14_sopraano.mp3">
-      Your browser does not support the audio player.
-    </audio>
+      <button
+        type="button"
+        id="painike-harjoitus"
+        class="aktiivinen"
+        role="tab"
+        aria-selected="true"
+        aria-controls="harjoitussisalto"
+        onclick="avaaValilehti('harjoitussisalto')">
+        Sheet Music and Lyrics
+      </button>
 
-    <!-- SHEET MUSIC AND LYRICS -->
-
-    <div class="sisalto">
-
-      <!-- SHEET MUSIC -->
-
-      <section class="nuottialue">
-
-        <h2>Sheet music</h2>
-
-        <img
-          id="nuotti"
-          src="img/nuottikuvat/14_sopraano.jpg"
-          alt="Vaccaj 14 – soprano sheet music">
-
-      </section>
-
-      <!-- ORIGINAL LYRICS AND ENGLISH TRANSLATION -->
-
-      <section class="tekstialue">
-
-        <h2>Exercise 14</h2>
-
-        <div class="aanne">
-          [il retʃita'tivo]
-        </div>
-
-        <h3>Il recitativo</h3>
-
-        <p>The recitative</p>
-
-        <hr>
-
-        <div class="sae">
-          <div class="aanne">[la 'patrja ɛ un 'tutto]</div>
-          <div class="italia">La patria è un tutto</div>
-          <div class="suomi">Fatherland is an entity</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[di 'kui sjam 'parti]</div>
-          <div class="italia">di cui siam parti</div>
-          <div class="suomi">of which we are part.</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[al tʃitta'dino ɛ 'fallo]</div>
-          <div class="italia">al cittadino è fallo</div>
-          <div class="suomi">For a citizen it is a mistake</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[konside'rar se 'stesso]</div>
-          <div class="italia">considerar sè stesso</div>
-          <div class="suomi">to consider himself</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[sepa'rato da 'lɛi]</div>
-          <div class="italia">separato da lei.</div>
-          <div class="suomi">separate from it.</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[l 'utile o il 'danno]</div>
-          <div class="italia">L´utile, o il danno,</div>
-          <div class="suomi">A benefit or a loss,</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[k 'ei ko'noʃʃer dee 'solo]</div>
-          <div class="italia">ch'ei conoscer dee solo</div>
-          <div class="suomi">the only one he knows</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[ɛ tʃɔ ke 'dʒova]</div>
-          <div class="italia">è ciò che giova</div>
-          <div class="suomi">is the one that helps (= ciò = all that)</div>
-          <small>(ciò = tutto quello, che)</small>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[o 'nwɔtʃe 'alla 'sua 'patria]</div>
-          <div class="italia">o nuoce alla sua patria,</div>
-          <div class="suomi">or harms his fatherland,</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[a 'kui di 'tutto ɛ debi'tor]</div>
-          <div class="italia">a cui di tutto è debitor.</div>
-          <div class="suomi">to which he owns everything.</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">['kwando i su'dori]</div>
-          <div class="italia">Quando i sudori,</div>
-          <div class="suomi">When sweat</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[e il 'sangue 'spardʒe per 'lɛi]</div>
-          <div class="italia">e il sangue sparge per lei,</div>
-          <div class="suomi">and blood he sheds for it,</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">['nulla del 'proprjo 'ei 'dona]</div>
-          <div class="italia">nulla del proprio ei dona:</div>
-          <div class="suomi">nothing of his own he donates,</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">['rɛnde sol tʃo ke n'ɛbbe]</div>
-          <div class="italia">rende sol ciò che n'ebbe.</div>
-          <div class="suomi">he just gives back what he received.</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">['essa il pro'dusse]</div>
-          <div class="italia">Essa il produsse,</div>
-          <div class="suomi">It has produced him,</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[l edu'kɔ lo nu'dri]</div>
-          <div class="italia">l'educò, lo nudrì.</div>
-          <div class="suomi">educated him, nourished him.</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[kon le 'sue 'leddʒi]</div>
-          <div class="italia">Con le sue leggi</div>
-          <div class="suomi">With its laws</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            ['daʎʎ in'sulti do'mestitʃi il di'fɛnde]
-          </div>
-          <div class="italia">
-            dagl'insulti domestici il difende,
-          </div>
-          <div class="suomi">from domestic insults it defends him,</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">['daʎʎi es'tɛrni kon l 'armi]</div>
-          <div class="italia">dagli esterni con l'armi.</div>
-          <div class="suomi">from foreign with armies.</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">['ella ʎi 'presta 'nome]</div>
-          <div class="italia">Ella gli presta nome,</div>
-          <div class="suomi">It lends him a name,,</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">['grado ed o'nor]</div>
-          <div class="italia">grado, ed onor;</div>
-          <div class="suomi">rank and honour,</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[ne 'premja il 'mɛrto]</div>
-          <div class="italia">ne premia il merto;</div>
-          <div class="suomi">awards him for merits;</div>
-          <small>(merto = merito)</small>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[ne 'vendika le of'feze]</div>
-          <div class="italia">ne vendica le offese,</div>
-          <div class="suomi">avenges him,</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[e 'madre a'mante]</div>
-          <div class="italia">e madre amante</div>
-          <div class="suomi">and (like) a loving mother</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[a fabbri'kar s af'fanna]</div>
-          <div class="italia">a fabbricar s'affanna</div>
-          <div class="suomi">toils for</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[la 'sua felitʃi'ta]</div>
-          <div class="italia">la sua felicità,</div>
-          <div class="suomi">his happiness,</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[per 'kwanto 'litʃe]</div>
-          <div class="italia">per quanto lice</div>
-          <div class="suomi">as much as it is possible</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">[al des'tin de mor'tali]</div>
-          <div class="italia">al destin de' mortali</div>
-          <div class="suomi">for mortals</div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">['ɛsser fe'litʃe]</div>
-          <div class="italia">esser felice.</div>
-          <div class="suomi">to be happy.</div>
-        </div>
-
-        <!-- ENGLISH SUMMARY -->
-
-        <div class="yhteenveto">
-
-          <strong>
-            Fatherland is an entity,<br>
-            which we are part of.<br>
-            It is mistake for a citizen<br>
-            to see himself as separate from it.<br>
-            He must not know<br>
-            other benefit or loss<br>
-            than all<br>
-            that helps or harms<br>
-            his fatherland,<br>
-            to which he owns everything.<br>
-            When he sweats or sheds blood for it,<br>
-            he is not giving away anything of his own;<br>
-            he just returns what he received.<br>
-            Fatherland produced him,<br>
-            educated him, nourished him.<br>
-            It defends him from domestic insults with laws<br>
-            and from foreign insults with armies.<br>
-            It lends him a name,<br>
-            a rank and honour, awards him for merits<br>
-            , avenges him, and like a loving mother toils<br>
-            for his happiness<br>
-            inasmuch as<br>
-            happiness is the fate of mortals.
-          </strong>
-
-        </div>
-
-      </section>
+      <button
+        type="button"
+        id="painike-esitysohjeet"
+        role="tab"
+        aria-selected="false"
+        aria-controls="esitysohjeet"
+        onclick="avaaValilehti('esitysohjeet')">
+        Performance instructions
+      </button>
 
     </div>
 
-    <!-- PERFORMANCE INSTRUCTIONS BELOW THE EXERCISE -->
+    <!-- SHEET MUSIC AND LYRICS TAB -->
+
+    <div
+      id="harjoitussisalto"
+      class="valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-harjoitus">
+
+      <!-- AUDIO RECORDING -->
+
+      <h2>Listen to the recording</h2>
+
+      <audio
+        id="soitin"
+        controls
+        preload="none"
+        src="aanet/14_sopraano.mp3">
+        Your browser does not support the audio player.
+      </audio>
+
+      <!-- SHEET MUSIC AND LYRICS -->
+
+      <div class="sisalto">
+
+        <!-- SHEET MUSIC -->
+
+        <section class="nuottialue">
+
+          <h2>Sheet music</h2>
+
+          <img
+            id="nuotti"
+            src="img/nuottikuvat/14_sopraano.jpg"
+            alt="Vaccaj 14 – soprano sheet music">
+
+        </section>
+
+        <!-- ORIGINAL LYRICS AND ENGLISH TRANSLATION -->
+
+        <section class="tekstialue">
+
+          <h2>Lyrics</h2>
+
+          <div class="aanne">
+            [il retʃita'tivo]
+          </div>
+
+          <h3>Il recitativo</h3>
+
+          <p>The recitative</p>
+
+          <hr>
+
+          <div class="sae">
+            <div class="aanne">[la 'patrja ɛ un 'tutto]</div>
+            <div class="italia">La patria è un tutto</div>
+            <div class="suomi">Fatherland is an entity</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[di 'kui sjam 'parti]</div>
+            <div class="italia">di cui siam parti</div>
+            <div class="suomi">of which we are part.</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[al tʃitta'dino ɛ 'fallo]</div>
+            <div class="italia">al cittadino è fallo</div>
+            <div class="suomi">For a citizen it is a mistake</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[konside'rar se 'stesso]</div>
+            <div class="italia">considerar sè stesso</div>
+            <div class="suomi">to consider himself</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[sepa'rato da 'lɛi]</div>
+            <div class="italia">separato da lei.</div>
+            <div class="suomi">separate from it.</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[l 'utile o il 'danno]</div>
+            <div class="italia">L´utile, o il danno,</div>
+            <div class="suomi">A benefit or a loss,</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[k 'ei ko'noʃʃer dee 'solo]</div>
+            <div class="italia">ch'ei conoscer dee solo</div>
+            <div class="suomi">the only one he knows</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[ɛ tʃɔ ke 'dʒova]</div>
+            <div class="italia">è ciò che giova</div>
+            <div class="suomi">is the one that helps (= ciò = all that)</div>
+            <small>(ciò = tutto quello, che)</small>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[o 'nwɔtʃe 'alla 'sua 'patria]</div>
+            <div class="italia">o nuoce alla sua patria,</div>
+            <div class="suomi">or harms his fatherland,</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[a 'kui di 'tutto ɛ debi'tor]</div>
+            <div class="italia">a cui di tutto è debitor.</div>
+            <div class="suomi">to which he owns everything.</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">['kwando i su'dori]</div>
+            <div class="italia">Quando i sudori,</div>
+            <div class="suomi">When sweat</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[e il 'sangue 'spardʒe per 'lɛi]</div>
+            <div class="italia">e il sangue sparge per lei,</div>
+            <div class="suomi">and blood he sheds for it,</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">['nulla del 'proprjo 'ei 'dona]</div>
+            <div class="italia">nulla del proprio ei dona:</div>
+            <div class="suomi">nothing of his own he donates,</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">['rɛnde sol tʃo ke n'ɛbbe]</div>
+            <div class="italia">rende sol ciò che n'ebbe.</div>
+            <div class="suomi">he just gives back what he received.</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">['essa il pro'dusse]</div>
+            <div class="italia">Essa il produsse,</div>
+            <div class="suomi">It has produced him,</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[l edu'kɔ lo nu'dri]</div>
+            <div class="italia">l'educò, lo nudrì.</div>
+            <div class="suomi">educated him, nourished him.</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[kon le 'sue 'leddʒi]</div>
+            <div class="italia">Con le sue leggi</div>
+            <div class="suomi">With its laws</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              ['daʎʎ in'sulti do'mestitʃi il di'fɛnde]
+            </div>
+            <div class="italia">
+              dagl'insulti domestici il difende,
+            </div>
+            <div class="suomi">from domestic insults it defends him,</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">['daʎʎi es'tɛrni kon l 'armi]</div>
+            <div class="italia">dagli esterni con l'armi.</div>
+            <div class="suomi">from foreign with armies.</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">['ella ʎi 'presta 'nome]</div>
+            <div class="italia">Ella gli presta nome,</div>
+            <div class="suomi">It lends him a name,,</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">['grado ed o'nor]</div>
+            <div class="italia">grado, ed onor;</div>
+            <div class="suomi">rank and honour,</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[ne 'premja il 'mɛrto]</div>
+            <div class="italia">ne premia il merto;</div>
+            <div class="suomi">awards him for merits;</div>
+            <small>(merto = merito)</small>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[ne 'vendika le of'feze]</div>
+            <div class="italia">ne vendica le offese,</div>
+            <div class="suomi">avenges him,</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[e 'madre a'mante]</div>
+            <div class="italia">e madre amante</div>
+            <div class="suomi">and (like) a loving mother</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[a fabbri'kar s af'fanna]</div>
+            <div class="italia">a fabbricar s'affanna</div>
+            <div class="suomi">toils for</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[la 'sua felitʃi'ta]</div>
+            <div class="italia">la sua felicità,</div>
+            <div class="suomi">his happiness,</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[per 'kwanto 'litʃe]</div>
+            <div class="italia">per quanto lice</div>
+            <div class="suomi">as much as it is possible</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">[al des'tin de mor'tali]</div>
+            <div class="italia">al destin de' mortali</div>
+            <div class="suomi">for mortals</div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">['ɛsser fe'litʃe]</div>
+            <div class="italia">esser felice.</div>
+            <div class="suomi">to be happy.</div>
+          </div>
+
+          <!-- ENGLISH SUMMARY -->
+
+          <div class="yhteenveto">
+
+            <strong>
+              Fatherland is an entity,<br>
+              which we are part of.<br>
+              It is mistake for a citizen<br>
+              to see himself as separate from it.<br>
+              He must not know<br>
+              other benefit or loss<br>
+              than all<br>
+              that helps or harms<br>
+              his fatherland,<br>
+              to which he owns everything.<br>
+              When he sweats or sheds blood for it,<br>
+              he is not giving away anything of his own;<br>
+              he just returns what he received.<br>
+              Fatherland produced him,<br>
+              educated him, nourished him.<br>
+              It defends him from domestic insults with laws<br>
+              and from foreign insults with armies.<br>
+              It lends him a name,<br>
+              a rank and honour, awards him for merits<br>
+              , avenges him, and like a loving mother toils<br>
+              for his happiness<br>
+              inasmuch as<br>
+              happiness is the fate of mortals.
+            </strong>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+    <!-- PERFORMANCE INSTRUCTIONS TAB -->
 
     <section
-      class="esitysohjeet"
-      aria-labelledby="esitysohjeet-otsikko">
+      id="esitysohjeet"
+      class="esitysohjeet valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-esitysohjeet"
+      hidden>
 
-      <h2 id="esitysohjeet-otsikko">
+      <h2>
         Performance instructions
       </h2>
 
@@ -857,6 +1012,38 @@
         "aanet/14_" + aaniala + ".mp3";
 
       soitin.load();
+    }
+
+    // SWITCH BETWEEN SHEET MUSIC AND PERFORMANCE INSTRUCTIONS
+
+    function avaaValilehti(tunnus) {
+      const sisallot =
+        document.querySelectorAll(".valilehtisisalto");
+
+      const painikkeet =
+        document.querySelectorAll(".valilehdet button");
+
+      sisallot.forEach(function(sisalto) {
+        sisalto.hidden = true;
+      });
+
+      painikkeet.forEach(function(painike) {
+        painike.classList.remove("aktiivinen");
+        painike.setAttribute("aria-selected", "false");
+      });
+
+      document.getElementById(tunnus).hidden = false;
+
+      const painikeId =
+        tunnus === "harjoitussisalto"
+          ? "painike-harjoitus"
+          : "painike-esitysohjeet";
+
+      const valittuPainike =
+        document.getElementById(painikeId);
+
+      valittuPainike.classList.add("aktiivinen");
+      valittuPainike.setAttribute("aria-selected", "true");
     }
 
   </script>
