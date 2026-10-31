@@ -85,6 +85,48 @@
       color: white;
     }
 
+    /* SONGS DROPDOWN MENU */
+
+    .paavalikko .alasvetovalikko {
+      position: relative;
+    }
+
+    .paavalikko .alasvetovalikko > a {
+      display: block;
+    }
+
+    .paavalikko .alavalikko {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 270px;
+      background: white;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+      z-index: 10;
+      padding: 6px;
+    }
+
+    .paavalikko .alavalikko a {
+      display: block;
+      margin: 3px 0;
+    }
+
+    .paavalikko .alasvetovalikko:hover .alavalikko,
+    .paavalikko .alasvetovalikko:focus-within .alavalikko {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .paavalikko .alavalikko {
+        position: static;
+        box-shadow: none;
+        min-width: 0;
+      }
+    }
+
     /* EXERCISE SELECTION */
 
     .harjoitusvalinta {
@@ -203,7 +245,7 @@
 
   </div>
 
-  <!-- SEVEN MAIN NAVIGATION TABS -->
+  <!-- MAIN NAVIGATION -->
 
   <nav class="paavalikko" aria-label="Main navigation">
 
@@ -211,24 +253,44 @@
       href="index_en.html"
       class="aktiivinen"
       aria-current="page">
-      Exercises
+      Home
     </a>
 
     <a href="metodo-pratico_en.html">
       Metodo pratico
     </a>
 
-    <a href="italian-aakkoset_en.html">
-      Italian alphabet and pronunciation
-    </a>
+    <div class="alasvetovalikko">
 
-    <a href="runojen-alkupera_en.html">
-      Origins of the poems
-    </a>
+      <a href="tehtavat_en.html"
+         aria-haspopup="true">
+        Songs ▾
+      </a>
 
-    <a href="ohjeita-opettajalle_en.html">
-      Instructions for teachers
-    </a>
+      <!-- SECOND-LEVEL MENU -->
+
+      <div class="alavalikko"
+           aria-label="Songs submenu">
+
+        <a href="tehtavat_en.html">
+          Exercises
+        </a>
+
+        <a href="italian-aakkoset_en.html">
+          Italian Alphabet and Pronunciation
+        </a>
+
+        <a href="runojen-alkupera_en.html">
+          Origins of the Poems
+        </a>
+
+        <a href="ohjeita-opettajalle_en.html">
+          Instructions for Teachers
+        </a>
+
+      </div>
+
+    </div>
 
     <a href="vaccaj-metastasio_en.html">
       Vaccaj and Metastasio
