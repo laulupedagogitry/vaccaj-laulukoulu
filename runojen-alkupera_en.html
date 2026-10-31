@@ -1,0 +1,746 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Origins of the poems – Vaccaj Singing School</title>
+
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      color: #285b99;
+    }
+
+    /* MAIN NAVIGATION */
+
+    nav.paavalikko {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0 35px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #d2e2f3;
+    }
+
+    .paavalikko a {
+      padding: 10px 16px;
+      background: #f1f6fb;
+      border-radius: 6px;
+      color: #285b99;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .paavalikko a:hover {
+      background: #dceaf8;
+    }
+
+    .paavalikko a.aktiivinen {
+      background: #285b99;
+      color: white;
+    }
+
+    /* INTRODUCTION */
+
+    .johdanto {
+      margin-bottom: 30px;
+    }
+
+    /* POEM SELECTION */
+
+    .harjoitusvalinta {
+      margin: 25px 0 40px;
+      padding: 22px;
+      background: #f1f6fb;
+      border-radius: 10px;
+    }
+
+    .harjoitusvalinta label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .harjoitusvalinta select {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      border: 1px solid #b7cce2;
+      border-radius: 6px;
+      background: white;
+      cursor: pointer;
+    }
+
+    /* POEM DESCRIPTIONS */
+
+    .runot {
+      margin-top: 30px;
+    }
+
+    .runo {
+      margin-bottom: 20px;
+      padding: 22px 25px;
+      background: #f7faff;
+      border: 1px solid #d2e2f3;
+      border-radius: 8px;
+      scroll-margin-top: 20px;
+    }
+
+    .runo h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .runo p {
+      margin-bottom: 0;
+    }
+
+    .runo strong {
+      color: #285b99;
+    }
+
+    /* MOBILE VIEW */
+
+    @media (max-width: 600px) {
+
+      nav.paavalikko {
+        flex-direction: column;
+      }
+
+      .paavalikko a {
+        text-align: center;
+      }
+
+      .runo {
+        padding: 18px;
+      }
+
+      .runo h2 {
+        font-size: 19px;
+      }
+
+    }
+
+    /* LANGUAGE SELECTION */
+
+    .kielivalinta {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin: 0 0 15px;
+    }
+
+    .kielivalinta a {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #b7cce2;
+      border-radius: 6px;
+      background: white;
+      color: #285b99;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .kielivalinta a:hover {
+      background: #dceaf8;
+    }
+
+    .kielivalinta a.aktiivinen {
+      background: #285b99;
+      border-color: #285b99;
+      color: white;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- LANGUAGE SELECTION -->
+
+  <div
+    class="kielivalinta"
+    role="group"
+    aria-label="Language">
+
+    <a href="runojen-alkupera.html" lang="fi">
+      Suomi
+    </a>
+
+    <a
+      href="runojen-alkupera_en.html"
+      class="aktiivinen"
+      lang="en"
+      aria-current="page">
+      English
+    </a>
+
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+
+  <nav class="paavalikko" aria-label="Main navigation">
+
+    <a href="index_en.html">
+      Exercises
+    </a>
+
+    <a href="metodo-pratico_en.html">
+      Metodo pratico
+    </a>
+
+    <a href="italian-aakkoset_en.html">
+      Italian alphabet and pronunciation
+    </a>
+
+    <a
+      href="runojen-alkupera_en.html"
+      class="aktiivinen"
+      aria-current="page">
+      Origins of the poems
+    </a>
+
+    <a href="ohjeita-opettajalle_en.html">
+      Guidance for teachers
+    </a>
+
+    <a href="vaccaj-metastasio_en.html">
+      Vaccaj and Metastasio
+    </a>
+
+    <a href="tekijat_en.html">
+      Credits
+    </a>
+
+  </nav>
+
+  <main>
+
+    <h1>Origins of the poems</h1>
+
+    <div class="johdanto">
+
+      <p>
+        The exercise texts in Nicola Vaccaj's
+        <em>Metodo pratico</em> singing method
+        originate from various operas, cantatas,
+        oratorios, and other theatrical works.
+      </p>
+
+      <p>
+        This page introduces the origins of the
+        poems used in the exercises, their original
+        performers, and the works in which they appear.
+      </p>
+
+    </div>
+
+    <!-- POEM SELECTION -->
+
+    <div class="harjoitusvalinta">
+
+      <label for="runovalinta">
+        Choose a poem:
+      </label>
+
+      <select
+        id="runovalinta"
+        onchange="siirryRunoon()">
+
+        <option value="" selected>
+          Choose a poem
+        </option>
+
+        <option value="runo-1a">
+          1a – Manca sollecita
+        </option>
+
+        <option value="runo-1b">
+          1b – Semplicetta tortorella
+        </option>
+
+        <option value="runo-2a">
+          2a – Lascia il lido
+        </option>
+
+        <option value="runo-2b">
+          2b – Avvezzo a vivere
+        </option>
+
+        <option value="runo-3">
+          3 – Bella prova è d'alma forte
+        </option>
+
+        <option value="runo-4a">
+          4a – Fra l'ombre un lampo solo
+        </option>
+
+        <option value="runo-4b">
+          4b – Quell'onda che ruina
+        </option>
+
+        <option value="runo-5">
+          5 – Delira dubbiosa
+        </option>
+
+        <option value="runo-6">
+          6 – Nel contrasto Amor s'accende
+        </option>
+
+        <option value="runo-7">
+          7 – Come il candore
+        </option>
+
+        <option value="runo-8a">
+          8a – Senza l'amabile
+        </option>
+
+        <option value="runo-8b">
+          8b – Benchè di senso privo
+        </option>
+
+        <option value="runo-9a">
+          9a – La gioia verace
+        </option>
+
+        <option value="runo-9b">
+          9b – L'augelletto in lacci stretto
+        </option>
+
+        <option value="runo-10a">
+          10a – Quando accende un nobil petto
+        </option>
+
+        <option value="runo-10b">
+          10b – Più non si trovano
+        </option>
+
+        <option value="runo-11">
+          11 – Se povero il ruscello
+        </option>
+
+        <option value="runo-12">
+          12 – Siam navi all'onde algenti
+        </option>
+
+        <option value="runo-13a">
+          13a – Vorrei spiegar l'affanno
+        </option>
+
+        <option value="runo-13b">
+          13b – O placido il mare
+        </option>
+
+        <option value="runo-14">
+          14 – La patria è un tutto
+        </option>
+
+        <option value="runo-15">
+          15 – Alla stagion de' fiori
+        </option>
+
+      </select>
+
+    </div>
+
+    <!-- ORIGINS OF THE POEMS -->
+
+    <div class="runot">
+
+      <section class="runo" id="runo-1a">
+
+        <h2>1a – Manca sollecita</h2>
+
+        <p>
+          These lyrics are from the opera
+          <strong>Demetrio</strong>
+          (Act 2, scene 13).
+          They are sung by Cleonice, queen of Syria.
+          The opera premièred in Vienna on
+          4 November 1731 by order of Empress
+          Elisabeth to celebrate the emperor's
+          name day (Charles VI).
+          The opera was composed by Antonio Caldara.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-1b">
+
+        <h2>1b – Semplicetta tortorella</h2>
+
+        <p>
+          These lyrics are also from the opera
+          <strong>Demetrio</strong>
+          (Act 3, scene 11).
+          It is sung by Barnese, queen Cleonice's
+          friend and confidante.
+          This is part A of her fifth aria,
+          which is also the last in the opera.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-2a">
+
+        <h2>2a – Lascia il lido</h2>
+
+        <p>
+          These lyrics are from the opera
+          <strong>Siface</strong>,
+          which was Metastasio's first opera libretto.
+          The aria is sung by Erminio,
+          Siface's commander-in-chief.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-2b">
+
+        <h2>2b – Avvezzo a vivere</h2>
+
+        <p>
+          These lyrics are also from the opera
+          <strong>Demetrio</strong>
+          (Act 3, Scene 9).
+          It is sung by Captain Mitrane
+          in front of the royal guards.
+          The lyrics are part B of his third aria.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-3">
+
+        <h2>3 – Bella prova è d'alma forte</h2>
+
+        <p>
+          These lyrics are from the opera
+          <strong>Ezio</strong>
+          (Act 3, Scene 1).
+          They are sung by Ezio, commander of the
+          army of the Roman emperor of the West,
+          Valentinian III.
+          This is part B of his fifth aria
+          and composed by Nicola Porpora.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-4a">
+
+        <h2>4a – Fra l'ombre un lampo solo</h2>
+
+        <p>
+          These lyrics are from the opera
+          <strong>Achille in Sciro</strong>
+          (Achilles on Skyros).
+          They are sung by Odysseus, who is staying
+          with Achilles on the island of Skyros
+          in the Aegean Sea.
+          This is part A in the first of his
+          three arias.
+          It was composed by Caldara.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-4b">
+
+        <h2>4b – Quell'onda che ruina</h2>
+
+        <p>
+          These lyrics are from a
+          <em>festa teatrale</em> titled
+          <strong>Alcide al bivio</strong>
+          (Hercules at a crossroads).
+          It is sung in the fifth act by Aretea,
+          a maiden representing chastity.
+          This is part A of her second and last aria.
+          It was composed by Johan Adolf Hasse.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-5">
+
+        <h2>5 – Delira dubbiosa</h2>
+
+        <p>
+          These lyrics are from the play
+          <strong>Il sogno di Scipione</strong>
+          (Scipio's dream).
+          It is sung by Scipio himself
+          and composed by Luca Antonio Predieri.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-6">
+
+        <h2>6 – Nel contrasto Amor s'accende</h2>
+
+        <p>
+          These lyrics end the
+          <em>componimento drammatico</em>,
+          dramatic piece,
+          <strong>Amor prigioniero</strong>
+          (Cupid imprisoned).
+          It is sung by the ancient god figures
+          Cupid and Diana and composed by Georg Reutter.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-7">
+
+        <h2>7 – Come il candore</h2>
+
+        <p>
+          The original version of these lyrics
+          is found in the opera
+          <strong>Alessandro nell'Indie</strong>
+          (Alexander the Great in India).
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-8a">
+
+        <h2>8a – Senza l'amabile</h2>
+
+        <p>
+          These lyrics are from the play
+          <strong>L'asilo d'amore</strong>
+          (The asylum of love),
+          where they are sung by the goddess Venus.
+          This is her third and last aria.
+          It was composed by Caldara in 1732.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-8b">
+
+        <h2>8b – Benchè di senso privo</h2>
+
+        <p>
+          These lyrics are included in the fifth act
+          of the play
+          <strong>L'isola disabitata</strong>
+          (The uninhabited island).
+          They are sung by Enrico in his one and only aria.
+          The aria was composed by Josef Bonno.
+          It was premièred in Aranjuez on
+          31 May 1753 and conducted by
+          the great singer Farinelli.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-9a">
+
+        <h2>9a – La gioia verace</h2>
+
+        <p>
+          These lyrics are from the second part
+          of the oratorio
+          <strong>Giuseppe riconosciuto</strong>
+          (The unknown Joseph) from Genesis.
+          It is sung by Joseph's wife
+          Aseneta (Asenat) and composed by
+          Giuseppe Porsile.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-9b">
+
+        <h2>9b – L'augelletto in lacci stretto</h2>
+
+        <p>
+          These lyrics are connected with
+          the original version of the opera
+          <strong>Didone abbandonata</strong>
+          (The betrayed Dido), Act 5.
+          There it was sung by Araspe.
+          The music was composed by
+          Domenico Natale Sarro (Sarri).
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-10a">
+
+        <h2>10a – Quando accende un nobil petto</h2>
+
+        <p>
+          These lyrics are from a duet by
+          Clelia and Orazio in
+          <strong>Il trionfo di Clelia</strong>
+          (Clelia's triumph),
+          Act 2, Scene 3.
+          The duet was composed by Hasse.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-10b">
+
+        <h2>10b – Più non si trovano</h2>
+
+        <p>
+          These lyrics are from the opera
+          <strong>L'olimpiade</strong>
+          (The Olympics),
+          Act 1, Scene 7.
+          It is sung by Argene.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-11">
+
+        <h2>11 – Se povero il ruscello</h2>
+
+        <p>
+          These lyrics as well as
+          <em>Bella prova</em> (exercise 3)
+          are from the opera
+          <strong>Ezio</strong>.
+          They are sung by Massimo in the
+          eighth scene of the first act.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-12">
+
+        <h2>12 – Siam navi all'onde algenti</h2>
+
+        <p>
+          As well as the lyrics to
+          <em>Più non si trovano</em>,
+          these lyrics are from the opera
+          <strong>L'olimpiade</strong>
+          (The Olympics).
+          They are sung in the fifth scene
+          of Act 2 by Amonta, the governess.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-13a">
+
+        <h2>13a – Vorrei spiegar l'affanno</h2>
+
+        <p>
+          These lyrics are from the revised version
+          of the opera
+          <strong>Semiramide</strong>
+          (Semiramis)
+          (Act 1, scene 4).
+          They are sung by the Indian prince Scitalce,
+          who is in love with Queen Semiramis.
+          The lyrics were probably premièred in Rome
+          on 6 February 1729 as a composition by Vinci,
+          but it is possible that Porpora's music
+          to the same lyrics was premièred
+          in Venice before that.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-13b">
+
+        <h2>13b – O placido il mare</h2>
+
+        <p>
+          These lyrics are from the opera
+          <strong>Siroe</strong>
+          (Act 1, Scene 8).
+          They are sung by Leodice.
+          The music was composed by Vinci.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-14">
+
+        <h2>14 – La patria è un tutto</h2>
+
+        <p>
+          <em>La patria è un tutto</em>
+          comes from the first scene of
+          the second act in the opera
+          <strong>Attilio Regolo</strong>.
+          It is sung by Regolo himself.
+        </p>
+
+      </section>
+
+      <section class="runo" id="runo-15">
+
+        <h2>15 – Alla stagion de' fiori</h2>
+
+        <p>
+          These lyrics end the brief cantata
+          <strong>L'armonica</strong>
+          (Glasharmonika),
+          which was composed for the wedding
+          of Archduchess Maria Amalia of Austria
+          and Crown Prince Ferdinand of Parma
+          in 1769.
+          The cantata was composed by Hasse.
+        </p>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <script>
+
+    // SCROLL TO THE SELECTED POEM
+
+    function siirryRunoon() {
+
+      const runo =
+        document.getElementById("runovalinta").value;
+
+      if (runo !== "") {
+
+        const kohde = document.getElementById(runo);
+
+        if (kohde) {
+          kohde.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
