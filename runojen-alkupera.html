@@ -52,6 +52,40 @@
       color: white;
     }
 
+    /* LAULUT-ALAVALIKKO */
+
+    .paavalikko .alasvetovalikko {
+      position: relative;
+    }
+
+    .paavalikko .alasvetovalikko > a {
+      display: block;
+    }
+
+    .paavalikko .alavalikko {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 270px;
+      background: white;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+      z-index: 10;
+      padding: 6px;
+    }
+
+    .paavalikko .alavalikko a {
+      display: block;
+      margin: 3px 0;
+    }
+
+    .paavalikko .alasvetovalikko:hover .alavalikko,
+    .paavalikko .alasvetovalikko:focus-within .alavalikko {
+      display: block;
+    }
+
     /* JOHDANTO */
 
     .johdanto {
@@ -125,6 +159,12 @@
         text-align: center;
       }
 
+      .paavalikko .alavalikko {
+        position: static;
+        box-shadow: none;
+        min-width: 0;
+      }
+
       .runo {
         padding: 18px;
       }
@@ -160,27 +200,42 @@
   <nav class="paavalikko" aria-label="Päävalikko">
 
     <a href="index.html">
-      Harjoitukset
+      Etusivu
     </a>
 
     <a href="metodo-pratico.html">
       Metodo pratico
     </a>
 
-    <a href="italian-aakkoset.html">
-      Italian kielen aakkoset ja ääntäminen
-    </a>
+    <div class="alasvetovalikko">
 
-    <a
-      href="runojen-alkupera.html"
-      class="aktiivinen"
-      aria-current="page">
-      Runojen alkuperä
-    </a>
+      <a href="tehtavat.html" aria-haspopup="true">
+        Laulut ▾
+      </a>
 
-    <a href="ohjeita-opettajalle.html">
-      Ohjeita opettajalle
-    </a>
+      <div class="alavalikko" aria-label="Laulujen alavalikko">
+
+        <a href="tehtavat.html">
+          Tehtävät
+        </a>
+
+        <a href="italian-aakkoset.html">
+          Italian kielen aakkoset ja ääntäminen
+        </a>
+
+        <a href="runojen-alkupera.html"
+           class="aktiivinen"
+           aria-current="page">
+          Runojen alkuperä
+        </a>
+
+        <a href="ohjeita-opettajalle.html">
+          Ohjeita opettajalle
+        </a>
+
+      </div>
+
+    </div>
 
     <a href="vaccaj-metastasio.html">
       Vaccaj ja Metastasio
