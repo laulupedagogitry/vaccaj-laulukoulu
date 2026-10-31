@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Vaccaj – Exercise 6</title>
+  <title>Vaccaj: Exercise 6</title>
 
   <style>
     body {
@@ -52,6 +52,48 @@
     .paavalikko a.aktiivinen {
       background: #285b99;
       color: white;
+    }
+
+    /* SONGS DROPDOWN MENU */
+
+    .paavalikko .alasvetovalikko {
+      position: relative;
+    }
+
+    .paavalikko .alasvetovalikko > a {
+      display: block;
+    }
+
+    .paavalikko .alavalikko {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 270px;
+      background: white;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+      z-index: 10;
+      padding: 6px;
+    }
+
+    .paavalikko .alavalikko a {
+      display: block;
+      margin: 3px 0;
+    }
+
+    .paavalikko .alasvetovalikko:hover .alavalikko,
+    .paavalikko .alasvetovalikko:focus-within .alavalikko {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .paavalikko .alavalikko {
+        position: static;
+        box-shadow: none;
+        min-width: 0;
+      }
     }
 
     /* EXERCISE AND VOICE TYPE SELECTION */
@@ -207,6 +249,57 @@
       color: #555;
     }
 
+    /* LOWER TABS */
+
+    .valilehdet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 30px 0 25px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #d2e2f3;
+    }
+
+    .valilehdet button {
+      background: #f1f6fb;
+      color: #285b99;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font: bold 16px Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    .valilehdet button:hover {
+      background: #dceaf8;
+    }
+
+    .valilehdet button.aktiivinen {
+      background: #285b99;
+      color: white;
+      border-color: #285b99;
+    }
+
+    .valilehtisisalto[hidden] {
+      display: none;
+    }
+
+    /* EXERCISE HEADING LINE SPACING */
+
+    .tekstialue > .aanne {
+      line-height: 1.6;
+    }
+
+    .tekstialue > h3 {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .tekstialue > p {
+      margin: 0 0 16px;
+      line-height: 1.6;
+    }
+
     /* MOBILE VIEW */
 
     @media (max-width: 800px) {
@@ -230,11 +323,13 @@
     }
 
     @media (max-width: 600px) {
-      nav.paavalikko {
+      nav.paavalikko,
+      .valilehdet {
         flex-direction: column;
       }
 
-      .paavalikko a {
+      .paavalikko a,
+      .valilehdet button {
         text-align: center;
       }
 
@@ -296,31 +391,48 @@
 
   </div>
 
-  <!-- SEVEN MAIN NAVIGATION TABS -->
+  <!-- MAIN NAVIGATION -->
 
   <nav class="paavalikko" aria-label="Main navigation">
 
-    <a href="index_en.html"
-       class="aktiivinen"
-       aria-current="page">
-      Exercises
+    <a href="index_en.html">
+      Home
     </a>
 
     <a href="metodo-pratico_en.html">
       Metodo pratico
     </a>
 
-    <a href="italian-aakkoset_en.html">
-      Italian alphabet and pronunciation
-    </a>
+    <div class="alasvetovalikko">
 
-    <a href="runojen-alkupera_en.html">
-      Origins of the poems
-    </a>
+      <a
+        href="tehtavat_en.html"
+        class="aktiivinen"
+        aria-haspopup="true">
+        Songs ▾
+      </a>
 
-    <a href="ohjeita-opettajalle_en.html">
-      Instructions for teachers
-    </a>
+      <div class="alavalikko" aria-label="Songs submenu">
+
+        <a href="tehtavat_en.html">
+          Exercises
+        </a>
+
+        <a href="italian-aakkoset_en.html">
+          Italian Alphabet and Pronunciation
+        </a>
+
+        <a href="runojen-alkupera_en.html">
+          Origins of the Poems
+        </a>
+
+        <a href="ohjeita-opettajalle_en.html">
+          Instructions for Teachers
+        </a>
+
+      </div>
+
+    </div>
 
     <a href="vaccaj-metastasio_en.html">
       Vaccaj and Metastasio
@@ -334,7 +446,7 @@
 
   <main>
 
-    <h1>Vaccaj – Exercise 6</h1>
+    <h1>Vaccaj: Exercise 6</h1>
 
     <!-- EXERCISE AND VOICE TYPE SELECTION -->
 
@@ -481,110 +593,151 @@
 
     </div>
 
-    <!-- DEFAULT RECORDING: MEZZO-SOPRANO -->
+    <!-- LOWER TABS -->
 
-    <h2>Listen to the recording</h2>
+    <div
+      class="valilehdet"
+      role="tablist"
+      aria-label="Exercise content">
 
-    <audio
-      id="soitin"
-      controls
-      preload="none"
-      src="aanet/6_mezzo.mp3">
-      Your browser does not support the audio player.
-    </audio>
+      <button
+        type="button"
+        id="painike-harjoitus"
+        class="aktiivinen"
+        role="tab"
+        aria-selected="true"
+        aria-controls="harjoitussisalto"
+        onclick="avaaValilehti('harjoitussisalto')">
+        Sheet Music and Lyrics
+      </button>
 
-    <!-- SHEET MUSIC AND LYRICS -->
-
-    <div class="sisalto">
-
-      <section class="nuottialue">
-
-        <h2>Sheet music</h2>
-
-        <img
-          id="nuotti"
-          src="img/nuottikuvat/6_mezzo.jpg"
-          alt="Vaccaj 6 – mezzo-soprano sheet music">
-
-      </section>
-
-      <section class="tekstialue">
-
-        <h2>Exercise 6</h2>
-
-        <div class="aanne">
-          ['mɔdo sinco'pato]
-        </div>
-
-        <h3>Modo sincopato</h3>
-
-        <p>Syncopation</p>
-
-        <hr>
-
-        <div class="sae">
-          <div class="aanne">
-            [nel kon'trasto a'mor s at'tʃende]
-          </div>
-          <div class="italia">
-            Nel contrasto amor s'accende:
-          </div>
-          <div class="suomi">
-            Resistance makes love flare up:
-          </div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            [kon ki 'tʃede o ki s ar'rende]
-          </div>
-          <div class="italia">
-            con chi cede, o chi s'arrende
-          </div>
-          <div class="suomi">
-            to him that succumbs or surrenders,
-          </div>
-        </div>
-
-        <div class="sae">
-          <div class="aanne">
-            ['mai si 'barbaro non ɛ]
-          </div>
-          <div class="italia">
-            mai sì barbaro non è.
-          </div>
-          <div class="suomi">
-            it is never cruel.
-          </div>
-        </div>
-
-        <div class="yhteenveto">
-
-          <strong>
-            When he encounters resistance, Cupid *<br>
-            flares up, but he is never cruel<br>
-            to those that surrender.
-          </strong>
-
-          <p class="huomautus">
-            * (Cupid imprisoned / By Metastasio)
-          </p>
-
-        </div>
-
-      </section>
+      <button
+        type="button"
+        id="painike-esitysohjeet"
+        role="tab"
+        aria-selected="false"
+        aria-controls="esitysohjeet"
+        onclick="avaaValilehti('esitysohjeet')">
+        Performance instructions
+      </button>
 
     </div>
 
-    <!-- PERFORMANCE INSTRUCTIONS -->
+    <!-- SHEET MUSIC AND LYRICS TAB -->
+
+    <div
+      id="harjoitussisalto"
+      class="valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-harjoitus">
+
+      <!-- DEFAULT RECORDING: MEZZO-SOPRANO -->
+
+      <h2>Listen to the recording</h2>
+
+      <audio
+        id="soitin"
+        controls
+        preload="none"
+        src="aanet/6_mezzo.mp3">
+        Your browser does not support the audio player.
+      </audio>
+
+      <!-- SHEET MUSIC AND LYRICS -->
+
+      <div class="sisalto">
+
+        <section class="nuottialue">
+
+          <h2>Sheet music</h2>
+
+          <img
+            id="nuotti"
+            src="img/nuottikuvat/6_mezzo.jpg"
+            alt="Vaccaj 6 – mezzo-soprano sheet music">
+
+        </section>
+
+        <section class="tekstialue">
+
+          <h2>Lyrics</h2>
+
+          <div class="aanne">
+            ['mɔdo sinco'pato]
+          </div>
+
+          <h3>Modo sincopato</h3>
+
+          <p>Syncopation</p>
+
+          <hr>
+
+          <div class="sae">
+            <div class="aanne">
+              [nel kon'trasto a'mor s at'tʃende]
+            </div>
+            <div class="italia">
+              Nel contrasto amor s'accende:
+            </div>
+            <div class="suomi">
+              Resistance makes love flare up:
+            </div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              [kon ki 'tʃede o ki s ar'rende]
+            </div>
+            <div class="italia">
+              con chi cede, o chi s'arrende
+            </div>
+            <div class="suomi">
+              to him that succumbs or surrenders,
+            </div>
+          </div>
+
+          <div class="sae">
+            <div class="aanne">
+              ['mai si 'barbaro non ɛ]
+            </div>
+            <div class="italia">
+              mai sì barbaro non è.
+            </div>
+            <div class="suomi">
+              it is never cruel.
+            </div>
+          </div>
+
+          <div class="yhteenveto">
+
+            <strong>
+              When he encounters resistance, Cupid *<br>
+              flares up, but he is never cruel<br>
+              to those that surrender.
+            </strong>
+
+            <p class="huomautus">
+              * (Cupid imprisoned / By Metastasio)
+            </p>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+    <!-- PERFORMANCE INSTRUCTIONS TAB -->
 
     <section
-      class="esitysohjeet"
-      aria-labelledby="esitysohjeet-otsikko">
+      id="esitysohjeet"
+      class="esitysohjeet valilehtisisalto"
+      role="tabpanel"
+      aria-labelledby="painike-esitysohjeet"
+      hidden>
 
-      <h2 id="esitysohjeet-otsikko">
-        Performance instructions
-      </h2>
+      <h2>Performance instructions</h2>
 
       <p>
         This exercise practises syncopation
@@ -773,6 +926,38 @@
         "aanet/6_" + aaniala + ".mp3";
 
       soitin.load();
+    }
+
+    // SWITCH BETWEEN SHEET MUSIC AND PERFORMANCE INSTRUCTIONS
+
+    function avaaValilehti(tunnus) {
+      const sisallot =
+        document.querySelectorAll(".valilehtisisalto");
+
+      const painikkeet =
+        document.querySelectorAll(".valilehdet button");
+
+      sisallot.forEach(function(sisalto) {
+        sisalto.hidden = true;
+      });
+
+      painikkeet.forEach(function(painike) {
+        painike.classList.remove("aktiivinen");
+        painike.setAttribute("aria-selected", "false");
+      });
+
+      document.getElementById(tunnus).hidden = false;
+
+      const painikeId =
+        tunnus === "harjoitussisalto"
+          ? "painike-harjoitus"
+          : "painike-esitysohjeet";
+
+      const valittuPainike =
+        document.getElementById(painikeId);
+
+      valittuPainike.classList.add("aktiivinen");
+      valittuPainike.setAttribute("aria-selected", "true");
     }
 
   </script>
