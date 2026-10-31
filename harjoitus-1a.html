@@ -243,17 +243,113 @@
         overflow-wrap: anywhere;
       }
     }
+
     /* KIELIVALINTA */
-    .kielivalinta { display: flex; justify-content: flex-end; gap: 8px; margin: 0 0 15px; }
-    .kielivalinta a { display: inline-block; padding: 8px 16px; border: 1px solid #b7cce2; border-radius: 6px; background: white; color: #285b99; font-size: 15px; font-weight: bold; text-decoration: none; }
-    .kielivalinta a:hover { background: #dceaf8; }
-    .kielivalinta a.aktiivinen { background: #285b99; border-color: #285b99; color: white; }
+
+    .kielivalinta {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin: 0 0 15px;
+    }
+
+    .kielivalinta a {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #b7cce2;
+      border-radius: 6px;
+      background: white;
+      color: #285b99;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .kielivalinta a:hover {
+      background: #dceaf8;
+    }
+
+    .kielivalinta a.aktiivinen {
+      background: #285b99;
+      border-color: #285b99;
+      color: white;
+    }
+
     /* HARJOITUS- JA ESITYSOHJEVÄLILEHDET */
-    .alavalilehdet { display: flex; gap: 8px; margin: 20px 0; border-bottom: 2px solid #d2e2f3; padding-bottom: 12px; }
-    .alavalilehdet button { padding: 10px 18px; border: 0; border-radius: 6px; background: #f1f6fb; color: #285b99; font: inherit; font-weight: bold; cursor: pointer; }
-    .alavalilehdet button:hover { background: #dceaf8; }
-    .alavalilehdet button[aria-selected="true"] { background: #285b99; color: white; }
-    .valilehtisisalto[hidden] { display: none; }
+
+    .alavalilehdet {
+      display: flex;
+      gap: 8px;
+      margin: 20px 0;
+      border-bottom: 2px solid #d2e2f3;
+      padding-bottom: 12px;
+    }
+
+    .alavalilehdet button {
+      padding: 10px 18px;
+      border: 0;
+      border-radius: 6px;
+      background: #f1f6fb;
+      color: #285b99;
+      font: inherit;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .alavalilehdet button:hover {
+      background: #dceaf8;
+    }
+
+    .alavalilehdet button[aria-selected="true"] {
+      background: #285b99;
+      color: white;
+    }
+
+    .valilehtisisalto[hidden] {
+      display: none;
+    }
+
+    /* PÄÄVALIKON ALAVALIKKO */
+
+    .paavalikko .alasvetovalikko {
+      position: relative;
+    }
+
+    .paavalikko .alasvetovalikko > a {
+      display: block;
+    }
+
+    .paavalikko .alavalikko {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 270px;
+      background: white;
+      border: 1px solid #d2e2f3;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+      z-index: 10;
+      padding: 6px;
+    }
+
+    .paavalikko .alavalikko a {
+      display: block;
+      margin: 3px 0;
+    }
+
+    .paavalikko .alasvetovalikko:hover .alavalikko,
+    .paavalikko .alasvetovalikko:focus-within .alavalikko {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .paavalikko .alavalikko {
+        position: static;
+        box-shadow: none;
+        min-width: 0;
+      }
+    }
   </style>
 </head>
 
@@ -273,7 +369,21 @@
 
     <a href="metodo-pratico.html">Metodo pratico</a>
 
-    <a href="harjoitukset.html" class="aktiivinen" aria-current="page">Harjoitukset</a>
+    <div class="alasvetovalikko">
+      <a href="harjoitukset.html"
+         class="aktiivinen"
+         aria-current="page"
+         aria-haspopup="true">
+        Harjoitukset ▾
+      </a>
+
+      <div class="alavalikko" aria-label="Harjoitusten alavalikko">
+        <a href="harjoitukset.html">Harjoitukset</a>
+        <a href="italian-aakkoset.html">Italian kielen aakkoset ja ääntäminen</a>
+        <a href="runojen-alkupera.html">Runojen alkuperä</a>
+        <a href="ohjeita-opettajalle.html">Ohjeita opettajalle</a>
+      </div>
+    </div>
 
     <a href="vaccaj-metastasio.html">Vaccaj ja Metastasio</a>
 
@@ -286,12 +396,37 @@
     <h1>Vaccaj – Harjoitus 1a</h1>
 
     <!-- ALEMPI VÄLILEHTIVALIKKO -->
-    <div class="alavalilehdet" role="tablist" aria-label="Harjoituksen sisältö">
-      <button type="button" id="valilehti-harjoitus" role="tab" aria-controls="sisalto-harjoitus" aria-selected="true" onclick="vaihdaValilehti('harjoitus')">Harjoitus</button>
-      <button type="button" id="valilehti-esitysohjeet" role="tab" aria-controls="sisalto-esitysohjeet" aria-selected="false" onclick="vaihdaValilehti('esitysohjeet')">Esitysohjeet</button>
+
+    <div class="alavalilehdet"
+         role="tablist"
+         aria-label="Harjoituksen sisältö">
+
+      <button
+        type="button"
+        id="valilehti-harjoitus"
+        role="tab"
+        aria-controls="sisalto-harjoitus"
+        aria-selected="true"
+        onclick="vaihdaValilehti('harjoitus')">
+        Harjoitus
+      </button>
+
+      <button
+        type="button"
+        id="valilehti-esitysohjeet"
+        role="tab"
+        aria-controls="sisalto-esitysohjeet"
+        aria-selected="false"
+        onclick="vaihdaValilehti('esitysohjeet')">
+        Esitysohjeet
+      </button>
+
     </div>
 
-    <div id="sisalto-harjoitus" class="valilehtisisalto" role="tabpanel" aria-labelledby="valilehti-harjoitus">
+    <div id="sisalto-harjoitus"
+         class="valilehtisisalto"
+         role="tabpanel"
+         aria-labelledby="valilehti-harjoitus">
 
     <!-- HARJOITUKSEN JA ÄÄNIALAN VALINTA -->
 
@@ -566,7 +701,11 @@
 
     </div>
 
-    <div id="sisalto-esitysohjeet" class="valilehtisisalto" role="tabpanel" aria-labelledby="valilehti-esitysohjeet" hidden>
+    <div id="sisalto-esitysohjeet"
+         class="valilehtisisalto"
+         role="tabpanel"
+         aria-labelledby="valilehti-esitysohjeet"
+         hidden>
 
     <!-- ESITYSOHJEET HARJOITUSSIVUN LOPUSSA -->
 
@@ -742,14 +881,19 @@
   <script>
 
     // ALEMPIEN VÄLILEHTIEN VAIHTAMINEN
+
     function vaihdaValilehti(valilehti) {
       const harjoitus = valilehti === 'harjoitus';
+
       document.getElementById('sisalto-harjoitus').hidden = !harjoitus;
       document.getElementById('sisalto-esitysohjeet').hidden = harjoitus;
-      document.getElementById('valilehti-harjoitus').setAttribute('aria-selected', String(harjoitus));
-      document.getElementById('valilehti-esitysohjeet').setAttribute('aria-selected', String(!harjoitus));
-    }
 
+      document.getElementById('valilehti-harjoitus')
+        .setAttribute('aria-selected', String(harjoitus));
+
+      document.getElementById('valilehti-esitysohjeet')
+        .setAttribute('aria-selected', String(!harjoitus));
+    }
 
     // SIIRTYMINEN TOISEEN HARJOITUKSEEN
 
