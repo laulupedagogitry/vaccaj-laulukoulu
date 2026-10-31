@@ -211,10 +211,22 @@
         min-width: 720px;
       }
     }
+
+    /* KIELIVALINTA */
+    .kielivalinta { display: flex; justify-content: flex-end; gap: 8px; margin: 0 0 15px; }
+    .kielivalinta a { display: inline-block; padding: 8px 16px; border: 1px solid #b7cce2; border-radius: 6px; background: white; color: #285b99; font-size: 15px; font-weight: bold; text-decoration: none; }
+    .kielivalinta a:hover { background: #dceaf8; }
+    .kielivalinta a.aktiivinen { background: #285b99; border-color: #285b99; color: white; }
   </style>
 </head>
 
 <body>
+
+  <!-- KIELIVALINTA -->
+  <div class="kielivalinta" role="group" aria-label="Kieli / Language">
+    <a href="metodo-pratico.html" class="aktiivinen" lang="fi" aria-current="page">Suomi</a>
+    <a href="metodo-pratico_en.html" lang="en">English</a>
+  </div>
 
   <!-- PÄIVITETTY SIVUSTON YLÄVALIKKO -->
 
