@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fi">
 <head>
@@ -438,6 +439,158 @@
 
     <h1>Vaccaj: Tehtävä 1b</h1>
 
+    <!-- HARJOITUKSEN JA ÄÄNIALAN VALINTA -->
+
+    <div class="valinnat">
+
+      <div class="valintaryhma harjoitusryhma">
+
+        <label for="harjoitus">
+          Valitse tehtävä:
+        </label>
+
+        <select
+          id="harjoitus"
+          onchange="vaihdaHarjoitus()">
+
+          <optgroup label="I–IV – Intervallit">
+
+            <option value="1a">
+              I / 1a – Manca sollecita... – La scala – asteikko
+            </option>
+
+            <option value="1b" selected>
+              I / 1b – Semplicetta tortorella... – Intervalli di terza – terssi
+            </option>
+
+            <option value="2a">
+              II / 2a – Lascia il lido, e il mare infido... – Intervalli di quarta – kvartti
+            </option>
+
+            <option value="2b">
+              II / 2b – Avvezzo a vivere... – Intervalli di quinta – kvintti
+            </option>
+
+            <option value="3">
+              III / 3 – Bella prova é d'alma forte... – Intervalli di sesta – seksti
+            </option>
+
+            <option value="4a">
+              IV / 4a – Fra l'ombre un lampo solo... – Intervalli di settima – septimi
+            </option>
+
+            <option value="4b">
+              IV / 4b – Quell' onda che ruina... – Intervalli di ottava – oktaavi
+            </option>
+
+          </optgroup>
+
+          <optgroup label="V–XIII – Koristeet ja laulutekniikka">
+
+            <option value="5">
+              V / 5 – Delira dubbiosa... – I semitoni – puolisävelaskel
+            </option>
+
+            <option value="6">
+              VI / 6 – Nel contrasto amor accende... – Modo sincopato – synkooppi
+            </option>
+
+            <option value="7">
+              VII / 7 – Come il candore... – Introduzione alle volate – johdatus juoksutukseen
+            </option>
+
+            <option value="8a">
+              VIII / 8a – Senza l'amabile... – Le appoggiatura sopra e sotto – pitkä etuhele
+            </option>
+
+            <option value="8b">
+              VIII / 8b – Benchè di senso privo... – L'acciaccatura – lyhyt etuhele
+            </option>
+
+            <option value="9a">
+              IX / 9a – La gioia verace... – Introduzione al Mordente – johdatus jälkiheleeseen
+            </option>
+
+            <option value="9b">
+              IX / 9b – L'augelletto in lacci stretto... – Mordente in diversi modi – jälkihele, kaksoishele
+            </option>
+
+            <option value="10a">
+              X / 10a – Quando accende un nobil petto... – Introduzione al grupetto – johdatus kaksoisheleeseen
+            </option>
+
+            <option value="10b">
+              X / 10b – Più non si trovano... – Il gruppetto – kaksoishele
+            </option>
+
+            <option value="11">
+              XI / 11 – Se povero il ruscello... – Introduzione al trillo – johdatus trilliin
+            </option>
+
+            <option value="12">
+              XII / 12 – Siam navi all' onde algenti... – Le volate – pitkä 16-osajuoksutus
+            </option>
+
+            <option value="13a">
+              XIII / 13a – Vorrei spiegar l'affanno... – Portamento I - Modo per portare la voce – kannattelu I
+            </option>
+
+            <option value="13b">
+              XIII / 13b – O placido il mare... – Portamento II - Altro modo – kannattelu II
+            </option>
+
+          </optgroup>
+
+          <optgroup label="XIV–XV – Resitatiivi ja kertaus">
+
+            <option value="14">
+              XIV / 14 – La patria è un tutto... – Il recitativo – resitatiivi
+            </option>
+
+            <option value="15">
+              XV / 15 – Alla stagion de' fiori... – Riepilogo – kertaus
+            </option>
+
+          </optgroup>
+
+        </select>
+
+      </div>
+
+      <!-- NELJÄ ÄÄNIALAA -->
+
+      <div class="valintaryhma aanialaryhma">
+
+        <label for="aaniala">
+          Valitse ääniala:
+        </label>
+
+        <select
+          id="aaniala"
+          onchange="vaihdaAaniala()">
+
+          <option value="sopraano" selected>
+            Sopraano
+          </option>
+
+          <option value="mezzo">
+            Mezzosopraano
+          </option>
+
+          <option value="altto">
+            Altto
+          </option>
+
+          <option value="baritoni">
+            Baritoni
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
     <!-- SISÄLTÖVÄLILEHDET -->
 
     <div class="alavalilehdet" role="tablist" aria-label="Tehtävän sisältö">
@@ -468,158 +621,6 @@
          class="valilehtisisalto"
          role="tabpanel"
          aria-labelledby="valilehti-harjoitus">
-
-      <!-- HARJOITUKSEN JA ÄÄNIALAN VALINTA -->
-
-      <div class="valinnat">
-
-        <div class="valintaryhma harjoitusryhma">
-
-          <label for="harjoitus">
-            Valitse tehtävä:
-          </label>
-
-          <select
-            id="harjoitus"
-            onchange="vaihdaHarjoitus()">
-
-            <optgroup label="I–IV – Intervallit">
-
-              <option value="1a">
-                I / 1a – Manca sollecita... – La scala – asteikko
-              </option>
-
-              <option value="1b" selected>
-                I / 1b – Semplicetta tortorella... – Intervalli di terza – terssi
-              </option>
-
-              <option value="2a">
-                II / 2a – Lascia il lido, e il mare infido... – Intervalli di quarta – kvartti
-              </option>
-
-              <option value="2b">
-                II / 2b – Avvezzo a vivere... – Intervalli di quinta – kvintti
-              </option>
-
-              <option value="3">
-                III / 3 – Bella prova é d'alma forte... – Intervalli di sesta – seksti
-              </option>
-
-              <option value="4a">
-                IV / 4a – Fra l'ombre un lampo solo... – Intervalli di settima – septimi
-              </option>
-
-              <option value="4b">
-                IV / 4b – Quell' onda che ruina... – Intervalli di ottava – oktaavi
-              </option>
-
-            </optgroup>
-
-            <optgroup label="V–XIII – Koristeet ja laulutekniikka">
-
-              <option value="5">
-                V / 5 – Delira dubbiosa... – I semitoni – puolisävelaskel
-              </option>
-
-              <option value="6">
-                VI / 6 – Nel contrasto amor accende... – Modo sincopato – synkooppi
-              </option>
-
-              <option value="7">
-                VII / 7 – Come il candore... – Introduzione alle volate – johdatus juoksutukseen
-              </option>
-
-              <option value="8a">
-                VIII / 8a – Senza l'amabile... – Le appoggiatura sopra e sotto – pitkä etuhele
-              </option>
-
-              <option value="8b">
-                VIII / 8b – Benchè di senso privo... – L'acciaccatura – lyhyt etuhele
-              </option>
-
-              <option value="9a">
-                IX / 9a – La gioia verace... – Introduzione al Mordente – johdatus jälkiheleeseen
-              </option>
-
-              <option value="9b">
-                IX / 9b – L'augelletto in lacci stretto... – Mordente in diversi modi – jälkihele, kaksoishele
-              </option>
-
-              <option value="10a">
-                X / 10a – Quando accende un nobil petto... – Introduzione al grupetto – johdatus kaksoisheleeseen
-              </option>
-
-              <option value="10b">
-                X / 10b – Più non si trovano... – Il gruppetto – kaksoishele
-              </option>
-
-              <option value="11">
-                XI / 11 – Se povero il ruscello... – Introduzione al trillo – johdatus trilliin
-              </option>
-
-              <option value="12">
-                XII / 12 – Siam navi all' onde algenti... – Le volate – pitkä 16-osajuoksutus
-              </option>
-
-              <option value="13a">
-                XIII / 13a – Vorrei spiegar l'affanno... – Portamento I - Modo per portare la voce – kannattelu I
-              </option>
-
-              <option value="13b">
-                XIII / 13b – O placido il mare... – Portamento II - Altro modo – kannattelu II
-              </option>
-
-            </optgroup>
-
-            <optgroup label="XIV–XV – Resitatiivi ja kertaus">
-
-              <option value="14">
-                XIV / 14 – La patria è un tutto... – Il recitativo – resitatiivi
-              </option>
-
-              <option value="15">
-                XV / 15 – Alla stagion de' fiori... – Riepilogo – kertaus
-              </option>
-
-            </optgroup>
-
-          </select>
-
-        </div>
-
-        <!-- NELJÄ ÄÄNIALAA -->
-
-        <div class="valintaryhma aanialaryhma">
-
-          <label for="aaniala">
-            Valitse ääniala:
-          </label>
-
-          <select
-            id="aaniala"
-            onchange="vaihdaAaniala()">
-
-            <option value="sopraano" selected>
-              Sopraano
-            </option>
-
-            <option value="mezzo">
-              Mezzosopraano
-            </option>
-
-            <option value="altto">
-              Altto
-            </option>
-
-            <option value="baritoni">
-              Baritoni
-            </option>
-
-          </select>
-
-        </div>
-
-      </div>
 
       <!-- ÄÄNITE -->
 
