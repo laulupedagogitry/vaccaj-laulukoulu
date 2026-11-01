@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fi">
 <head>
@@ -7,16 +6,29 @@
 <title>Vaccaj: Tehtävä 1a</title>
 
 <style>
+html {
+  min-height: 100%;
+  background-color: #21154e;
+  background-image: url("img/tausta.jpg");
+  background-position: center top;
+  background-repeat: repeat;
+  background-size: 1000px auto;
+}
+
 body {
   font-family: Arial, sans-serif;
   max-width: 1300px;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 30px auto;
+  padding: 30px;
   line-height: 1.6;
   color: #333;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, .25);
 }
-h1, h2, h3 { color: #285b99; }
-a { color: #285b99; }
+
+h1, h2, h3 { color: #231A50; }
+a { color: #231A50; }
 
 /* SIVUSTON YLÄVALIKKO */
 nav.paavalikko {
@@ -25,19 +37,24 @@ nav.paavalikko {
   gap: 8px;
   margin: 15px 0 35px;
   padding-bottom: 15px;
-  border-bottom: 2px solid #d2e2f3;
+  border-bottom: 2px solid #d4cde7;
 }
+
 .paavalikko a {
   padding: 10px 16px;
-  background: #f1f6fb;
+  background: rgba(35, 26, 80, .08);
   border-radius: 6px;
-  color: #285b99;
+  color: #231A50;
   text-decoration: none;
   font-weight: bold;
 }
-.paavalikko a:hover { background: #dceaf8; }
+
+.paavalikko a:hover {
+  background: rgba(35, 26, 80, .16);
+}
+
 .paavalikko a.aktiivinen {
-  background: #285b99;
+  background: #231A50;
   color: white;
 }
 
@@ -47,23 +64,26 @@ label {
   margin: 0 0 8px;
   font-weight: bold;
 }
+
 select {
   font-size: 16px;
   padding: 12px;
   max-width: 100%;
-  border: 1px solid #b7cce2;
+  border: 1px solid #d4cde7;
   border-radius: 6px;
   background: white;
 }
+
 .valinnat {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   margin: 25px 0;
   padding: 20px;
-  background: #f1f6fb;
+  background: rgba(35, 26, 80, .06);
   border-radius: 10px;
 }
+
 .valintaryhma { min-width: 0; }
 .harjoitusryhma { flex: 1 1 650px; }
 .aanialaryhma { flex: 0 1 220px; }
@@ -83,36 +103,54 @@ audio {
   gap: 35px;
   align-items: start;
 }
+
 .nuottialue img {
   display: block;
   width: 100%;
   height: auto;
   margin-top: 20px;
 }
+
 .tekstialue {
-  background: #f1f6fb;
+  background: rgba(35, 26, 80, .06);
   padding: 25px;
   border-radius: 10px;
 }
+
 .tekstialue h2 { margin-top: 0; }
+
+.tekstialue > h3 {
+  color: #0d0c08;
+}
+
+.tekstialue > p:first-of-type {
+  color: #231A50;
+}
+
 .sae { margin-bottom: 22px; }
+
 .aanne {
-  color: #666;
+  color: #897c96;
   font-size: 15px;
   font-style: italic;
 }
+
 .italia {
+  color: #0d0c08;
   font-size: 19px;
   font-weight: bold;
 }
+
 .suomi {
   font-size: 16px;
-  color: #555;
+  color: #231A50;
 }
+
 .yhteenveto {
   margin-top: 30px;
   padding-top: 15px;
   border-top: 1px solid #ccc;
+  color: #0d0c08;
 }
 
 /* ESITYSOHJEET */
@@ -120,28 +158,38 @@ audio {
   max-width: 1000px;
   margin-top: 55px;
   padding-top: 25px;
-  border-top: 2px solid #d2e2f3;
+  border-top: 2px solid #d4cde7;
 }
+
 .esitysohjeet h2 { margin-top: 0; }
 .esitysohjeet h3 { margin-top: 35px; }
 .esitysohjeet p { margin-bottom: 20px; }
+
 .saveltapailu {
-  background: #f1f6fb;
-  border-left: 4px solid #285b99;
+  background: rgba(35, 26, 80, .06);
+  border-left: 4px solid #231A50;
   border-radius: 4px;
   padding: 18px 22px;
   margin: 20px 0 25px;
   line-height: 2;
 }
+
 .saveltapailu p { margin: 0; }
+
 .esitysohjeet .lahde {
   margin-top: 35px;
   padding-top: 15px;
-  border-top: 1px solid #d2e2f3;
+  border-top: 1px solid #d4cde7;
   color: #555;
 }
 
 /* MOBIILINÄKYMÄ */
+@media (max-width: 1400px) {
+  body {
+    margin: 20px;
+  }
+}
+
 @media (max-width: 800px) {
   .sisalto { grid-template-columns: 1fr; }
   .valinnat { flex-direction: column; }
@@ -151,10 +199,18 @@ audio {
   }
   .tekstialue { padding: 20px; }
 }
+
 @media (max-width: 600px) {
+  body {
+    margin: 12px;
+    padding: 18px;
+    border-radius: 8px;
+  }
+
   nav.paavalikko { flex-direction: column; }
   .paavalikko a { text-align: center; }
   h1 { font-size: 28px; }
+
   .saveltapailu {
     padding: 15px;
     overflow-wrap: anywhere;
@@ -176,21 +232,26 @@ audio {
   gap: 8px;
   margin: 0 0 15px;
 }
+
 .kielivalinta a {
   display: inline-block;
   padding: 8px 16px;
-  border: 1px solid #b7cce2;
+  border: 1px solid #d4cde7;
   border-radius: 6px;
-  background: white;
-  color: #285b99;
+  background: rgba(35, 26, 80, .06);
+  color: #231A50;
   font-size: 15px;
   font-weight: bold;
   text-decoration: none;
 }
-.kielivalinta a:hover { background: #dceaf8; }
+
+.kielivalinta a:hover {
+  background: rgba(35, 26, 80, .16);
+}
+
 .kielivalinta a.aktiivinen {
-  background: #285b99;
-  border-color: #285b99;
+  background: #231A50;
+  border-color: #231A50;
   color: white;
 }
 
@@ -199,29 +260,36 @@ audio {
   display: flex;
   gap: 8px;
   margin: 20px 0;
-  border-bottom: 2px solid #d2e2f3;
+  border-bottom: 2px solid #d4cde7;
   padding-bottom: 12px;
 }
+
 .alavalilehdet button {
   padding: 10px 18px;
   border: 0;
   border-radius: 6px;
-  background: #f1f6fb;
-  color: #285b99;
+  background: rgba(35, 26, 80, .08);
+  color: #231A50;
   font: inherit;
   font-weight: bold;
   cursor: pointer;
 }
-.alavalilehdet button:hover { background: #dceaf8; }
+
+.alavalilehdet button:hover {
+  background: rgba(35, 26, 80, .16);
+}
+
 .alavalilehdet button[aria-selected="true"] {
-  background: #285b99;
+  background: #231A50;
   color: white;
 }
+
 .valilehtisisalto[hidden] { display: none; }
 
 /* PÄÄVALIKON ALAVALIKKO */
 .paavalikko .alasvetovalikko { position: relative; }
 .paavalikko .alasvetovalikko > a { display: block; }
+
 .paavalikko .alavalikko {
   display: none;
   position: absolute;
@@ -229,20 +297,23 @@ audio {
   left: 0;
   min-width: 270px;
   background: white;
-  border: 1px solid #d2e2f3;
+  border: 1px solid #d4cde7;
   border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  box-shadow: 0 4px 12px rgba(35, 26, 80, .18);
   z-index: 10;
   padding: 6px;
 }
+
 .paavalikko .alavalikko a {
   display: block;
   margin: 3px 0;
 }
+
 .paavalikko .alasvetovalikko:hover .alavalikko,
 .paavalikko .alasvetovalikko:focus-within .alavalikko {
   display: block;
 }
+
 @media (max-width: 600px) {
   .paavalikko .alavalikko {
     position: static;
