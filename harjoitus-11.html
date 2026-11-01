@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fi">
 <head>
@@ -394,41 +395,6 @@
 
     <h1>Vaccaj: Tehtävä 11</h1>
 
-    <!-- ALEMPIEN VÄLILEHTIEN VALIKKO -->
-
-    <div class="alavalilehdet"
-         role="tablist"
-         aria-label="Tehtävän sisältö">
-
-      <button
-        type="button"
-        id="valilehti-harjoitus"
-        role="tab"
-        aria-controls="sisalto-harjoitus"
-        aria-selected="true"
-        onclick="vaihdaValilehti('harjoitus')">
-        Nuotit ja sanat
-      </button>
-
-      <button
-        type="button"
-        id="valilehti-esitysohjeet"
-        role="tab"
-        aria-controls="sisalto-esitysohjeet"
-        aria-selected="false"
-        onclick="vaihdaValilehti('esitysohjeet')">
-        Esitysohjeet
-      </button>
-
-    </div>
-
-    <!-- NUOTIT JA SANAT -VÄLILEHTI -->
-
-    <div id="sisalto-harjoitus"
-         class="valilehtisisalto"
-         role="tabpanel"
-         aria-labelledby="valilehti-harjoitus">
-
     <!-- HARJOITUKSEN JA ÄÄNIALAN VALINTA -->
 
     <div class="valinnat">
@@ -581,6 +547,41 @@
       </div>
 
     </div>
+
+    <!-- ALEMPIEN VÄLILEHTIEN VALIKKO -->
+
+    <div class="alavalilehdet"
+         role="tablist"
+         aria-label="Tehtävän sisältö">
+
+      <button
+        type="button"
+        id="valilehti-harjoitus"
+        role="tab"
+        aria-controls="sisalto-harjoitus"
+        aria-selected="true"
+        onclick="vaihdaValilehti('harjoitus')">
+        Nuotit ja sanat
+      </button>
+
+      <button
+        type="button"
+        id="valilehti-esitysohjeet"
+        role="tab"
+        aria-controls="sisalto-esitysohjeet"
+        aria-selected="false"
+        onclick="vaihdaValilehti('esitysohjeet')">
+        Esitysohjeet
+      </button>
+
+    </div>
+
+    <!-- NUOTIT JA SANAT -VÄLILEHTI -->
+
+    <div id="sisalto-harjoitus"
+         class="valilehtisisalto"
+         role="tabpanel"
+         aria-labelledby="valilehti-harjoitus">
 
     <!-- ÄÄNITE -->
 
