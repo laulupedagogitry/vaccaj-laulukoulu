@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fi">
 <head>
@@ -428,13 +429,6 @@
 
     <h1>Vaccaj: Tehtävä 4b</h1>
 
-    <div class="alavalilehdet" role="tablist" aria-label="Tehtävän sisältö">
-      <button type="button" id="valilehti-harjoitus" role="tab" aria-controls="sisalto-harjoitus" aria-selected="true" onclick="vaihdaValilehti('harjoitus')">Nuotit ja sanat</button>
-      <button type="button" id="valilehti-esitysohjeet" role="tab" aria-controls="sisalto-esitysohjeet" aria-selected="false" onclick="vaihdaValilehti('esitysohjeet')">Esitysohjeet</button>
-    </div>
-
-    <div id="sisalto-harjoitus" class="valilehtisisalto" role="tabpanel" aria-labelledby="valilehti-harjoitus">
-
       <!-- HARJOITUKSEN JA ÄÄNIALAN VALINTA -->
 
       <div class="valinnat">
@@ -578,6 +572,13 @@
         </div>
 
       </div>
+
+    <div class="alavalilehdet" role="tablist" aria-label="Tehtävän sisältö">
+      <button type="button" id="valilehti-harjoitus" role="tab" aria-controls="sisalto-harjoitus" aria-selected="true" onclick="vaihdaValilehti('harjoitus')">Nuotit ja sanat</button>
+      <button type="button" id="valilehti-esitysohjeet" role="tab" aria-controls="sisalto-esitysohjeet" aria-selected="false" onclick="vaihdaValilehti('esitysohjeet')">Esitysohjeet</button>
+    </div>
+
+    <div id="sisalto-harjoitus" class="valilehtisisalto" role="tabpanel" aria-labelledby="valilehti-harjoitus">
 
       <!-- ÄÄNITE -->
 
